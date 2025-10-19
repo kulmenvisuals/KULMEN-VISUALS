@@ -1,8 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 py-6 text-center text-sm text-zinc-500 mt-auto">
+    // NADA de fixed/absolute. Solo un bloque normal con margen-top auto
+    <footer className="mt-auto border-t border-zinc-800 py-6 text-center text-sm text-zinc-500">
       <p>© {new Date().getFullYear()} Kulmen Visuals — Galicia</p>
-      <p>FPV · Cine · Publicidad · Turismo · Eventos</p>
+      <p className="mt-1">FPV · Cine · Publicidad · Turismo · Eventos</p>
     </footer>
   )
 }
