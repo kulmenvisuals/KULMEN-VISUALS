@@ -4,7 +4,6 @@ import Footer from "./components/Footer"
 
 export default function App() {
   return (
-    // Contenedor de página: alto mínimo toda la pantalla + layout en columna
     <div className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100">
       <Header />
 

@@ -1,14 +1,13 @@
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
-import projects from "../data/projects"
 
 export default function Home() {
-  const base = import.meta.env.BASE_URL
+  const base = import.meta.env.BASE_URL // respeta GitHub Pages (/KULMEN-VISUALS/)
 
   return (
     <div className="bg-zinc-950 text-zinc-100">
 
-      {/* HERO */}
+      {/* HERO: UNA SOLA SECCIÓN */}
       <section className="relative min-h-[70svh] bg-zinc-900 overflow-hidden">
         {/* Vídeo de fondo */}
         <video
@@ -17,11 +16,11 @@ export default function Home() {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-70"
-          src={`${base}videos/hero.mp4`} // 👈 aquí va tu vídeo dentro de public/videos/
+          src={`${base}videos/hero.mp4`}  /* <-- pon aquí tu fichero en public/videos/ */
           onError={(e) => (e.currentTarget.style.display = "none")}
         />
 
-        {/* Capa degradado para contraste */}
+        {/* Degradado para contraste */}
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none" />
 
         {/* Contenido sobre el vídeo */}
@@ -56,34 +55,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN: Últimos trabajos */}
-      <section id="proyectos" className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-xl font-semibold mb-4">Últimos trabajos</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {projects.map((p) => (
-            <Link
-              key={p.id}
-              to={`/proyectos/${p.id}`}
-              className="group block rounded-xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition"
-            >
-              <div className="overflow-hidden">
-                <img
-                  src={p.thumbnail}
-                  alt={p.title}
-                  className="aspect-video object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-3">
-                <h3 className="font-medium">{p.title}</h3>
-                <p className="text-xs text-zinc-400 mt-1">
-                  {p.type.join(" · ")} — {p.location}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+      {/* ——— BLOQUE DE PRUEBA ——— */}
+      <section className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-2xl font-semibold">
+          🔧 PRUEBA: si ves este texto justo debajo del hero y el footer queda al final, el layout está OK.
+        </h2>
+        <p className="text-zinc-400 mt-2">
+          Luego quitamos esta sección y volvemos a meter tus “Últimos trabajos”.
+        </p>
       </section>
+      {/* ——— FIN BLOQUE DE PRUEBA ——— */}
+
     </div>
   )
 }
