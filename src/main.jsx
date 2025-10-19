@@ -1,6 +1,7 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
+
 import App from "./App.jsx"
 import Home from "./pages/Home.jsx"
 import MapPage from "./pages/MapPage.jsx"
@@ -10,23 +11,18 @@ import About from "./pages/About.jsx"
 import Contact from "./pages/Contact.jsx"
 import "./index.css"
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "mapa", element: <MapPage /> },
-      { path: "proyectos", element: <Projects /> },
-      { path: "proyectos/:id", element: <ProjectDetail /> },
-      { path: "sobre-mi", element: <About /> },
-      { path: "contacto", element: <Contact /> },
-    ],
-  },
-])
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HashRouter>
+      <App />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/mapa" element={<MapPage />} />
+        <Route path="/proyectos" element={<Projects />} />
+        <Route path="/proyectos/:id" element={<ProjectDetail />} />
+        <Route path="/sobre-mi" element={<About />} />
+        <Route path="/contacto" element={<Contact />} />
+      </Routes>
+    </HashRouter>
   </StrictMode>
 )
