@@ -1,4 +1,6 @@
-// Datos ligeros para textos e interfaz
+// src/data/servicios.js
+
+// 1) FASES DEL PROCESO (lo que ya tenías)
 export const fases = [
   {
     id: "prepro",
@@ -59,6 +61,7 @@ export const fases = [
   }
 ]
 
+// 2) ESPECIALIDADES (también lo que ya tenías)
 export const especialidades = [
   {
     id: "cine",
@@ -85,3 +88,56 @@ export const especialidades = [
     fondo: `${import.meta.env.BASE_URL}images/spec_turismo.jpg`,
   },
 ]
+
+// 3) SERVICIOS (esto es lo que pedía Servicios.jsx)
+export const servicios = [
+  {
+    id: "prepro",
+    nombre: "Preproducción",
+    categoria: "Estrategia y guion",
+    descripcion:
+      "Brief, concepto, guion y planificación. Definimos objetivo, tono, localizaciones y qué piezas necesitas exactamente.",
+    destacado: true,
+    etiquetas: ["Guion técnico", "Storyboard", "Localizaciones", "Plan de rodaje"],
+    // opcionales, por si en algún momento quieres enlazar a una ficha concreta:
+    // slug: "servicio-preproduccion",
+    // thumbnail: `${import.meta.env.BASE_URL}images/servicio_prepro.jpg`,
+    // cliente: "",
+  },
+  {
+    id: "rodaje",
+    nombre: "Rodaje · Cámaras + FPV",
+    categoria: "Producción",
+    descripcion:
+      "Rodaje con cámaras de cine, ópticas y drones FPV. Combinamos planos físicos y cercanos con recursos más clásicos.",
+    destacado: true,
+    etiquetas: ["Cámara cine", "FPV", "Dron aéreo", "Cinewhoop"],
+    // slug: "servicio-rodaje",
+    // thumbnail: `${import.meta.env.BASE_URL}images/servicio_rodaje.jpg`,
+  },
+  {
+    id: "post",
+    nombre: "Postproducción y color",
+    categoria: "Postproducción",
+    descripcion:
+      "Montaje, corrección de color, sonido y grafismos. Entrega en formatos adaptados a redes, web o campañas.",
+    destacado: true,
+    etiquetas: ["Montaje", "Color", "Sonido", "Gráficos/motion"],
+    // slug: "servicio-postproduccion",
+    // thumbnail: `${import.meta.env.BASE_URL}images/servicio_post.jpg`,
+  },
+  {
+    id: "ia",
+    nombre: "Contenido con IA",
+    categoria: "Soporte creativo",
+    descripcion:
+      "Uso de IA para generar moodboards, storyboards e imágenes clave que ayudan a definir estilo y campaña.",
+    destacado: false, // lo tratamos como “extra” para que salga en el bloque de abajo
+    etiquetas: ["Moodboard", "Storyboard", "Imagen conceptual"],
+    // slug: "servicio-ia",
+    // thumbnail: `${import.meta.env.BASE_URL}images/servicio_ia.jpg`,
+  },
+]
+
+// 4) Export por defecto (por si en algún sitio se usa `default`)
+export default servicios

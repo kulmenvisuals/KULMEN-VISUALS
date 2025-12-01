@@ -1,4 +1,6 @@
-const projects = [
+// src/data/projects.js
+
+export const projects = [
   {
     id: "torre-hercules-fpv",
     title: "FPV en Torre de Hércules",
@@ -8,7 +10,8 @@ const projects = [
     roles: ["Dirección", "Piloto FPV", "Edición"],
     location: "A Coruña",
     coords: [43.385, -8.406],
-    thumbnail: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1280&auto=format",
+    thumbnail:
+      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1280&auto=format",
     videoUrl: "/assets/videos/reel_hercules.mp4",
     poster: "/assets/posters/torre.jpg",
     images: [
@@ -27,7 +30,8 @@ const projects = [
     roles: ["Dirección de Foto", "Color"],
     location: "Lugo",
     coords: [42.415, -7.56],
-    thumbnail: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1280&auto=format",
+    thumbnail:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1280&auto=format",
     videoUrl: "/assets/videos/reel_sacra.mp4",
     poster: "/assets/posters/sacra.jpg",
     images: [
@@ -46,7 +50,8 @@ const projects = [
     roles: ["Operador Cámara", "Postproducción"],
     location: "Pontevedra",
     coords: [42.431, -8.644],
-    thumbnail: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1280&auto=format",
+    thumbnail:
+      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1280&auto=format",
     videoUrl: "/assets/videos/reel_evento.mp4",
     poster: "/assets/posters/evento.jpg",
     images: [
@@ -58,4 +63,5 @@ const projects = [
   },
 ]
 
+// opcional, pero lo dejamos por si en algún sitio importas `default`
 export default projects
