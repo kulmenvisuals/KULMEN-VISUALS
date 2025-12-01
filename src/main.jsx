@@ -1,32 +1,44 @@
-import { StrictMode } from "react"
-import { createRoot } from "react-dom/client"
-import { HashRouter, Routes, Route } from "react-router-dom"
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import App from './App.jsx'
 
-import App from "./App.jsx"
-import Home from "./pages/Home.jsx"
-import Servicios from "./pages/Servicios.jsx"   // ✅ Import nuevo
-import Projects from "./pages/Projects.jsx"
-import ProjectDetail from "./pages/ProjectDetail.jsx"
-import MapPage from "./pages/MapPage.jsx"
-import About from "./pages/About.jsx"
-import Contact from "./pages/Contact.jsx"
+// Páginas
+import Home from './pages/Home.jsx'
+import Portfolio from './pages/Portfolio.jsx'
+import ProjectDetail from './pages/ProjectDetail.jsx'
+import Servicios from './pages/Servicios.jsx'
+import SobreMi from './pages/SobreMi.jsx'
+import Contacto from './pages/Contacto.jsx'
+import NotFound from './pages/NotFound.jsx'
 
-import "./index.css"
+import './index.css'
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          {/* Inicio */}
           <Route index element={<Home />} />
-          <Route path="servicios" element={<Servicios />} />  {/* ✅ Ruta nueva */}
-          <Route path="proyectos" element={<Projects />} />
-          <Route path="proyectos/:id" element={<ProjectDetail />} />
-          <Route path="mapa" element={<MapPage />} />
-          <Route path="sobre-mi" element={<About />} />
-          <Route path="contacto" element={<Contact />} />
+
+          {/* Portfolio */}
+          <Route path="proyectos" element={<Portfolio />} />
+          <Route path="proyectos/:slug" element={<ProjectDetail />} />
+
+          {/* Servicios */}
+          <Route path="servicios" element={<Servicios />} />
+
+          {/* Sobre mí */}
+          <Route path="sobre-mi" element={<SobreMi />} />
+
+          {/* Contacto */}
+          <Route path="contacto" element={<Contacto />} />
+
+          {/* 404 */}
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </HashRouter>
-  </StrictMode>
+  </StrictMode>,
 )
