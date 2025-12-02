@@ -1,73 +1,106 @@
-import { Link } from 'react-router-dom'
+// src/pages/SobreMi.jsx
+
+// Ruta de la foto (sirve tanto en dev como en GitHub Pages)
+const fotoIo = `${import.meta.env.BASE_URL}images/io-portrait.jpg`
 
 export default function SobreMi() {
   return (
     <div className="bg-zinc-950 text-zinc-50">
-      <section className="max-w-5xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20">
-        <div className="grid gap-10 md:grid-cols-[minmax(0,1.8fr),minmax(0,1.2fr)] items-start">
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
+      {/* Hero con foto + texto */}
+      <section className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-16 md:pb-20">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-center">
+          {/* Texto principal */}
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-zinc-500 mb-3">
               Sobre mí
             </p>
-            <h1 className="text-2xl md:text-3xl font-semibold">
-              Io Rodríguez, Kulmen Visuals.
+            <h1 className="text-3xl md:text-4xl font-semibold mb-4">
+              io Rodríguez — Kulmen Visuals
             </h1>
-            <p className="text-sm text-zinc-300">
-              Soy creadora audiovisual y piloto de dron FPV. Vengo del deporte, de entrenar y
-              competir, y eso se nota en cómo ruedo: me gusta el movimiento, el ritmo y las
-              cosas que se sienten en el cuerpo, no sólo en la cabeza.
+            <p className="text-zinc-300 text-sm md:text-base mb-4 max-w-xl">
+              Soy creadora audiovisual y piloto de drones FPV. Me muevo entre el cine,
+              la publicidad y los proyectos culturales, buscando siempre piezas que
+              tengan cuidado estético y que conecten con las personas.
             </p>
-            <p className="text-sm text-zinc-300">
-              Kulmen Visuals nace de juntar todo eso con Galicia, su paisaje y la gente que
-              está haciendo cosas aquí: proyectos culturales, pequeñas marcas, eventos que no
-              salen en la tele pero que tienen una comunidad muy real detrás.
+            <p className="text-zinc-400 text-sm md:text-base mb-4 max-w-xl">
+              Trabajo el proyecto de principio a fin: desde pensar la idea y la estrategia,
+              hasta el rodaje con cámara y dron, y la postproducción completa
+              (montaje, color, sonido, grafismo). También integro herramientas de IA
+              cuando aportan valor: moodboards, storyboards y assets híbridos.
             </p>
-            <p className="text-sm text-zinc-300">
-              Me gusta cuidar a la gente delante y detrás de cámara, explicar bien el proceso y
-              que todo el mundo sepa qué estamos haciendo y para qué. No me interesa hacer
-              vídeos huecos; prefiero piezas pequeñas pero honestas.
+            <p className="text-zinc-500 text-xs md:text-sm max-w-xl">
+              Mi objetivo: que cada pieza tenga alma de cine pero funcione en el mundo
+              real de marcas, festivales y redes sociales.
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              <Link
-                to="/proyectos"
-                className="inline-flex px-5 py-2.5 rounded-full bg-amber-400 text-black text-xs font-semibold hover:bg-amber-300 transition"
-              >
-                Ver portfolio
-              </Link>
-              <Link
-                to="/contacto"
-                className="inline-flex px-5 py-2.5 rounded-full border border-zinc-600 text-xs text-zinc-100 hover:border-amber-300 hover:text-amber-200 transition"
-              >
-                Hablemos
-              </Link>
+            {/* Etiquetas rápidas */}
+            <div className="mt-6 flex flex-wrap gap-2 text-xs">
+              <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200">
+                Dirección y guion
+              </span>
+              <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200">
+                Cámara &amp; FPV
+              </span>
+              <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200">
+                Montaje &amp; color
+              </span>
+              <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200">
+                Contenido con IA
+              </span>
             </div>
           </div>
 
-          <aside className="border border-zinc-800 rounded-2xl bg-zinc-900/60 p-5 space-y-4 text-xs text-zinc-400">
-            {/* Si subes una foto, puedes añadirla aquí */}
-            {/* <img src="/images/sobre-mi-io.jpg" alt="Io Rodríguez" className="w-full rounded-xl mb-4 object-cover" /> */}
-            <div>
-              <h2 className="text-sm font-semibold text-zinc-100 mb-1">En corto</h2>
-              <ul className="space-y-1 list-disc list-inside">
-                <li>FPV y cine desde Galicia.</li>
-                <li>Mezcla de rodajes ligeros con mirada de cine.</li>
-                <li>Clientes pequeños y proyectos culturales.</li>
-                <li>Obsesión sana por el sonido y el ritmo.</li>
-              </ul>
+          {/* Foto */}
+          <div className="relative w-full max-w-xs md:max-w-sm mx-auto">
+            <div className="rounded-3xl overflow-hidden border border-zinc-800/70 bg-zinc-900/60 shadow-[0_25px_70px_rgba(0,0,0,0.65)]">
+              <img
+                src={fotoIo}
+                alt="Retrato de io Rodríguez, creadora audiovisual y piloto de drones"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div>
-              <h2 className="text-sm font-semibold text-zinc-100 mb-1">
-                Lo que intento cuidar siempre
-              </h2>
-              <ul className="space-y-1 list-disc list-inside">
-                <li>Que el rodaje sea un lugar seguro para todo el mundo.</li>
-                <li>No vender más de lo que realmente podemos hacer.</li>
-                <li>Ser clara con tiempos, entregas y versiones.</li>
-                <li>Escuchar antes de proponer.</li>
-              </ul>
-            </div>
-          </aside>
+            <p className="mt-3 text-[11px] text-zinc-500 text-center">
+              io Rodríguez — Kulmen Visuals · Galicia
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Bloque extra: cómo trabajo */}
+      <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20 border-t border-zinc-900">
+        <div className="grid gap-8 md:grid-cols-3 text-sm">
+          <div>
+            <h2 className="text-zinc-100 font-semibold mb-2 text-base">
+              Cómo trabajo
+            </h2>
+            <p className="text-zinc-400">
+              Me gusta entender bien el contexto del proyecto: quién eres, qué
+              quieres comunicar y para quién. A partir de ahí planteo una propuesta
+              visual concreta, con referencias claras y una ruta de trabajo realista.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-zinc-100 font-semibold mb-2 text-base">
+              Lo que más disfruto
+            </h2>
+            <p className="text-zinc-400">
+              El punto exacto donde técnica y emociones se encuentran: un plano FPV
+              bien medido, una transición que respira, un color que cuenta algo más
+              que lo que se ve en pantalla.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-zinc-100 font-semibold mb-2 text-base">
+              Con quién suelo trabajar
+            </h2>
+            <p className="text-zinc-400">
+              Marcas, festivales, centros deportivos y proyectos culturales que
+              valoran el detalle visual y quieren algo más que “un vídeo más” para
+              redes.
+            </p>
+          </div>
         </div>
       </section>
     </div>

@@ -6,7 +6,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <Link
-      to={`/proyectos/${project.id}`}
+      to={`/proyectos/${project.id}`} // 👈 MUY IMPORTANTE: usamos project.id
       className="group block bg-zinc-900/60 border border-zinc-800/70 rounded-2xl overflow-hidden hover:border-amber-400/70 hover:bg-zinc-900 transition-colors"
     >
       <div className="aspect-video overflow-hidden">

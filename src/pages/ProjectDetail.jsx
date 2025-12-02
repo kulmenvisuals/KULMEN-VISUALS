@@ -1,182 +1,150 @@
-import { useParams, Link } from 'react-router-dom'
-import { projects } from '../data/projects.js'
-import VideoPlayer from '../components/VideoPlayer.jsx'
-import ProjectCard from '../components/ProjectCard.jsx'
+// src/pages/ProjectDetail.jsx
+import { Link, useParams } from "react-router-dom"
+import { projects } from "../data/projects.js"
+import VideoPlayer from "../components/VideoPlayer.jsx"
 
 export default function ProjectDetail() {
   const { slug } = useParams()
-  const project = Array.isArray(projects)
-    ? projects.find((p) => p.slug === slug)
-    : null
+
+  // Intentamos buscar por slug y, si no, por id
+  const project = projects.find(
+    (p) => p.slug === slug || p.id === slug
+  )
 
   if (!project) {
     return (
-      <div className="max-w-4xl mx-auto px-4 py-16 text-zinc-50">
-        <h1 className="text-2xl font-semibold mb-4">Proyecto no encontrado</h1>
-        <p className="text-sm text-zinc-400 mb-4">
-          No he encontrado ningún proyecto con ese identificador.
-        </p>
-        <Link
-          to="/proyectos"
-          className="inline-flex px-4 py-2 rounded-full border border-zinc-600 text-sm text-zinc-100 hover:border-amber-300 hover:text-amber-200 transition"
-        >
-          Volver al portfolio
-        </Link>
+      <div className="bg-zinc-950 text-zinc-50 min-h-screen">
+        <main className="max-w-4xl mx-auto px-4 pt-16 pb-20">
+          <h1 className="text-3xl font-semibold mb-3">Proyecto no encontrado</h1>
+          <p className="text-zinc-400 mb-8">
+            No he encontrado ningún proyecto con ese identificador.
+          </p>
+          <Link
+            to="/proyectos"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400 text-black text-sm font-semibold hover:bg-amber-300 transition"
+          >
+            Volver al portfolio
+          </Link>
+        </main>
       </div>
     )
   }
 
-  const related =
-    Array.isArray(projects) &&
-    projects
-      .filter((p) => p.slug !== project.slug && p.category === project.category)
-      .slice(0, 3)
-
   return (
-    <div className="bg-zinc-950 text-zinc-50">
-      {/* Hero vídeo */}
-      <section className="border-b border-zinc-900 bg-black">
-        <div className="max-w-5xl mx-auto px-4 pt-10 pb-8 md:pt-14 md:pb-10">
-          {project.heroVideo ? (
-            <VideoPlayer
-              src={project.heroVideo}
-              poster={project.heroPoster}
-              className="rounded-2xl overflow-hidden border border-zinc-800 mb-6"
-            />
-          ) : project.heroImage ? (
-            <img
-              src={project.heroImage}
-              alt={project.title}
-              className="w-full rounded-2xl border border-zinc-800 mb-6 object-cover"
-            />
-          ) : null}
+    <div className="bg-zinc-950 text-zinc-50 min-h-screen">
+      <main className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20">
+        {/* Migas + volver */}
+        <div className="mb-6 text-xs text-zinc-500 flex items-center gap-2">
+          <Link to="/proyectos" className="hover:text-amber-300">
+            Portfolio
+          </Link>
+          <span>•</span>
+          <span>{project.client}</span>
+        </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-xs text-zinc-400 mb-2">
-            {project.category && (
-              <span className="px-2 py-1 rounded-full border border-zinc-700 uppercase tracking-wide">
-                {project.category}
+        {/* Cabecera */}
+        <header className="mb-8 md:mb-10">
+          <h1 className="text-3xl md:text-4xl font-semibold mb-3">
+            {project.title}
+          </h1>
+          <div className="flex flex-wrap gap-4 text-xs text-zinc-400">
+            {project.year && (
+              <span className="uppercase tracking-[0.2em]">
+                {project.year}
               </span>
             )}
-            {project.year && <span>{project.year}</span>}
-            {project.location && <span>· {project.location}</span>}
+            {project.location && (
+              <span>{project.location}</span>
+            )}
+            {Array.isArray(project.type) && project.type.length > 0 && (
+              <span>{project.type.join(" · ")}</span>
+            )}
+          </div>
+        </header>
+
+        {/* VIDEO PRINCIPAL */}
+        {(project.youtubeUrl || project.videoUrl) && (
+          <section className="mb-10">
+            {project.youtubeUrl ? (
+              // 👉 Si hay YouTube, usamos iframe
+              <div className="aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
+                <iframe
+                  src={project.youtubeUrl}
+                  title={project.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              // 👉 Si NO hay YouTube pero sí video local, usamos tu VideoPlayer
+              <VideoPlayer src={project.videoUrl} poster={project.poster} />
+            )}
+          </section>
+        )}
+
+        {/* Descripción + roles */}
+        <section className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] mb-12">
+          <div className="text-sm text-zinc-300 leading-relaxed">
+            {project.description && (
+              <p className="mb-4">{project.description}</p>
+            )}
+            {project.extra && (
+              <p className="text-zinc-400 text-sm">{project.extra}</p>
+            )}
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-semibold mb-3">{project.title}</h1>
-          {project.summary && (
-            <p className="text-sm text-zinc-300 max-w-2xl mb-4">{project.summary}</p>
-          )}
-
-          {/* Metadatos básicos */}
-          <dl className="grid gap-3 text-xs text-zinc-400 sm:grid-cols-2 md:grid-cols-4 mb-4">
+          <aside className="text-sm">
             {project.client && (
-              <div>
-                <dt className="font-medium text-zinc-300">Cliente</dt>
-                <dd>{project.client}</dd>
+              <div className="mb-4">
+                <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
+                  Cliente
+                </h2>
+                <p className="text-zinc-200">{project.client}</p>
               </div>
             )}
-            {project.format && (
-              <div>
-                <dt className="font-medium text-zinc-300">Formato</dt>
-                <dd>{project.format}</dd>
+            {Array.isArray(project.roles) && project.roles.length > 0 && (
+              <div className="mb-4">
+                <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
+                  Rol
+                </h2>
+                <p className="text-zinc-200">{project.roles.join(" · ")}</p>
               </div>
             )}
-            {project.role && (
+            {project.category && (
               <div>
-                <dt className="font-medium text-zinc-300">Rol</dt>
-                <dd>{project.role}</dd>
+                <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
+                  Tipo de proyecto
+                </h2>
+                <p className="text-zinc-200">{project.category}</p>
               </div>
-            )}
-            {project.duration && (
-              <div>
-                <dt className="font-medium text-zinc-300">Duración</dt>
-                <dd>{project.duration}</dd>
-              </div>
-            )}
-          </dl>
-
-          <Link
-            to="/proyectos"
-            className="inline-flex text-xs text-zinc-400 hover:text-amber-200 underline underline-offset-4"
-          >
-            ← Volver a proyectos
-          </Link>
-        </div>
-      </section>
-
-      {/* Cuerpo: contexto + ficha técnica */}
-      <section className="max-w-5xl mx-auto px-4 py-10 md:py-14">
-        <div className="grid gap-10 md:grid-cols-[minmax(0,2fr),minmax(0,1.3fr)]">
-          <div className="text-sm text-zinc-300 space-y-4">
-            {project.context && (
-              <p className="whitespace-pre-line">{project.context}</p>
-            )}
-            {project.process && (
-              <p className="whitespace-pre-line text-zinc-400">{project.process}</p>
-            )}
-          </div>
-
-          <aside className="text-xs text-zinc-400 border border-zinc-800 rounded-2xl p-4 bg-zinc-900/40 space-y-3">
-            <h2 className="text-sm font-semibold text-zinc-100 mb-1">Ficha técnica</h2>
-            {project.camera && (
-              <p>
-                <span className="font-medium text-zinc-200">Cámara:</span> {project.camera}
-              </p>
-            )}
-            {project.drone && (
-              <p>
-                <span className="font-medium text-zinc-200">Dron:</span> {project.drone}
-              </p>
-            )}
-            {project.software && (
-              <p>
-                <span className="font-medium text-zinc-200">Software:</span>{' '}
-                {project.software}
-              </p>
             )}
           </aside>
-        </div>
-      </section>
-
-      {/* Galería extra opcional */}
-      {Array.isArray(project.gallery) && project.gallery.length > 0 && (
-        <section className="max-w-5xl mx-auto px-4 pb-14">
-          <h2 className="text-sm font-semibold text-zinc-100 mb-4">Galería</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {project.gallery.map((img) => (
-              <img
-                key={img.src}
-                src={img.src}
-                alt={img.alt || project.title}
-                className="w-full rounded-xl border border-zinc-800 object-cover"
-              />
-            ))}
-          </div>
         </section>
-      )}
 
-      {/* Proyectos relacionados */}
-      {related && related.length > 0 && (
-        <section className="border-t border-zinc-900 bg-zinc-900/40">
-          <div className="max-w-5xl mx-auto px-4 py-10 md:py-14">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-sm font-semibold text-zinc-100">
-                Proyectos relacionados
-              </h2>
-              <Link
-                to="/proyectos"
-                className="text-xs text-zinc-400 hover:text-amber-200 underline underline-offset-4"
-              >
-                Ver todos
-              </Link>
-            </div>
+        {/* Galería simple */}
+        {Array.isArray(project.images) && project.images.length > 0 && (
+          <section>
+            <h2 className="text-sm font-semibold text-zinc-100 mb-4">
+              Imágenes del proyecto
+            </h2>
             <div className="grid gap-4 md:grid-cols-3">
-              {related.map((p) => (
-                <ProjectCard key={p.id || p.slug} project={p} />
+              {project.images.map((src, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900"
+                >
+                  <img
+                    src={src}
+                    alt={`${project.title} — imagen ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               ))}
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        )}
+      </main>
     </div>
   )
 }
