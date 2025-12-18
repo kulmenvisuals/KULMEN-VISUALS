@@ -4,12 +4,12 @@ import { NavLink, Link } from "react-router-dom"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
+// 👇 OJO: ya no incluimos "Contacto" aquí
 const nav = [
   { to: "/", label: "Inicio" },
   { to: "/servicios", label: "Servicios" },
   { to: "/proyectos", label: "Proyectos" },
   { to: "/sobre-mi", label: "Sobre mí" },
-  { to: "/contacto", label: "Contacto" },
 ]
 
 export default function Header() {
@@ -40,7 +40,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA contacto escritorio */}
+        {/* CTA contacto escritorio: único enlace a Contacto en el header */}
         <Link
           to="/contacto"
           className="hidden md:inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold bg-amber-400 text-black hover:bg-amber-300 transition shadow-sm"
@@ -83,7 +83,7 @@ export default function Header() {
                 </NavLink>
               ))}
 
-              {/* CTA contacto móvil */}
+              {/* CTA contacto móvil: también es el único enlace a Contacto en mobile */}
               <Link
                 to="/contacto"
                 onClick={() => setOpen(false)}
