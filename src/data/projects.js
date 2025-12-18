@@ -1,6 +1,42 @@
 // src/data/projects.js
 
 export const projects = [
+  // 1) Videoclip real: Sislah, Albella | MIÉNTETE
+  {
+    id: "sislah-albella-mientete",
+    slug: "sislah-albella-mientete",
+
+    title: "Videoclip · MIÉNTETE",
+    client: "Sislah, Albella",
+    year: 2024, // ajusta el año si quieres
+
+    category: "Videoclip / Música",
+    type: ["Videoclip", "Música"],
+    roles: ["Cámara", "FPV", "Apoyo en dirección", "Montaje"], // ajusta a lo que hiciste exactamente
+    location: "Madrid",
+
+    // Miniatura: usamos thumbnail de YouTube
+    thumbnail: "https://img.youtube.com/vi/C_knrGpZW0k/maxresdefault.jpg",
+
+    // YouTube en formato EMBED (importante para el iframe)
+    youtubeUrl: "https://www.youtube.com/embed/C_knrGpZW0k",
+
+    // Si en algún momento tienes export en archivo local, puedes rellenar esto:
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "https://img.youtube.com/vi/C_knrGpZW0k/maxresdefault.jpg",
+      "https://img.youtube.com/vi/C_knrGpZW0k/sddefault.jpg",
+    ],
+
+    description:
+      "Videoclip rodado en Madrid para Sislah y Albella. Trabajo de cámara y FPV mezclando cercanía, movimiento y atmósfera intimista.",
+    extra:
+      "En este proyecto el foco estuvo en integrar el movimiento de cámara con la narrativa emocional del tema, jugando con espacios interiores y detalles del performance.",
+  },
+
+  // 2) Ejemplo: FPV en Torre de Hércules
   {
     id: "torre-hercules-fpv",
     slug: "torre-hercules-fpv",
@@ -15,15 +51,11 @@ export const projects = [
     location: "A Coruña",
     coords: [43.385, -8.406],
 
-    // Miniatura principal (grid)
     thumbnail:
       "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1280&auto=format",
 
-    // 👉 YouTube (formato EMBED). Sustituye por tu URL real:
-    // Ejemplo válido: https://www.youtube.com/embed/XXXXXXXXXXX
     youtubeUrl: "https://www.youtube.com/embed/TU_ID_DE_VIDEO_1",
 
-    // Opcional: vídeo local como fallback (si algún día lo usas)
     videoUrl: "/assets/videos/reel_hercules.mp4",
     poster: "/assets/posters/torre.jpg",
 
@@ -38,6 +70,7 @@ export const projects = [
       "Trabajo orientado a redes sociales y difusión digital, con versiones adaptadas a diferentes formatos.",
   },
 
+  // 3) Ejemplo: Spot Ribeira Sacra
   {
     id: "ribeira-sacra-spot",
     slug: "ribeira-sacra-spot",
@@ -71,6 +104,7 @@ export const projects = [
       "Se desarrollaron diferentes piezas para televisión local, redes sociales y proyección en eventos.",
   },
 
+  // 4) Ejemplo: Cobertura Evento Cultural
   {
     id: "pontevedra-evento",
     slug: "pontevedra-evento",
@@ -105,5 +139,4 @@ export const projects = [
   },
 ]
 
-// Por si en algún punto sigues usando el import por defecto
 export default projects
