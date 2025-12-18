@@ -16,8 +16,7 @@ export default function Contacto() {
           contexto me des, mejor podré ayudarte.
         </p>
 
-        {/* FORMULARIO ORIGINAL – RESPETADO */}
-        {/* Deja aquí exactamente el endpoint de Formspree que ya tenías funcionando */}
+        {/* FORMULARIO – FORMSPREE
         <form
           action="https://formspree.io/f/your-id"
           method="POST"
@@ -49,11 +48,11 @@ export default function Contacto() {
           </button>
         </form>
 
-        {/* Mailto directo, tal como lo tenías */}
+        {/* Mailto directo */}
         <p className="text-xs text-zinc-500 mt-6">
           También puedes escribir a{' '}
-          <a className="text-amber-400" href="mailto:hola@kulmenvisuals.com">
-            hola@kulmenvisuals.com
+          <a className="text-amber-400" href="mailto:kulmenvisuals@gmail.com">
+            kulmenvisuals@gmail.com
           </a>
         </p>
       </section>

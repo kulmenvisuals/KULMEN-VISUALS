@@ -28,10 +28,10 @@ export default function Footer() {
           <p className="text-[11px] text-zinc-500">
             Escríbeme a{" "}
             <a
-              href="mailto:hola@kulmenvisuals.com"
+              href="mailto:kulmenvisuals@gmail.com"
               className="text-amber-300 hover:text-amber-200"
             >
-              hola@kulmenvisuals.com
+            kulmenvisuals@gmail.com
             </a>
           </p>
         </div>
