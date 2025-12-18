@@ -1,40 +1,77 @@
 // src/pages/ProjectDetail.jsx
-import { Link, useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { projects } from "../data/projects.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
+
+// Normaliza strings para comparar slugs aunque tengan acentos/espacios
+function normalizeSlug(value) {
+  if (!value) return ""
+  return value
+    .toString()
+    .toLowerCase()
+    .normalize("NFD") // quita acentos
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-") // todo lo que no sea letra/numero → "-"
+    .replace(/(^-|-$)/g, "") // quita guiones al principio/fin
+}
 
 export default function ProjectDetail() {
   const { slug } = useParams()
 
-  // Intentamos buscar por slug y, si no, por id
-  const project = projects.find(
-    (p) => p.slug === slug || p.id === slug
-  )
+  // Buscamos por varias cosas: id, slug, título… todo normalizado
+  const project = projects.find((p) => {
+    const slugNorm = normalizeSlug(slug)
+    return (
+      normalizeSlug(p.id) === slugNorm ||
+      normalizeSlug(p.slug) === slugNorm ||
+      normalizeSlug(p.title) === slugNorm
+    )
+  })
 
   if (!project) {
     return (
-      <div className="bg-zinc-950 text-zinc-50 min-h-screen">
-        <main className="max-w-4xl mx-auto px-4 pt-16 pb-20">
-          <h1 className="text-3xl font-semibold mb-3">Proyecto no encontrado</h1>
-          <p className="text-zinc-400 mb-8">
+      <main className="bg-zinc-950 text-zinc-50 min-h-screen">
+        <div className="max-w-4xl mx-auto px-4 py-24 space-y-4">
+          <h1 className="text-3xl font-bold mb-2">Proyecto no encontrado</h1>
+          <p className="text-zinc-400">
             No he encontrado ningún proyecto con ese identificador.
           </p>
+
+          <p className="text-xs text-zinc-500 mt-4">
+            <span className="font-semibold text-zinc-300">Slug recibido:</span>{" "}
+            <code className="bg-zinc-900 px-2 py-1 rounded border border-zinc-800">
+              {slug ?? "(vacío)"}
+            </code>
+          </p>
+
+          <p className="text-xs text-zinc-500">
+            <span className="font-semibold text-zinc-300">
+              IDs disponibles:
+            </span>{" "}
+            {projects.map((p) => p.id).join(", ")}
+          </p>
+
           <Link
             to="/proyectos"
-            className="inline-flex items-center px-4 py-2 rounded-full bg-amber-400 text-black text-sm font-semibold hover:bg-amber-300 transition"
+            className="inline-flex mt-6 px-4 py-2 rounded-full bg-amber-400 text-black font-semibold hover:bg-amber-300 transition"
           >
             Volver al portfolio
           </Link>
-        </main>
-      </div>
+        </div>
+      </main>
     )
   }
 
+  // Construimos URL embed de Instagram si existe instagramUrl
+  const instagramEmbedUrl = project.instagramUrl
+    ? `${project.instagramUrl.replace(/\/$/, "")}/embed`
+    : null
+
   return (
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
-      <main className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20">
+      <main className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
         {/* Migas + volver */}
-        <div className="mb-6 text-xs text-zinc-500 flex items-center gap-2">
+        <div className="text-xs text-zinc-500 flex items-center gap-2">
           <Link to="/proyectos" className="hover:text-amber-300">
             Portfolio
           </Link>
@@ -43,8 +80,8 @@ export default function ProjectDetail() {
         </div>
 
         {/* Cabecera */}
-        <header className="mb-8 md:mb-10">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-3">
+        <header className="space-y-3">
+          <h1 className="text-3xl md:text-4xl font-semibold text-zinc-50">
             {project.title}
           </h1>
           <div className="flex flex-wrap gap-4 text-xs text-zinc-400">
@@ -53,9 +90,7 @@ export default function ProjectDetail() {
                 {project.year}
               </span>
             )}
-            {project.location && (
-              <span>{project.location}</span>
-            )}
+            {project.location && <span>{project.location}</span>}
             {Array.isArray(project.type) && project.type.length > 0 && (
               <span>{project.type.join(" · ")}</span>
             )}
@@ -63,10 +98,10 @@ export default function ProjectDetail() {
         </header>
 
         {/* VIDEO PRINCIPAL */}
-        {(project.youtubeUrl || project.videoUrl) && (
-          <section className="mb-10">
+        {(project.youtubeUrl || instagramEmbedUrl || project.videoUrl) && (
+          <section>
             {project.youtubeUrl ? (
-              // 👉 Si hay YouTube, usamos iframe
+              // YouTube
               <div className="aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
                 <iframe
                   src={project.youtubeUrl}
@@ -76,27 +111,54 @@ export default function ProjectDetail() {
                   allowFullScreen
                 />
               </div>
+            ) : instagramEmbedUrl ? (
+              // Instagram (post / reel)
+              <div className="w-full max-w-md md:max-w-lg mx-auto rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
+                <div className="aspect-[9/16]">
+                  <iframe
+                    src={instagramEmbedUrl}
+                    title={project.title}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
             ) : (
-              // 👉 Si NO hay YouTube pero sí video local, usamos tu VideoPlayer
-              <VideoPlayer src={project.videoUrl} poster={project.poster} />
+              // Vídeo local como fallback
+              <div className="aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
+                <VideoPlayer src={project.videoUrl} poster={project.poster} />
+              </div>
             )}
           </section>
         )}
 
-        {/* Descripción + roles */}
-        <section className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] mb-12">
-          <div className="text-sm text-zinc-300 leading-relaxed">
-            {project.description && (
-              <p className="mb-4">{project.description}</p>
-            )}
+        {/* Descripción + ficha lateral */}
+        <section className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+          <div className="text-sm text-zinc-300 leading-relaxed space-y-4">
+            {project.description && <p>{project.description}</p>}
             {project.extra && (
               <p className="text-zinc-400 text-sm">{project.extra}</p>
             )}
+
+            {project.instagramUrl && (
+              <p className="text-[11px] text-zinc-500">
+                También en Instagram:{" "}
+                <a
+                  href={project.instagramUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-amber-300 hover:text-amber-200"
+                >
+                  ver publicación
+                </a>
+              </p>
+            )}
           </div>
 
-          <aside className="text-sm">
+          <aside className="text-sm space-y-4">
             {project.client && (
-              <div className="mb-4">
+              <div>
                 <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
                   Cliente
                 </h2>
@@ -104,7 +166,7 @@ export default function ProjectDetail() {
               </div>
             )}
             {Array.isArray(project.roles) && project.roles.length > 0 && (
-              <div className="mb-4">
+              <div>
                 <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
                   Rol
                 </h2>
@@ -124,15 +186,15 @@ export default function ProjectDetail() {
 
         {/* Galería simple */}
         {Array.isArray(project.images) && project.images.length > 0 && (
-          <section>
-            <h2 className="text-sm font-semibold text-zinc-100 mb-4">
+          <section className="space-y-4">
+            <h2 className="text-sm font-semibold text-zinc-100">
               Imágenes del proyecto
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
               {project.images.map((src, idx) => (
                 <div
                   key={idx}
-                  className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900"
+                  className="rounded-xl overflow-hidden border border-zinc-800 bg-zinc-900 aspect-[4/3]"
                 >
                   <img
                     src={src}

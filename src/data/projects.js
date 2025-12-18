@@ -69,7 +69,42 @@ export const projects = [
       "El objetivo fue documentar la experiencia expositiva con un lenguaje cercano al documental, respetando el ritmo de las obras y el contexto del espacio.",
   },
 
-  // 3) Ejemplo: FPV en Torre de Hércules
+  // 3) Patrocinio real: Cobre San Rafael x Campus Xacobeo (SD Compostela)
+  {
+    id: "cobre-san-rafael-campus-xacobeo",
+    slug: "cobre-san-rafael-campus-xacobeo",
+
+    title: "Patrocinio · Cobre San Rafael x Campus Xacobeo",
+    client: "Cobre San Rafael · SD Compostela",
+    year: 2024, // ajusta si es otro año
+
+    category: "Deporte / Patrocinio",
+    type: ["Eventos", "Deporte", "Patrocinio"],
+    roles: ["Cobertura audiovisual", "Montaje para RRSS"], // afina según tu rol real
+    location: "Santiago de Compostela",
+
+    // No hay thumbnail oficial fácil de extraer; puedes cambiar esta URL por una imagen tuya
+    thumbnail:
+      "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1280&auto=format",
+
+    // Enlace a Instagram (no lo estamos embeviendo aún, pero ya queda guardado)
+    instagramUrl: "https://www.instagram.com/p/DMuqh9yoWBN/",
+
+    youtubeUrl: null,
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1200&auto=format",
+    ],
+
+    description:
+      "Pieza para redes sociales del patrocinio de Cobre San Rafael junto al Campus Xacobeo del Compostela. Cobertura dinámica en campo para transmitir energía, afición y vínculo con el territorio.",
+    extra:
+      "Orientado a Instagram, con montaje ágil y énfasis en planos de juego, detalles de marca y ambiente de grada.",
+  },
+
+  // 4) Ejemplo: FPV en Torre de Hércules
   {
     id: "torre-hercules-fpv",
     slug: "torre-hercules-fpv",
@@ -103,7 +138,7 @@ export const projects = [
       "Trabajo orientado a redes sociales y difusión digital, con versiones adaptadas a diferentes formatos.",
   },
 
-  // 4) Ejemplo: Spot Ribeira Sacra
+  // 5) Ejemplo: Spot Ribeira Sacra
   {
     id: "ribeira-sacra-spot",
     slug: "ribeira-sacra-spot",
@@ -137,7 +172,7 @@ export const projects = [
       "Se desarrollaron diferentes piezas para televisión local, redes sociales y proyección en eventos.",
   },
 
-  // 5) Ejemplo: Cobertura Evento Cultural
+  // 6) Ejemplo: Cobertura Evento Cultural
   {
     id: "pontevedra-evento",
     slug: "pontevedra-evento",
