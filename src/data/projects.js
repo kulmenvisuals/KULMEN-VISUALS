@@ -12,16 +12,16 @@ export const projects = [
 
     category: "Videoclip / Música",
     type: ["Videoclip", "Música"],
-    roles: ["Cámara", "FPV", "Apoyo en dirección", "Montaje"], // ajusta a lo que hiciste exactamente
+    roles: ["Cámara", "FPV", "Montaje"], // ajusta a lo que hiciste exactamente
     location: "Madrid",
 
-    // Miniatura: usamos thumbnail de YouTube
+    // Miniatura: thumbnail de YouTube
     thumbnail: "https://img.youtube.com/vi/C_knrGpZW0k/maxresdefault.jpg",
 
-    // YouTube en formato EMBED (importante para el iframe)
+    // YouTube embed
     youtubeUrl: "https://www.youtube.com/embed/C_knrGpZW0k",
 
-    // Si en algún momento tienes export en archivo local, puedes rellenar esto:
+    // Fallback local (si algún día lo usas)
     videoUrl: null,
     poster: null,
 
@@ -33,10 +33,43 @@ export const projects = [
     description:
       "Videoclip rodado en Madrid para Sislah y Albella. Trabajo de cámara y FPV mezclando cercanía, movimiento y atmósfera intimista.",
     extra:
-      "En este proyecto el foco estuvo en integrar el movimiento de cámara con la narrativa emocional del tema, jugando con espacios interiores y detalles del performance.",
+      "El foco del proyecto estuvo en integrar el movimiento de cámara con la narrativa emocional del tema, jugando con espacios interiores y detalles del performance.",
   },
 
-  // 2) Ejemplo: FPV en Torre de Hércules
+  // 2) Reportaje real: Banca March · Lynda Benglis
+  {
+    id: "banca-march-lynda-benglis",
+    slug: "banca-march-lynda-benglis",
+
+    title: "Reportaje · Lynda Benglis para Banca March",
+    client: "Banca March",
+    year: 2024, // ajusta si corresponde
+
+    category: "Reportaje / Arte",
+    type: ["Reportaje", "Arte", "Eventos"],
+    roles: ["Cámara", "Cobertura audiovisual"], // ajusta a tu rol real
+    location: "Madrid",
+
+    thumbnail: "https://img.youtube.com/vi/qbNfBMfWglA/maxresdefault.jpg",
+
+    // YouTube embed
+    youtubeUrl: "https://www.youtube.com/embed/qbNfBMfWglA",
+
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "https://img.youtube.com/vi/qbNfBMfWglA/maxresdefault.jpg",
+      "https://img.youtube.com/vi/qbNfBMfWglA/sddefault.jpg",
+    ],
+
+    description:
+      "Reportaje audiovisual alrededor de la obra de Lynda Benglis para Banca March, grabado en Madrid. Cobertura cuidada de la exposición y del espacio, poniendo el foco en la relación entre arte, materia y luz.",
+    extra:
+      "El objetivo fue documentar la experiencia expositiva con un lenguaje cercano al documental, respetando el ritmo de las obras y el contexto del espacio.",
+  },
+
+  // 3) Ejemplo: FPV en Torre de Hércules
   {
     id: "torre-hercules-fpv",
     slug: "torre-hercules-fpv",
@@ -70,7 +103,7 @@ export const projects = [
       "Trabajo orientado a redes sociales y difusión digital, con versiones adaptadas a diferentes formatos.",
   },
 
-  // 3) Ejemplo: Spot Ribeira Sacra
+  // 4) Ejemplo: Spot Ribeira Sacra
   {
     id: "ribeira-sacra-spot",
     slug: "ribeira-sacra-spot",
@@ -104,7 +137,7 @@ export const projects = [
       "Se desarrollaron diferentes piezas para televisión local, redes sociales y proyección en eventos.",
   },
 
-  // 4) Ejemplo: Cobertura Evento Cultural
+  // 5) Ejemplo: Cobertura Evento Cultural
   {
     id: "pontevedra-evento",
     slug: "pontevedra-evento",
@@ -135,7 +168,7 @@ export const projects = [
     description:
       "Cobertura multicámara con entrega express para redes sociales. Piezas verticales y horizontales optimizadas.",
     extra:
-      "El objetivo era capturar la energía del público y el contexto del festival para reforzar la marca del evento.",
+      "El objetivo fue capturar la energía del público y el contexto del festival para reforzar la marca del evento.",
   },
 ]
 
