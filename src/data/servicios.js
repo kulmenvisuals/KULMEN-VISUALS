@@ -61,7 +61,7 @@ export const fases = [
   }
 ]
 
-// 2) ESPECIALIDADES (también lo que ya tenías)
+// 2) ESPECIALIDADES 
 export const especialidades = [
   {
     id: "cine",
