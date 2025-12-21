@@ -2,60 +2,90 @@
 
 export default function Contacto() {
   return (
-    <div className="bg-zinc-950 text-zinc-50">
-      <section className="max-w-xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20">
-        <p className="text-xs uppercase tracking-[0.25em] text-zinc-500 mb-3">
-          Contacto
-        </p>
-        <h1 className="text-2xl md:text-3xl font-semibold mb-3">
-          Cuéntame tu proyecto.
-        </h1>
-        <p className="text-sm text-zinc-400 mb-8">
-          Objetivo, tipo de pieza, localización, fechas aproximadas y presupuesto
-          orientativo. No hace falta que lo tengas todo clarísimo, pero cuanto más
-          contexto me des, mejor podré ayudarte.
-        </p>
+    <div className="max-w-xl mx-auto px-4 py-12">
+      <h1 className="text-3xl font-bold mb-4">Contacto</h1>
 
-        {/* FORMULARIO – FORMSPREE
-        <form
-          action="https://formspree.io/f/your-id"
-          method="POST"
-          className="space-y-4"
+      <p className="text-zinc-300 mb-4">
+        Cuéntame tu proyecto: ¿qué quieres conseguir?
+      </p>
+
+      <p className="text-sm text-zinc-400 mb-6">
+        Puedes escribirme directamente a{" "}
+        <a
+          href="mailto:kulmenvisuals@gmail.com"
+          className="text-amber-300 hover:text-amber-200"
         >
+          kulmenvisuals@gmail.com
+        </a>{" "}
+        o rellenar este formulario.
+      </p>
+
+      {/* FORMULARIO FUNCIONAL CON FORMSPREE */}
+      <form
+        action="https://formspree.io/f/xyzdkrka"
+        method="POST"
+        className="space-y-4"
+      >
+        {/* Asunto del email que me llega */}
+        <input
+          type="hidden"
+          name="_subject"
+          value="Nuevo contacto desde la web de Kulmen Visuals"
+        />
+
+        <div>
+          <label className="block text-xs text-zinc-400 mb-1" htmlFor="nombre">
+            Nombre
+          </label>
           <input
+            id="nombre"
             name="nombre"
-            placeholder="Nombre"
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100 outline-none focus:border-amber-400"
+            placeholder="Tu nombre"
+            required
+            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
           />
+        </div>
+
+        <div>
+          <label className="block text-xs text-zinc-400 mb-1" htmlFor="email">
+            Email
+          </label>
           <input
+            id="email"
             name="email"
             type="email"
-            placeholder="Email"
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100 outline-none focus:border-amber-400"
+            placeholder="tucorreo@ejemplo.com"
+            required
+            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
           />
+        </div>
+
+        <div>
+          <label className="block text-xs text-zinc-400 mb-1" htmlFor="mensaje">
+            Mensaje
+          </label>
           <textarea
+            id="mensaje"
             name="mensaje"
             rows="6"
-            placeholder="Mensaje"
-            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100 outline-none focus:border-amber-400 resize-y"
+            required
+            placeholder="Cuéntame lo que tienes en mente."
+            className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
           />
+        </div>
 
-          <button
-            type="submit"
-            className="px-5 py-3 rounded-lg bg-amber-400 text-black font-semibold text-sm hover:bg-amber-300 transition"
-          >
-            Enviar
-          </button>
-        </form>
+        <button
+          type="submit"
+          className="px-5 py-3 rounded-lg bg-amber-400 text-black font-semibold text-sm hover:bg-amber-300 transition"
+        >
+          Enviar
+        </button>
+      </form>
 
-        {/* Mailto directo */}
-        <p className="text-xs text-zinc-500 mt-6">
-          También puedes escribir a{' '}
-          <a className="text-amber-400" href="mailto:kulmenvisuals@gmail.com">
-            kulmenvisuals@gmail.com
-          </a>
-        </p>
-      </section>
+      <p className="text-[11px] text-zinc-500 mt-4">
+        El formulario se envía mediante Formspree y llega a{" "}
+        <span className="text-amber-300">kulmenvisuals@gmail.com</span>.
+      </p>
     </div>
   )
 }
