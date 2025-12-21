@@ -47,7 +47,7 @@ export const projects = [
 
     category: "Reportaje / Arte",
     type: ["Reportaje", "Arte", "Eventos"],
-    roles: ["Cámara", "Cobertura audiovisual"]
+    roles: ["Cámara", "Cobertura audiovisual"],
     location: "Madrid",
 
     thumbnail: "https://img.youtube.com/vi/qbNfBMfWglA/maxresdefault.jpg",
