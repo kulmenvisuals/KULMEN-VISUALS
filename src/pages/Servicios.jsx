@@ -5,17 +5,15 @@ import { fases, especialidades } from "../data/servicios.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 
 const heroVideo = `${import.meta.env.BASE_URL}videos/hero.mp4`
-const heroPoster = `${import.meta.env.BASE_URL}images/hero_poster.jpg` // si no tienes póster, da igual, solo no se verá
+const heroPoster = `${import.meta.env.BASE_URL}images/hero_poster.jpg` // si no tienes póster, simplemente no se verá
 
 export default function Servicios() {
   const fasesList = Array.isArray(fases) ? fases : []
   const especialidadesList = Array.isArray(especialidades) ? especialidades : []
 
-  const [faseActiva, setFaseActiva] = useState(
-    fasesList[0]?.id ?? "prepro"
-  )
-
-  const fase = fasesList.find((f) => f.id === faseActiva) ?? fasesList[0] ?? {}
+  const [faseActiva, setFaseActiva] = useState(fasesList[0]?.id ?? "prepro")
+  const fase =
+    fasesList.find((f) => f.id === faseActiva) ?? fasesList[0] ?? {}
 
   return (
     <main className="bg-zinc-950 text-zinc-100">
@@ -34,8 +32,8 @@ export default function Servicios() {
             </h1>
             <p className="text-zinc-300 max-w-xl">
               Diseñamos y producimos piezas audiovisuales completas:
-              preproducción, rodaje y postproducción. Desde campañas de
-              marca hasta coberturas ágiles de eventos y turismo.
+              preproducción, rodaje y postproducción. Desde campañas de marca
+              hasta coberturas ágiles de eventos y turismo.
             </p>
 
             <ul className="grid gap-2 text-sm text-zinc-300 md:grid-cols-2">
@@ -48,11 +46,7 @@ export default function Servicios() {
 
           {/* Vídeo */}
           <div className="rounded-2xl overflow-hidden border border-zinc-800 bg-black/60">
-            <VideoPlayer
-              src={heroVideo}
-              poster={heroPoster}
-              label="Reel de trabajo"
-            />
+            <VideoPlayer src={heroVideo} poster={heroPoster} label="Reel de trabajo" />
           </div>
         </div>
       </section>
@@ -64,9 +58,9 @@ export default function Servicios() {
             Un proceso completo, fase a fase.
           </h2>
           <p className="text-zinc-300 max-w-2xl">
-            No solo grabamos: pensamos, planificamos y cerramos la pieza
-            contigo. Puedes entrar en cualquier fase, pero el resultado
-            brilla cuando recorremos el camino completo.
+            No solo grabamos: pensamos, planificamos y cerramos la pieza contigo. Puedes
+            entrar en cualquier fase, pero el resultado brilla cuando recorremos el
+            camino completo.
           </p>
         </header>
 
@@ -198,42 +192,69 @@ export default function Servicios() {
         </div>
       </section>
 
-      {/* ESPECIALIDADES */}
+      {/* ESPECIALIDADES – versión glass con foto y hover */}
       <section className="border-t border-zinc-800 bg-zinc-900/40">
-        <div className="max-w-6xl mx-auto px-4 py-16 space-y-6">
+        <div className="max-w-6xl mx-auto px-4 py-16 space-y-8">
           <header className="space-y-2">
             <h2 className="text-2xl md:text-3xl font-semibold">
               ¿Para qué tipo de proyectos encajamos mejor?
             </h2>
             <p className="text-zinc-300 max-w-2xl">
-              Desde cine y publicidad hasta turismo y cultura. Adaptamos el
-              lenguaje visual y el ritmo al contexto de cada pieza.
+              Desde cine y publicidad hasta turismo y cultura. Adaptamos el lenguaje
+              visual y el ritmo al contexto de cada pieza.
             </p>
           </header>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {especialidadesList.map((card) => (
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {especialidadesList.map((item) => (
               <article
-                key={card.id}
-                className="relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950/60 group"
+                key={item.id}
+                className="relative group overflow-hidden rounded-3xl border border-zinc-800/70 bg-zinc-900/40
+                           backdrop-blur-xl shadow-[0_18px_45px_rgba(0,0,0,0.55)]
+                           transition-transform transition-shadow duration-300
+                           hover:-translate-y-1 hover:shadow-[0_28px_70px_rgba(0,0,0,0.75)]"
               >
-                <div
-                  className="absolute inset-0 opacity-50 group-hover:opacity-70 transition-opacity"
-                  style={{
-                    backgroundImage: `url(${card.fondo})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
-                <div className="relative z-10 p-4 pt-20 bg-gradient-to-t from-black/90 via-black/60 to-black/20">
-                  <h3 className="text-sm font-semibold mb-2">
-                    {card.titulo}
-                  </h3>
-                  <ul className="space-y-1 text-[11px] text-zinc-200">
-                    {card.bullets.map((b, i) => (
-                      <li key={i}>· {b}</li>
+                {/* Imagen de fondo + overlays */}
+                <div className="absolute inset-0">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center opacity-40
+                               group-hover:opacity-70 group-hover:scale-105
+                               transition-transform transition-opacity duration-400"
+                    style={{ backgroundImage: `url(${item.fondo})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(250,204,21,0.35),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                </div>
+
+                {/* Contenido */}
+                <div className="relative z-10 h-full flex flex-col justify-between p-5 md:p-6">
+                  <div className="space-y-2">
+                    <p className="text-[11px] uppercase tracking-[0.25em] text-amber-300/80">
+                      {item.badge || "Especialidad"}
+                    </p>
+                    <h3 className="text-lg font-semibold text-zinc-50">
+                      {item.titulo}
+                    </h3>
+                  </div>
+
+                  <ul className="mt-4 space-y-1.5 text-sm text-zinc-200">
+                    {item.bullets?.map((bullet, idx) => (
+                      <li key={idx} className="flex gap-2 items-start">
+                        <span className="mt-[6px] h-[3px] w-[12px] rounded-full bg-amber-300/80" />
+                        <span className="leading-snug text-zinc-200/95">
+                          {bullet}
+                        </span>
+                      </li>
                     ))}
                   </ul>
+
+                  <div className="mt-5 flex items-center justify-between text-[11px] text-zinc-400">
+                    <span>Proyectos {item.tagline || "con intención visual"}</span>
+                    <span className="inline-flex items-center gap-1 text-amber-300 group-hover:text-amber-200 transition-colors">
+                      Ver ejemplos
+                      <span className="inline-block h-[1px] w-6 bg-amber-300 group-hover:w-10 transition-all" />
+                    </span>
+                  </div>
                 </div>
               </article>
             ))}

@@ -56,3 +56,16 @@
       backdrop-blur-md text-zinc-100;
   }
 }
+
+/* Ajuste suave para cualquier card glass oscura */
+.kv-glass-dark {
+  background: linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.92),
+      rgba(15, 23, 42, 0.85),
+      rgba(24, 24, 27, 0.9)
+    );
+  border: 1px solid rgba(250, 204, 21, 0.16);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(18px);
+}
