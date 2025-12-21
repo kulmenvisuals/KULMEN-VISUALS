@@ -1,33 +1,69 @@
-// src/components/ProjectCard.jsx
 import { Link } from "react-router-dom"
 
 export default function ProjectCard({ project }) {
   if (!project) return null
 
-  return (
-    <Link
-      to={`/proyectos/${project.id}`} // 👈 MUY IMPORTANTE: usamos project.id
-      className="group block bg-zinc-900/60 border border-zinc-800/70 rounded-2xl overflow-hidden hover:border-amber-400/70 hover:bg-zinc-900 transition-colors"
-    >
-      <div className="aspect-video overflow-hidden">
-        <img
-          src={project.thumbnail}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-        />
-      </div>
+  const slug = project.id || project.slug
+  const href = `/proyectos/${slug}`
 
-      <div className="p-4 space-y-2">
-        <p className="text-xs tracking-[0.2em] uppercase text-zinc-500">
-          {project.client}
-        </p>
-        <h3 className="text-lg font-semibold text-zinc-100 group-hover:text-amber-300 transition-colors">
-          {project.title}
-        </h3>
-        <p className="text-xs text-zinc-400">
-          {project.type?.join(" · ")} — {project.location}
-        </p>
-      </div>
+  const typeText = Array.isArray(project.type)
+    ? project.type.join(" · ")
+    : project.type || ""
+
+  const locationText = project.location
+    ? typeText
+      ? `${typeText} — ${project.location}`
+      : project.location
+    : typeText
+
+  return (
+    <Link to={href} className="group block">
+      <article className="kv-glass-soft rounded-3xl overflow-hidden flex flex-col h-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_24px_60px_rgba(0,0,0,0.75)]">
+        <div className="relative aspect-video overflow-hidden">
+          {project.thumbnail && (
+            <img
+              src={project.thumbnail}
+              alt={project.title}
+              className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.04]"
+            />
+          )}
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent opacity-80 group-hover:opacity-100 transition" />
+
+          {project.type && (
+            <div className="absolute bottom-3 left-3 flex flex-wrap gap-1">
+              {Array.isArray(project.type)
+                ? project.type.slice(0, 3).map((tag) => (
+                    <span key={tag} className="kv-chip bg-black/70 border-transparent">
+                      {tag}
+                    </span>
+                  ))
+                : (
+                  <span className="kv-chip bg-black/70 border-transparent">
+                    {project.type}
+                  </span>
+                )}
+            </div>
+          )}
+        </div>
+
+        <div className="p-4 flex-1 flex flex-col">
+          {project.client && (
+            <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-400 mb-1">
+              {project.client}
+            </p>
+          )}
+          <h3 className="text-sm md:text-base font-semibold text-zinc-50 mb-1">
+            {project.title}
+          </h3>
+          {locationText && (
+            <p className="text-xs text-zinc-400 mb-1">{locationText}</p>
+          )}
+          {project.year && (
+            <p className="text-[11px] text-zinc-500 mt-auto">Año {project.year}</p>
+          )}
+        </div>
+      </article>
     </Link>
   )
 }

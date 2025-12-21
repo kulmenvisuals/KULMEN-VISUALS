@@ -38,13 +38,13 @@ export default function Home() {
       <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/hero.mp4"
+          src={`${import.meta.env.BASE_URL}videos/hero.mp4`}
           autoPlay
           muted
           loop
           playsInline
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/85" />
 
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center">
           <p className="text-sm uppercase tracking-[0.25em] text-zinc-300 mb-4">
@@ -60,16 +60,10 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <Link
-              to="/proyectos"
-              className="inline-flex items-center px-5 py-2.5 rounded-full bg-amber-400 text-black text-sm font-semibold hover:bg-amber-300 transition"
-            >
+            <Link to="/proyectos" className="kv-button-primary">
               Ver proyectos
             </Link>
-            <Link
-              to="/servicios"
-              className="inline-flex items-center px-5 py-2.5 rounded-full border border-zinc-600 text-sm text-zinc-100 hover:border-amber-300 hover:text-amber-200 transition"
-            >
+            <Link to="/servicios" className="kv-button-secondary">
               Ver cómo trabajo
             </Link>
           </div>
@@ -107,8 +101,8 @@ export default function Home() {
         )}
       </section>
 
-      {/* Resumen de servicios */}
-      <section className="border-t border-zinc-800 bg-zinc-900/40">
+      {/* Resumen de servicios*/}
+      <section className="border-t border-zinc-900/70 bg-zinc-950/90">
         <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-10">
             <div className="max-w-md">
@@ -132,12 +126,14 @@ export default function Home() {
             {serviceTeasers.map((service) => (
               <article
                 key={service.id}
-                className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 flex flex-col"
+                className="kv-glass-soft rounded-2xl p-4 flex flex-col"
               >
                 <h3 className="text-sm font-semibold mb-2 text-zinc-100">
                   {service.titulo}
                 </h3>
-                <p className="text-xs text-zinc-400 leading-relaxed">{service.texto}</p>
+                <p className="text-xs text-zinc-300 leading-relaxed">
+                  {service.texto}
+                </p>
               </article>
             ))}
           </div>
@@ -146,27 +142,21 @@ export default function Home() {
 
       {/* CTA final */}
       <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <div className="rounded-3xl border border-zinc-800 bg-gradient-to-r from-zinc-900 to-zinc-800 px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <h2 className="text-xl md:text-2xl font-semibold mb-2">
               ¿Tienes un proyecto en mente?
             </h2>
-            <p className="text-sm text-zinc-400 max-w-md">
+            <p className="text-sm text-zinc-300 max-w-md">
               Podemos empezar con una llamada corta para ver si encaja lo que necesitas con lo
               que puedo ofrecerte. Sin compromiso.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link
-              to="/contacto"
-              className="inline-flex items-center px-5 py-2.5 rounded-full bg-amber-400 text-black text-sm font-semibold hover:bg-amber-300 transition"
-            >
+            <Link to="/contacto" className="kv-button-primary">
               Escríbeme
             </Link>
-            <Link
-              to="/proyectos"
-              className="inline-flex items-center px-5 py-2.5 rounded-full border border-zinc-600 text-sm text-zinc-100 hover:border-amber-300 hover:text-amber-200 transition"
-            >
+            <Link to="/proyectos" className="kv-button-secondary">
               Ver portfolio
             </Link>
           </div>

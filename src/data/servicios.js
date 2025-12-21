@@ -35,7 +35,7 @@ export const fases = [
     texto:
       "Montaje, color, sonido y gráficos para una pieza con ritmo, coherencia y atmósfera.",
     beforeAfter: {
-      // coloca una imagen base en public/images/
+      
       before: `${import.meta.env.BASE_URL}images/before.jpg`,
       after: `${import.meta.env.BASE_URL}images/after.jpg`,
     },
@@ -89,7 +89,7 @@ export const especialidades = [
   },
 ]
 
-// 3) SERVICIOS (esto es lo que pedía Servicios.jsx)
+// 3) SERVICIOS 
 export const servicios = [
   {
     id: "prepro",
@@ -99,7 +99,7 @@ export const servicios = [
       "Brief, concepto, guion y planificación. Definimos objetivo, tono, localizaciones y qué piezas necesitas exactamente.",
     destacado: true,
     etiquetas: ["Guion técnico", "Storyboard", "Localizaciones", "Plan de rodaje"],
-    // opcionales, por si en algún momento quieres enlazar a una ficha concreta:
+    // opcionales
     // slug: "servicio-preproduccion",
     // thumbnail: `${import.meta.env.BASE_URL}images/servicio_prepro.jpg`,
     // cliente: "",
@@ -132,7 +132,7 @@ export const servicios = [
     categoria: "Soporte creativo",
     descripcion:
       "Uso de IA para generar moodboards, storyboards e imágenes clave que ayudan a definir estilo y campaña.",
-    destacado: false, // lo tratamos como “extra” para que salga en el bloque de abajo
+    destacado: false, // se trata como “extra” para que salga en el bloque de abajo
     etiquetas: ["Moodboard", "Storyboard", "Imagen conceptual"],
     // slug: "servicio-ia",
     // thumbnail: `${import.meta.env.BASE_URL}images/servicio_ia.jpg`,

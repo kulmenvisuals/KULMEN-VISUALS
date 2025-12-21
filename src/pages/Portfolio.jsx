@@ -4,7 +4,7 @@ import ProjectCard from "../components/ProjectCard.jsx"
 import { projects } from "../data/projects.js"
 
 export default function Portfolio() {
-  // filtro actual: "todos" o un tipo concreto (FPV, Cine, Turismo, etc.)
+  // filtro actual: "todos" 
   const [filter, setFilter] = useState("todos")
 
   // Sacamos todos los tipos únicos a partir de project.type (array)

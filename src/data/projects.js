@@ -8,11 +8,11 @@ export const projects = [
 
     title: "Videoclip · MIÉNTETE",
     client: "Sislah, Albella",
-    year: 2024, // ajusta el año si quieres
+    year: 2024,
 
     category: "Videoclip / Música",
     type: ["Videoclip", "Música"],
-    roles: ["Cámara", "FPV", "Montaje"], // ajusta a lo que hiciste exactamente
+    roles: ["Cámara", "FPV", "Montaje"],
     location: "Madrid",
 
     // Miniatura: thumbnail de YouTube
@@ -21,7 +21,7 @@ export const projects = [
     // YouTube embed
     youtubeUrl: "https://www.youtube.com/embed/C_knrGpZW0k",
 
-    // Fallback local (si algún día lo usas)
+    // Fallback local
     videoUrl: null,
     poster: null,
 
@@ -43,11 +43,11 @@ export const projects = [
 
     title: "Reportaje · Lynda Benglis para Banca March",
     client: "Banca March",
-    year: 2024, // ajusta si corresponde
+    year: 2024,
 
     category: "Reportaje / Arte",
     type: ["Reportaje", "Arte", "Eventos"],
-    roles: ["Cámara", "Cobertura audiovisual"], // ajusta a tu rol real
+    roles: ["Cámara", "Cobertura audiovisual"]
     location: "Madrid",
 
     thumbnail: "https://img.youtube.com/vi/qbNfBMfWglA/maxresdefault.jpg",
@@ -69,25 +69,25 @@ export const projects = [
       "El objetivo fue documentar la experiencia expositiva con un lenguaje cercano al documental, respetando el ritmo de las obras y el contexto del espacio.",
   },
 
-  // 3) Patrocinio real: Cobre San Rafael x Campus Xacobeo (SD Compostela)
+  // 3) Patrocinio: Cobre San Rafael x Campus Xacobeo (SD Compostela)
   {
     id: "cobre-san-rafael-campus-xacobeo",
     slug: "cobre-san-rafael-campus-xacobeo",
 
     title: "Patrocinio · Cobre San Rafael x Campus Xacobeo",
     client: "Cobre San Rafael · SD Compostela",
-    year: 2024, // ajusta si es otro año
+    year: 2024, 
 
     category: "Deporte / Patrocinio",
     type: ["Eventos", "Deporte", "Patrocinio"],
-    roles: ["Cobertura audiovisual", "Montaje para RRSS"], // afina según tu rol real
+    roles: ["Cobertura audiovisual", "Montaje para RRSS"], 
     location: "Santiago de Compostela",
 
-    // No hay thumbnail oficial fácil de extraer; puedes cambiar esta URL por una imagen tuya
+  
     thumbnail:
       "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1280&auto=format",
 
-    // Enlace a Instagram (no lo estamos embeviendo aún, pero ya queda guardado)
+    // Enlace a Instagram
     instagramUrl: "https://www.instagram.com/p/DMuqh9yoWBN/",
 
     youtubeUrl: null,
