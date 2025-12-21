@@ -5,7 +5,7 @@ import { fases, especialidades } from "../data/servicios.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 
 const heroVideo = `${import.meta.env.BASE_URL}videos/hero.mp4`
-const heroPoster = `${import.meta.env.BASE_URL}images/hero_poster.jpg` // si no tienes póster, simplemente no se verá
+const heroPoster = `${import.meta.env.BASE_URL}images/hero_poster.jpg` 
 
 export default function Servicios() {
   const fasesList = Array.isArray(fases) ? fases : []
@@ -248,13 +248,6 @@ export default function Servicios() {
                     ))}
                   </ul>
 
-                  <div className="mt-5 flex items-center justify-between text-[11px] text-zinc-400">
-                    <span>Proyectos {item.tagline || "con intención visual"}</span>
-                    <span className="inline-flex items-center gap-1 text-amber-300 group-hover:text-amber-200 transition-colors">
-                      Ver ejemplos
-                      <span className="inline-block h-[1px] w-6 bg-amber-300 group-hover:w-10 transition-all" />
-                    </span>
-                  </div>
                 </div>
               </article>
             ))}
