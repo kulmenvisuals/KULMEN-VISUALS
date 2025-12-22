@@ -111,7 +111,7 @@ export const projects = [
   title: "MAMÁ — Sislah",
   client: "Sislah",
   year: 2024, 
-  type: ["Videoclip", "Cine"],
+  type: ["Videoclip","Musica"],
   category: "videoclip",
   roles: ["Dirección de foto", "Cámara", "Operadora FPV", "Edición"],
   location: "Madrid",
