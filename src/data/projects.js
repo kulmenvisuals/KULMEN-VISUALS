@@ -1,7 +1,7 @@
 // src/data/projects.js
 
 export const projects = [
-  // 1) Videoclip real: Sislah, Albella | MIÉNTETE
+  // 1) Videoclip: Sislah, Albella | MIÉNTETE
   {
     id: "sislah-albella-mientete",
     slug: "sislah-albella-mientete",
@@ -36,7 +36,7 @@ export const projects = [
       "El foco del proyecto estuvo en integrar el movimiento de cámara con la narrativa emocional del tema, jugando con espacios interiores y detalles del performance.",
   },
 
-  // 2) Reportaje real: Banca March · Lynda Benglis
+  // 2) Reportaje: Banca March · Lynda Benglis
   {
     id: "banca-march-lynda-benglis",
     slug: "banca-march-lynda-benglis",
@@ -104,7 +104,27 @@ export const projects = [
       "Orientado a Instagram, con montaje ágil y énfasis en planos de juego, detalles de marca y ambiente de grada.",
   },
 
-  // 4) Ejemplo: FPV en Torre de Hércules
+    // 5) Videoclip: Mamá, Sislah
+{
+  id: "mama-sislah-madrid",
+  slug: "mama-sislah-madrid",
+  title: "MAMÁ — Sislah",
+  client: "Sislah",
+  year: 2024, 
+  type: ["Videoclip", "Cine"],
+  category: "videoclip",
+  roles: ["Dirección de foto", "Cámara", "Operadora FPV", "Edición"],
+  location: "Madrid",
+  coords: [40.4168, -3.7038]
+  thumbnail: "https://img.youtube.com/vi/MYtznjHXaYw/maxresdefault.jpg",
+  youtubeUrl: "https://www.youtube.com/embed/MYtznjHXaYw",
+  poster: null,
+  images: [],
+  description:
+    "Videoclip 'MAMÁ' para Sislah, rodado en Madrid. Pieza emocional con enfoque íntimo, mezclando planos de cámara y recursos urbanos.",
+},
+
+  // 5) Ejemplo: FPV en Torre de Hércules
   {
     id: "torre-hercules-fpv",
     slug: "torre-hercules-fpv",
