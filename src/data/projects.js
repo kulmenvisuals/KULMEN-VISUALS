@@ -115,7 +115,7 @@ export const projects = [
   category: "videoclip",
   roles: ["Dirección de foto", "Cámara", "Operadora FPV", "Edición"],
   location: "Madrid",
-  coords: [40.4168, -3.7038]
+  coords: [40.4168, -3.7038],
   thumbnail: "https://img.youtube.com/vi/MYtznjHXaYw/maxresdefault.jpg",
   youtubeUrl: "https://www.youtube.com/embed/MYtznjHXaYw",
   poster: null,
