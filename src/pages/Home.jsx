@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className="bg-zinc-950 text-zinc-50">
       {/* HERO con vídeo de fondo */}
-      <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
+      <section className="relative min-h-[70vh] md:h-[80vh] overflow-hidden pt-20 pb-10 md:pt-24">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src={`${import.meta.env.BASE_URL}videos/hero.mp4`}
@@ -46,7 +46,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/85" />
 
-        <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center">
+        <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
           <p className="text-sm uppercase tracking-[0.25em] text-zinc-300 mb-4">
             Kulmen Visuals · Galicia
           </p>
