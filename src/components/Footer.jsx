@@ -1,4 +1,5 @@
 // src/components/Footer.jsx
+import { Instagram } from "lucide-react"
 import { Link } from "react-router-dom"
 
 export default function Footer() {
@@ -91,9 +92,18 @@ export default function Footer() {
           <p className="text-[11px] text-zinc-600">
             © {year} Kulmen Visuals. Hecho en Galicia.
           </p>
-          <p className="text-[11px] text-zinc-600">
-            Portfolio interactivo · Proyecto UOC
-          </p>
+          <div className="flex w-full items-center justify-between gap-3 text-[11px] text-zinc-600 md:w-auto md:justify-end">
+            <p>Portfolio interactivo · Proyecto UOC</p>
+            <a
+              href="https://www.instagram.com/kulmenvisuals/"
+              target="_blank"
+              rel="noreferrer"
+              className="kv-crystal rounded-full p-2 text-zinc-200 hover:text-amber-100 hover:border-amber-200/70 transition"
+              aria-label="Instagram de Kulmen Visuals"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
