@@ -90,18 +90,18 @@ export default function Home() {
                 className="w-full rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
                 aria-label="Correo electrónico"
               />
-              <button type="submit" className="kv-button-primary">
-                Enviar
-              </button>
             </div>
             <textarea
               name="interes"
-              rows="3"
+              rows="2"
               required
               placeholder="Cuéntame qué te interesa (tipo de proyecto, objetivo, etc.)"
-              className="w-full rounded-2xl bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
+              className="w-full rounded-2xl bg-black/40 border border-white/20 px-3 py-2 md:px-4 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
               aria-label="Interés del proyecto"
             />
+            <button type="submit" className="kv-button-primary">
+              Enviar
+            </button>
           </form>
         </div>
       </section>
