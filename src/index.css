@@ -2,9 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* TIPOGRAFÍA GLOBAL: tamaños cómodos por defecto */
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-zinc-950 text-zinc-50 antialiased;
+  }
+
+  /* Texto de párrafo y listas */
+  p,
+  li {
+    @apply text-base md:text-[17px] leading-relaxed;
+  }
+
+  /* Encabezados genéricos (cuando no les metes clases propias) */
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+}
 
 @layer components {
   /* Panel glass principal */
@@ -55,17 +81,17 @@
       bg-zinc-900/80 border border-zinc-700/80
       backdrop-blur-md text-zinc-100;
   }
-}
 
-/* Ajuste suave para cualquier card glass oscura */
-.kv-glass-dark {
-  background: linear-gradient(
+  /* Ajuste suave para cualquier card glass oscura */
+  .kv-glass-dark {
+    background: linear-gradient(
       145deg,
       rgba(15, 23, 42, 0.92),
       rgba(15, 23, 42, 0.85),
       rgba(24, 24, 27, 0.9)
     );
-  border: 1px solid rgba(250, 204, 21, 0.16);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(18px);
+    border: 1px solid rgba(250, 204, 21, 0.16);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(18px);
+  }
 }
