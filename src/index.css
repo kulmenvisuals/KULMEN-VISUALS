@@ -33,16 +33,20 @@
 }
 
 @layer components {
-  /* Panel glass principal */
-  .kv-glass {
-    @apply bg-zinc-900/55 border border-zinc-700/70 backdrop-blur-xl
-      shadow-[0_18px_45px_rgba(0,0,0,0.65)];
-  }
-
-  /* Panel glass suave (para tarjetas, secciones) */
-  .kv-glass-soft {
-    @apply bg-zinc-900/45 border border-zinc-700/60 backdrop-blur-md
-      shadow-[0_14px_36px_rgba(0,0,0,0.55)];
+  /* Efecto crystal glass base */
+  .kv-crystal,
+  .kv-glass,
+  .kv-glass-soft,
+  .kv-button-primary,
+  .kv-button-secondary {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.04)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
   }
 
   /* Header glass */
@@ -58,9 +62,8 @@
   /* Botón principal */
   .kv-button-primary {
     @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full
-      text-sm font-semibold text-black
-      bg-amber-400/95 hover:bg-amber-300
-      shadow-[0_14px_32px_rgba(0,0,0,0.6)]
+      text-sm font-semibold text-amber-100
+      hover:border-amber-200/70 hover:text-amber-50
       transition;
   }
 
@@ -68,10 +71,8 @@
   .kv-button-secondary {
     @apply inline-flex items-center justify-center px-5 py-2.5 rounded-full
       text-sm font-medium
-      border border-zinc-600/80
       text-zinc-100
-      bg-zinc-900/40 hover:bg-zinc-900/70
-      hover:border-amber-300 hover:text-amber-200
+      hover:border-amber-200/50 hover:text-amber-100
       transition;
   }
 
