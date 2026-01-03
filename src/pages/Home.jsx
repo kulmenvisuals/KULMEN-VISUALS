@@ -71,7 +71,7 @@ export default function Home() {
           <form
             action="https://formspree.io/f/xyzdkrka"
             method="POST"
-            className="mt-6 max-w-md kv-crystal rounded-2xl p-3 md:p-4 flex flex-col gap-3"
+            className="mt-6 w-full max-w-2xl kv-crystal rounded-2xl p-3 md:p-4 flex flex-col gap-3"
           >
             <input
               type="hidden"
@@ -81,27 +81,27 @@ export default function Home() {
             <p className="text-xs text-zinc-200">
               ¿Quieres propuestas y ejemplos? Déjame tu correo.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center">
               <input
                 type="email"
                 name="email"
                 required
                 placeholder="tu@email.com"
-                className="w-full rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
+                className="w-full md:flex-1 rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
                 aria-label="Correo electrónico"
               />
+              <input
+                type="text"
+                name="interes"
+                required
+                placeholder="Qué te interesa"
+                className="w-full md:flex-[1.2] rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
+                aria-label="Interés del proyecto"
+              />
+              <button type="submit" className="kv-button-primary md:shrink-0">
+                Enviar
+              </button>
             </div>
-            <textarea
-              name="interes"
-              rows="2"
-              required
-              placeholder="Cuéntame qué te interesa (tipo de proyecto, objetivo, etc.)"
-              className="w-full rounded-2xl bg-black/40 border border-white/20 px-3 py-2 md:px-4 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
-              aria-label="Interés del proyecto"
-            />
-            <button type="submit" className="kv-button-primary">
-              Enviar
-            </button>
           </form>
         </div>
       </section>
