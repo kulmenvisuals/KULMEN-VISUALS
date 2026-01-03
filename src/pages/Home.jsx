@@ -67,6 +67,34 @@ export default function Home() {
               Ver cómo trabajo
             </Link>
           </div>
+
+          <form
+            action="https://formspree.io/f/xyzdkrka"
+            method="POST"
+            className="mt-6 max-w-md kv-crystal rounded-2xl p-3 md:p-4 flex flex-col gap-3"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nuevo lead desde el hero de Kulmen Visuals"
+            />
+            <p className="text-xs text-zinc-200">
+              ¿Quieres propuestas y ejemplos? Déjame tu correo.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="tu@email.com"
+                className="w-full rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
+                aria-label="Correo electrónico"
+              />
+              <button type="submit" className="kv-button-primary">
+                Enviar
+              </button>
+            </div>
+          </form>
         </div>
       </section>
 
