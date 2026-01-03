@@ -104,6 +104,33 @@ export const projects = [
       "Orientado a Instagram, con montaje ágil y énfasis en planos de juego, detalles de marca y ambiente de grada.",
   },
 
+  // 4) Tour FPV: Nova Vila Enoturismo
+  {
+    id: "tour-fpv-nova-vila-enoturismo",
+    slug: "tour-fpv-nova-vila-enoturismo",
+
+    title: "Tour FPV · Novavila Design Wine Hotel",
+    client: "Novavila Design Wine Hotel",
+    year: 2025,
+
+    category: "RRSS / FPV",
+    type: ["RRSS", "FPV"],
+    roles: ["Piloto de dron FPV", "Edición", "Etalonaje"],
+
+    thumbnail: "https://farm8.staticflickr.com/7721/16895047450_9387760d62_b_d.jpg",
+
+    instagramUrl: "https://www.instagram.com/reel/DS5HOLgCMC0/",
+
+    youtubeUrl: null,
+    videoUrl: null,
+    poster: null,
+
+    images: [],
+
+    description:
+      "Tour FPV para Nova Vila Enoturismo orientado a redes sociales, con recorrido inmersivo del espacio y ritmo ágil.",
+  },
+
     // 5) Videoclip: Mamá, Sislah
 {
   id: "mama-sislah-madrid",

@@ -94,6 +94,14 @@ export default function Home() {
                 Enviar
               </button>
             </div>
+            <textarea
+              name="interes"
+              rows="3"
+              required
+              placeholder="Cuéntame qué te interesa (tipo de proyecto, objetivo, etc.)"
+              className="w-full rounded-2xl bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
+              aria-label="Interés del proyecto"
+            />
           </form>
         </div>
       </section>
