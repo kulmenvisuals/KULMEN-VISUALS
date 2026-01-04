@@ -51,12 +51,12 @@ export default function Home() {
             Kulmen Visuals · Galicia
           </p>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
-            Historias con alma.<br className="hidden md:block" />
-            <span className="text-zinc-200"> Estética de cine.</span>
+            Eleva tu marca.<br className="hidden md:block" />
+            <span className="text-zinc-200"> con contenido de altura.</span>
           </h1>
           <p className="max-w-xl text-zinc-300 mb-8 text-sm md:text-base">
             Productora audiovisual 360º: guion, rodaje, FPV y postproducción para marcas,
-            eventos y proyectos que quieren enseñar algo más que un plano bonito.
+            eventos y proyectos que quieren destacar y diferenciarse.
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -78,9 +78,7 @@ export default function Home() {
               name="_subject"
               value="Nuevo lead desde el hero de Kulmen Visuals"
             />
-            <p className="text-xs text-zinc-200">
-              ¿Quieres propuestas y ejemplos? Déjame tu correo.
-            </p>
+            
             <div className="flex flex-col gap-3 md:flex-row md:items-center">
               <input
                 type="email"
@@ -94,12 +92,12 @@ export default function Home() {
                 type="text"
                 name="interes"
                 required
-                placeholder="Qué te interesa"
+                placeholder="¿Qué te interesa?"
                 className="w-full md:flex-[1.2] rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
                 aria-label="Interés del proyecto"
               />
               <button type="submit" className="kv-button-primary md:shrink-0">
-                Enviar
+                Iniciar proyecto
               </button>
             </div>
           </form>
@@ -146,14 +144,14 @@ export default function Home() {
                 Acompaño todo el proceso.
               </h2>
               <p className="text-sm text-zinc-400">
-                Desde la idea inicial hasta la pieza final lista para publicar. Podemos entrar
-                en cualquier fase, pero lo ideal es diseñar el proyecto juntas desde el principio.
+                Desde la idea inicial hasta la pieza final lista para publicar. Puedo entrar
+                en cualquier fase, pero lo ideal es diseñar el proyecto juntos desde el principio.
               </p>
             </div>
             <div className="text-sm text-zinc-400 max-w-sm">
               <p>
-                Trabajo con marcas pequeñas, proyectos culturales y eventos que necesitan una
-                mirada cercana. Nada de vídeos plantillero sin contexto.
+                Trabajo con marcas, proyectos y eventos que necesitan una
+                mirada cercana y una producción ágil.
               </p>
             </div>
           </div>
@@ -184,13 +182,13 @@ export default function Home() {
               ¿Tienes un proyecto en mente?
             </h2>
             <p className="text-sm text-zinc-300 max-w-md">
-              Podemos empezar con una llamada corta para ver si encaja lo que necesitas con lo
-              que puedo ofrecerte. Sin compromiso.
+              Escríbeme para ver si encaja lo que necesitas con lo
+              que puedo ofrecerte. Sin compromiso. Comencemos a impulsar tu presencia.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contacto" className="kv-button-primary">
-              Escríbeme
+              Comencemos
             </Link>
             <Link to="/proyectos" className="kv-button-secondary">
               Ver portfolio
