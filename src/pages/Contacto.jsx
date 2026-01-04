@@ -12,10 +12,10 @@ export default function Contacto() {
       <p className="text-sm text-zinc-400 mb-6">
         Puedes escribirme directamente a{" "}
         <a
-          href="mailto:kulmenvisuals@gmail.com"
+          href="mailto:hola@kulmenvisuals.com"
           className="text-amber-300 hover:text-amber-200"
         >
-          kulmenvisuals@gmail.com
+          hola@kulmenvisuals.com
         </a>{" "}
         o rellenar este formulario.
       </p>
@@ -84,7 +84,7 @@ export default function Contacto() {
 
       <p className="text-[11px] text-zinc-500 mt-4">
         El formulario se envía mediante Formspree y llega a{" "}
-        <span className="text-amber-300">kulmenvisuals@gmail.com</span>.
+        <span className="text-amber-300">hola@kulmenvisuals.com</span>.
       </p>
     </div>
   )
