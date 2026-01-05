@@ -93,7 +93,6 @@ export default function Footer() {
             © {year} Kulmen Visuals. Hecho en Galicia.
           </p>
           <div className="flex w-full items-center justify-between gap-3 text-[11px] text-zinc-600 md:w-auto md:justify-end">
-            <p>Portfolio interactivo · Proyecto UOC</p>
             <a
               href="https://www.instagram.com/kulmenvisuals/"
               target="_blank"
