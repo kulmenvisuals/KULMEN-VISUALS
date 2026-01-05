@@ -51,7 +51,7 @@ export default function Home() {
             Kulmen Visuals · Galicia
           </p>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
-            Eleva tu marca.<br className="hidden md:block" />
+            Eleva tu marca <br className="hidden md:block" />
             <span className="text-zinc-200"> con contenido de altura.</span>
           </h1>
           <p className="max-w-xl text-zinc-300 mb-8 text-sm md:text-base">

@@ -1,40 +1,40 @@
 // src/pages/SobreMi.jsx
 
-// Ruta de la foto (sirve tanto en dev como en GitHub Pages)
+// Ruta de la foto (sirve en dev y en GitHub Pages)
 const fotoIo = `${import.meta.env.BASE_URL}images/io-portrait.jpg`
 
 const aboutBlocks = [
   {
     id: "como",
     label: "Cómo trabajo",
-    title: "Contexto primero, cámara después.",
-    text: "Me gusta entender bien el contexto del proyecto: quién eres, qué quieres comunicar y para quién. A partir de ahí planteo una propuesta visual concreta, con referencias claras y una ruta de trabajo realista.",
+    title: "Primero objetivos, después cámara.",
+    text: "Empiezo por entender qué quieres conseguir con el vídeo: ventas, visibilidad, reservas o comunidad. A partir de ahí defino propuesta, mensajes clave, formatos finales y calendario realista.",
     bullets: [
-      "Escucha activa y briefing cuidado",
-      "Referencias visuales compartidas",
-      "Plan de trabajo asumible para tu equipo",
+      "Reunión inicial corta y clara",
+      "Propuesta de pieza + estructura",
+      "Planning de rodaje y entregas",
     ],
   },
   {
     id: "disfruto",
-    label: "Lo que más disfruto",
-    title: "El punto exacto donde todo encaja.",
-    text: "El momento en el que técnica y emociones se encuentran: un plano FPV bien medido, una transición que respira, un color que cuenta algo más que lo que se ve en pantalla.",
+    label: "Lo que mejor hago",
+    title: "Traducir necesidades en piezas concretas.",
+    text: "Mi punto fuerte es bajar a tierra ideas que están medio definidas y convertirlas en piezas utilizables: spots, reels, aftermovies o bancos de clips listos para publicar.",
     bullets: [
-      "Planos FPV medidos, no gratuitos",
-      "Color con intención narrativa",
-      "Ritmo que acompaña la música y la historia",
+      "Selección de planos pensando en su uso real",
+      "Mezcla de cámara y FPV cuando aporta valor",
+      "Versiones adaptadas a cada canal (web, IG, TikTok)",
     ],
   },
   {
     id: "clientes",
-    label: "Con quién suelo trabajar",
-    title: "Proyectos que cuidan el detalle.",
-    text: "Marcas, festivales, centros deportivos y proyectos culturales que valoran el detalle visual y quieren algo más que “un vídeo más” para redes.",
+    label: "Con quién encajo mejor",
+    title: "Equipos pequeños que quieren vídeo serio.",
+    text: "Trabajo bien con negocios y proyectos que no tienen departamento interno de vídeo, pero necesitan contenido sólido y constante sin complicarse la vida.",
     bullets: [
       "Marcas pequeñas y medianas",
-      "Festivales y proyectos culturales",
-      "Centros deportivos y eventos con alma",
+      "Festivales, centros culturales y eventos",
+      "Gimnasios, clubs y proyectos deportivos",
     ],
   },
 ]
@@ -47,69 +47,71 @@ export default function SobreMi() {
         <div className="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-center">
           {/* Texto principal */}
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-zinc-500 mb-3">
+            <p className="text-[11px] md:text-xs uppercase tracking-[0.25em] text-zinc-500 mb-3">
               Sobre mí
             </p>
-            <h1 className="text-3xl md:text-4xl font-semibold mb-4">
-              io Rodríguez — Kulmen Visuals
+            <h1 className="text-3xl md:text-4xl lg:text-[2.6rem] font-semibold mb-4 leading-tight">
+              io Rodríguez · Kulmen Visuals
             </h1>
-            <p className="text-zinc-300 text-sm md:text-base mb-4 max-w-xl">
-              Soy creadora audiovisual y piloto de drones FPV. Me muevo entre el cine,
-              la publicidad y los proyectos culturales, buscando siempre piezas que
-              tengan cuidado estético y que conecten con las personas.
+
+            <p className="text-zinc-300 text-sm md:text-base lg:text-[17px] mb-4 max-w-xl leading-relaxed">
+              Soy creadora audiovisual y piloto de drones FPV. Trabajo para marcas,
+              eventos y proyectos culturales que necesitan vídeo profesional sin
+              montar un equipo interno.
             </p>
-            <p className="text-zinc-400 text-sm md:text-base mb-4 max-w-xl">
-              Trabajo el proyecto de principio a fin: desde pensar la idea y la estrategia,
-              hasta el rodaje con cámara y dron, y la postproducción completa
-              (montaje, color, sonido, grafismo). También integro herramientas de IA
-              cuando aportan valor: moodboards, storyboards y assets híbridos.
+
+            <p className="text-zinc-400 text-sm md:text-base lg:text-[17px] mb-4 max-w-xl leading-relaxed">
+              Cubro todo el proceso: definición del proyecto, guion básico,
+              planificación de rodaje, grabación con cámara y dron, y edición final
+              con color, sonido y grafismos. También utilizo IA cuando ayuda a
+              mejorar la producción de contenido.
             </p>
-            <p className="text-zinc-500 text-xs md:text-sm max-w-xl">
-              Mi objetivo: que cada pieza tenga alma de cine pero funcione en el mundo
-              real de marcas, festivales y redes sociales.
+
+            <p className="text-zinc-500 text-xs md:text-sm lg:text-[15px] max-w-xl leading-relaxed">
+              Mi foco es que cada pieza impacte y genere una repercusión positiva que se traduzca en mayores ventas y mejor reputación. 
             </p>
 
             {/* Etiquetas rápidas */}
-            <div className="mt-6 flex flex-wrap gap-2 text-xs">
-              <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-700/80 text-zinc-200 backdrop-blur-md">
-                Dirección y guion
+            <div className="mt-6 flex flex-wrap gap-2 text-xs md:text-[13px]">
+              <span className="kv-chip">
+                Dirección y planteamiento de pieza
               </span>
-              <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-700/80 text-zinc-200 backdrop-blur-md">
+              <span className="kv-chip">
                 Cámara &amp; FPV
               </span>
-              <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-700/80 text-zinc-200 backdrop-blur-md">
-                Montaje &amp; color
+              <span className="kv-chip">
+                Montaje, color y grafismo
               </span>
-              <span className="px-3 py-1 rounded-full bg-zinc-900/70 border border-zinc-700/80 text-zinc-200 backdrop-blur-md">
-                Contenido con IA
+              <span className="kv-chip">
+                Contenido para redes y campañas
               </span>
             </div>
           </div>
 
           {/* Foto */}
           <div className="relative w-full max-w-xs md:max-w-sm mx-auto">
-            <div className="rounded-3xl overflow-hidden border border-zinc-700/80 bg-zinc-900/60 backdrop-blur-xl shadow-[0_25px_70px_rgba(0,0,0,0.65)]">
+            <div className="kv-glass rounded-3xl overflow-hidden">
               <img
                 src={fotoIo}
                 alt="Retrato de io Rodríguez, creadora audiovisual y piloto de drones"
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="mt-3 text-[11px] text-zinc-500 text-center">
+            <p className="mt-3 text-[11px] md:text-xs text-zinc-500 text-center">
               io Rodríguez — Kulmen Visuals · Galicia
             </p>
           </div>
         </div>
       </section>
 
-      {/* Bloque extra: cómo trabajo / lo que disfruto / con quién trabajo */}
+      {/* Bloque extra: cómo trabajo / lo que mejor hago / con quién encajo */}
       <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20 border-t border-zinc-900">
         <header className="mb-8 md:mb-10">
-          <p className="text-xs uppercase tracking-[0.25em] text-amber-300/80 mb-2">
+          <p className="text-[11px] md:text-xs uppercase tracking-[0.25em] text-amber-300/80 mb-2">
             Forma de trabajar
           </p>
-          <h2 className="text-xl md:text-2xl font-semibold text-zinc-50">
-            Cómo entiendo el proceso creativo.
+          <h2 className="text-xl md:text-2xl lg:text-[1.6rem] font-semibold text-zinc-50">
+            Cómo trabajo y con quién tiene sentido colaborar.
           </h2>
         </header>
 
@@ -117,29 +119,29 @@ export default function SobreMi() {
           {aboutBlocks.map((block) => (
             <article
               key={block.id}
-              className="relative rounded-3xl border border-zinc-800/80 bg-zinc-950/60 backdrop-blur-xl overflow-hidden group shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
+              className="relative kv-glass-soft rounded-3xl overflow-hidden group"
             >
               {/* Foco de color en hover */}
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                <div className="absolute -top-24 -left-16 w-48 h-48 bg-amber-400/15 blur-3xl" />
+              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute -top-24 -left-16 w-48 h-48 bg-amber-400/12 blur-3xl" />
                 <div className="absolute -bottom-24 -right-8 w-40 h-40 bg-amber-500/10 blur-3xl" />
               </div>
 
               <div className="relative z-10 px-5 py-5 md:px-6 md:py-6 space-y-3">
-                <p className="text-[11px] tracking-[0.3em] uppercase text-amber-300/80">
+                <p className="text-[11px] tracking-[0.28em] uppercase text-amber-300/80">
                   {block.label}
                 </p>
-                <h3 className="text-base md:text-lg font-semibold text-zinc-50">
+                <h3 className="text-sm md:text-base lg:text-[15px] font-semibold text-zinc-50">
                   {block.title}
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-300 leading-relaxed">
+                <p className="text-xs md:text-sm lg:text-[14px] text-zinc-300 leading-relaxed">
                   {block.text}
                 </p>
 
-                <ul className="pt-2 space-y-1.5 text-[11px] text-zinc-200/90">
+                <ul className="pt-2 space-y-1.5 text-[11px] md:text-xs text-zinc-200/90">
                   {block.bullets.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="mt-[6px] inline-block w-1.5 h-1.5 rounded-full bg-amber-400/80" />
+                      <span className="mt-[6px] inline-block w-1.5 h-1.5 rounded-full bg-amber-400/85" />
                       <span>{item}</span>
                     </li>
                   ))}
