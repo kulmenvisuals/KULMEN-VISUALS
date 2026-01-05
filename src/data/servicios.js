@@ -81,26 +81,29 @@ export const fases = [
     titulo: "Apoyo con IA",
     subtitulo: "Más material, mismo esfuerzo",
     texto:
-      "Uso IA solo cuando mejora el proceso: para explorar estilos, preparar moodboards rápidos o generar variantes de contenido a partir del material grabado.",
+      "Uso IA solo cuando mejora el proceso: para explorar estilos, generar variantes de contenido a partir del material grabado o generar contenido íntegro con IA .",
     presets: [
       {
         id: "mood",
         label: "Moodboards rápidos",
-        desc: "Explorar estilos visuales y gamas de color antes de rodar.",
+        desc: "Explorar estilos visuales antes de rodar.",
       },
       {
         id: "story",
         label: "Storyboards ligeros",
-        desc: "Previsualizar escenas clave sin invertir horas en dibujo.",
+        desc: "Previsualizar escenas clave para agilizar la producción.",
       },
       {
         id: "variaciones",
         label: "Variaciones de contenido",
         desc: "Ideas de cortes, formatos y adaptaciones para distintos canales.",
       },
+      {
+        id: "contenido",
+        label: "Creación de contenido 100% IA",
+        desc: "Contenido generado mediante IA, imágenes, animaciones, vídeos... sin límite",
+      },
     ],
-    nota:
-      "La IA nunca sustituye al rodaje real: la utilizo para ahorrar tiempo en fase creativa y sacar más partido al material que ya tienes.",
   },
 ]
 
