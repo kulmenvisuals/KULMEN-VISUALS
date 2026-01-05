@@ -160,14 +160,23 @@ export default function Home() {
             {serviceTeasers.map((service) => (
               <article
                 key={service.id}
-                className="kv-glass-soft rounded-2xl p-4 flex flex-col"
+                className="relative kv-glass-soft rounded-2xl p-4 flex flex-col overflow-hidden group
+                           transition-transform duration-300 ease-out hover:-translate-y-1"
               >
+                {/* Glow hover como en SobreMi */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute -top-20 -left-16 w-40 h-40 bg-amber-400/12 blur-3xl" />
+                  <div className="absolute -bottom-20 -right-10 w-36 h-36 bg-amber-500/10 blur-3xl" />
+                </div>
+
+                <div className="relative z-10">
                 <h3 className="text-sm font-semibold mb-2 text-zinc-100">
                   {service.titulo}
                 </h3>
                 <p className="text-xs text-zinc-300 leading-relaxed">
                   {service.texto}
                 </p>
+                </div>
               </article>
             ))}
           </div>

@@ -101,7 +101,7 @@ export const fases = [
       {
         id: "contenido",
         label: "Creación de contenido 100% IA",
-        desc: "Contenido generado mediante IA, imágenes, animaciones, vídeos... sin límite",
+        desc: "Contenido generado mediante IA, imágenes, animaciones, vídeos...",
       },
     ],
   },
