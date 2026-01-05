@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
@@ -32,6 +33,18 @@ const serviceTeasers = [
 ]
 
 export default function Home() {
+  useEffect(() => {
+    const existing = document.querySelector(
+      'script[data-lightwidget="kulmenvisuals"]'
+    )
+    if (existing) return
+    const script = document.createElement('script')
+    script.src = 'https://cdn.lightwidget.com/widgets/lightwidget.js'
+    script.async = true
+    script.setAttribute('data-lightwidget', 'kulmenvisuals')
+    document.body.appendChild(script)
+  }, [])
+
   return (
     <div className="bg-zinc-950 text-zinc-50">
       {/* HERO con vídeo de fondo */}
@@ -179,6 +192,58 @@ export default function Home() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Instagram preview */}
+      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <div className="relative overflow-hidden kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -top-24 right-6 h-48 w-48 rounded-full bg-amber-400/10 blur-3xl" />
+            <div className="absolute -bottom-28 left-6 h-56 w-56 rounded-full bg-orange-500/10 blur-3xl" />
+          </div>
+
+          <div className="relative z-10 flex flex-col gap-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="h-14 w-14 rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-800/80 to-zinc-950/80 flex items-center justify-center text-lg font-semibold text-amber-200">
+                  KV
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-zinc-400">
+                    Instagram
+                  </p>
+                  <h3 className="text-lg md:text-xl font-semibold text-zinc-100">
+                    @kulmenvisuals
+                  </h3>
+                  <p className="text-sm text-zinc-400">
+                    Últimas publicaciones y BTS de rodajes.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://www.instagram.com/kulmenvisuals/"
+                target="_blank"
+                rel="noreferrer"
+                className="kv-button-primary"
+              >
+                Ver perfil
+              </a>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="col-span-full overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/80">
+                <iframe
+                  title="Kulmen Visuals Instagram feed"
+                  src="https://lightwidget.com/widgets/2519ad266e6d5a7cb28dd291383745f2.html"
+                  scrolling="no"
+                  allowTransparency={true}
+                  className="lightwidget-widget w-full border-0 overflow-hidden"
+                  style={{ height: '720px' }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
