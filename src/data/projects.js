@@ -104,7 +104,34 @@ export const projects = [
       "Orientado a Instagram, con montaje ágil y énfasis en planos de juego, detalles de marca y ambiente de grada.",
   },
 
-  // 4) Tour FPV: Nova Vila Enoturismo
+  // 4) Evento deportivo: HXGAP RACE
+  {
+    id: "hxgap-race",
+    slug: "hxgap-race",
+
+    title: "HXGAP RACE",
+    client: "XGAP Fitness Center",
+    year: 2025,
+
+    category: "RRSS / Deporte",
+    type: ["RRSS", "Deporte"],
+    roles: ["Cobertura audiovisual", "Edición"],
+    location: "A Estrada",
+
+    thumbnail: null,
+
+    instagramUrl: "https://www.instagram.com/reel/DRkRXo0kX4J/",
+    youtubeUrl: null,
+    videoUrl: null,
+    poster: null,
+
+    images: [],
+
+    description:
+      "Evento deportivo para amantes del gimnasio y el crossfit.",
+  },
+
+  // 5) Tour FPV: Nova Vila Enoturismo
   {
     id: "tour-fpv-nova-vila-enoturismo",
     slug: "tour-fpv-nova-vila-enoturismo",
