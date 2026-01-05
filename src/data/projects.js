@@ -151,40 +151,6 @@ export const projects = [
     "Videoclip 'MAMÁ' para Sislah, rodado en Madrid. Pieza emocional con enfoque íntimo, mezclando planos de cámara y recursos urbanos.",
 },
 
-  // 5) Ejemplo: FPV en Torre de Hércules
-  {
-    id: "torre-hercules-fpv",
-    slug: "torre-hercules-fpv",
-
-    title: "FPV en Torre de Hércules",
-    client: "Turismo A Coruña",
-    year: 2024,
-
-    category: "FPV / Turismo",
-    type: ["FPV", "Turismo"],
-    roles: ["Dirección", "Piloto FPV", "Edición"],
-    location: "A Coruña",
-    coords: [43.385, -8.406],
-
-    thumbnail:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1280&auto=format",
-
-    youtubeUrl: "https://www.youtube.com/embed/TU_ID_DE_VIDEO_1",
-
-    videoUrl: "/assets/videos/reel_hercules.mp4",
-    poster: "/assets/posters/torre.jpg",
-
-    images: [
-      "https://images.unsplash.com/photo-1520975682031-df6a02c0bcb6?q=80&w=1200&auto=format",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format",
-    ],
-
-    description:
-      "Pieza promocional FPV para Turismo con narrativa fluida y planos de vértigo rodeando la Torre de Hércules.",
-    extra:
-      "Trabajo orientado a redes sociales y difusión digital, con versiones adaptadas a diferentes formatos.",
-  },
-
 ]
 
 export default projects
