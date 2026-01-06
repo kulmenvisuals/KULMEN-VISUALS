@@ -11,10 +11,12 @@ export default function Footer() {
         {/* Bloque marca + CTA */}
         <div className="space-y-4">
           <div>
-            <p className="font-semibold text-zinc-50 text-sm">
-              Kulmen <span className="text-amber-400">Visuals</span>
-            </p>
-            <p className="text-xs text-zinc-500 mt-1">
+            <img
+              src="/logo-kulmen-visuals.png"
+              alt="Kulmen Visuals"
+              className="h-10 w-auto"
+            />
+            <p className="text-xs text-zinc-500 mt-2">
               Creación audiovisual con mirada cinematográfica: cine, FPV, eventos y proyectos culturales desde Galicia.
             </p>
           </div>

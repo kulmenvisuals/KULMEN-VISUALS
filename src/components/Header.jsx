@@ -17,11 +17,13 @@ export default function Header() {
     <header className="sticky top-0 z-50 kv-header">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link
-          to="/"
-          className="font-semibold tracking-tight text-white text-sm md:text-base"
-        >
-          Kulmen <span className="text-amber-400">Visuals</span>
+        <Link to="/" className="flex items-center">
+          <img
+            src="/logo-kulmen-visuals.png"
+            alt="Kulmen Visuals"
+            className="h-8 w-auto"
+          />
+          <span className="sr-only">Kulmen Visuals</span>
         </Link>
 
         {/* Navegación desktop */}
