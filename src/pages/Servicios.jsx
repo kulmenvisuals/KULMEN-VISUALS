@@ -55,6 +55,96 @@ const equipmentGroups = [
   },
 ]
 
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      name: "Grabación con drones FPV",
+      serviceType: "Drones FPV",
+      areaServed: "ES",
+      provider: {
+        "@type": "Organization",
+        name: "Kulmen Visuals",
+        url: "https://kulmenvisuals.com",
+      },
+    },
+    {
+      "@type": "Service",
+      name: "Producción de vídeo",
+      serviceType: "Producción audiovisual",
+      areaServed: "ES",
+      provider: {
+        "@type": "Organization",
+        name: "Kulmen Visuals",
+        url: "https://kulmenvisuals.com",
+      },
+    },
+    {
+      "@type": "Service",
+      name: "Edición y postproducción de vídeo",
+      serviceType: "Postproducción",
+      areaServed: "ES",
+      provider: {
+        "@type": "Organization",
+        name: "Kulmen Visuals",
+        url: "https://kulmenvisuals.com",
+      },
+    },
+    {
+      "@type": "Service",
+      name: "Contenido para redes sociales",
+      serviceType: "Contenido para RRSS",
+      areaServed: "ES",
+      provider: {
+        "@type": "Organization",
+        name: "Kulmen Visuals",
+        url: "https://kulmenvisuals.com",
+      },
+    },
+    {
+      "@type": "Service",
+      name: "Contenido audiovisual y multimedia",
+      serviceType: "Contenido audiovisual",
+      areaServed: "ES",
+      provider: {
+        "@type": "Organization",
+        name: "Kulmen Visuals",
+        url: "https://kulmenvisuals.com",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "¿Qué tipo de proyectos cubrís con dron FPV?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Rodajes dinámicos para deporte, acción, turismo y eventos. El FPV aporta movimiento cercano y una perspectiva inmersiva.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Ofrecéis producción completa o solo postproducción?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Podemos encargarnos de todo el proceso o entrar en una fase concreta: rodaje, edición, color o entrega final.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Trabajáis solo en Pontevedra?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Estamos en Pontevedra y trabajamos en toda España según el proyecto.",
+          },
+        },
+      ],
+    },
+  ],
+}
+
 export default function Servicios() {
   const fasesList = Array.isArray(fases) ? fases : []
   const especialidadesList = Array.isArray(especialidades) ? especialidades : []
@@ -64,6 +154,10 @@ export default function Servicios() {
 
   return (
     <main className="bg-zinc-950 text-zinc-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
       {/* HERO: vídeo + copy de servicios */}
       <section className="relative border-b border-zinc-800">
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16 grid gap-10 lg:grid-cols-2 items-center">

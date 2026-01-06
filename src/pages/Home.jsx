@@ -32,6 +32,39 @@ const serviceTeasers = [
   },
 ]
 
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "Kulmen Visuals",
+      url: "https://kulmenvisuals.com",
+      email: "hola@kulmenvisuals.com",
+      telephone: "+34 652405654",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Pontevedra",
+        addressCountry: "ES",
+      },
+      areaServed: "ES",
+      sameAs: ["https://www.instagram.com/kulmenvisuals/"],
+    },
+    {
+      "@type": "LocalBusiness",
+      name: "Kulmen Visuals",
+      url: "https://kulmenvisuals.com",
+      telephone: "+34 652405654",
+      email: "hola@kulmenvisuals.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Pontevedra",
+        addressCountry: "ES",
+      },
+      areaServed: "ES",
+    },
+  ],
+}
+
 export default function Home() {
   useEffect(() => {
     const existing = document.querySelector(
@@ -47,6 +80,10 @@ export default function Home() {
 
   return (
     <div className="bg-zinc-950 text-zinc-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
+      />
       {/* HERO con vídeo de fondo */}
       <section className="relative min-h-[70vh] md:h-[80vh] overflow-hidden pt-20 pb-10 md:pt-24">
         <video
