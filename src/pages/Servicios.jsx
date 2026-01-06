@@ -4,8 +4,56 @@ import { motion } from "framer-motion"
 import { fases, especialidades } from "../data/servicios.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 
-const heroVideo = `${import.meta.env.BASE_URL}videos/hero.mp4`
-const heroPoster = `${import.meta.env.BASE_URL}images/hero_poster.jpg`
+const assetBase = import.meta.env.BASE_URL
+const heroVideo = `${assetBase}videos/hero.mp4`
+const heroPoster = `${assetBase}images/hero_poster.jpg`
+
+const equipmentGroups = [
+  {
+    id: "camaras",
+    label: "Cámaras",
+    grid: "md:grid-cols-2",
+    items: [
+      {
+        name: "Blackmagic 4K",
+        desc: "Look cinematográfico y rango dinámico para piezas con intención visual.",
+        tags: ["Spots", "Narrativa", "Entrevistas cuidadas"],
+        image: `${assetBase}images/blackmagic.jpg`,
+      },
+      {
+        name: "Lumix S5II",
+        desc: "Full frame ágil y fiable en poca luz para rodajes rápidos.",
+        tags: ["Eventos", "Entrevistas", "Run & gun"],
+        image: `${assetBase}images/lumix-s5ii.jpeg`,
+      },
+    ],
+  },
+  {
+    id: "drones",
+    label: "Drones",
+    grid: "md:grid-cols-3",
+    items: [
+      {
+        name: "DJI Mini 4 Pro",
+        desc: "Compacto y discreto, ideal para tomas limpias de localización.",
+        tags: ["Turismo", "Exteriores", "Establishing shots"],
+        image: `${assetBase}images/dji-mini-4pro.webp`,
+      },
+      {
+        name: "FPV Mark 5",
+        desc: "Velocidad y energía con vuelos dinámicos y agresivos.",
+        tags: ["Deporte", "Acción", "Adrenalina"],
+        image: `${assetBase}images/geprc-mark5.jpg`,
+      },
+      {
+        name: "GEPRC Cinelog 30 V3",
+        desc: "Cinewhoop estable para interiores y vuelos cercanos.",
+        tags: ["Eventos indoor", "Recorridos", "Espacios reducidos"],
+        image: `${assetBase}images/geprc-cinelog-30-v3.jpg`,
+      },
+    ],
+  },
+]
 
 export default function Servicios() {
   const fasesList = Array.isArray(fases) ? fases : []
@@ -178,6 +226,86 @@ export default function Servicios() {
               </div>
             )}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Equipo audiovisual */}
+      <section className="border-t border-zinc-900/80 bg-zinc-950">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-10">
+          <header className="space-y-2">
+            <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
+              Equipo audiovisual
+            </p>
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              Herramientas pensadas para cada tipo de rodaje.
+            </h2>
+            <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
+              El equipo no es un listado técnico: es la clave para elegir el
+              lenguaje visual correcto. Aquí tienes una vista rápida de para qué
+              encaja cada cámara y cada dron.
+            </p>
+          </header>
+
+          <div className="grid gap-6">
+            {equipmentGroups.map((group) => (
+              <div
+                key={group.id}
+                className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/70 kv-glass-soft"
+              >
+                <div className="pointer-events-none absolute inset-0">
+                  <div className="absolute -top-20 right-8 h-40 w-40 rounded-full bg-amber-500/8 blur-3xl" />
+                  <div className="absolute -bottom-24 left-6 h-48 w-48 rounded-full bg-amber-400/6 blur-3xl" />
+                </div>
+
+                <div className="relative z-10 px-6 py-8 md:px-8 md:py-9 space-y-6">
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
+                      {group.label}
+                    </p>
+                    <span className="text-[11px] text-zinc-500">
+                      {group.items.length} opciones
+                    </span>
+                  </div>
+
+                  <div className={`grid gap-4 ${group.grid}`}>
+                    {group.items.map((item) => (
+                      <article
+                        key={item.name}
+                        className="rounded-2xl border border-zinc-800/80 bg-zinc-900/60 overflow-hidden"
+                      >
+                        <div className="aspect-[16/9] w-full overflow-hidden">
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="p-4 space-y-3">
+                        <div className="space-y-1">
+                          <h3 className="text-base font-semibold text-zinc-100">
+                            {item.name}
+                          </h3>
+                          <p className="text-sm text-zinc-300">{item.desc}</p>
+                        </div>
+                        <div className="flex flex-wrap gap-2 text-[11px] text-amber-200">
+                          {item.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
