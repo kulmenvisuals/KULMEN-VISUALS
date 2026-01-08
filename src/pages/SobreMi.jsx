@@ -41,13 +41,17 @@ const aboutBlocks = [
 
 export default function SobreMi() {
   return (
-    <div className="bg-zinc-950 text-zinc-50">
+    <div className="text-zinc-50">
       {/* Hero con foto + texto */}
-      <section className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-16 md:pb-20">
+      <section className="relative max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-16 md:pb-20">
+        <div className="pointer-events-none absolute inset-0 kv-grid-overlay opacity-20" />
+        <div className="pointer-events-none absolute -top-20 right-10 h-44 w-44 rounded-full bg-amber-400/10 blur-3xl kv-float" />
+        <div className="pointer-events-none absolute -bottom-16 left-6 h-52 w-52 rounded-full bg-sky-400/8 blur-3xl kv-float-slow" />
+
         <div className="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-center">
           {/* Texto principal */}
           <div>
-            <p className="text-[11px] md:text-xs uppercase tracking-[0.25em] text-zinc-500 mb-3">
+            <p className="kv-eyebrow text-zinc-400 mb-3">
               Sobre mí
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-[2.6rem] font-semibold mb-4 leading-tight">
@@ -100,9 +104,9 @@ export default function SobreMi() {
       </section>
 
       {/* Bloque extra: cómo trabajo / lo que mejor hago / con quién encajo */}
-      <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20 border-t border-zinc-900">
+      <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20 border-t border-zinc-900/70">
         <header className="mb-8 md:mb-10">
-          <p className="text-[11px] md:text-xs uppercase tracking-[0.25em] text-amber-300/80 mb-2">
+          <p className="kv-eyebrow mb-2">
             Forma de trabajar
           </p>
           <h2 className="text-xl md:text-2xl lg:text-[1.6rem] font-semibold text-zinc-50">
@@ -114,7 +118,7 @@ export default function SobreMi() {
           {aboutBlocks.map((block) => (
             <article
               key={block.id}
-              className="relative kv-glass-soft rounded-3xl overflow-hidden group"
+              className="relative kv-panel rounded-3xl overflow-hidden group"
             >
               {/* Foco de color en hover */}
               <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

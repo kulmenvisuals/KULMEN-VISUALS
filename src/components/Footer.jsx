@@ -6,8 +6,13 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="mt-16 border-t border-zinc-900 bg-zinc-950">
-      <div className="max-w-6xl mx-auto px-4 py-10 md:py-12 grid gap-8 md:grid-cols-[2fr,1.3fr,1.3fr]">
+    <footer className="mt-16 kv-footer relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-20 right-10 h-48 w-48 rounded-full bg-amber-400/8 blur-3xl kv-float-slow" />
+        <div className="absolute -bottom-24 left-6 h-56 w-56 rounded-full bg-sky-400/6 blur-3xl kv-float" />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-10 md:py-12 grid gap-8 md:grid-cols-[2fr,1.3fr,1.3fr]">
         {/* Bloque marca + CTA */}
         <div className="space-y-4">
           <div>
@@ -24,10 +29,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <Link
-            to="/contacto"
-            className="inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold bg-amber-400 text-black hover:bg-amber-300 transition shadow-sm"
-          >
+          <Link to="/contacto" className="kv-button-primary">
             Hablemos de tu proyecto
           </Link>
 
@@ -72,19 +74,19 @@ export default function Footer() {
             Especialidades
           </h2>
           <div className="flex flex-wrap gap-2 text-[11px]">
-            <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
+            <span className="kv-chip bg-zinc-900/80 border-zinc-800 text-zinc-300">
               FPV profesional
             </span>
-            <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
+            <span className="kv-chip bg-zinc-900/80 border-zinc-800 text-zinc-300">
               Vídeo &amp; publicidad
             </span>
-            <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
+            <span className="kv-chip bg-zinc-900/80 border-zinc-800 text-zinc-300">
               Eventos &amp; deporte
             </span>
-            <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
+            <span className="kv-chip bg-zinc-900/80 border-zinc-800 text-zinc-300">
               Turismo
             </span>
-            <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
+            <span className="kv-chip bg-zinc-900/80 border-zinc-800 text-zinc-300">
               Edición de vídeo
             </span>
           </div>
@@ -92,7 +94,7 @@ export default function Footer() {
       </div>
 
       {/* Franja inferior */}
-      <div className="border-t border-zinc-900">
+      <div className="border-t border-zinc-900/80">
         <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-[11px] text-zinc-600">© {year} Kulmen Visuals</p>
           <p className="text-[11px] text-zinc-600">

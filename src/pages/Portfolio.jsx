@@ -33,16 +33,18 @@ export default function Portfolio() {
   }, [filter])
 
   return (
-    <div className="bg-zinc-950 text-zinc-50">
+    <div className="text-zinc-50">
       {/* Intro */}
-      <section className="max-w-6xl mx-auto px-4 pt-10 pb-6 md:pt-14 md:pb-8">
-        <p className="text-xs uppercase tracking-[0.25em] text-zinc-500 mb-3">
+      <section className="relative max-w-6xl mx-auto px-4 pt-10 pb-6 md:pt-14 md:pb-8">
+        <div className="pointer-events-none absolute inset-0 kv-grid-overlay opacity-20" />
+        <div className="pointer-events-none absolute -top-16 right-8 h-36 w-36 rounded-full bg-amber-400/10 blur-3xl kv-float" />
+        <p className="kv-eyebrow text-zinc-400 mb-3 relative z-10">
           Portfolio
         </p>
-        <h1 className="text-2xl md:text-3xl font-semibold mb-3">
+        <h1 className="text-2xl md:text-3xl font-semibold mb-3 relative z-10">
           Proyectos de FPV, cine y contenido para marcas.
         </h1>
-        <p className="text-sm text-zinc-400 max-w-2xl">
+        <p className="text-sm text-zinc-400 max-w-2xl relative z-10">
           Una selección de trabajos para marcas, festivales y proyectos
           culturales. Puedes filtrar por tipo de pieza para encontrar mejor lo
           que se parece a lo que tienes en mente.
@@ -54,11 +56,11 @@ export default function Portfolio() {
         <div className="flex flex-wrap gap-2 text-xs">
           <button
             onClick={() => setFilter("todos")}
-            className={`px-3 py-1 rounded-full border ${
+            className={`px-3 py-1.5 rounded-full border transition ${
               filter === "todos"
-                ? "border-amber-400 bg-amber-400/10 text-amber-200"
-                : "border-zinc-700 text-zinc-300 hover:border-amber-300 hover:text-amber-200"
-            } transition`}
+                ? "border-amber-400 bg-amber-400/15 text-amber-200"
+                : "border-white/10 text-zinc-300 hover:border-amber-300/60 hover:text-amber-200"
+            }`}
           >
             Todos
           </button>
@@ -67,11 +69,11 @@ export default function Portfolio() {
             <button
               key={tag}
               onClick={() => setFilter(tag)}
-              className={`px-3 py-1 rounded-full border ${
+              className={`px-3 py-1.5 rounded-full border transition ${
                 filter === tag
-                  ? "border-amber-400 bg-amber-400/10 text-amber-200"
-                  : "border-zinc-700 text-zinc-300 hover:border-amber-300 hover:text-amber-200"
-              } transition`}
+                  ? "border-amber-400 bg-amber-400/15 text-amber-200"
+                  : "border-white/10 text-zinc-300 hover:border-amber-300/60 hover:text-amber-200"
+              }`}
             >
               {tag}
             </button>
