@@ -229,8 +229,6 @@ export default function Servicios() {
 
   const [faseActiva, setFaseActiva] = useState(fasesList[0]?.id ?? "prepro")
   const fase = fasesList.find((f) => f.id === faseActiva) ?? fasesList[0] ?? {}
-  const phaseBlockClass =
-    "rounded-2xl border border-zinc-800 bg-zinc-900/60 kv-glass-soft px-4 py-4 md:px-5 md:py-5"
 
   return (
     <main className="bg-zinc-950 text-zinc-100">
@@ -444,79 +442,73 @@ export default function Servicios() {
             )}
 
             {Array.isArray(fase.bullets) && fase.bullets.length > 0 && (
-              <div className={phaseBlockClass}>
-                <ul className="grid gap-2 text-sm md:text-base text-zinc-200/90">
-                  {fase.bullets.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="mt-2 inline-block h-[2px] w-4 rounded-full bg-amber-300" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="grid gap-3 md:grid-cols-2">
+                {fase.bullets.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-xl border border-zinc-800/80 bg-zinc-900/60 px-4 py-3"
+                  >
+                    <p className="text-sm text-zinc-200/90">{item}</p>
+                  </div>
+                ))}
               </div>
             )}
 
             {/* Toggles (prepro) */}
             {Array.isArray(fase.toggles) && fase.toggles.length > 0 && (
-              <div className={phaseBlockClass}>
-                <div className="grid gap-3 md:grid-cols-2">
-                  {fase.toggles.map((t) => (
-                    <div
-                      key={t.id}
-                      className="rounded-xl border border-zinc-800/80 bg-zinc-900/70 px-4 py-3"
-                    >
-                      <p className="text-sm font-medium text-amber-200">{t.label}</p>
-                      <p className="text-xs text-zinc-400">{t.desc}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid gap-3 md:grid-cols-2">
+                {fase.toggles.map((t) => (
+                  <div
+                    key={t.id}
+                    className="rounded-xl border border-zinc-800/80 bg-zinc-900/70 px-4 py-3"
+                  >
+                    <p className="text-sm font-medium text-amber-200">{t.label}</p>
+                    <p className="text-xs text-zinc-400">{t.desc}</p>
+                  </div>
+                ))}
               </div>
             )}
 
             {/* Modos (producción) */}
             {Array.isArray(fase.modos) && fase.modos.length > 0 && (
-              <div className={phaseBlockClass}>
-                <div className="flex flex-wrap gap-3">
-                  {fase.modos.map((m) => (
-                    <div
-                      key={m.id}
-                      className="rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2"
-                    >
-                      <p className="text-xs font-medium text-amber-200">{m.label}</p>
-                      <p className="text-[11px] text-zinc-400">{m.desc}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid gap-3 md:grid-cols-2">
+                {fase.modos.map((m) => (
+                  <div
+                    key={m.id}
+                    className="rounded-xl border border-zinc-800/80 bg-zinc-900/60 px-4 py-3"
+                  >
+                    <p className="text-sm font-medium text-amber-200">{m.label}</p>
+                    <p className="text-xs text-zinc-400">{m.desc}</p>
+                  </div>
+                ))}
               </div>
             )}
 
             {/* Before/After (postproducción) */}
             {fase.beforeAfter && (
-              <div className={phaseBlockClass}>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <p className="text-xs font-semibold text-zinc-400 uppercase">
-                      Antes
-                    </p>
-                    <div className="rounded-xl overflow-hidden border border-zinc-800">
-                      <img
-                        src={fase.beforeAfter.before}
-                        alt="Antes de corrección de color"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold text-zinc-400 uppercase">
+                    Antes
+                  </p>
+                  <div className="rounded-xl overflow-hidden border border-zinc-800">
+                    <img
+                      src={fase.beforeAfter.before}
+                      alt="Antes de corrección de color"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="space-y-2">
-                    <p className="text-xs font-semibold text-zinc-400 uppercase">
-                      Después
-                    </p>
-                    <div className="rounded-xl overflow-hidden border border-amber-400/70">
-                      <img
-                        src={fase.beforeAfter.after}
-                        alt="Después de corrección de color"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold text-zinc-400 uppercase">
+                    Después
+                  </p>
+                  <div className="rounded-xl overflow-hidden border border-amber-400/70">
+                    <img
+                      src={fase.beforeAfter.after}
+                      alt="Después de corrección de color"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
