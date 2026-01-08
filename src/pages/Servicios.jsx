@@ -610,7 +610,7 @@ export default function Servicios() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary">
+            <Link to="/contacto" className="kv-button-primary kv-button-accent">
               Pedir presupuesto
             </Link>
           </div>

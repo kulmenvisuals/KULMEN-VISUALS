@@ -1,4 +1,5 @@
 // src/pages/SobreMi.jsx
+import { Link } from "react-router-dom"
 
 // Ruta de la foto (sirve en dev y en GitHub Pages)
 const fotoIo = `${import.meta.env.BASE_URL}images/io-portrait.jpg`
@@ -144,6 +145,26 @@ export default function SobreMi() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20">
+        <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+              ¿Hablamos de tu proyecto?
+            </h2>
+            <p className="text-sm text-zinc-300 max-w-md">
+              Si buscas un vídeo con intención y un proceso claro, cuéntame tu idea
+              y lo vemos sin compromiso.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contacto" className="kv-button-primary kv-button-accent">
+              Contactar
+            </Link>
+          </div>
         </div>
       </section>
     </div>
