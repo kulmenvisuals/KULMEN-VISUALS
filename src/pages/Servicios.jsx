@@ -1,5 +1,6 @@
 // src/pages/Servicios.jsx
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { fases, especialidades } from "../data/servicios.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
@@ -169,20 +170,14 @@ export default function Servicios() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
               De la idea al máster final.
               <br />
-              Cine, FPV y contenido para marcas y proyectos.
+              Vídeo, FPV y contenido para marcas y proyectos.
             </h1>
             <p className="text-zinc-300 max-w-xl text-sm md:text-base">
-              Diseño y producción de piezas audiovisuales completas: preproducción,
-              rodaje y postproducción. Desde campañas de marca hasta coberturas
-              ágiles de eventos y turismo.
+              Planifico, grabo y edito vídeo para marcas, eventos y espacios que
+              necesitan comunicar con intención y diferenciarse. Desde campañas de
+              marca hasta coberturas ágiles de eventos y turismo.
             </p>
 
-            <ul className="grid gap-2 text-sm text-zinc-300 md:grid-cols-2">
-              <li>· Diseño de campaña y guion técnico</li>
-              <li>· Rodaje con cámaras de cine y drones FPV</li>
-              <li>· Edición, color y sonido finales</li>
-              <li>· Apoyo con IA: moodboards, storyboards, assets</li>
-            </ul>
           </div>
 
           {/* Vídeo */}
@@ -448,6 +443,25 @@ export default function Servicios() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+              ¿Qué necesitas?
+            </h2>
+            <p className="text-sm text-zinc-300 max-w-md">
+              Si tienes una idea, una fecha o un objetivo, lo vemos.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contacto" className="kv-button-primary">
+              Pedir presupuesto
+            </Link>
           </div>
         </div>
       </section>
