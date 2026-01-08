@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import { Camera, Drone, Scissors, Video } from "lucide-react"
 import { fases, especialidades } from "../data/servicios.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 
@@ -150,6 +151,7 @@ const mainServices = [
   {
     id: "produccion-audiovisual",
     title: "Producción audiovisual",
+    icon: Camera,
     intro:
       "Planificación y rodaje de vídeo para marcas, eventos y espacios, con un enfoque narrativo y visual coherente con el mensaje.",
     usage: [
@@ -167,6 +169,7 @@ const mainServices = [
   {
     id: "fpv-cinematografico",
     title: "FPV cinematográfico",
+    icon: Drone,
     intro:
       "Grabación aérea dinámica con drones FPV para generar movimiento, inmersión y continuidad visual.",
     usage: [
@@ -184,6 +187,7 @@ const mainServices = [
   {
     id: "edicion-postproduccion",
     title: "Edición y postproducción",
+    icon: Scissors,
     intro:
       "Montaje final del proyecto con atención al ritmo, la estructura y el uso real del vídeo.",
     usage: [
@@ -201,6 +205,7 @@ const mainServices = [
   {
     id: "contenido-redes",
     title: "Contenido para redes",
+    icon: Video,
     intro:
       "Creación de piezas de vídeo pensadas específicamente para redes sociales, a partir de un enfoque claro y un material bien planteado desde el rodaje.",
     usage: [
@@ -283,10 +288,15 @@ export default function Servicios() {
               >
                 <div className="absolute left-0 top-0 h-full w-[3px] bg-amber-400/50" />
                 <div className="relative z-10 px-6 py-7 md:px-8 md:py-8 space-y-5">
-                  <div className="space-y-2">
-                    <h3 className="text-xl md:text-2xl font-semibold text-zinc-50">
-                      {service.title}
-                    </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-amber-400/30 bg-amber-400/10 text-amber-200">
+                        <service.icon className="h-5 w-5" />
+                      </span>
+                      <h3 className="text-xl md:text-2xl font-semibold text-zinc-50">
+                        {service.title}
+                      </h3>
+                    </div>
                     <p className="text-sm md:text-base text-zinc-300">
                       {service.intro}
                     </p>
