@@ -332,7 +332,12 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
-            <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
               <h3 className="text-sm md:text-base font-semibold text-zinc-100">
                 Marcas
               </h3>
@@ -340,8 +345,14 @@ export default function Home() {
                 Vídeos de producto y campañas pensados para construir imagen,
                 lanzar novedades y generar contenido usable en redes y web.
               </p>
+              </div>
             </article>
-            <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
               <h3 className="text-sm md:text-base font-semibold text-zinc-100">
                 Eventos
               </h3>
@@ -349,8 +360,14 @@ export default function Home() {
                 Piezas que amplifican el evento: teasers previos, contenido durante
                 la acción y aftermovies que prolongan su impacto.
               </p>
+              </div>
             </article>
-            <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
               <h3 className="text-sm md:text-base font-semibold text-zinc-100">
                 Espacios
               </h3>
@@ -358,6 +375,7 @@ export default function Home() {
                 Flythroughs y visitas inmersivas para mostrar un lugar con impacto,
                 claridad y diferenciación.
               </p>
+              </div>
             </article>
           </div>
         </div>
