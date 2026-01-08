@@ -33,14 +33,6 @@ const serviceTeasers = [
   },
 ]
 
-const clientLogos = [
-  { name: "Cliente 01", mark: "C1" },
-  { name: "Cliente 02", mark: "C2" },
-  { name: "Cliente 03", mark: "C3" },
-  { name: "Cliente 04", mark: "C4" },
-  { name: "Cliente 05", mark: "C5" },
-  { name: "Cliente 06", mark: "C6" },
-]
 
 const homeSchema = {
   "@context": "https://schema.org",
@@ -237,35 +229,6 @@ export default function Home() {
         )}
       </section>
 
-      {/* Clientes */}
-      <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
-        <div className="flex flex-col gap-6 md:gap-10">
-          <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-3">
-              Clientes con los que he trabajado
-            </h2>
-            <p className="text-sm text-zinc-400 max-w-2xl">
-              Espacios para logos. Cuando los tengas, los sustituyo por tus marcas reales.
-            </p>
-          </div>
-          <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-            {clientLogos.map((client) => (
-              <div
-                key={client.name}
-                className="kv-glass-soft rounded-2xl border border-white/10 px-4 py-6 flex flex-col items-center justify-center text-center"
-              >
-                <div className="h-10 w-10 rounded-full border border-amber-300/40 bg-amber-300/10 text-amber-200 flex items-center justify-center text-sm font-semibold">
-                  {client.mark}
-                </div>
-                <p className="mt-3 text-[11px] uppercase tracking-[0.25em] text-zinc-500">
-                  {client.name}
-                </p>
-                <p className="text-[10px] text-zinc-600 mt-1">Logo aqui</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Servicios de producción audiovisual */}
       <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
