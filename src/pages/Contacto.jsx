@@ -157,10 +157,10 @@ export default function Contacto() {
           type="submit"
           className="px-5 py-3 rounded-lg bg-amber-400 text-black font-semibold text-sm hover:bg-amber-300 transition"
         >
-          Enviar
+          Enviar solicitud
         </button>
       </form>
-      
+
     </div>
   )
 }
