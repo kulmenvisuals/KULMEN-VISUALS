@@ -6,7 +6,17 @@ export default function Contacto() {
       <h1 className="text-3xl font-bold mb-4">Contacto</h1>
 
       <p className="text-zinc-300 mb-4">
-        Cuéntame tu proyecto: ¿qué quieres conseguir?
+        Si tienes un proyecto en mente o necesitas contenido audiovisual para tu
+        marca, evento o espacio, escríbeme y lo vemos.
+      </p>
+
+      <p className="text-sm text-zinc-400 mb-6">
+        Responderé en un plazo de 24–48 h laborables.
+      </p>
+
+      <p className="text-sm text-zinc-400 mb-6">
+        Ubicación. Trabajo desde Pontevedra y me desplazo por Galicia y España,
+        según el proyecto.
       </p>
 
       <p className="text-sm text-zinc-400 mb-6">
