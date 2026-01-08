@@ -146,6 +146,94 @@ const servicesSchema = {
   ],
 }
 
+const mainServices = [
+  {
+    id: "produccion-audiovisual",
+    title: "Producción audiovisual",
+    intro:
+      "Planificación y rodaje de vídeo para marcas, eventos y espacios, con un enfoque narrativo y visual coherente con el mensaje.",
+    usageTitle: "Para qué se utiliza",
+    usage: [
+      "Vídeos de marca y campañas",
+      "Lanzamientos de producto",
+      "Piezas principales para web y redes",
+      "Contenido corporativo con intención comunicativa",
+    ],
+    includesTitle: "Qué incluye habitualmente",
+    includes: [
+      "Definición de enfoque visual",
+      "Grabación en localización",
+      "Dirección de plano y ritmo",
+      "Material pensado para edición y reutilización",
+    ],
+    result:
+      "Resultado: una base sólida sobre la que construir piezas eficaces, no material inconexo.",
+  },
+  {
+    id: "fpv-cinematografico",
+    title: "FPV cinematográfico",
+    intro:
+      "Grabación aérea dinámica con drones FPV para generar movimiento, inmersión y continuidad visual.",
+    usageTitle: "Cuándo tiene sentido",
+    usage: [
+      "Eventos y acciones en directo",
+      "Recorrer espacios de forma fluida e inmersiva",
+      "Acompañar acciones en movimiento (eventos, deporte, actividad)",
+      "Aportar diferenciación visual en piezas de marca",
+      "Generar impacto desde el primer segundo",
+    ],
+    includesTitle: "Qué incluye",
+    includes: [
+      "Planificación del vuelo",
+      "Coordinación de permisos y medidas de seguridad",
+      "Grabación aérea en exteriores e interiores",
+      "Edición final integrada en la pieza",
+      "Corrección de color, sonido y ritmo",
+    ],
+    result: "Resultado: imágenes que destacan por sí mismas sin distraer del mensaje.",
+  },
+  {
+    id: "edicion-postproduccion",
+    title: "Edición y postproducción",
+    intro:
+      "Montaje final del proyecto con atención al ritmo, la estructura y el uso real del vídeo.",
+    usageTitle: "Incluye",
+    usage: [
+      "Selección y montaje de planos",
+      "Ajuste de ritmo y duración",
+      "Música y sonido",
+      "Corrección de color",
+      "Exportaciones por formato",
+    ],
+    includesTitle: null,
+    includes: [],
+    result:
+      "Resultado: piezas claras, dinámicas y listas para compartir en cualquier medio.",
+  },
+  {
+    id: "contenido-redes",
+    title: "Contenido para redes",
+    intro:
+      "Creación de piezas de vídeo pensadas específicamente para redes sociales, a partir de un enfoque claro y un material bien planteado desde el rodaje.",
+    usageTitle: "Para qué sirve",
+    usage: [
+      "Comunicar de forma directa en entornos saturados",
+      "Aprovechar un mismo rodaje en múltiples piezas",
+      "Mantener coherencia visual y narrativa en la marca",
+      "Reducir costes sin perder calidad",
+    ],
+    includesTitle: "Cómo se plantea",
+    includes: [
+      "Planificación del contenido desde el inicio",
+      "Grabación pensada para vertical, cuadrado u horizontal",
+      "Edición con ritmo, estructura y puntos de atención",
+      "Adaptación por plataforma y objetivo",
+    ],
+    result:
+      "Resultado: vídeos claros, dinámicos y listos para publicarse, que encajan en la estrategia de la marca.",
+  },
+]
+
 export default function Servicios() {
   const fasesList = Array.isArray(fases) ? fases : []
   const especialidadesList = Array.isArray(especialidades) ? especialidades : []
@@ -183,6 +271,95 @@ export default function Servicios() {
           {/* Vídeo */}
           <div className="rounded-2xl overflow-hidden border border-zinc-800 bg-black/60 kv-glass-soft">
             <VideoPlayer src={heroVideo} poster={heroPoster} label="Reel de trabajo" />
+          </div>
+        </div>
+      </section>
+
+      {/* Servicios principales */}
+      <section className="border-t border-zinc-900 bg-zinc-950">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-10">
+          <header className="space-y-2">
+            <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
+              Servicios
+            </p>
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              Cuatro líneas claras para resolver tu producción.
+            </h2>
+            <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
+              Cada servicio está pensado como bloque independiente, pero encajan
+              entre sí para construir piezas sólidas, coherentes y listas para
+              publicar.
+            </p>
+          </header>
+
+          <div className="grid gap-6 lg:grid-cols-2">
+            {mainServices.map((service, index) => (
+              <article
+                key={service.id}
+                className="group relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/70 kv-glass-soft"
+              >
+                <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute -top-24 -right-10 h-40 w-40 rounded-full bg-amber-500/12 blur-3xl" />
+                  <div className="absolute -bottom-24 -left-10 h-44 w-44 rounded-full bg-amber-400/8 blur-3xl" />
+                </div>
+
+                <div className="relative z-10 px-6 py-8 md:px-8 md:py-9 space-y-6">
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
+                      Servicio {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <span className="text-[11px] text-zinc-500">
+                      {service.id.replaceAll("-", " ")}
+                    </span>
+                  </div>
+
+                  <div className="space-y-3">
+                    <h3 className="text-xl md:text-2xl font-semibold text-zinc-50">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-zinc-300">
+                      {service.intro}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div className="space-y-3">
+                      <p className="text-[11px] uppercase tracking-[0.3em] text-zinc-400">
+                        {service.usageTitle}
+                      </p>
+                      <ul className="space-y-2 text-sm text-zinc-200/90">
+                        {service.usage.map((item) => (
+                          <li key={item} className="flex items-start gap-3">
+                            <span className="mt-2 inline-block h-[2px] w-4 rounded-full bg-amber-300" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {service.includes.length > 0 && (
+                      <div className="space-y-3">
+                        <p className="text-[11px] uppercase tracking-[0.3em] text-zinc-400">
+                          {service.includesTitle}
+                        </p>
+                        <ul className="space-y-2 text-sm text-zinc-200/90">
+                          {service.includes.map((item) => (
+                            <li key={item} className="flex items-start gap-3">
+                              <span className="mt-2 inline-block h-[2px] w-4 rounded-full bg-amber-300" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+
+                  <p className="text-sm text-amber-100/90 border-t border-amber-300/10 pt-4">
+                    {service.result}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
