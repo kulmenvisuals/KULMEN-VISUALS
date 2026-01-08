@@ -56,19 +56,18 @@ export default function SobreMi() {
 
             <p className="text-zinc-300 text-sm md:text-base lg:text-[17px] mb-4 max-w-xl leading-relaxed">
               Soy creadora audiovisual y piloto de drones FPV. Trabajo para marcas,
-              eventos y proyectos culturales que necesitan vídeo profesional desde la conceptualización hasta la edición..
+              eventos y proyectos culturales que necesitan vídeo profesional desde la conceptualización hasta la edición.
             </p>
 
             <p className="text-zinc-400 text-sm md:text-base lg:text-[17px] mb-4 max-w-xl leading-relaxed">
               Cubro todo el proceso: definición del proyecto, guion básico,
               planificación de rodaje, grabación con cámara y dron FPV, y postproducción final (montaje, color, sonido y grafismos) con entregas listas para publicar.
-
             </p>
 
             <p className="text-zinc-500 text-xs md:text-sm lg:text-[15px] max-w-xl leading-relaxed">
               Mi foco es que cada pieza tenga intención, impacte y genere una repercusión positiva para mejorar
               la percepción de marca y generar resultados medibles en comunicación (más atención, más confianza, más acción).
-
+            </p>
 
             {/* Etiquetas rápidas */}
             <div className="mt-6 flex flex-wrap gap-2 text-xs md:text-[13px]">
