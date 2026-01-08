@@ -10,7 +10,7 @@ const clientLogos = [
   { name: "Cobre San Rafael", src: "/images/logo-cobre-san-rafael.jpg" },
   { name: "Norvento Technpower", src: "/images/logo-norvento-technpower.jpg" },
   { name: "Banca March", src: "/images/logo-banca-march.webp" },
-]
+].reverse()
 
 export default function Portfolio() {
   const filtered = useMemo(() => {
@@ -53,8 +53,8 @@ export default function Portfolio() {
       </section>
 
       {/* Clientes */}
-      <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20">
-        <div className="flex flex-col gap-6 md:gap-10">
+      <section className="max-w-6xl mx-auto px-4 py-16 md:py-20 min-h-[70vh] flex items-center">
+        <div className="flex flex-col gap-6 md:gap-10 w-full">
           <div>
             <h2 className="kv-section-title mb-3">
               Clientes con los que he trabajado
