@@ -219,7 +219,7 @@ export default function ProjectDetail() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary">
+            <Link to="/contacto" className="kv-button-primary kv-button-accent">
               Hablemos de tu proyecto
             </Link>
           </div>

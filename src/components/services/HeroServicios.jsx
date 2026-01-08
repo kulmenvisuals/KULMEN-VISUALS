@@ -32,7 +32,7 @@ export default function HeroServicios() {
           <a href="#proceso" className="px-5 py-3 rounded-lg bg-amber-400 text-black font-semibold hover:bg-amber-300 transition">
             Ver cómo trabajamos
           </a>
-          <Link to="/contacto" className="px-5 py-3 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 transition">
+          <Link to="/contacto" className="kv-button-primary kv-button-accent">
             Cuéntanos tu idea
           </Link>
         </motion.div>

@@ -26,7 +26,7 @@ export default function Footer() {
 
           <Link
             to="/contacto"
-            className="inline-flex items-center rounded-full px-4 py-2 text-xs md:text-sm font-semibold bg-amber-400 text-black hover:bg-amber-300 transition shadow-sm"
+            className="kv-button-primary kv-button-accent"
           >
             Hablemos de tu proyecto
           </Link>
