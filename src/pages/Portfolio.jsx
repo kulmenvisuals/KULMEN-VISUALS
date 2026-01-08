@@ -53,8 +53,8 @@ export default function Portfolio() {
       </section>
 
       {/* Clientes */}
-      <section className="max-w-6xl mx-auto px-4 py-16 md:py-20 min-h-[70vh] flex items-center">
-        <div className="flex flex-col gap-6 md:gap-10 w-full">
+      <section className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <div className="flex flex-col gap-6 md:gap-10">
           <div>
             <h2 className="kv-section-title mb-3">
               Clientes con los que he trabajado
