@@ -17,7 +17,10 @@ export default function Footer() {
               className="h-10 w-auto"
             />
             <p className="text-xs text-zinc-500 mt-2">
-              Creación audiovisual con mirada cinematográfica: cine, FPV, eventos y proyectos culturales desde Galicia.
+              Producción audiovisual con FPV cinematográfico en Galicia.
+            </p>
+            <p className="text-xs text-zinc-500 mt-2">
+              Vídeo para marcas, eventos y espacios que necesitan comunicar con impacto y criterio.
             </p>
           </div>
 
@@ -70,19 +73,16 @@ export default function Footer() {
           </h2>
           <div className="flex flex-wrap gap-2 text-[11px]">
             <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
-              Cine &amp; publicidad
+              FPV profesional
             </span>
             <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
-              FPV profesional
+              Vídeo &amp; publicidad
             </span>
             <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
               Eventos &amp; deporte
             </span>
             <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
-              Turismo &amp; territorio
-            </span>
-            <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
-              Contenido con IA
+              Turismo
             </span>
           </div>
         </div>
@@ -91,8 +91,9 @@ export default function Footer() {
       {/* Franja inferior */}
       <div className="border-t border-zinc-900">
         <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="text-[11px] text-zinc-600">© {year} Kulmen Visuals</p>
           <p className="text-[11px] text-zinc-600">
-            © {year} Kulmen Visuals. Hecho en Galicia.
+            Aviso legal · Política de privacidad · Cookies
           </p>
           <div className="flex w-full items-center justify-between gap-3 text-[11px] text-zinc-600 md:w-auto md:justify-end">
             <a
