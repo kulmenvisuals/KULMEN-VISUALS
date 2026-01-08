@@ -223,6 +223,8 @@ export default function Servicios() {
 
   const [faseActiva, setFaseActiva] = useState(fasesList[0]?.id ?? "prepro")
   const fase = fasesList.find((f) => f.id === faseActiva) ?? fasesList[0] ?? {}
+  const phaseBlockClass =
+    "rounded-2xl border border-zinc-800 bg-zinc-900/60 kv-glass-soft px-4 py-4 md:px-5 md:py-5"
 
   return (
     <main className="bg-zinc-950 text-zinc-100">
@@ -330,16 +332,64 @@ export default function Servicios() {
         </div>
       </section>
 
+      {/* ESPECIALIDADES – estilo “antes”, títulos grandes + hover */}
+      <section className="border-t border-zinc-900 bg-zinc-950">
+        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-8">
+          <header className="space-y-2">
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              ¿Para qué tipo de proyectos encajamos mejor?
+            </h2>
+            <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
+              Desde cine y publicidad hasta turismo y cultura. Adaptamos el lenguaje
+              visual y el ritmo al contexto de cada pieza.
+            </p>
+          </header>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {especialidadesList.map((card) => (
+              <article
+                key={card.id}
+                className="relative rounded-[32px] overflow-hidden kv-glass-soft group
+                           transition-transform duration-300 ease-out hover:-translate-y-1.5"
+              >
+                {/* Glow en hover */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute -top-24 -left-10 w-40 h-40 bg-amber-400/18 blur-3xl" />
+                  <div className="absolute -bottom-24 -right-10 w-44 h-44 bg-amber-500/10 blur-3xl" />
+                </div>
+
+                <div className="relative z-10 px-6 pt-8 pb-7 md:px-7 md:pt-9 md:pb-8">
+                  <p className="text-[11px] md:text-xs tracking-[0.35em] text-amber-300/80 uppercase mb-3">
+                    ESPECIALIDAD
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-semibold text-zinc-50 mb-4">
+                    {card.titulo}
+                  </h3>
+
+                  <ul className="space-y-3 text-sm md:text-base text-zinc-100/90">
+                    {card.bullets.map((b, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="mt-2 inline-block w-5 h-[2px] rounded-full bg-amber-300" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROCESO: prepro / pro / post / IA */}
       <section className="max-w-6xl mx-auto px-4 py-16 space-y-8">
         <header className="space-y-2">
           <h2 className="text-2xl md:text-3xl font-semibold">
-            Un proceso completo, fase a fase.
+            Proceso audiovisual completo: de la idea a la entrega.
           </h2>
           <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
-            No solo grabamos: pensamos, planificamos y cerramos la pieza contigo.
-            Puedes entrar en cualquier fase, pero el resultado es mejor cuando
-            recorremos el camino completo.
+            Preproducción, rodaje, postproducción y edición con IA cuando aporta
+            velocidad y consistencia al resultado final.
           </p>
         </header>
 
@@ -380,83 +430,85 @@ export default function Servicios() {
               </p>
             )}
 
+            {Array.isArray(fase.bullets) && fase.bullets.length > 0 && (
+              <div className={phaseBlockClass}>
+                <ul className="grid gap-2 text-sm md:text-base text-zinc-200/90">
+                  {fase.bullets.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-2 inline-block h-[2px] w-4 rounded-full bg-amber-300" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {/* Toggles (prepro) */}
             {Array.isArray(fase.toggles) && fase.toggles.length > 0 && (
-              <div className="grid gap-3 md:grid-cols-2">
-                {fase.toggles.map((t) => (
-                  <div
-                    key={t.id}
-                    className="rounded-xl border border-zinc-800 bg-zinc-900/60 px-4 py-3 kv-glass-soft"
-                  >
-                    <p className="text-sm font-medium text-amber-200">{t.label}</p>
-                    <p className="text-xs text-zinc-400">{t.desc}</p>
-                  </div>
-                ))}
+              <div className={phaseBlockClass}>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {fase.toggles.map((t) => (
+                    <div
+                      key={t.id}
+                      className="rounded-xl border border-zinc-800/80 bg-zinc-900/70 px-4 py-3"
+                    >
+                      <p className="text-sm font-medium text-amber-200">{t.label}</p>
+                      <p className="text-xs text-zinc-400">{t.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
             {/* Modos (producción) */}
             {Array.isArray(fase.modos) && fase.modos.length > 0 && (
-              <div className="flex flex-wrap gap-3">
-                {fase.modos.map((m) => (
-                  <div
-                    key={m.id}
-                    className="rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2"
-                  >
-                    <p className="text-xs font-medium text-amber-200">{m.label}</p>
-                    <p className="text-[11px] text-zinc-400">{m.desc}</p>
-                  </div>
-                ))}
+              <div className={phaseBlockClass}>
+                <div className="flex flex-wrap gap-3">
+                  {fase.modos.map((m) => (
+                    <div
+                      key={m.id}
+                      className="rounded-full border border-zinc-700 bg-zinc-900/60 px-4 py-2"
+                    >
+                      <p className="text-xs font-medium text-amber-200">{m.label}</p>
+                      <p className="text-[11px] text-zinc-400">{m.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
             {/* Before/After (postproducción) */}
             {fase.beforeAfter && (
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-2">
-                  <p className="text-xs font-semibold text-zinc-400 uppercase">Antes</p>
-                  <div className="rounded-xl overflow-hidden border border-zinc-800">
-                    <img
-                      src={fase.beforeAfter.before}
-                      alt="Antes de corrección de color"
-                      className="w-full h-full object-cover"
-                    />
+              <div className={phaseBlockClass}>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold text-zinc-400 uppercase">
+                      Antes
+                    </p>
+                    <div className="rounded-xl overflow-hidden border border-zinc-800">
+                      <img
+                        src={fase.beforeAfter.before}
+                        alt="Antes de corrección de color"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-xs font-semibold text-zinc-400 uppercase">
-                    Después
-                  </p>
-                  <div className="rounded-xl overflow-hidden border border-amber-400/70">
-                    <img
-                      src={fase.beforeAfter.after}
-                      alt="Después de corrección de color"
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold text-zinc-400 uppercase">
+                      Después
+                    </p>
+                    <div className="rounded-xl overflow-hidden border border-amber-400/70">
+                      <img
+                        src={fase.beforeAfter.after}
+                        alt="Después de corrección de color"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Presets IA */}
-            {Array.isArray(fase.presets) && fase.presets.length > 0 && (
-              <div className="space-y-3">
-                <div className="flex flex-wrap gap-3">
-                  {fase.presets.map((p) => (
-                    <div
-                      key={p.id}
-                      className="rounded-xl border border-violet-500/50 bg-violet-950/40 px-4 py-3"
-                    >
-                      <p className="text-xs font-semibold text-violet-200">{p.label}</p>
-                      <p className="text-[11px] text-violet-200/80">{p.desc}</p>
-                    </div>
-                  ))}
-                </div>
-                {fase.nota && (
-                  <p className="text-[11px] text-violet-200/70">{fase.nota}</p>
-                )}
-              </div>
-            )}
           </motion.div>
         </div>
       </section>
@@ -536,55 +588,6 @@ export default function Servicios() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ESPECIALIDADES – estilo “antes”, títulos grandes + hover */}
-      <section className="border-t border-zinc-900 bg-zinc-950">
-        <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-8">
-          <header className="space-y-2">
-            <h2 className="text-2xl md:text-3xl font-semibold">
-              ¿Para qué tipo de proyectos encajamos mejor?
-            </h2>
-            <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
-              Desde cine y publicidad hasta turismo y cultura. Adaptamos el lenguaje
-              visual y el ritmo al contexto de cada pieza.
-            </p>
-          </header>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {especialidadesList.map((card) => (
-              <article
-                key={card.id}
-                className="relative rounded-[32px] overflow-hidden kv-glass-soft group
-                           transition-transform duration-300 ease-out hover:-translate-y-1.5"
-              >
-                {/* Glow en hover */}
-                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute -top-24 -left-10 w-40 h-40 bg-amber-400/18 blur-3xl" />
-                  <div className="absolute -bottom-24 -right-10 w-44 h-44 bg-amber-500/10 blur-3xl" />
-                </div>
-
-                <div className="relative z-10 px-6 pt-8 pb-7 md:px-7 md:pt-9 md:pb-8">
-                  <p className="text-[11px] md:text-xs tracking-[0.35em] text-amber-300/80 uppercase mb-3">
-                    ESPECIALIDAD
-                  </p>
-                  <h3 className="text-xl md:text-2xl font-semibold text-zinc-50 mb-4">
-                    {card.titulo}
-                  </h3>
-
-                  <ul className="space-y-3 text-sm md:text-base text-zinc-100/90">
-                    {card.bullets.map((b, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span className="mt-2 inline-block w-5 h-[2px] rounded-full bg-amber-300" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
             ))}
           </div>
         </div>

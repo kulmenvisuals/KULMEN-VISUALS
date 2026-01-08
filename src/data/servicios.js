@@ -78,31 +78,15 @@ export const fases = [
   },
   {
     id: "ia",
-    titulo: "Apoyo con IA",
-    subtitulo: "Más material, mismo esfuerzo",
+    titulo: "Edición con IA",
+    subtitulo: "Extra estratégico",
     texto:
-      "Uso IA solo cuando mejora el proceso: para explorar estilos, generar variantes de contenido a partir del material grabado o generar contenido íntegro con IA .",
-    presets: [
-      {
-        id: "mood",
-        label: "Moodboards rápidos",
-        desc: "Explorar estilos visuales antes de rodar.",
-      },
-      {
-        id: "story",
-        label: "Storyboards ligeros",
-        desc: "Previsualizar escenas clave para agilizar la producción.",
-      },
-      {
-        id: "variaciones",
-        label: "Variaciones de contenido",
-        desc: "Ideas de cortes, formatos y adaptaciones para distintos canales.",
-      },
-      {
-        id: "contenido",
-        label: "Creación de contenido 100% IA",
-        desc: "Contenido generado mediante IA, imágenes, animaciones, vídeos...",
-      },
+      "IA aplicada para acelerar entregas, crear variantes y sumar recursos visuales sin perder coherencia con la pieza principal.",
+    bullets: [
+      "Generación de vídeo y animaciones para reforzar mensajes",
+      "Optimización de procesos y versionado por formato",
+      "Variantes creativas para testing y campañas",
+      "Subtítulos y adaptaciones multiidioma cuando hace falta",
     ],
   },
 ]
