@@ -507,10 +507,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contacto" className="kv-button-primary">
-              Comencemos
-            </Link>
-            <Link to="/proyectos" className="kv-button-secondary">
-              Ver portfolio
+              Pedir presupuesto
             </Link>
           </div>
         </div>
