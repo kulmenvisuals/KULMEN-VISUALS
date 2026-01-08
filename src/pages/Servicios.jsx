@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
-import { Camera, Drone, Scissors, Video } from "lucide-react"
+import { Camera, Drone, Heart, Scissors, Video } from "lucide-react"
 import { fases, especialidades } from "../data/servicios.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 
@@ -170,6 +170,7 @@ const mainServices = [
     id: "fpv-cinematografico",
     title: "FPV cinematográfico",
     icon: Drone,
+    iconClassName: "h-6 w-6",
     intro:
       "Grabación aérea dinámica con drones FPV para generar movimiento, inmersión y continuidad visual.",
     usage: [
@@ -205,7 +206,7 @@ const mainServices = [
   {
     id: "contenido-redes",
     title: "Contenido para redes",
-    icon: Video,
+    icon: Heart,
     intro:
       "Creación de piezas de vídeo pensadas específicamente para redes sociales, a partir de un enfoque claro y un material bien planteado desde el rodaje.",
     usage: [
@@ -291,7 +292,9 @@ export default function Servicios() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-amber-400/30 bg-amber-400/10 text-amber-200">
-                        <service.icon className="h-5 w-5" />
+                        <service.icon
+                          className={service.iconClassName ?? "h-5 w-5"}
+                        />
                       </span>
                       <h3 className="text-xl md:text-2xl font-semibold text-zinc-50">
                         {service.title}
