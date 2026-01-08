@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const nav = [
-  { to: "/", label: "Inicio" },
   { to: "/proyectos", label: "Proyectos" },
   { to: "/servicios", label: "Servicios" },
   { to: "/sobre-mi", label: "Sobre mí" },
