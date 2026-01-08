@@ -113,9 +113,6 @@ export default function Home() {
             <Link to="/proyectos" className="kv-button-primary">
               Ver proyectos
             </Link>
-            <Link to="/servicios" className="kv-button-secondary">
-              Ver cómo trabajo
-            </Link>
           </div>
 
           <form
