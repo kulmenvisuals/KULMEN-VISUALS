@@ -328,7 +328,8 @@ export default function Home() {
               Proyectos con los que trabajo
             </h2>
             <p className="text-sm text-zinc-400 max-w-2xl">
-              Colaboraciones pensadas para comunicar y generar impacto real.
+              Trabajo con marcas, proyectos y eventos que necesitan una mirada cercana
+              y una producción ágil.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
@@ -408,8 +409,8 @@ export default function Home() {
             </div>
             <div className="text-sm text-zinc-400 max-w-sm">
               <p>
-                Trabajo con marcas, proyectos y eventos que necesitan una
-                mirada cercana y una producción ágil.
+                Planifico cada etapa para que el rodaje fluya, la edición sea ágil
+                y el resultado final cumpla el objetivo.
               </p>
             </div>
           </div>
