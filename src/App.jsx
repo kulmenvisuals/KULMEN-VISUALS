@@ -9,17 +9,6 @@ function App() {
     <div className="min-h-screen bg-zinc-950 text-zinc-50 flex flex-col">
       <Header currentPath={location.pathname} />
 
-      <div className="kv-marquee">
-        <div className="kv-marquee-track">
-          <span className="kv-marquee-text">
-            Eleva tu marca con contenido de altura · Kulmen Visuals.
-          </span>
-          <span className="kv-marquee-text" aria-hidden="true">
-            Eleva tu marca con contenido de altura · Kulmen Visuals.
-          </span>
-        </div>
-      </div>
-
       <main className="flex-1">
         <Outlet />
       </main>

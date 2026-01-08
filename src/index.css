@@ -96,39 +96,4 @@
     backdrop-filter: blur(18px);
   }
 
-  .kv-marquee {
-    @apply border-b border-zinc-800/60 bg-zinc-950/50 backdrop-blur-md overflow-hidden;
-  }
-
-  .kv-marquee-track {
-    @apply py-2;
-    display: flex;
-    align-items: center;
-    width: max-content;
-    white-space: nowrap;
-    animation: kv-marquee 12s linear infinite;
-  }
-
-  .kv-marquee-text {
-    @apply text-[11px] md:text-xs uppercase tracking-[0.3em] text-amber-200/90;
-    padding-right: 3rem;
-    text-shadow:
-      0 0 10px rgba(251, 191, 36, 0.35),
-      0 0 18px rgba(251, 191, 36, 0.2);
-  }
-}
-
-@keyframes kv-marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .kv-marquee-track {
-    animation: none;
-  }
 }
