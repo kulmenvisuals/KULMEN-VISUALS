@@ -277,7 +277,7 @@ export default function Servicios() {
             {mainServices.map((service) => (
               <article
                 key={service.id}
-                className="relative overflow-hidden rounded-3xl border border-zinc-800/70 bg-zinc-950/70 kv-glass-soft"
+                className="relative overflow-hidden rounded-3xl border border-zinc-800/70 bg-zinc-950/70 kv-glass-soft backdrop-blur transition-transform duration-300 hover:scale-[1.01] hover:border-zinc-700"
               >
                 <div className="absolute left-0 top-0 h-full w-[3px] bg-amber-400/50" />
                 <div className="relative z-10 px-6 py-7 md:px-8 md:py-8 space-y-5">
