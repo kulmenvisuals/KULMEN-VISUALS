@@ -105,9 +105,42 @@ export default function Home() {
             <span className="text-zinc-200"> con FPV cinematográfico en Galicia.</span>
           </h1>
           <p className="max-w-xl text-zinc-300 mb-8 text-sm md:text-base">
-            Producción audiovisual con FPV cinematográfico en Galicia.  guion, rodaje, FPV y postproducción para marcas,
-            eventos y proyectos que quieren destacar y diferenciarse.
+            Vídeos para marcas y eventos que necesitan destacar de verdad. 
+            Rodaje, FPV y edición pensados para redes, campañas y web. 
           </p>
+          <ul className="max-w-xl text-sm md:text-base text-zinc-200 space-y-4 mb-8">
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-amber-300/80 shadow-[0_0_10px_rgba(251,191,36,0.35)]" />
+              <div>
+                <p className="font-medium">
+                  Impacto visual desde el primer segundo
+                </p>
+                <p className="text-zinc-400 text-xs md:text-sm">
+                  (movimiento, ritmo y planos pensados para retener)
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-amber-300/80 shadow-[0_0_10px_rgba(251,191,36,0.35)]" />
+              <div>
+                <p className="font-medium">Contenido diseñado para publicarse</p>
+                <p className="text-zinc-400 text-xs md:text-sm">
+                  (formatos, duración y encuadres adaptados a cada canal)
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-2 h-2 w-2 rounded-full bg-amber-300/80 shadow-[0_0_10px_rgba(251,191,36,0.35)]" />
+              <div>
+                <p className="font-medium">
+                  Producción completa, sin intermediarios ni fricción
+                </p>
+                <p className="text-zinc-400 text-xs md:text-sm">
+                  (planificación, rodaje y edición en un solo flujo)
+                </p>
+              </div>
+            </li>
+          </ul>
 
           <div className="flex flex-wrap gap-3">
             <Link to="/proyectos" className="kv-button-primary">
