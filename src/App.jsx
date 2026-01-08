@@ -14,6 +14,9 @@ function App() {
           <span className="kv-marquee-text">
             Eleva tu marca con contenido de altura · Kulmen Visuals.
           </span>
+          <span className="kv-marquee-text" aria-hidden="true">
+            Eleva tu marca con contenido de altura · Kulmen Visuals.
+          </span>
         </div>
       </div>
 

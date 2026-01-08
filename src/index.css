@@ -102,13 +102,16 @@
 
   .kv-marquee-track {
     @apply py-2;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    width: max-content;
     white-space: nowrap;
-    animation: kv-marquee 18s linear infinite;
+    animation: kv-marquee 12s linear infinite;
   }
 
   .kv-marquee-text {
     @apply text-[11px] md:text-xs uppercase tracking-[0.3em] text-amber-200/90;
+    padding-right: 3rem;
     text-shadow:
       0 0 10px rgba(251, 191, 36, 0.35),
       0 0 18px rgba(251, 191, 36, 0.2);
@@ -117,10 +120,10 @@
 
 @keyframes kv-marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 

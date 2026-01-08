@@ -84,6 +84,9 @@ export default function Footer() {
             <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
               Turismo
             </span>
+            <span className="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300">
+              Edición de vídeo
+            </span>
           </div>
         </div>
       </div>
