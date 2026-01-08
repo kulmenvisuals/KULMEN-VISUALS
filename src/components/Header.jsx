@@ -16,13 +16,12 @@ export default function Header() {
     <header className="sticky top-0 z-50 kv-header">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center" aria-label="Kulmen Visuals">
           <img
             src="/logo-kulmen-visuals.png"
-            alt="Kulmen Visuals"
+            alt=""
             className="h-10 md:h-12 w-auto"
           />
-          <span className="sr-only">Kulmen Visuals</span>
         </Link>
 
         {/* Navegación desktop */}

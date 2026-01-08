@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <img
               src="/logo-kulmen-visuals.png"
-              alt="Kulmen Visuals"
+              alt=""
               className="h-10 w-auto"
             />
             <p className="text-xs text-zinc-500 mt-2">
