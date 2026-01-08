@@ -204,15 +204,14 @@ export default function Home() {
           <div>
             <h2 className="text-xl md:text-2xl font-semibold mb-2">Últimos trabajos</h2>
             <p className="text-sm text-zinc-400 max-w-md">
-              Una selección de proyectos recientes con dron FPV, cobertura de eventos y piezas
-              para marcas en Galicia.
+              Proyectos audiovisuales para marcas, eventos y espacios en Galicia.
             </p>
           </div>
           <Link
             to="/proyectos"
-            className="text-sm text-amber-300 hover:text-amber-200 underline underline-offset-4"
+            className="kv-button-secondary text-sm"
           >
-            Ver todos los proyectos
+            Ver proyectos completos
           </Link>
         </div>
 
@@ -237,7 +236,7 @@ export default function Home() {
               Servicios de producción audiovisual
             </h2>
             <p className="text-sm text-zinc-400 max-w-2xl">
-              Producción integral con foco narrativo, ritmo y acabado profesional.
+              Producción integral con foco narrativo, fluidez y acabado profesional.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -343,8 +342,9 @@ export default function Home() {
                   Marcas
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-400 mt-2">
-                  Vídeos de producto y campañas pensados para construir imagen,
-                  lanzar novedades y generar contenido usable en redes y web.
+                  Vídeos de producto y campañas pensados para construir imagen de marca,
+                  lanzar novedades y generar contenido listo para redes y web.
+
                 </p>
               </div>
             </article>
@@ -361,8 +361,8 @@ export default function Home() {
                   Eventos
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-400 mt-2">
-                  Piezas que amplifican el evento: teasers previos, contenido durante
-                  la acción y aftermovies que prolongan su impacto.
+                  Piezas que amplifican el evento: teasers previos, contenido durante la acción y aftermovies que prolongan su impacto en el tiempo.
+
                 </p>
               </div>
             </article>
@@ -379,8 +379,10 @@ export default function Home() {
                   Espacios
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-400 mt-2">
-                  Flythroughs y visitas inmersivas para mostrar un lugar con impacto,
-                  claridad y diferenciación.
+                  Flythroughs y visitas inmersivas pensadas para inmobiliarias, promotoras,
+                   alojamientos turísticos y negocios que necesitan mostrar sus espacios con claridad, 
+                   impacto y diferenciación.
+
                 </p>
               </div>
             </article>
