@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Film, Plane, Scissors, Share2 } from 'lucide-react'
+import { Film, Plane, Scissors, Share2, Briefcase, Calendar, Building2 } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
 
@@ -338,13 +338,16 @@ export default function Home() {
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
               <div className="relative">
-              <h3 className="text-sm md:text-base font-semibold text-zinc-100">
-                Marcas
-              </h3>
-              <p className="text-xs md:text-sm text-zinc-400 mt-2">
-                Vídeos de producto y campañas pensados para construir imagen,
-                lanzar novedades y generar contenido usable en redes y web.
-              </p>
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Briefcase size={16} />
+                </div>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                  Marcas
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                  Vídeos de producto y campañas pensados para construir imagen,
+                  lanzar novedades y generar contenido usable en redes y web.
+                </p>
               </div>
             </article>
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
@@ -353,13 +356,16 @@ export default function Home() {
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
               <div className="relative">
-              <h3 className="text-sm md:text-base font-semibold text-zinc-100">
-                Eventos
-              </h3>
-              <p className="text-xs md:text-sm text-zinc-400 mt-2">
-                Piezas que amplifican el evento: teasers previos, contenido durante
-                la acción y aftermovies que prolongan su impacto.
-              </p>
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Calendar size={16} />
+                </div>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                  Eventos
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                  Piezas que amplifican el evento: teasers previos, contenido durante
+                  la acción y aftermovies que prolongan su impacto.
+                </p>
               </div>
             </article>
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
@@ -368,16 +374,22 @@ export default function Home() {
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
               <div className="relative">
-              <h3 className="text-sm md:text-base font-semibold text-zinc-100">
-                Espacios
-              </h3>
-              <p className="text-xs md:text-sm text-zinc-400 mt-2">
-                Flythroughs y visitas inmersivas para mostrar un lugar con impacto,
-                claridad y diferenciación.
-              </p>
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Building2 size={16} />
+                </div>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                  Espacios
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                  Flythroughs y visitas inmersivas para mostrar un lugar con impacto,
+                  claridad y diferenciación.
+                </p>
               </div>
             </article>
           </div>
+          <p className="text-sm md:text-base text-zinc-300">
+            El objetivo manda. La técnica se adapta para cumplirlo.
+          </p>
         </div>
       </section>
 
