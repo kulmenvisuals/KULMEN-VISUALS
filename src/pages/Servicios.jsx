@@ -49,7 +49,7 @@ const equipmentGroups = [
         name: "GEPRC Cinelog 30 V3",
         desc: "Cinewhoop estable para interiores y vuelos cercanos.",
         tags: ["Eventos indoor", "Recorridos", "Espacios reducidos"],
-        image: `${assetBase}images/geprc-cinelog-30-v3.jpg`,
+        image: `${assetBase}images/geprc-cinelog-30-v3.png`,
       },
     ],
   },
