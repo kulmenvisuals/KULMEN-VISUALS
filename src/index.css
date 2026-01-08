@@ -79,12 +79,12 @@
   .kv-button-accent {
     background: linear-gradient(
       135deg,
-      rgba(251, 191, 36, 0.7),
-      rgba(249, 115, 22, 0.6)
+      rgba(251, 191, 36, 0.88),
+      rgba(249, 115, 22, 0.82)
     );
-    border-color: rgba(251, 191, 36, 0.6);
+    border: 1px solid transparent;
     color: rgb(10, 10, 12);
-    box-shadow: 0 18px 40px rgba(251, 191, 36, 0.25);
+    box-shadow: 0 18px 40px rgba(251, 191, 36, 0.28);
   }
 
   /* Chips / tags */
