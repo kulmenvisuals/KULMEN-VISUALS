@@ -67,17 +67,16 @@ export default function Portfolio() {
             {clientLogos.map((client) => (
               <div
                 key={client.name}
-                className="kv-glass-soft rounded-2xl border border-white/10 px-4 py-6 flex flex-col items-center justify-center text-center"
+                className="group rounded-2xl border border-white/10 bg-zinc-950/40 px-4 py-5 flex flex-col items-center justify-center text-center gap-3 transition hover:border-amber-300/30"
               >
-                <div className="h-12 w-12 md:h-14 md:w-14 rounded-full border border-amber-300/25 bg-zinc-950/60 flex items-center justify-center overflow-hidden">
+                <div className="h-12 md:h-14 w-full flex items-center justify-center">
                   <img
                     src={client.src}
                     alt={client.name}
-                    className="h-full w-full object-contain p-2"
+                    className="h-full w-auto max-w-[120px] md:max-w-[140px] object-contain grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100"
                     loading="lazy"
                   />
                 </div>
-                <p className="kv-caption text-zinc-400 mt-3">{client.name}</p>
               </div>
             ))}
           </div>
