@@ -80,7 +80,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="text-zinc-50">
+    <div className="bg-zinc-950 text-zinc-50">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
@@ -95,16 +95,13 @@ export default function Home() {
           loop
           playsInline
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/85" />
-        <div className="pointer-events-none absolute inset-0 kv-grid-overlay opacity-25" />
-        <div className="pointer-events-none absolute -top-24 right-6 h-56 w-56 rounded-full bg-amber-400/10 blur-3xl kv-float" />
-        <div className="pointer-events-none absolute -bottom-20 left-4 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl kv-float-slow" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/85" />
 
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
-          <p className="kv-eyebrow text-zinc-300 mb-4">
+          <p className="text-sm uppercase tracking-[0.25em] text-zinc-300 mb-4">
             Kulmen Visuals · Galicia
           </p>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
             Producción audiovisual <br className="hidden md:block" />
             <span className="text-zinc-200"> con FPV cinematográfico en Galicia.</span>
           </h1>
@@ -135,7 +132,7 @@ export default function Home() {
                 name="email"
                 required
                 placeholder="tu@email.com"
-                className="kv-input-soft md:flex-1"
+                className="w-full md:flex-1 rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
                 aria-label="Correo electrónico"
               />
               <input
@@ -143,7 +140,7 @@ export default function Home() {
                 name="interes"
                 required
                 placeholder="¿Qué te interesa?"
-                className="kv-input-soft md:flex-[1.2]"
+                className="w-full md:flex-[1.2] rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
                 aria-label="Interés del proyecto"
               />
               <button type="submit" className="kv-button-primary md:shrink-0">
@@ -156,7 +153,7 @@ export default function Home() {
 
       <section className="max-w-6xl mx-auto px-4 mt-6 md:mt-8 pb-10 md:pb-16">
         <div className="grid gap-4 md:grid-cols-3">
-          <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40">
+          <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
             <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
@@ -170,7 +167,7 @@ export default function Home() {
               </p>
             </div>
           </article>
-          <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40">
+          <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
             <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
@@ -184,7 +181,7 @@ export default function Home() {
               </p>
             </div>
           </article>
-          <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40">
+          <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
             <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
@@ -243,7 +240,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 md:col-span-2">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
               <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
@@ -261,7 +258,7 @@ export default function Home() {
                 </p>
               </div>
             </article>
-            <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 md:col-span-2">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
               <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
@@ -279,7 +276,7 @@ export default function Home() {
                 </p>
               </div>
             </article>
-            <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
               <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
@@ -297,7 +294,7 @@ export default function Home() {
                 </p>
               </div>
             </article>
-            <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
               <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
@@ -331,47 +328,45 @@ export default function Home() {
               y una producción ágil.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
-            <div className="grid gap-4">
-              <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40">
-                <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
-                  <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+          <div className="grid gap-4 md:grid-cols-3">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Briefcase size={16} />
                 </div>
-                <div className="relative">
-                  <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
-                    <Briefcase size={16} />
-                  </div>
-                  <h3 className="text-sm md:text-base font-semibold text-zinc-100">
-                    Marcas
-                  </h3>
-                  <p className="text-xs md:text-sm text-zinc-400 mt-2">
-                    Vídeos de producto y campañas pensados para construir imagen de marca,
-                    lanzar novedades y generar contenido listo para redes y web.
-                  </p>
-                </div>
-              </article>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                  Marcas
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                  Vídeos de producto y campañas pensados para construir imagen de marca,
+                  lanzar novedades y generar contenido listo para redes y web.
 
-              <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40">
-                <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
-                  <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+                </p>
+              </div>
+            </article>
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Calendar size={16} />
                 </div>
-                <div className="relative">
-                  <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
-                    <Calendar size={16} />
-                  </div>
-                  <h3 className="text-sm md:text-base font-semibold text-zinc-100">
-                    Eventos
-                  </h3>
-                  <p className="text-xs md:text-sm text-zinc-400 mt-2">
-                    Piezas que amplifican el evento: teasers previos, contenido durante la acción y aftermovies que prolongan su impacto en el tiempo.
-                  </p>
-                </div>
-              </article>
-            </div>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                  Eventos
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                  Piezas que amplifican el evento: teasers previos, contenido durante la acción y aftermovies que prolongan su impacto en el tiempo.
 
-            <article className="group relative overflow-hidden kv-panel rounded-2xl p-4 md:p-5 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40">
+                </p>
+              </div>
+            </article>
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
               <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
@@ -385,8 +380,9 @@ export default function Home() {
                 </h3>
                 <p className="text-xs md:text-sm text-zinc-400 mt-2">
                   Flythroughs y visitas inmersivas pensadas para inmobiliarias, promotoras,
-                  alojamientos turísticos y negocios que necesitan mostrar sus espacios con claridad,
-                  impacto y diferenciación.
+                   alojamientos turísticos y negocios que necesitan mostrar sus espacios con claridad, 
+                   impacto y diferenciación.
+
                 </p>
               </div>
             </article>
@@ -422,7 +418,7 @@ export default function Home() {
             {serviceTeasers.map((service) => (
               <article
                 key={service.id}
-                className="relative kv-panel rounded-2xl p-4 flex flex-col overflow-hidden group
+                className="relative kv-glass-soft rounded-2xl p-4 flex flex-col overflow-hidden group
                            transition-transform duration-300 ease-out hover:-translate-y-1"
               >
                 {/* Glow hover como en SobreMi */}

@@ -231,19 +231,17 @@ export default function Servicios() {
   const fase = fasesList.find((f) => f.id === faseActiva) ?? fasesList[0] ?? {}
 
   return (
-    <main className="text-zinc-100">
+    <main className="bg-zinc-950 text-zinc-100">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
       {/* HERO: vídeo + copy de servicios */}
       <section className="relative border-b border-zinc-800">
-        <div className="pointer-events-none absolute inset-0 kv-grid-overlay opacity-20" />
-        <div className="pointer-events-none absolute -top-20 right-10 h-48 w-48 rounded-full bg-amber-400/10 blur-3xl kv-float" />
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16 grid gap-10 lg:grid-cols-2 items-center">
           {/* Texto */}
           <div className="space-y-4">
-            <p className="kv-eyebrow">
+            <p className="text-sm uppercase tracking-[0.2em] text-amber-300/80">
               Servicios
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
@@ -260,17 +258,17 @@ export default function Servicios() {
           </div>
 
           {/* Vídeo */}
-          <div className="rounded-3xl overflow-hidden kv-panel bg-black/60">
+          <div className="rounded-2xl overflow-hidden border border-zinc-800 bg-black/60 kv-glass-soft">
             <VideoPlayer src={heroVideo} poster={heroPoster} label="Reel de trabajo" />
           </div>
         </div>
       </section>
 
       {/* Servicios principales */}
-      <section className="border-t border-zinc-900/80">
+      <section className="border-t border-zinc-900 bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-8">
           <header className="space-y-2">
-            <p className="kv-eyebrow">
+            <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
               Servicios
             </p>
             <h2 className="text-2xl md:text-3xl font-semibold">
@@ -285,7 +283,7 @@ export default function Servicios() {
             {mainServices.map((service) => (
               <article
                 key={service.id}
-                className="relative overflow-hidden rounded-3xl kv-panel transition-transform duration-300 hover:scale-[1.01] hover:border-amber-300/30"
+                className="relative overflow-hidden rounded-3xl border border-zinc-800/70 bg-zinc-950/70 kv-glass-soft backdrop-blur transition-transform duration-300 hover:scale-[1.01] hover:border-zinc-700"
               >
                 <div className="absolute left-0 top-0 h-full w-[3px] bg-amber-400/50" />
                 <div className="relative z-10 px-6 py-7 md:px-8 md:py-8 space-y-5">
@@ -346,7 +344,7 @@ export default function Servicios() {
       </section>
 
       {/* ESPECIALIDADES – estilo “antes”, títulos grandes + hover */}
-      <section className="border-t border-zinc-900/80">
+      <section className="border-t border-zinc-900 bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-8">
           <header className="space-y-2">
             <h2 className="text-2xl md:text-3xl font-semibold">
@@ -362,7 +360,7 @@ export default function Servicios() {
             {especialidadesList.map((card) => (
               <article
                 key={card.id}
-                className="relative rounded-[32px] overflow-hidden kv-panel group
+                className="relative rounded-[32px] overflow-hidden kv-glass-soft group
                            transition-transform duration-300 ease-out hover:-translate-y-1.5"
               >
                 {/* Glow en hover */}
@@ -450,10 +448,7 @@ export default function Servicios() {
                     key={item}
                     className="rounded-xl border border-zinc-800/80 bg-zinc-900/60 px-4 py-3"
                   >
-                    <div className="flex items-start gap-3">
-                      <span className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-amber-300" />
-                      <p className="text-sm text-zinc-200/90">{item}</p>
-                    </div>
+                    <p className="text-sm text-zinc-200/90">{item}</p>
                   </div>
                 ))}
               </div>
@@ -524,7 +519,7 @@ export default function Servicios() {
       </section>
 
       {/* Equipo audiovisual */}
-      <section className="border-t border-zinc-900/80">
+      <section className="border-t border-zinc-900/80 bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-10">
           <header className="space-y-2">
             <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
@@ -544,7 +539,7 @@ export default function Servicios() {
             {equipmentGroups.map((group) => (
               <div
                 key={group.id}
-                className="relative overflow-hidden rounded-3xl kv-panel"
+                className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950/70 kv-glass-soft"
               >
                 <div className="pointer-events-none absolute inset-0">
                   <div className="absolute -top-20 right-8 h-40 w-40 rounded-full bg-amber-500/8 blur-3xl" />

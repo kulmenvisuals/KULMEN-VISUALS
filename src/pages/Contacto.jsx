@@ -3,15 +3,10 @@
 export default function Contacto() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-      <div className="relative overflow-hidden kv-panel rounded-[32px] px-6 py-10 md:px-10 md:py-12">
-        <div className="pointer-events-none absolute inset-0 kv-grid-overlay opacity-25" />
-        <div className="pointer-events-none absolute -top-16 right-10 h-44 w-44 rounded-full bg-amber-400/10 blur-3xl kv-float-slow" />
-        <div className="pointer-events-none absolute -bottom-20 left-6 h-52 w-52 rounded-full bg-sky-400/8 blur-3xl kv-float" />
-
-        <div className="relative z-10 grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start">
+      <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start">
         <div className="space-y-6">
           <div className="space-y-3">
-            <p className="kv-eyebrow text-zinc-400">
+            <p className="text-xs uppercase tracking-[0.35em] text-zinc-500">
               Contacto
             </p>
             <h1 className="text-3xl md:text-4xl font-semibold text-zinc-50">
@@ -94,7 +89,7 @@ export default function Contacto() {
                   name="nombre"
                   placeholder="Tu nombre"
                   required
-                  className="kv-input"
+                  className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
                 />
               </div>
 
@@ -111,7 +106,7 @@ export default function Contacto() {
                   type="email"
                   placeholder="tu@email.com"
                   required
-                  className="kv-input"
+                  className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
                 />
               </div>
             </div>
@@ -127,7 +122,7 @@ export default function Contacto() {
                 id="empresa"
                 name="empresa"
                 placeholder="Marca, evento o espacio"
-                className="kv-input"
+                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
               />
               <p className="text-[11px] text-zinc-500 mt-2">
                 Deja este campo opcional si no tienes empresa.
@@ -145,7 +140,7 @@ export default function Contacto() {
                 id="tipo-proyecto"
                 name="tipo_proyecto"
                 required
-                className="kv-select"
+                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
               >
                 <option value="">Selecciona una opción</option>
                 <option value="Marca / Campaña">Marca / Campaña</option>
@@ -196,7 +191,7 @@ export default function Contacto() {
                 id="fecha"
                 name="fecha"
                 placeholder="Ej. marzo · Pontevedra"
-                className="kv-input"
+                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
               />
             </div>
 
@@ -213,18 +208,17 @@ export default function Contacto() {
                 rows="6"
                 required
                 placeholder="Qué quieres comunicar, a quién va dirigido y qué resultado esperas del vídeo."
-                className="kv-textarea"
+                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
               />
             </div>
 
             <button
               type="submit"
-              className="kv-button-primary w-full sm:w-auto"
+              className="w-full sm:w-auto px-5 py-3 rounded-full bg-amber-400 text-black font-semibold text-sm hover:bg-amber-300 transition"
             >
               Enviar solicitud
             </button>
           </form>
-        </div>
         </div>
       </div>
     </div>

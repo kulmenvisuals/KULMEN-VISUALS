@@ -6,7 +6,7 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen text-zinc-50 flex flex-col">
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 flex flex-col">
       <Header currentPath={location.pathname} />
 
       <main className="flex-1">

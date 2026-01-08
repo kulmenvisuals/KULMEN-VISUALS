@@ -32,9 +32,9 @@ export default function Header() {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `relative text-zinc-300 transition after:absolute after:-bottom-2 after:left-0 after:h-[2px]
-                after:w-full after:origin-left after:scale-x-0 after:bg-amber-400/70 after:transition-transform
-                ${isActive ? "text-amber-300 after:scale-x-100" : "hover:text-amber-200 hover:after:scale-x-100"}`
+                `hover:text-amber-300 transition ${
+                  isActive ? "text-amber-400" : "text-zinc-300"
+                }`
               }
             >
               {item.label}
@@ -72,10 +72,8 @@ export default function Header() {
                   to={item.to}
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
-                    `block rounded-xl px-3 py-2 text-sm transition ${
-                      isActive
-                        ? "bg-amber-400/10 text-amber-200"
-                        : "text-zinc-200 hover:bg-white/5"
+                    `block py-2 text-sm ${
+                      isActive ? "text-amber-400" : "text-zinc-200"
                     }`
                   }
                 >

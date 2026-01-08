@@ -81,7 +81,7 @@ export const fases = [
     titulo: "Edición con IA",
     subtitulo: "Extra estratégico",
     texto:
-      "IA como herramienta extra a considerar según el proyecto, siempre con criterio profesional y enfoque en la calidad.",
+      "IA aplicada para acelerar entregas, crear variantes y sumar recursos visuales sin perder coherencia con la pieza principal.",
     bullets: [
       "Generación de vídeo y animaciones para reforzar mensajes",
       "Optimización de procesos y versionado por formato",

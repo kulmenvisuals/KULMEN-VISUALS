@@ -18,7 +18,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <Link to={href} className="group block">
-      <article className="kv-panel rounded-3xl overflow-hidden flex flex-col h-full transition-transform duration-300 group-hover:-translate-y-1">
+      <article className="kv-glass-soft rounded-3xl overflow-hidden flex flex-col h-full transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_24px_60px_rgba(0,0,0,0.75)]">
         <div className="relative aspect-video overflow-hidden">
           {project.thumbnail && (
             <img

@@ -7,7 +7,7 @@ export default function Filters({ types, locations, state, setState }) {
           value={state.q}
           onChange={(e) => setState((s) => ({ ...s, q: e.target.value }))}
           placeholder="Título, cliente…"
-          className="kv-input md:w-64"
+          className="w-full md:w-64 bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2"
         />
       </div>
       <div>
@@ -15,7 +15,7 @@ export default function Filters({ types, locations, state, setState }) {
         <select
           value={state.type}
           onChange={(e) => setState((s) => ({ ...s, type: e.target.value }))}
-          className="kv-select md:w-44"
+          className="w-full md:w-44 bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2"
         >
           <option value="">Todos</option>
           {types.map((t) => (
@@ -30,7 +30,7 @@ export default function Filters({ types, locations, state, setState }) {
         <select
           value={state.location}
           onChange={(e) => setState((s) => ({ ...s, location: e.target.value }))}
-          className="kv-select md:w-44"
+          className="w-full md:w-44 bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2"
         >
           <option value="">Todas</option>
           {locations.map((l) => (
@@ -42,7 +42,7 @@ export default function Filters({ types, locations, state, setState }) {
       </div>
       <button
         onClick={() => setState({ q: "", type: "", location: "" })}
-        className="kv-button-secondary"
+        className="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700"
       >
         Limpiar
       </button>

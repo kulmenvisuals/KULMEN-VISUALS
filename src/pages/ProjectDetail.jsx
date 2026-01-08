@@ -30,7 +30,7 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <main className="text-zinc-50 min-h-screen">
+      <main className="bg-zinc-950 text-zinc-50 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 py-24 space-y-4">
           <h1 className="text-3xl font-bold mb-2">Proyecto no encontrado</h1>
           <p className="text-zinc-400">
@@ -53,7 +53,7 @@ export default function ProjectDetail() {
 
           <Link
             to="/proyectos"
-            className="kv-button-primary mt-6"
+            className="inline-flex mt-6 px-4 py-2 rounded-full bg-amber-400 text-black font-semibold hover:bg-amber-300 transition"
           >
             Volver al portfolio
           </Link>
@@ -68,10 +68,8 @@ export default function ProjectDetail() {
     : null
 
   return (
-    <div className="text-zinc-50 min-h-screen">
-      <main className="relative max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
-        <div className="pointer-events-none absolute inset-0 kv-grid-overlay opacity-15" />
-        <div className="pointer-events-none absolute -top-24 right-6 h-56 w-56 rounded-full bg-amber-400/8 blur-3xl kv-float" />
+    <div className="bg-zinc-950 text-zinc-50 min-h-screen">
+      <main className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
         {/* Migas + volver */}
         <div className="text-xs text-zinc-500 flex items-center gap-2">
           <Link to="/proyectos" className="hover:text-amber-300">
@@ -104,7 +102,7 @@ export default function ProjectDetail() {
           <section>
             {project.youtubeUrl ? (
               // YouTube
-              <div className="aspect-video w-full rounded-3xl overflow-hidden kv-panel bg-black/80">
+              <div className="aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
                 <iframe
                   src={project.youtubeUrl}
                   title={project.title}
@@ -115,7 +113,7 @@ export default function ProjectDetail() {
               </div>
             ) : instagramEmbedUrl ? (
               // Instagram (post / reel)
-              <div className="w-full max-w-md md:max-w-lg mx-auto rounded-3xl overflow-hidden kv-panel bg-black/80">
+              <div className="w-full max-w-md md:max-w-lg mx-auto rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
                 <div className="aspect-[9/16]">
                   <iframe
                     src={instagramEmbedUrl}
@@ -128,7 +126,7 @@ export default function ProjectDetail() {
               </div>
             ) : (
               // Vídeo local como fallback
-              <div className="aspect-video w-full rounded-3xl overflow-hidden kv-panel bg-black/80">
+              <div className="aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
                 <VideoPlayer src={project.videoUrl} poster={project.poster} />
               </div>
             )}
@@ -137,7 +135,7 @@ export default function ProjectDetail() {
 
         {/* Descripción + ficha lateral */}
         <section className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-          <div className="text-sm text-zinc-300 leading-relaxed space-y-4 relative z-10">
+          <div className="text-sm text-zinc-300 leading-relaxed space-y-4">
             {project.description && <p>{project.description}</p>}
             {project.extra && (
               <p className="text-zinc-400 text-sm">{project.extra}</p>
@@ -158,7 +156,7 @@ export default function ProjectDetail() {
             )}
           </div>
 
-          <aside className="text-sm space-y-4 kv-panel rounded-2xl p-5 h-fit">
+          <aside className="text-sm space-y-4">
             {project.client && (
               <div>
                 <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
