@@ -155,7 +155,7 @@ export const projects = [
     images: [],
 
     description:
-      "Tour FPV para Nova Vila Enoturismo orientado a redes sociales, con recorrido inmersivo del espacio y ritmo ágil.",
+      "Tour FPV para Nova Vila Enoturismo orientado a redes sociales, con recorrido inmersivo del espacio.",
   },
 
     // 5) Videoclip: Mamá, Sislah
