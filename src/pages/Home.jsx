@@ -108,40 +108,6 @@ export default function Home() {
             Vídeos para marcas y eventos que necesitan destacar de verdad. 
             Rodaje, FPV y edición pensados para redes, campañas y web. 
           </p>
-          <ul className="max-w-xl text-sm md:text-base text-zinc-200 space-y-4 mb-8">
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-amber-300/80 shadow-[0_0_10px_rgba(251,191,36,0.35)]" />
-              <div>
-                <p className="font-medium">
-                  Impacto visual desde el primer segundo
-                </p>
-                <p className="text-zinc-400 text-xs md:text-sm">
-                  (movimiento, ritmo y planos pensados para retener)
-                </p>
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-amber-300/80 shadow-[0_0_10px_rgba(251,191,36,0.35)]" />
-              <div>
-                <p className="font-medium">Contenido diseñado para publicarse</p>
-                <p className="text-zinc-400 text-xs md:text-sm">
-                  (formatos, duración y encuadres adaptados a cada canal)
-                </p>
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-2 w-2 rounded-full bg-amber-300/80 shadow-[0_0_10px_rgba(251,191,36,0.35)]" />
-              <div>
-                <p className="font-medium">
-                  Producción completa, sin intermediarios ni fricción
-                </p>
-                <p className="text-zinc-400 text-xs md:text-sm">
-                  (planificación, rodaje y edición en un solo flujo)
-                </p>
-              </div>
-            </li>
-          </ul>
-
           <div className="flex flex-wrap gap-3">
             <Link to="/proyectos" className="kv-button-primary">
               Ver proyectos
@@ -184,6 +150,35 @@ export default function Home() {
               </button>
             </div>
           </form>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 pb-10 md:pb-16">
+        <div className="grid gap-4 md:grid-cols-3">
+          <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+            <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+              Impacto visual desde el primer segundo
+            </h3>
+            <p className="text-xs md:text-sm text-zinc-400 mt-2">
+              Movimiento, ritmo y planos pensados para retener.
+            </p>
+          </article>
+          <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+            <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+              Contenido diseñado para publicarse
+            </h3>
+            <p className="text-xs md:text-sm text-zinc-400 mt-2">
+              Formatos, duración y encuadres adaptados a cada canal.
+            </p>
+          </article>
+          <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+            <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+              Producción completa, sin intermediarios ni fricción
+            </h3>
+            <p className="text-xs md:text-sm text-zinc-400 mt-2">
+              Planificación, rodaje y edición en un solo flujo.
+            </p>
+          </article>
         </div>
       </section>
 
