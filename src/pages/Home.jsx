@@ -320,6 +320,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Proyectos con los que trabajo */}
+      <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
+        <div className="flex flex-col gap-6 md:gap-10">
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold mb-3">
+              Proyectos con los que trabajo
+            </h2>
+            <p className="text-sm text-zinc-400 max-w-2xl">
+              Colaboraciones pensadas para comunicar y generar impacto real.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+              <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                Marcas
+              </h3>
+              <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                Vídeos de producto y campañas pensados para construir imagen,
+                lanzar novedades y generar contenido usable en redes y web.
+              </p>
+            </article>
+            <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+              <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                Eventos
+              </h3>
+              <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                Piezas que amplifican el evento: teasers previos, contenido durante
+                la acción y aftermovies que prolongan su impacto.
+              </p>
+            </article>
+            <article className="kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10">
+              <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                Espacios
+              </h3>
+              <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                Flythroughs y visitas inmersivas para mostrar un lugar con impacto,
+                claridad y diferenciación.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* Resumen de servicios*/}
       <section className="border-t border-zinc-900/70 bg-zinc-950/90">
         <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
