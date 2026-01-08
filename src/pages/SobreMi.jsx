@@ -11,7 +11,7 @@ const aboutBlocks = [
     text: "Empiezo por entender qué quieres conseguir con el vídeo: ventas, visibilidad, reservas o comunidad. A partir de ahí defino propuesta, mensajes clave, formatos finales y calendario realista.",
     bullets: [
       "Reunión inicial corta y clara",
-      "Propuesta de pieza + estructura",
+      "Propuesta audiovisual",
       "Planning de rodaje y entregas",
     ],
   },
@@ -22,7 +22,7 @@ const aboutBlocks = [
     text: "Mi punto fuerte es bajar a tierra ideas que están medio definidas y convertirlas en piezas utilizables: spots, reels, aftermovies o bancos de clips listos para publicar.",
     bullets: [
       "Selección de planos pensando en su uso real",
-      "Mezcla de cámara y FPV cuando aporta valor",
+      "Mezcla de cámara y drones FPV cuando aporta valor",
       "Versiones adaptadas a cada canal (web, IG, TikTok)",
     ],
   },
@@ -33,8 +33,8 @@ const aboutBlocks = [
     text: "Trabajo bien con negocios y proyectos que no tienen departamento interno de vídeo, pero necesitan contenido sólido y constante sin complicarse la vida.",
     bullets: [
       "Marcas pequeñas y medianas",
-      "Festivales, centros culturales y eventos",
-      "Gimnasios, clubs y proyectos deportivos",
+      "Festivales y eventos",
+      "Proyectos deportivos",
     ],
   },
 ]
@@ -51,39 +51,35 @@ export default function SobreMi() {
               Sobre mí
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-[2.6rem] font-semibold mb-4 leading-tight">
-              io Rodríguez · Kulmen Visuals
+              io · Kulmen Visuals
             </h1>
 
             <p className="text-zinc-300 text-sm md:text-base lg:text-[17px] mb-4 max-w-xl leading-relaxed">
               Soy creadora audiovisual y piloto de drones FPV. Trabajo para marcas,
-              eventos y proyectos culturales que necesitan vídeo profesional sin
-              montar un equipo interno.
+              eventos y proyectos culturales que necesitan vídeo profesional desde la conceptualización hasta la edición..
             </p>
 
             <p className="text-zinc-400 text-sm md:text-base lg:text-[17px] mb-4 max-w-xl leading-relaxed">
               Cubro todo el proceso: definición del proyecto, guion básico,
-              planificación de rodaje, grabación con cámara y dron, y edición final
-              con color, sonido y grafismos. También utilizo IA cuando ayuda a
-              mejorar la producción de contenido.
+              planificación de rodaje, grabación con cámara y dron FPV, y postproducción final (montaje, color, sonido y grafismos) con entregas listas para publicar.
+
             </p>
 
             <p className="text-zinc-500 text-xs md:text-sm lg:text-[15px] max-w-xl leading-relaxed">
-              Mi foco es que cada pieza impacte y genere una repercusión positiva que se traduzca en mayores ventas y mejor reputación. 
-            </p>
+              Mi foco es que cada pieza tenga intención, impacte y genere una repercusión positiva para mejorar
+              la percepción de marca y generar resultados medibles en comunicación (más atención, más confianza, más acción).
+
 
             {/* Etiquetas rápidas */}
             <div className="mt-6 flex flex-wrap gap-2 text-xs md:text-[13px]">
               <span className="kv-chip">
-                Dirección y planteamiento de pieza
+                Piloto de drones certificada por EASA
               </span>
               <span className="kv-chip">
-                Cámara &amp; FPV
+                Realizadora audiovisual
               </span>
               <span className="kv-chip">
-                Montaje, color y grafismo
-              </span>
-              <span className="kv-chip">
-                Contenido para redes y campañas
+                Editora de contenidos
               </span>
             </div>
           </div>
@@ -98,7 +94,7 @@ export default function SobreMi() {
               />
             </div>
             <p className="mt-3 text-[11px] md:text-xs text-zinc-500 text-center">
-              io Rodríguez — Kulmen Visuals · Galicia
+              io — Kulmen Visuals
             </p>
           </div>
         </div>
