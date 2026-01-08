@@ -7,7 +7,12 @@ export default function PostPanel({ beforeAfter, bullets = [] }) {
       <div className="rounded-xl border border-zinc-800 p-5 bg-zinc-900/50">
         <h4 className="font-semibold mb-2">Qué hacemos</h4>
         <ul className="space-y-2 text-zinc-300">
-          {bullets.map((b, i) => <li key={i}>• {b}</li>)}
+          {bullets.map((b, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="kv-bullet mt-2" />
+              <span>{b}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

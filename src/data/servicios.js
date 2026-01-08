@@ -95,29 +95,35 @@ export const especialidades = [
   {
     id: "cine",
     titulo: "Cine y Publicidad",
+    descripcion:
+      "Producción de piezas pensadas para campañas y lanzamientos, donde el vídeo tiene que condensar mensaje, estética y ritmo en pocos segundos.",
     bullets: [
       "Spots y piezas cortas para campañas",
-      "Vídeo para webs y lanzamientos de producto",
-      "Contenido pensado para anuncios en redes",
+      "Vídeo para web y lanzamientos de producto",
+      "Contenido diseñado para anuncios en redes",
     ],
     fondo: `${import.meta.env.BASE_URL}images/spec_cine.jpg`,
   },
   {
     id: "fpv",
     titulo: "FPV Profesional",
+    descripcion:
+      "Uso del FPV como recurso narrativo, integrado con cámara tradicional para aportar movimiento, continuidad y diferenciación real.",
     bullets: [
       "Persecución de coches, motos y deporte",
       "Recorridos inmersivos por espacios y negocios",
-      "Planos imposibles combinados con cámara tradicional",
+      "Planos imposibles combinados con cámara en tierra",
     ],
     fondo: `${import.meta.env.BASE_URL}images/spec_fpv.jpg`,
   },
   {
     id: "eventos",
     titulo: "Eventos y Cultura",
+    descripcion:
+      "Piezas que extienden la vida del evento más allá del directo, con un enfoque ágil y pensado para difusión inmediata.",
     bullets: [
       "Aftermovies y resúmenes de evento",
-      "Cobertura ágil con entregas rápidas para redes",
+      "Cobertura dinámica con entregas rápidas para redes",
       "Clips verticales listos para publicar durante y después",
     ],
     fondo: `${import.meta.env.BASE_URL}images/spec_eventos.jpg`,
@@ -125,10 +131,12 @@ export const especialidades = [
   {
     id: "turismo",
     titulo: "Turismo y Territorio",
+    descripcion:
+      "Vídeos que sitúan el lugar en contexto, combinando espacio, actividad y personas para una comunicación honesta y atractiva.",
     bullets: [
-      "Piezas que enseñan el lugar con contexto",
-      "Combinación de paisaje, actividad y personas",
-      "Vídeo útil para turismo, territorio y promoción local",
+      "Piezas que muestran el territorio con intención",
+      "Integración de paisaje, experiencia y ritmo",
+      "Contenido útil para turismo, cultura y promoción local",
     ],
     fondo: `${import.meta.env.BASE_URL}images/spec_turismo.jpg`,
   },

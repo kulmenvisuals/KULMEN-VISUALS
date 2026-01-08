@@ -137,7 +137,7 @@ export default function SobreMi() {
                 <ul className="pt-2 space-y-1.5 text-[11px] md:text-xs text-zinc-200/90">
                   {block.bullets.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="mt-[6px] inline-block w-1.5 h-1.5 rounded-full bg-amber-400/85" />
+                      <span className="kv-bullet mt-[6px]" />
                       <span>{item}</span>
                     </li>
                   ))}

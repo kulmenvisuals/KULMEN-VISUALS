@@ -98,6 +98,10 @@
       backdrop-blur-md text-zinc-100;
   }
 
+  .kv-bullet {
+    @apply inline-block h-1.5 w-1.5 rounded-full bg-amber-300;
+  }
+
   /* Ajuste suave para cualquier card glass oscura */
   .kv-glass-dark {
     background: linear-gradient(

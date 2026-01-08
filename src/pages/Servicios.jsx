@@ -311,7 +311,7 @@ export default function Servicios() {
                       <ul className="space-y-1.5 text-sm text-zinc-200/90">
                         {service.usage.map((item) => (
                           <li key={item} className="flex items-start gap-3">
-                            <span className="mt-2 inline-block h-[2px] w-4 rounded-full bg-amber-300" />
+                            <span className="kv-bullet mt-2" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -325,7 +325,7 @@ export default function Servicios() {
                       <ul className="space-y-1.5 text-sm text-zinc-200/90">
                         {service.includes.map((item) => (
                           <li key={item} className="flex items-start gap-3">
-                            <span className="mt-2 inline-block h-[2px] w-4 rounded-full bg-amber-300" />
+                            <span className="kv-bullet mt-2" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -376,11 +376,14 @@ export default function Servicios() {
                   <h3 className="text-xl md:text-2xl font-semibold text-zinc-50 mb-4">
                     {card.titulo}
                   </h3>
+                  <p className="text-sm md:text-base text-zinc-200/90 mb-5">
+                    {card.descripcion}
+                  </p>
 
                   <ul className="space-y-3 text-sm md:text-base text-zinc-100/90">
                     {card.bullets.map((b, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <span className="mt-2 inline-block w-5 h-[2px] rounded-full bg-amber-300" />
+                        <span className="kv-bullet mt-2" />
                         <span>{b}</span>
                       </li>
                     ))}

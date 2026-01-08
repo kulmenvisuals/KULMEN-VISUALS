@@ -40,7 +40,12 @@ export default function EspecialidadesSwitch({ items = [] }) {
           >
             <h3 className="text-xl font-semibold">{current?.titulo}</h3>
             <ul className="mt-2 text-zinc-300 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-              {current?.bullets.map((b, i) => <li key={i}>• {b}</li>)}
+              {current?.bullets.map((b, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="kv-bullet mt-2" />
+                  <span>{b}</span>
+                </li>
+              ))}
             </ul>
           </motion.div>
         </AnimatePresence>
