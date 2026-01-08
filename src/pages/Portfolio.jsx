@@ -5,12 +5,11 @@ import ProjectCard from "../components/ProjectCard.jsx"
 import { projects } from "../data/projects.js"
 
 const clientLogos = [
-  { name: "Cliente 01", mark: "C1" },
-  { name: "Cliente 02", mark: "C2" },
-  { name: "Cliente 03", mark: "C3" },
-  { name: "Cliente 04", mark: "C4" },
-  { name: "Cliente 05", mark: "C5" },
-  { name: "Cliente 06", mark: "C6" },
+  { name: "XGAP Fitness Center", src: "/images/logo-xgap.png" },
+  { name: "Orestes Comunica", src: "/images/logo-orestes-comunica.webp" },
+  { name: "Cobre San Rafael", src: "/images/logo-cobre-san-rafael.jpg" },
+  { name: "Norvento Technpower", src: "/images/logo-norvento-technpower.jpg" },
+  { name: "Banca March", src: "/images/logo-banca-march.webp" },
 ]
 
 export default function Portfolio() {
@@ -61,7 +60,7 @@ export default function Portfolio() {
               Clientes con los que he trabajado
             </h2>
             <p className="kv-body-muted max-w-2xl">
-              Espacios para logos. Cuando los tengas, los sustituyo por tus marcas reales.
+              Algunas marcas con las que he trabajado.
             </p>
           </div>
           <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
@@ -70,13 +69,15 @@ export default function Portfolio() {
                 key={client.name}
                 className="kv-glass-soft rounded-2xl border border-white/10 px-4 py-6 flex flex-col items-center justify-center text-center"
               >
-                <div className="h-10 w-10 rounded-full border border-amber-300/40 bg-amber-300/10 text-amber-200 flex items-center justify-center text-sm font-semibold">
-                  {client.mark}
+                <div className="h-12 w-12 md:h-14 md:w-14 rounded-full border border-amber-300/25 bg-zinc-950/60 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={client.src}
+                    alt={client.name}
+                    className="h-full w-full object-contain p-2"
+                    loading="lazy"
+                  />
                 </div>
-                <p className="kv-eyebrow mt-3 text-zinc-500">
-                  {client.name}
-                </p>
-                <p className="kv-caption text-zinc-600 mt-1">Logo aqui</p>
+                <p className="kv-caption text-zinc-400 mt-3">{client.name}</p>
               </div>
             ))}
           </div>
