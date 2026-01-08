@@ -41,7 +41,7 @@ export default function Header() {
             </NavLink>
           ))}
           
-          <Link to="/contacto" className="kv-button-primary ml-2">
+          <Link to="/contacto" className="kv-button-primary kv-button-accent ml-2">
             Hablemos
           </Link>
         </nav>
@@ -85,7 +85,7 @@ export default function Header() {
                 <Link
                   to="/contacto"
                   onClick={() => setOpen(false)}
-                  className="kv-button-primary w-full justify-center"
+                  className="kv-button-primary kv-button-accent w-full justify-center"
                 >
                   Hablemos
                 </Link>

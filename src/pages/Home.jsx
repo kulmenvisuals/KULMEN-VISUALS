@@ -143,7 +143,7 @@ export default function Home() {
                 className="w-full md:flex-[1.2] rounded-full bg-black/40 border border-white/20 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-amber-300/60"
                 aria-label="Interés del proyecto"
               />
-              <button type="submit" className="kv-button-primary md:shrink-0">
+              <button type="submit" className="kv-button-primary kv-button-accent md:shrink-0">
                 Iniciar proyecto
               </button>
             </div>
@@ -441,6 +441,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CTA final */}
+      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+              ¿Tienes un proyecto en mente?
+            </h2>
+            <p className="text-sm text-zinc-300 max-w-md">
+              Escríbeme para ver si encaja lo que necesitas con lo
+              que puedo ofrecerte. Sin compromiso. Comencemos a impulsar tu presencia.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contacto" className="kv-button-primary">
+              Pedir presupuesto
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Instagram preview */}
       <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
         <div className="relative overflow-hidden kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12">
@@ -489,26 +509,6 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA final */}
-      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">
-              ¿Tienes un proyecto en mente?
-            </h2>
-            <p className="text-sm text-zinc-300 max-w-md">
-              Escríbeme para ver si encaja lo que necesitas con lo
-              que puedo ofrecerte. Sin compromiso. Comencemos a impulsar tu presencia.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary">
-              Pedir presupuesto
-            </Link>
           </div>
         </div>
       </section>

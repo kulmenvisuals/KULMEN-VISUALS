@@ -76,6 +76,17 @@
       transition;
   }
 
+  .kv-button-accent {
+    background: linear-gradient(
+      135deg,
+      rgba(251, 191, 36, 0.7),
+      rgba(249, 115, 22, 0.6)
+    );
+    border-color: rgba(251, 191, 36, 0.6);
+    color: rgb(10, 10, 12);
+    box-shadow: 0 18px 40px rgba(251, 191, 36, 0.25);
+  }
+
   /* Chips / tags */
   .kv-chip {
     @apply rounded-full px-3 py-1 text-[11px]
