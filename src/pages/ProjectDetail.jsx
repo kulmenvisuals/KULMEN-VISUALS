@@ -206,6 +206,24 @@ export default function ProjectDetail() {
             </div>
           </section>
         )}
+
+        {/* CTA final */}
+        <section className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+              ¿Buscas algo similar para tu marca o evento?
+            </h2>
+            <p className="text-sm text-zinc-300 max-w-md">
+              Puedo ayudarte a definir el enfoque y producir una pieza
+              a medida para tu objetivo.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contacto" className="kv-button-primary">
+              Hablemos de tu proyecto
+            </Link>
+          </div>
+        </section>
       </main>
     </div>
   )
