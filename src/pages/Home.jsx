@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Film, Plane, Scissors, Share2 } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
 
@@ -229,6 +230,94 @@ export default function Home() {
             ))}
           </div>
         )}
+      </section>
+
+      {/* Servicios de producción audiovisual */}
+      <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
+        <div className="flex flex-col gap-6 md:gap-10">
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold mb-3">
+              Servicios de producción audiovisual
+            </h2>
+            <p className="text-sm text-zinc-400 max-w-2xl">
+              Producción integral con foco narrativo, ritmo y acabado profesional.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <article className="group kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Film size={16} />
+                </div>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+                  Producción audiovisual
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                  Rodaje de vídeo con enfoque narrativo y publicitario para marcas,
+                  eventos y proyectos.
+                </p>
+              </div>
+            </article>
+            <article className="group kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Plane size={16} />
+                </div>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+                  FPV cinematográfico
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                  Planos aéreos dinámicos e inmersivos que generan impacto, carácter,
+                  y diferenciación.
+                </p>
+              </div>
+            </article>
+            <article className="group kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Scissors size={16} />
+                </div>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+                  Edición y postproducción
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                  Montaje, ritmo, música y color para un acabado profesional listo para
+                  publicar.
+                </p>
+              </div>
+            </article>
+            <article className="group kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Share2 size={16} />
+                </div>
+                <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+                  Contenido para redes
+                </h3>
+                <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                  Versiones optimizadas por formato y plataforma para aprovechar cada
+                  rodaje al máximo.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
       {/* Resumen de servicios*/}
