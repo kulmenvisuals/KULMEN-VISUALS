@@ -20,7 +20,7 @@ export default function Header() {
           <img
             src="/logo-kulmen-visuals.png"
             alt="Kulmen Visuals"
-            className="h-8 w-auto"
+            className="h-10 md:h-12 w-auto"
           />
           <span className="sr-only">Kulmen Visuals</span>
         </Link>
