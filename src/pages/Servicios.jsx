@@ -269,7 +269,7 @@ export default function Servicios() {
               Cuatro servicios, una narrativa consistente.
             </h2>
             <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
-              Bloques compactos y combinables según lo que necesite tu proyecto.
+              Bloques combinables según lo que necesite tu proyecto.
             </p>
           </header>
 
