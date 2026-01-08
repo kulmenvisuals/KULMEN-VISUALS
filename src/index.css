@@ -15,20 +15,24 @@
   /* Texto de párrafo y listas */
   p,
   li {
-    @apply text-base md:text-[17px] leading-relaxed;
+    @apply text-[15px] md:text-[16px] leading-relaxed;
   }
 
   /* Encabezados genéricos (cuando no les metes clases propias) */
   h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight;
   }
 
   h2 {
-    @apply text-2xl md:text-3xl font-semibold;
+    @apply text-2xl md:text-3xl font-semibold tracking-tight leading-snug;
   }
 
   h3 {
-    @apply text-xl md:text-2xl font-semibold;
+    @apply text-xl md:text-2xl font-semibold tracking-tight leading-snug;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl font-semibold tracking-tight leading-snug;
   }
 }
 
@@ -100,6 +104,42 @@
 
   .kv-bullet {
     @apply inline-block h-1.5 w-1.5 rounded-full bg-amber-300;
+  }
+
+  .kv-eyebrow {
+    @apply text-[11px] md:text-xs uppercase tracking-[0.3em];
+  }
+
+  .kv-hero-title {
+    @apply text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight;
+  }
+
+  .kv-page-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight;
+  }
+
+  .kv-section-title {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+  }
+
+  .kv-lede {
+    @apply text-sm md:text-base text-zinc-300;
+  }
+
+  .kv-body-muted {
+    @apply text-sm md:text-base text-zinc-400;
+  }
+
+  .kv-card-title {
+    @apply text-base md:text-lg font-semibold;
+  }
+
+  .kv-card-body {
+    @apply text-sm md:text-base text-zinc-300;
+  }
+
+  .kv-caption {
+    @apply text-[11px] md:text-xs text-zinc-500;
   }
 
   /* Ajuste suave para cualquier card glass oscura */

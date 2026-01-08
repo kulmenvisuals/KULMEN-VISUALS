@@ -48,24 +48,24 @@ export default function SobreMi() {
         <div className="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-center">
           {/* Texto principal */}
           <div>
-            <p className="text-[11px] md:text-xs uppercase tracking-[0.25em] text-zinc-500 mb-3">
+            <p className="kv-eyebrow text-zinc-500 mb-3">
               Sobre mí
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-[2.6rem] font-semibold mb-4 leading-tight">
+            <h1 className="kv-page-title mb-4">
               io · Kulmen Visuals
             </h1>
 
-            <p className="text-zinc-300 text-sm md:text-base lg:text-[17px] mb-4 max-w-xl leading-relaxed">
+            <p className="kv-lede mb-4 max-w-xl">
               Soy creadora audiovisual y piloto de drones FPV. Trabajo para marcas,
               eventos y proyectos culturales que necesitan vídeo profesional desde la conceptualización hasta la edición.
             </p>
 
-            <p className="text-zinc-400 text-sm md:text-base lg:text-[17px] mb-4 max-w-xl leading-relaxed">
+            <p className="kv-body-muted mb-4 max-w-xl">
               Cubro todo el proceso: definición del proyecto, guion básico,
               planificación de rodaje, grabación con cámara y dron FPV, y postproducción final (montaje, color, sonido y grafismos) con entregas listas para publicar.
             </p>
 
-            <p className="text-zinc-500 text-xs md:text-sm lg:text-[15px] max-w-xl leading-relaxed">
+            <p className="kv-body-muted text-zinc-500 max-w-xl">
               Mi foco es que cada pieza tenga intención, impacte y genere una repercusión positiva para mejorar
               la percepción de marca y generar resultados medibles en comunicación (más atención, más confianza, más acción).
             </p>
@@ -93,7 +93,7 @@ export default function SobreMi() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="mt-3 text-[11px] md:text-xs text-zinc-500 text-center">
+            <p className="kv-caption mt-3 text-zinc-500 text-center">
               io — Kulmen Visuals
             </p>
           </div>
@@ -103,10 +103,10 @@ export default function SobreMi() {
       {/* Bloque extra: cómo trabajo / lo que mejor hago / con quién encajo */}
       <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20 border-t border-zinc-900">
         <header className="mb-8 md:mb-10">
-          <p className="text-[11px] md:text-xs uppercase tracking-[0.25em] text-amber-300/80 mb-2">
+          <p className="kv-eyebrow text-amber-300/80 mb-2">
             Forma de trabajar
           </p>
-          <h2 className="text-xl md:text-2xl lg:text-[1.6rem] font-semibold text-zinc-50">
+          <h2 className="kv-section-title text-zinc-50">
             Cómo trabajo y con quién tiene sentido colaborar.
           </h2>
         </header>
@@ -124,17 +124,17 @@ export default function SobreMi() {
               </div>
 
               <div className="relative z-10 px-5 py-5 md:px-6 md:py-6 space-y-3">
-                <p className="text-[11px] tracking-[0.28em] uppercase text-amber-300/80">
+                <p className="kv-eyebrow text-amber-300/80">
                   {block.label}
                 </p>
-                <h3 className="text-sm md:text-base lg:text-[15px] font-semibold text-zinc-50">
+                <h3 className="kv-card-title text-zinc-50">
                   {block.title}
                 </h3>
-                <p className="text-xs md:text-sm lg:text-[14px] text-zinc-300 leading-relaxed">
+                <p className="kv-card-body text-zinc-300 leading-relaxed">
                   {block.text}
                 </p>
 
-                <ul className="pt-2 space-y-1.5 text-[11px] md:text-xs text-zinc-200/90">
+                <ul className="pt-2 space-y-1.5 text-xs md:text-sm text-zinc-200/90">
                   {block.bullets.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="kv-bullet mt-[6px]" />
@@ -152,10 +152,10 @@ export default function SobreMi() {
       <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20">
         <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+            <h2 className="kv-section-title mb-2">
               ¿Hablamos de tu proyecto?
             </h2>
-            <p className="text-sm text-zinc-300 max-w-md">
+            <p className="kv-lede max-w-md">
               Si buscas un vídeo con intención y un proceso claro, cuéntame tu idea
               y lo vemos sin compromiso.
             </p>

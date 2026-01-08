@@ -6,15 +6,15 @@ export default function Contacto() {
       <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start">
         <div className="space-y-6">
           <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.35em] text-zinc-500">
+            <p className="kv-eyebrow text-zinc-500">
               Contacto
             </p>
-            <h1 className="text-3xl md:text-4xl font-semibold text-zinc-50">
+            <h1 className="kv-page-title text-zinc-50">
               Cuéntame tu proyecto
             </h1>
           </div>
 
-          <p className="text-zinc-300 text-base md:text-lg">
+          <p className="kv-lede text-zinc-300">
             Si tienes un proyecto en mente o necesitas contenido audiovisual
             para tu marca, evento o espacio, escríbeme y lo vemos.
           </p>
@@ -23,10 +23,10 @@ export default function Contacto() {
             <div className="flex items-start gap-3">
               <span className="mt-1 h-2.5 w-2.5 rounded-full bg-amber-400" />
               <div>
-                <p className="text-sm font-semibold text-zinc-100">
+                <p className="kv-card-title text-zinc-100">
                   Respuesta rápida
                 </p>
-                <p className="text-sm text-zinc-400">
+                <p className="kv-body-muted">
                   Responderé en un plazo de 24–48 h laborables.
                 </p>
               </div>
@@ -35,8 +35,8 @@ export default function Contacto() {
             <div className="flex items-start gap-3">
               <span className="mt-1 h-2.5 w-2.5 rounded-full bg-amber-400" />
               <div>
-                <p className="text-sm font-semibold text-zinc-100">Ubicación</p>
-                <p className="text-sm text-zinc-400">
+                <p className="kv-card-title text-zinc-100">Ubicación</p>
+                <p className="kv-body-muted">
                   Trabajo desde Pontevedra y me desplazo por Galicia y España,
                   según el proyecto.
                 </p>
@@ -46,10 +46,10 @@ export default function Contacto() {
             <div className="flex items-start gap-3">
               <span className="mt-1 h-2.5 w-2.5 rounded-full bg-amber-400" />
               <div>
-                <p className="text-sm font-semibold text-zinc-100">
+                <p className="kv-card-title text-zinc-100">
                   Correo directo
                 </p>
-                <p className="text-sm text-zinc-400">
+                <p className="kv-body-muted">
                   <a
                     href="mailto:hola@kulmenvisuals.com"
                     className="text-amber-300 hover:text-amber-200"
@@ -79,7 +79,7 @@ export default function Contacto() {
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <label
-                  className="block text-xs text-zinc-400 mb-1"
+                  className="kv-caption text-zinc-400 mb-1"
                   htmlFor="nombre"
                 >
                   Nombre *
@@ -95,7 +95,7 @@ export default function Contacto() {
 
               <div>
                 <label
-                  className="block text-xs text-zinc-400 mb-1"
+                  className="kv-caption text-zinc-400 mb-1"
                   htmlFor="email"
                 >
                   Email *
@@ -113,7 +113,7 @@ export default function Contacto() {
 
             <div>
               <label
-                className="block text-xs text-zinc-400 mb-1"
+                className="kv-caption text-zinc-400 mb-1"
                 htmlFor="empresa"
               >
                 Empresa / Proyecto
@@ -124,14 +124,14 @@ export default function Contacto() {
                 placeholder="Marca, evento o espacio"
                 className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
               />
-              <p className="text-[11px] text-zinc-500 mt-2">
+              <p className="kv-caption text-zinc-500 mt-2">
                 Deja este campo opcional si no tienes empresa.
               </p>
             </div>
 
             <div>
               <label
-                className="block text-xs text-zinc-400 mb-1"
+                className="kv-caption text-zinc-400 mb-1"
                 htmlFor="tipo-proyecto"
               >
                 Tipo de proyecto *
@@ -149,13 +149,13 @@ export default function Contacto() {
                 <option value="Deporte">Deporte</option>
                 <option value="Otro">Otro</option>
               </select>
-              <p className="text-[11px] text-zinc-500 mt-2">
+              <p className="kv-caption text-zinc-500 mt-2">
                 Esto te ahorra mensajes de ida y vuelta.
               </p>
             </div>
 
             <fieldset className="space-y-3">
-              <legend className="block text-xs text-zinc-400 mb-1">
+              <legend className="kv-caption text-zinc-400 mb-1">
                 ¿Para qué lo necesitas? *
               </legend>
               <div className="grid gap-2 text-sm text-zinc-200">
@@ -184,7 +184,7 @@ export default function Contacto() {
             </fieldset>
 
             <div>
-              <label className="block text-xs text-zinc-400 mb-1" htmlFor="fecha">
+              <label className="kv-caption text-zinc-400 mb-1" htmlFor="fecha">
                 Fecha y lugar aproximados
               </label>
               <input
@@ -197,7 +197,7 @@ export default function Contacto() {
 
             <div>
               <label
-                className="block text-xs text-zinc-400 mb-1"
+                className="kv-caption text-zinc-400 mb-1"
                 htmlFor="mensaje"
               >
                 Cuéntame un poco más sobre el proyecto *

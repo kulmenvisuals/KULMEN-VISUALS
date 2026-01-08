@@ -241,15 +241,15 @@ export default function Servicios() {
         <div className="max-w-6xl mx-auto px-4 py-12 lg:py-16 grid gap-10 lg:grid-cols-2 items-center">
           {/* Texto */}
           <div className="space-y-4">
-            <p className="text-sm uppercase tracking-[0.2em] text-amber-300/80">
+            <p className="kv-eyebrow text-amber-300/80">
               Servicios
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+            <h1 className="kv-page-title">
               De la idea al máster final.
               <br />
               Vídeo, FPV y contenido para marcas y proyectos.
             </h1>
-            <p className="text-zinc-300 max-w-xl text-sm md:text-base">
+            <p className="kv-lede max-w-xl">
               Planifico, grabo y edito vídeo para marcas, eventos y espacios que
               necesitan comunicar con intención y diferenciarse. Desde campañas de
               marca hasta coberturas ágiles de eventos y turismo.
@@ -268,13 +268,13 @@ export default function Servicios() {
       <section className="border-t border-zinc-900 bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-8">
           <header className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
+            <p className="kv-eyebrow text-amber-300/80">
               Servicios
             </p>
-            <h2 className="text-2xl md:text-3xl font-semibold">
+            <h2 className="kv-section-title">
               Cuatro servicios, una narrativa consistente.
             </h2>
-            <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
+            <p className="kv-lede max-w-2xl">
               Bloques combinables según lo que necesite tu proyecto.
             </p>
           </header>
@@ -305,7 +305,7 @@ export default function Servicios() {
 
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
-                      <p className="text-[11px] uppercase tracking-[0.3em] text-zinc-400">
+                      <p className="kv-eyebrow text-zinc-400">
                         Para qué sirve
                       </p>
                       <ul className="space-y-1.5 text-sm text-zinc-200/90">
@@ -319,7 +319,7 @@ export default function Servicios() {
                     </div>
 
                     <div className="space-y-2">
-                      <p className="text-[11px] uppercase tracking-[0.3em] text-zinc-400">
+                      <p className="kv-eyebrow text-zinc-400">
                         Qué incluye
                       </p>
                       <ul className="space-y-1.5 text-sm text-zinc-200/90">
@@ -347,10 +347,10 @@ export default function Servicios() {
       <section className="border-t border-zinc-900 bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-8">
           <header className="space-y-2">
-            <h2 className="text-2xl md:text-3xl font-semibold">
+            <h2 className="kv-section-title">
               ¿Para qué tipo de proyectos encajamos mejor?
             </h2>
-            <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
+            <p className="kv-lede max-w-2xl">
               Desde cine y publicidad hasta turismo y cultura. Adaptamos el lenguaje
               visual y el ritmo al contexto de cada pieza.
             </p>
@@ -370,13 +370,13 @@ export default function Servicios() {
                 </div>
 
                 <div className="relative z-10 px-6 pt-8 pb-7 md:px-7 md:pt-9 md:pb-8">
-                  <p className="text-[11px] md:text-xs tracking-[0.35em] text-amber-300/80 uppercase mb-3">
+                  <p className="kv-eyebrow text-amber-300/80 mb-3">
                     ESPECIALIDAD
                   </p>
                   <h3 className="text-xl md:text-2xl font-semibold text-zinc-50 mb-4">
                     {card.titulo}
                   </h3>
-                  <p className="text-sm md:text-base text-zinc-200/90 mb-5">
+                  <p className="kv-lede text-zinc-200/90 mb-5">
                     {card.descripcion}
                   </p>
 
@@ -400,13 +400,13 @@ export default function Servicios() {
       <section className="border-t border-zinc-900/80 bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 space-y-10">
           <header className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
+            <p className="kv-eyebrow text-amber-300/80">
               Equipo audiovisual
             </p>
-            <h2 className="text-2xl md:text-3xl font-semibold">
+            <h2 className="kv-section-title">
               Herramientas pensadas para cada tipo de rodaje.
             </h2>
-            <p className="text-zinc-300 max-w-2xl text-sm md:text-base">
+            <p className="kv-lede max-w-2xl">
               El equipo no es un listado técnico: es la clave para elegir el
               lenguaje visual correcto. Aquí tienes una vista rápida de para qué
               encaja cada cámara y cada dron.
@@ -426,10 +426,10 @@ export default function Servicios() {
 
                 <div className="relative z-10 px-6 py-8 md:px-8 md:py-9 space-y-6">
                   <div className="flex items-center justify-between">
-                    <p className="text-xs uppercase tracking-[0.35em] text-amber-300/80">
+                    <p className="kv-eyebrow text-amber-300/80">
                       {group.label}
                     </p>
-                    <span className="text-[11px] text-zinc-500">
+                    <span className="kv-caption text-zinc-500">
                       {group.items.length} opciones
                     </span>
                   </div>
@@ -450,10 +450,10 @@ export default function Servicios() {
                         </div>
                         <div className="p-4 space-y-3">
                         <div className="space-y-1">
-                          <h3 className="text-base font-semibold text-zinc-100">
+                          <h3 className="kv-card-title text-zinc-100">
                             {item.name}
                           </h3>
-                          <p className="text-sm text-zinc-300">{item.desc}</p>
+                          <p className="kv-card-body text-zinc-300">{item.desc}</p>
                         </div>
                         <div className="flex flex-wrap gap-2 text-[11px] text-amber-200">
                           {item.tags.map((tag) => (
@@ -480,10 +480,10 @@ export default function Servicios() {
       <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
         <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+            <h2 className="kv-section-title mb-2">
               ¿Qué necesitas?
             </h2>
-            <p className="text-sm text-zinc-300 max-w-md">
+            <p className="kv-lede max-w-md">
               Si tienes una idea, una fecha o un objetivo, lo vemos.
             </p>
           </div>

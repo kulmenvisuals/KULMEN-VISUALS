@@ -25,7 +25,7 @@ export default function Header() {
         </Link>
 
         {/* Navegación desktop */}
-        <nav className="hidden md:flex items-center gap-6 text-xs md:text-sm">
+        <nav className="hidden md:flex items-center gap-6 text-xs md:text-sm font-semibold">
           {nav.map((item) => (
             <NavLink
               key={item.to}
@@ -71,7 +71,7 @@ export default function Header() {
                   to={item.to}
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
-                    `block py-2 text-sm ${
+                    `block py-2 text-sm font-semibold ${
                       isActive ? "text-amber-400" : "text-zinc-200"
                     }`
                   }

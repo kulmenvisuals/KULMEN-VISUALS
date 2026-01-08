@@ -99,14 +99,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/85" />
 
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
-          <p className="text-sm uppercase tracking-[0.25em] text-zinc-300 mb-4">
+          <p className="kv-eyebrow text-zinc-300 mb-4">
             Kulmen Visuals · Galicia
           </p>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
+          <h1 className="kv-hero-title mb-6">
             Producción audiovisual <br className="hidden md:block" />
             <span className="text-zinc-200"> con FPV cinematográfico en Galicia.</span>
           </h1>
-          <p className="max-w-xl text-zinc-300 mb-8 text-sm md:text-base">
+          <p className="kv-lede max-w-xl mb-8">
             Vídeos para marcas y eventos que necesitan destacar de verdad. 
             Rodaje, FPV y edición pensados para redes, campañas y web. 
           </p>
@@ -160,10 +160,10 @@ export default function Home() {
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
             </div>
             <div className="relative">
-              <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+              <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
                 Impacto visual desde el primer segundo
               </h3>
-              <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+              <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
                 Movimiento, ritmo y planos pensados para retener.
               </p>
             </div>
@@ -174,10 +174,10 @@ export default function Home() {
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
             </div>
             <div className="relative">
-              <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+              <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
                 Contenido diseñado para publicarse
               </h3>
-              <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+              <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
                 Formatos, duración y encuadres adaptados a cada canal.
               </p>
             </div>
@@ -188,10 +188,10 @@ export default function Home() {
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
             </div>
             <div className="relative">
-              <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+              <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
                 Producción completa, sin intermediarios ni fricción
               </h3>
-              <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+              <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
                 Planificación, rodaje y edición en un solo flujo.
               </p>
             </div>
@@ -200,11 +200,11 @@ export default function Home() {
       </section>
 
       {/* Últimos trabajos */}
-      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+      <section className="max-w-6xl mx-auto px-4 py-10 md:py-14">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">Últimos trabajos</h2>
-            <p className="text-sm text-zinc-400 max-w-md">
+            <h2 className="kv-section-title mb-2">Últimos trabajos</h2>
+            <p className="kv-body-muted max-w-md">
               Proyectos audiovisuales para marcas, eventos y espacios en Galicia.
             </p>
           </div>
@@ -217,7 +217,7 @@ export default function Home() {
         </div>
 
         {featuredProjects.length === 0 ? (
-          <p className="text-sm text-zinc-500">
+          <p className="kv-body-muted text-zinc-500">
             Aún no hay proyectos cargados en <code>data/projects.js</code>.
           </p>
         ) : (
@@ -234,10 +234,10 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
         <div className="flex flex-col gap-6 md:gap-10">
           <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-3">
+            <h2 className="kv-section-title mb-3">
               Servicios de producción audiovisual
             </h2>
-            <p className="text-sm text-zinc-400 max-w-2xl">
+            <p className="kv-body-muted max-w-2xl">
               Producción integral con foco narrativo, fluidez y acabado profesional.
             </p>
           </div>
@@ -251,10 +251,10 @@ export default function Home() {
                 <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
                   <Film size={16} />
                 </div>
-                <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
                   Producción audiovisual
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
                   Rodaje de vídeo con enfoque narrativo y publicitario para marcas,
                   eventos y proyectos.
                 </p>
@@ -269,10 +269,10 @@ export default function Home() {
                 <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
                   <Plane size={16} />
                 </div>
-                <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
                   FPV cinematográfico
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
                   Planos aéreos dinámicos e inmersivos que generan impacto, carácter,
                   y diferenciación.
                 </p>
@@ -287,10 +287,10 @@ export default function Home() {
                 <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
                   <Scissors size={16} />
                 </div>
-                <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
                   Edición y postproducción
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
                   Montaje, ritmo, música y color para un acabado profesional listo para
                   publicar.
                 </p>
@@ -305,10 +305,10 @@ export default function Home() {
                 <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
                   <Share2 size={16} />
                 </div>
-                <h3 className="text-sm md:text-base font-semibold text-zinc-100 group-hover:text-amber-100 transition-colors">
+                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
                   Contenido para redes
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
                   Versiones optimizadas por formato y plataforma para aprovechar cada
                   rodaje al máximo.
                 </p>
@@ -322,10 +322,10 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
         <div className="flex flex-col gap-6 md:gap-10">
           <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-3">
+            <h2 className="kv-section-title mb-3">
               Proyectos con los que trabajo
             </h2>
-            <p className="text-sm text-zinc-400 max-w-2xl">
+            <p className="kv-body-muted max-w-2xl">
               Trabajo con marcas, proyectos y eventos que necesitan una mirada cercana
               y una producción ágil.
             </p>
@@ -340,10 +340,10 @@ export default function Home() {
                 <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
                   <Briefcase size={16} />
                 </div>
-                <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                <h3 className="kv-card-title text-zinc-100">
                   Marcas
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                <p className="kv-card-body text-zinc-400 mt-2">
                   Vídeos de producto y campañas pensados para construir imagen de marca,
                   lanzar novedades y generar contenido listo para redes y web.
 
@@ -359,10 +359,10 @@ export default function Home() {
                 <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
                   <Calendar size={16} />
                 </div>
-                <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                <h3 className="kv-card-title text-zinc-100">
                   Eventos
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                <p className="kv-card-body text-zinc-400 mt-2">
                   Piezas que amplifican el evento: teasers previos, contenido durante la acción y aftermovies que prolongan su impacto en el tiempo.
 
                 </p>
@@ -377,10 +377,10 @@ export default function Home() {
                 <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
                   <Building2 size={16} />
                 </div>
-                <h3 className="text-sm md:text-base font-semibold text-zinc-100">
+                <h3 className="kv-card-title text-zinc-100">
                   Espacios
                 </h3>
-                <p className="text-xs md:text-sm text-zinc-400 mt-2">
+                <p className="kv-card-body text-zinc-400 mt-2">
                   Flythroughs y visitas inmersivas pensadas para inmobiliarias, promotoras,
                    alojamientos turísticos y negocios que necesitan mostrar sus espacios con claridad, 
                    impacto y diferenciación.
@@ -389,7 +389,7 @@ export default function Home() {
               </div>
             </article>
           </div>
-          <p className="text-sm md:text-base text-zinc-300">
+          <p className="kv-lede">
             El objetivo manda. La técnica se adapta para cumplirlo.
           </p>
         </div>
@@ -400,15 +400,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-10">
             <div className="max-w-md">
-              <h2 className="text-xl md:text-2xl font-semibold mb-3">
+              <h2 className="kv-section-title mb-3">
                 Acompaño todo el proceso.
               </h2>
-              <p className="text-sm text-zinc-400">
+              <p className="kv-body-muted">
                 Desde la idea inicial hasta la pieza final lista para publicar. Puedo entrar
                 en cualquier fase, pero lo ideal es diseñar el proyecto juntos desde el principio.
               </p>
             </div>
-            <div className="text-sm text-zinc-400 max-w-sm">
+            <div className="kv-body-muted max-w-sm">
               <p>
                 Planifico cada etapa para que el rodaje fluya, la edición sea ágil
                 y el resultado final cumpla el objetivo.
@@ -430,10 +430,10 @@ export default function Home() {
                 </div>
 
                 <div className="relative z-10">
-                <h3 className="text-sm font-semibold mb-2 text-zinc-100">
+                <h3 className="kv-card-title mb-2 text-zinc-100">
                   {service.titulo}
                 </h3>
-                <p className="text-xs text-zinc-300 leading-relaxed">
+                <p className="kv-card-body text-zinc-300 leading-relaxed">
                   {service.texto}
                 </p>
                 </div>
@@ -447,10 +447,10 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
         <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+            <h2 className="kv-section-title mb-2">
               ¿Tienes un proyecto en mente?
             </h2>
-            <p className="text-sm text-zinc-300 max-w-md">
+            <p className="kv-lede max-w-md">
               Escríbeme para ver si encaja lo que necesitas con lo
               que puedo ofrecerte. Sin compromiso. Comencemos a impulsar tu presencia.
             </p>
@@ -465,53 +465,15 @@ export default function Home() {
 
       {/* Instagram preview */}
       <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <div className="relative overflow-hidden kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12">
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute -top-24 right-6 h-48 w-48 rounded-full bg-amber-400/10 blur-3xl" />
-            <div className="absolute -bottom-28 left-6 h-56 w-56 rounded-full bg-orange-500/10 blur-3xl" />
-          </div>
-
-          <div className="relative z-10 flex flex-col gap-8">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="h-14 w-14 rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-800/80 to-zinc-950/80 flex items-center justify-center text-lg font-semibold text-amber-200">
-                  KV
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-zinc-400">
-                    Instagram
-                  </p>
-                  <h3 className="text-lg md:text-xl font-semibold text-zinc-100">
-                    @kulmenvisuals
-                  </h3>
-                  <p className="text-sm text-zinc-400">
-                    Últimas publicaciones y BTS de rodajes.
-                  </p>
-                </div>
-              </div>
-              <a
-                href="https://www.instagram.com/kulmenvisuals/"
-                target="_blank"
-                rel="noreferrer"
-                className="kv-button-primary"
-              >
-                Ver perfil
-              </a>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="col-span-full overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/80">
-                <iframe
-                  title="Kulmen Visuals Instagram feed"
-                  src="https://cdn.lightwidget.com/widgets/2519ad266e6d5a7cb28dd291383745f2.html"
-                  scrolling="no"
-                  allowTransparency={true}
-                  className="lightwidget-widget w-full border-0 overflow-hidden"
-                  style={{ height: 'clamp(520px, 70vw, 820px)' }}
-                />
-              </div>
-            </div>
-          </div>
+        <div className="overflow-hidden rounded-2xl">
+          <iframe
+            title="Kulmen Visuals Instagram feed"
+            src="https://cdn.lightwidget.com/widgets/2519ad266e6d5a7cb28dd291383745f2.html"
+            scrolling="no"
+            allowTransparency={true}
+            className="lightwidget-widget w-full border-0 overflow-hidden"
+            style={{ height: "clamp(520px, 70vw, 820px)" }}
+          />
         </div>
       </section>
     </div>

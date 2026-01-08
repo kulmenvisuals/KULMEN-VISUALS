@@ -32,19 +32,19 @@ export default function ProjectDetail() {
     return (
       <main className="bg-zinc-950 text-zinc-50 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 py-24 space-y-4">
-          <h1 className="text-3xl font-bold mb-2">Proyecto no encontrado</h1>
-          <p className="text-zinc-400">
+          <h1 className="kv-page-title mb-2">Proyecto no encontrado</h1>
+          <p className="kv-body-muted">
             No he encontrado ningún proyecto con ese identificador.
           </p>
 
-          <p className="text-xs text-zinc-500 mt-4">
+          <p className="kv-caption text-zinc-500 mt-4">
             <span className="font-semibold text-zinc-300">Slug recibido:</span>{" "}
             <code className="bg-zinc-900 px-2 py-1 rounded border border-zinc-800">
               {slug ?? "(vacío)"}
             </code>
           </p>
 
-          <p className="text-xs text-zinc-500">
+          <p className="kv-caption text-zinc-500">
             <span className="font-semibold text-zinc-300">
               IDs disponibles:
             </span>{" "}
@@ -71,7 +71,7 @@ export default function ProjectDetail() {
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
       <main className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
         {/* Migas + volver */}
-        <div className="text-xs text-zinc-500 flex items-center gap-2">
+        <div className="kv-caption text-zinc-500 flex items-center gap-2">
           <Link to="/proyectos" className="hover:text-amber-300">
             Portfolio
           </Link>
@@ -81,10 +81,10 @@ export default function ProjectDetail() {
 
         {/* Cabecera */}
         <header className="space-y-3">
-          <h1 className="text-3xl md:text-4xl font-semibold text-zinc-50">
+          <h1 className="kv-page-title text-zinc-50">
             {project.title}
           </h1>
-          <div className="flex flex-wrap gap-4 text-xs text-zinc-400">
+          <div className="kv-caption text-zinc-400 flex flex-wrap gap-4">
             {project.year && (
               <span className="uppercase tracking-[0.2em]">
                 {project.year}
@@ -135,14 +135,14 @@ export default function ProjectDetail() {
 
         {/* Descripción + ficha lateral */}
         <section className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-          <div className="text-sm text-zinc-300 leading-relaxed space-y-4">
+          <div className="kv-lede text-zinc-300 leading-relaxed space-y-4">
             {project.description && <p>{project.description}</p>}
             {project.extra && (
-              <p className="text-zinc-400 text-sm">{project.extra}</p>
+              <p className="kv-body-muted text-zinc-400">{project.extra}</p>
             )}
 
             {project.instagramUrl && (
-              <p className="text-[11px] text-zinc-500">
+              <p className="kv-caption text-zinc-500">
                 También en Instagram:{" "}
                 <a
                   href={project.instagramUrl}
@@ -156,10 +156,10 @@ export default function ProjectDetail() {
             )}
           </div>
 
-          <aside className="text-sm space-y-4">
+          <aside className="kv-body-muted space-y-4">
             {project.client && (
               <div>
-                <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
+                <h2 className="kv-eyebrow text-zinc-500 mb-1">
                   Cliente
                 </h2>
                 <p className="text-zinc-200">{project.client}</p>
@@ -167,7 +167,7 @@ export default function ProjectDetail() {
             )}
             {Array.isArray(project.roles) && project.roles.length > 0 && (
               <div>
-                <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
+                <h2 className="kv-eyebrow text-zinc-500 mb-1">
                   Rol
                 </h2>
                 <p className="text-zinc-200">{project.roles.join(" · ")}</p>
@@ -175,7 +175,7 @@ export default function ProjectDetail() {
             )}
             {project.category && (
               <div>
-                <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-1">
+                <h2 className="kv-eyebrow text-zinc-500 mb-1">
                   Tipo de proyecto
                 </h2>
                 <p className="text-zinc-200">{project.category}</p>
@@ -187,7 +187,7 @@ export default function ProjectDetail() {
         {/* Galería simple */}
         {Array.isArray(project.images) && project.images.length > 0 && (
           <section className="space-y-4">
-            <h2 className="text-sm font-semibold text-zinc-100">
+            <h2 className="kv-card-title text-zinc-100">
               Imágenes del proyecto
             </h2>
             <div className="grid gap-4 md:grid-cols-3">
@@ -210,10 +210,10 @@ export default function ProjectDetail() {
         {/* CTA final */}
         <section className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <h2 className="text-xl md:text-2xl font-semibold mb-2">
+            <h2 className="kv-section-title mb-2">
               ¿Buscas algo similar para tu marca o evento?
             </h2>
-            <p className="text-sm text-zinc-300 max-w-md">
+            <p className="kv-lede max-w-md">
               Puedo ayudarte a definir el enfoque y producir una pieza
               a medida para tu objetivo.
             </p>

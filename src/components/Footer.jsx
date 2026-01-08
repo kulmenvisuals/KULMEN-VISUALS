@@ -16,10 +16,10 @@ export default function Footer() {
               alt=""
               className="h-10 w-auto"
             />
-            <p className="text-xs text-zinc-500 mt-2">
+            <p className="kv-caption text-zinc-500 mt-2">
               Producción audiovisual con FPV cinematográfico en Galicia.
             </p>
-            <p className="text-xs text-zinc-500 mt-2">
+            <p className="kv-caption text-zinc-500 mt-2">
               Vídeo para marcas, eventos y espacios que necesitan comunicar con impacto y criterio.
             </p>
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
             Hablemos de tu proyecto
           </Link>
 
-          <p className="text-[11px] text-zinc-500">
+          <p className="kv-caption text-zinc-500">
             Escríbeme a{" "}
             <a
               href="mailto:hola@kulmenvisuals.com"
@@ -44,7 +44,7 @@ export default function Footer() {
 
         {/* Navegación rápida */}
         <div className="space-y-3 text-sm">
-          <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500">
+          <h2 className="kv-eyebrow text-zinc-500">
             Navegación
           </h2>
           <nav className="flex flex-col gap-1 text-xs md:text-sm">
@@ -68,7 +68,7 @@ export default function Footer() {
 
         {/* Servicios / especialidades */}
         <div className="space-y-3 text-sm">
-          <h2 className="text-xs uppercase tracking-[0.2em] text-zinc-500">
+          <h2 className="kv-eyebrow text-zinc-500">
             Especialidades
           </h2>
           <div className="flex flex-wrap gap-2 text-[11px]">
@@ -94,11 +94,11 @@ export default function Footer() {
       {/* Franja inferior */}
       <div className="border-t border-zinc-900">
         <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
-          <p className="text-[11px] text-zinc-600">© {year} Kulmen Visuals</p>
-          <p className="text-[11px] text-zinc-600">
+          <p className="kv-caption text-zinc-600">© {year} Kulmen Visuals</p>
+          <p className="kv-caption text-zinc-600">
             Aviso legal · Política de privacidad · Cookies
           </p>
-          <div className="flex w-full items-center justify-between gap-3 text-[11px] text-zinc-600 md:w-auto md:justify-end">
+          <div className="kv-caption flex w-full items-center justify-between gap-3 text-zinc-600 md:w-auto md:justify-end">
             <a
               href="https://www.instagram.com/kulmenvisuals/"
               target="_blank"
