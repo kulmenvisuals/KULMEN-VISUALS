@@ -66,6 +66,10 @@ export default function ProjectDetail() {
   const instagramEmbedUrl = project.instagramUrl
     ? `${project.instagramUrl.replace(/\/$/, "")}/embed`
     : null
+  const hasYoutube = Boolean(project.youtubeUrl)
+  const hasLocalVideo = Boolean(project.videoUrl)
+  const hasInstagram = Boolean(instagramEmbedUrl)
+  const useInstagramSplit = hasInstagram && !hasYoutube && !hasLocalVideo
 
   return (
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
@@ -98,9 +102,9 @@ export default function ProjectDetail() {
         </header>
 
         {/* VIDEO PRINCIPAL */}
-        {(project.youtubeUrl || instagramEmbedUrl || project.videoUrl) && (
+        {(hasYoutube || hasInstagram || hasLocalVideo) && !useInstagramSplit && (
           <section>
-            {project.youtubeUrl ? (
+            {hasYoutube ? (
               // YouTube
               <div className="aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
                 <iframe
@@ -111,7 +115,7 @@ export default function ProjectDetail() {
                   allowFullScreen
                 />
               </div>
-            ) : instagramEmbedUrl ? (
+            ) : hasInstagram ? (
               // Instagram (post / reel)
               <div className="w-full max-w-md md:max-w-lg mx-auto rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
                 <div className="aspect-[9/16]">
@@ -133,56 +137,121 @@ export default function ProjectDetail() {
           </section>
         )}
 
-        {/* Descripción + ficha lateral */}
-        <section className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-          <div className="kv-lede text-zinc-300 leading-relaxed space-y-4">
-            {project.description && <p>{project.description}</p>}
-            {project.extra && (
-              <p className="kv-body-muted text-zinc-400">{project.extra}</p>
-            )}
+        {useInstagramSplit ? (
+          <section className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-start">
+            <div className="w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
+              <div className="aspect-[9/16]">
+                <iframe
+                  src={instagramEmbedUrl}
+                  title={project.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
 
-            {project.instagramUrl && (
-              <p className="kv-caption text-zinc-500">
-                También en Instagram:{" "}
-                <a
-                  href={project.instagramUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-amber-300 hover:text-amber-200"
-                >
-                  ver publicación
-                </a>
-              </p>
-            )}
-          </div>
+            <div className="space-y-8">
+              <div className="kv-lede text-zinc-300 leading-relaxed space-y-4">
+                {project.description && <p>{project.description}</p>}
+                {project.extra && (
+                  <p className="kv-body-muted text-zinc-400">{project.extra}</p>
+                )}
 
-          <aside className="kv-body-muted space-y-4">
-            {project.client && (
-              <div>
-                <h2 className="kv-eyebrow text-zinc-500 mb-1">
-                  Cliente
-                </h2>
-                <p className="text-zinc-200">{project.client}</p>
+                {project.instagramUrl && (
+                  <p className="kv-caption text-zinc-500">
+                    También en Instagram:{" "}
+                    <a
+                      href={project.instagramUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-amber-300 hover:text-amber-200"
+                    >
+                      ver publicación
+                    </a>
+                  </p>
+                )}
               </div>
-            )}
-            {Array.isArray(project.roles) && project.roles.length > 0 && (
-              <div>
-                <h2 className="kv-eyebrow text-zinc-500 mb-1">
-                  Rol
-                </h2>
-                <p className="text-zinc-200">{project.roles.join(" · ")}</p>
-              </div>
-            )}
-            {project.category && (
-              <div>
-                <h2 className="kv-eyebrow text-zinc-500 mb-1">
-                  Tipo de proyecto
-                </h2>
-                <p className="text-zinc-200">{project.category}</p>
-              </div>
-            )}
-          </aside>
-        </section>
+
+              <aside className="kv-body-muted space-y-4">
+                {project.client && (
+                  <div>
+                    <h2 className="kv-eyebrow text-zinc-500 mb-1">
+                      Cliente
+                    </h2>
+                    <p className="text-zinc-200">{project.client}</p>
+                  </div>
+                )}
+                {Array.isArray(project.roles) && project.roles.length > 0 && (
+                  <div>
+                    <h2 className="kv-eyebrow text-zinc-500 mb-1">
+                      Rol
+                    </h2>
+                    <p className="text-zinc-200">{project.roles.join(" · ")}</p>
+                  </div>
+                )}
+                {project.category && (
+                  <div>
+                    <h2 className="kv-eyebrow text-zinc-500 mb-1">
+                      Tipo de proyecto
+                    </h2>
+                    <p className="text-zinc-200">{project.category}</p>
+                  </div>
+                )}
+              </aside>
+            </div>
+          </section>
+        ) : (
+          <section className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+            <div className="kv-lede text-zinc-300 leading-relaxed space-y-4">
+              {project.description && <p>{project.description}</p>}
+              {project.extra && (
+                <p className="kv-body-muted text-zinc-400">{project.extra}</p>
+              )}
+
+              {project.instagramUrl && (
+                <p className="kv-caption text-zinc-500">
+                  También en Instagram:{" "}
+                  <a
+                    href={project.instagramUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-amber-300 hover:text-amber-200"
+                  >
+                    ver publicación
+                  </a>
+                </p>
+              )}
+            </div>
+
+            <aside className="kv-body-muted space-y-4">
+              {project.client && (
+                <div>
+                  <h2 className="kv-eyebrow text-zinc-500 mb-1">
+                    Cliente
+                  </h2>
+                  <p className="text-zinc-200">{project.client}</p>
+                </div>
+              )}
+              {Array.isArray(project.roles) && project.roles.length > 0 && (
+                <div>
+                  <h2 className="kv-eyebrow text-zinc-500 mb-1">
+                    Rol
+                  </h2>
+                  <p className="text-zinc-200">{project.roles.join(" · ")}</p>
+                </div>
+              )}
+              {project.category && (
+                <div>
+                  <h2 className="kv-eyebrow text-zinc-500 mb-1">
+                    Tipo de proyecto
+                  </h2>
+                  <p className="text-zinc-200">{project.category}</p>
+                </div>
+              )}
+            </aside>
+          </section>
+        )}
 
         {/* Galería simple */}
         {Array.isArray(project.images) && project.images.length > 0 && (
