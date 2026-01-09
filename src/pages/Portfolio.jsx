@@ -26,7 +26,7 @@ export default function Portfolio() {
           Portfolio
         </p>
         <h1 className="kv-page-title mb-3">
-          Proyectos de FPV, cine y contenido para marcas.
+          Proyectos de FPV, vídeo y contenido para marcas.
         </h1>
         <p className="kv-body-muted max-w-2xl">
           Una selección de trabajos para marcas, festivales y proyectos
