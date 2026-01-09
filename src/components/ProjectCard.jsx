@@ -59,9 +59,6 @@ export default function ProjectCard({ project }) {
           {locationText && (
             <p className="text-xs text-zinc-400 mb-1">{locationText}</p>
           )}
-          {project.year && (
-            <p className="text-[11px] text-zinc-500 mt-auto">Año {project.year}</p>
-          )}
         </div>
       </article>
     </Link>
