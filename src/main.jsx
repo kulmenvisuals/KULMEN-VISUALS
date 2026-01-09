@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
 
 // Páginas
@@ -11,12 +11,14 @@ import Servicios from './pages/Servicios.jsx'
 import SobreMi from './pages/SobreMi.jsx'
 import Contacto from './pages/Contacto.jsx'
 import NotFound from './pages/NotFound.jsx'
+import Blog from './pages/Blog.jsx'
+import BlogPost from './pages/BlogPost.jsx'
 
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
           {/* Inicio */}
@@ -35,10 +37,14 @@ createRoot(document.getElementById('root')).render(
           {/* Contacto */}
           <Route path="contacto" element={<Contacto />} />
 
+          {/* Blog */}
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
+
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>,
 )

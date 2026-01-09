@@ -26,6 +26,15 @@
   </head>
   <body class="bg-zinc-950 text-zinc-100">
     <div id="root"></div>
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem("redirect")
+        if (redirect) {
+          sessionStorage.removeItem("redirect")
+          history.replaceState(null, "", redirect)
+        }
+      })()
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
