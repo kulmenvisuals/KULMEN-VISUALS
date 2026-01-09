@@ -117,7 +117,7 @@ export default function ProjectDetail() {
               </div>
             ) : hasInstagram ? (
               // Instagram (post / reel)
-              <div className="w-full max-w-md md:max-w-lg mx-auto rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
+              <div className="w-full max-w-[260px] sm:max-w-[300px] mx-auto rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
                 <div className="aspect-[9/16]">
                   <iframe
                     src={instagramEmbedUrl}
@@ -139,7 +139,7 @@ export default function ProjectDetail() {
 
         {useInstagramSplit ? (
           <section className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-start">
-            <div className="w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
+            <div className="w-full max-w-[300px] sm:max-w-[340px] mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
               <div className="aspect-[9/16]">
                 <iframe
                   src={instagramEmbedUrl}
