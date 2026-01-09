@@ -98,9 +98,28 @@ export default function Footer() {
       <div className="border-t border-zinc-900">
         <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="kv-caption text-zinc-600">© {year} Kulmen Visuals</p>
-          <p className="kv-caption text-zinc-600">
-            Aviso legal · Política de privacidad · Cookies
-          </p>
+          <div className="kv-caption text-zinc-600 flex flex-wrap items-center justify-center gap-2">
+            <Link
+              to="/aviso-legal"
+              className="hover:text-amber-300 transition"
+            >
+              Aviso legal
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link
+              to="/politica-privacidad"
+              className="hover:text-amber-300 transition"
+            >
+              Política de privacidad
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link
+              to="/cookies"
+              className="hover:text-amber-300 transition"
+            >
+              Cookies
+            </Link>
+          </div>
           <div className="kv-caption flex w-full items-center justify-between gap-3 text-zinc-600 md:w-auto md:justify-end">
             <a
               href="https://www.instagram.com/kulmenvisuals/"

@@ -13,6 +13,9 @@ import Contacto from './pages/Contacto.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Blog from './pages/Blog.jsx'
 import BlogPost from './pages/BlogPost.jsx'
+import AvisoLegal from './pages/AvisoLegal.jsx'
+import PoliticaPrivacidad from './pages/PoliticaPrivacidad.jsx'
+import Cookies from './pages/Cookies.jsx'
 
 import './index.css'
 
@@ -40,6 +43,11 @@ createRoot(document.getElementById('root')).render(
           {/* Blog */}
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:slug" element={<BlogPost />} />
+
+          {/* Legal */}
+          <Route path="aviso-legal" element={<AvisoLegal />} />
+          <Route path="politica-privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="cookies" element={<Cookies />} />
 
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
