@@ -161,10 +161,10 @@ export default function Home() {
             </div>
             <div className="relative">
               <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
-                Impacto visual desde el primer segundo
+                Producción completa, sin intermediarios ni fricción
               </h3>
               <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
-                Movimiento, ritmo y planos pensados para retener.
+                Planificación, rodaje y edición en un solo flujo.
               </p>
             </div>
           </article>
@@ -189,10 +189,10 @@ export default function Home() {
             </div>
             <div className="relative">
               <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
-                Producción completa, sin intermediarios ni fricción
+                Impacto visual desde el primer segundo
               </h3>
               <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
-                Planificación, rodaje y edición en un solo flujo.
+                Movimiento, ritmo y planos pensados para retener.
               </p>
             </div>
           </article>
@@ -401,19 +401,14 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-10">
             <div className="max-w-md">
               <h2 className="kv-section-title mb-3">
-                Acompaño todo el proceso.
+                Realizo todo el proceso.
               </h2>
               <p className="kv-body-muted">
-                Desde la idea inicial hasta la pieza final lista para publicar. Puedo entrar
-                en cualquier fase, pero lo ideal es diseñar el proyecto juntos desde el principio.
+                Desde la idea inicial hasta la pieza final lista para publicar. Planifico cada etapa
+                para que el rodaje fluya, la edición sea ágil y el resultado final cumpla el objetivo.
               </p>
             </div>
-            <div className="kv-body-muted max-w-sm">
-              <p>
-                Planifico cada etapa para que el rodaje fluya, la edición sea ágil
-                y el resultado final cumpla el objetivo.
-              </p>
-            </div>
+            <div className="kv-body-muted max-w-sm" />
           </div>
 
           <div className="grid gap-6 md:grid-cols-4">
