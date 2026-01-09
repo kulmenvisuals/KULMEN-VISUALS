@@ -1,6 +1,7 @@
 // src/data/blogPosts.js
 
-const assetBase = import.meta.env.BASE_URL
+const assetBase =
+  (import.meta && import.meta.env && import.meta.env.BASE_URL) || "/"
 
 export const blogPosts = [
   {
