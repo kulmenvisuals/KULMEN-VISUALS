@@ -43,8 +43,8 @@ export const projects = [
     client: "Cobre San Rafael · SD Compostela",
     year: 2025,
 
-    category: "Deporte / Patrocinio",
-    type: ["Eventos", "Deporte", "Patrocinio"],
+    category: "Deporte",
+    type: ["Eventos", "Deporte"],
     roles: ["Cobertura audiovisual", "Montaje para RRSS"], 
     location: "Santiago de Compostela",
 
@@ -110,7 +110,7 @@ export const projects = [
     year: 2025,
 
     category: "Deporte / Evento",
-    type: ["Deporte", "Evento"],
+    type: ["Deporte", "Eventos"],
     roles: ["Operadora de cámara", "Operadora de dron estabilizado", "Edición"],
     location: "Galicia",
 
