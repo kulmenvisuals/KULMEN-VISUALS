@@ -76,7 +76,7 @@ export const projects = [
 
     title: "Patrocinio · Cobre San Rafael x Campus Xacobeo",
     client: "Cobre San Rafael · SD Compostela",
-    year: 2024, 
+    year: 2025,
 
     category: "Deporte / Patrocinio",
     type: ["Eventos", "Deporte", "Patrocinio"],
@@ -172,9 +172,12 @@ export const projects = [
   thumbnail: "https://img.youtube.com/vi/MYtznjHXaYw/maxresdefault.jpg",
   youtubeUrl: "https://www.youtube.com/embed/MYtznjHXaYw",
   poster: null,
-  images: [],
+  images: [
+    "/images/projects/mama-1.png",
+    "/images/projects/mama-2.png",
+  ],
   description:
-    "Videoclip 'MAMÁ' para Sislah, rodado en Madrid. Pieza emocional con enfoque íntimo, mezclando planos de cámara y recursos urbanos.",
+    "Videoclip rodado en estudio con un enfoque íntimo y contenido, donde la luz, el encuadre y el ritmo acompañan el tono emocional del tema.",
 },
 
 ]
