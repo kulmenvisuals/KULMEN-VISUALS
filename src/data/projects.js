@@ -50,7 +50,7 @@ export const projects = [
     roles: ["Cámara", "Cobertura audiovisual"],
     location: "Madrid",
 
-    thumbnail: "https://img.youtube.com/vi/qbNfBMfWglA/maxresdefault.jpg",
+    thumbnail: "/images/projects/march-3.png",
 
     // YouTube embed
     youtubeUrl: "https://www.youtube.com/embed/qbNfBMfWglA",
