@@ -29,9 +29,8 @@ export default function Portfolio() {
           Proyectos de FPV, vídeo y contenido para marcas.
         </h1>
         <p className="kv-body-muted max-w-2xl">
-          Una selección de trabajos para marcas, festivales y proyectos
-          culturales. Si te interesa algo similar, cuéntame tu idea y vemos
-          cómo adaptarlo a tu objetivo.
+          Una selección de trabajos para marcas y proyectos. Si te interesa
+          algo similar, cuéntame tu idea y vemos cómo adaptarlo a tu objetivo.
         </p>
       </section>
 
