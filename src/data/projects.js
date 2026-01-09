@@ -131,7 +131,7 @@ export const projects = [
     ],
 
     description:
-      "Cobertura del evento y edición.",
+      "Cobertura y edición del evento de quads y motos Cross Country organizado por Os do Jatillo y patrocinado por Cobre San Rafael.",
     extra: null,
   },
 
