@@ -16,13 +16,24 @@
     <meta property="og:locale" content="es_ES" />
     <link rel="sitemap" type="application/xml" href="https://kulmenvisuals.com/sitemap.xml" />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJW41LXWZ4"></script>
     <script>
       window.dataLayer = window.dataLayer || []
       function gtag(){dataLayer.push(arguments)}
       gtag('js', new Date())
 
-      gtag('config', 'G-YJW41LXWZ4')
+      function loadAnalytics() {
+        var gtagScript = document.createElement('script')
+        gtagScript.async = true
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJW41LXWZ4'
+        document.head.appendChild(gtagScript)
+        gtag('config', 'G-YJW41LXWZ4')
+      }
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 2000 })
+      } else {
+        setTimeout(loadAnalytics, 1500)
+      }
     </script>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
