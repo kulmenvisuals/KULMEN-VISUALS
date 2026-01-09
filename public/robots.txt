@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kulmenvisuals.com/sitemap.xml
