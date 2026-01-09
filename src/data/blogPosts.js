@@ -12,7 +12,7 @@ export const blogPosts = [
     date: "2024-04-12",
     readTime: "6 min",
     category: "Turismo",
-    cover: `${assetBase}images/geprc-mark5.jpg`,
+    cover: `${assetBase}images/blog-fpv.jpg`,
     tags: ["FPV", "turismo", "Galicia", "branding territorial"],
     sections: [
       {
@@ -51,7 +51,7 @@ export const blogPosts = [
     date: "2024-03-28",
     readTime: "7 min",
     category: "Marcas",
-    cover: `${assetBase}images/blackmagic.jpg`,
+    cover: `${assetBase}images/blog-prepro.jpg`,
     tags: ["preproducción", "video marketing", "marcas locales"],
     sections: [
       {
@@ -93,7 +93,7 @@ export const blogPosts = [
     date: "2024-02-10",
     readTime: "5 min",
     category: "Eventos",
-    cover: `${assetBase}images/lumix-s5ii.jpeg`,
+    cover: `${assetBase}images/blog-eventos.jpg`,
     tags: ["aftermovie", "eventos", "edición"],
     sections: [
       {
@@ -129,7 +129,7 @@ export const blogPosts = [
     date: "2024-01-22",
     readTime: "6 min",
     category: "Espacios",
-    cover: `${assetBase}images/dji-mini-4pro.webp`,
+    cover: `${assetBase}images/blog-indoor.jpg`,
     tags: ["rodaje", "espacios indoor", "planificación"],
     sections: [
       {
