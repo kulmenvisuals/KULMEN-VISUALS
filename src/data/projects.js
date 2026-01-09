@@ -84,8 +84,7 @@ export const projects = [
     location: "Santiago de Compostela",
 
   
-    thumbnail:
-      "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1280&auto=format",
+    thumbnail: "/images/projects/cobre-touro-2.png",
 
     // Enlace a Instagram
     instagramUrl: "https://www.instagram.com/p/DMuqh9yoWBN/",
@@ -95,13 +94,13 @@ export const projects = [
     poster: null,
 
     images: [
-      "https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=1200&auto=format",
+      "/images/projects/cobre-touro-3.png",
+      "/images/projects/cobre-touro-4.png",
     ],
 
     description:
       "Pieza para redes sociales del patrocinio de Cobre San Rafael junto al Campus Xacobeo del Compostela. Cobertura dinámica en campo para transmitir energía, afición y vínculo con el territorio.",
-    extra:
-      "Orientado a Instagram, con montaje ágil y énfasis en planos de juego, detalles de marca y ambiente de grada.",
+    extra: null,
   },
 
   // 4) Evento deportivo: HXGAP RACE
