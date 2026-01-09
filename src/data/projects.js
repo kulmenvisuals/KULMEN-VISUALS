@@ -59,14 +59,14 @@ export const projects = [
     poster: null,
 
     images: [
-      "https://img.youtube.com/vi/qbNfBMfWglA/maxresdefault.jpg",
-      "https://img.youtube.com/vi/qbNfBMfWglA/sddefault.jpg",
+      "/images/projects/march-1.png",
+      "/images/projects/march-2.png",
     ],
 
     description:
-      "Reportaje audiovisual alrededor de la obra de Lynda Benglis para Banca March, grabado en Madrid. Cobertura cuidada de la exposición y del espacio, poniendo el foco en la relación entre arte, materia y luz.",
+      "Reportaje audiovisual alrededor de la obra de Lynda Benglis para Banca March, grabado en Madrid. Cobertura cuidada del proceso de montado de la exposición y del espacio. Estilo reportaje documental",
     extra:
-      "El objetivo fue documentar la experiencia expositiva con un lenguaje cercano al documental, respetando el ritmo de las obras y el contexto del espacio.",
+      "El foco estuvo en el montaje de la exposicion y la relacion entre obra y espacio, con un tratamiento documental sobrio y observacional.",
   },
 
   // 3) Patrocinio: Cobre San Rafael x Campus Xacobeo (SD Compostela)
