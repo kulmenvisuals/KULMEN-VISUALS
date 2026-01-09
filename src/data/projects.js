@@ -26,14 +26,14 @@ export const projects = [
     poster: null,
 
     images: [
-      "https://img.youtube.com/vi/C_knrGpZW0k/maxresdefault.jpg",
-      "https://img.youtube.com/vi/C_knrGpZW0k/sddefault.jpg",
+      "/images/projects/mientete-1.png",
+      "/images/projects/mientete-2.png",
     ],
 
     description:
-      "Videoclip rodado en Madrid para Sislah y Albella. Trabajo de cámara y FPV mezclando cercanía, movimiento y atmósfera intimista.",
+      "Videoclip rodado en Madrid para Sislah y Albella. Rodado íntegramente en estudio con una propuesta visual centrada en el color, la silueta y el movimiento como elementos narrativos principales. La estética (marcada por tonos rosados, siluetas y primeros planos expresivos) busca un equilibrio entre minimalismo, carácter pop y una lectura visual directa, sin elementos superfluos.",
     extra:
-      "El foco del proyecto estuvo en integrar el movimiento de cámara con la narrativa emocional del tema, jugando con espacios interiores y detalles del performance.",
+      "La direccion se centro en coreografiar la camara dentro del set, usando luz y color para recortar siluetas y potenciar el movimiento como hilo narrativo.",
   },
 
   // 2) Reportaje: Banca March · Lynda Benglis
