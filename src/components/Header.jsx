@@ -7,7 +7,6 @@ const nav = [
   { to: "/proyectos", label: "Proyectos" },
   { to: "/servicios", label: "Servicios" },
   { to: "/sobre-mi", label: "Sobre mí" },
-  { to: "/blog", label: "Blog" },
 ]
 
 export default function Header() {
