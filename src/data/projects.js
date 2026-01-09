@@ -108,7 +108,7 @@ export const projects = [
     id: "hxgap-race",
     slug: "hxgap-race",
 
-    title: "HXGAP RACE",
+    title: "RRSS · XGAP Fitness Center",
     client: "XGAP Fitness Center",
     year: 2025,
 
@@ -117,17 +117,20 @@ export const projects = [
     roles: ["Cobertura audiovisual", "Edición"],
     location: "A Estrada",
 
-    thumbnail: null,
+    thumbnail: "/images/projects/xgap-3.png",
 
     instagramUrl: "https://www.instagram.com/reel/DRkRXo0kX4J/",
     youtubeUrl: null,
     videoUrl: null,
     poster: null,
 
-    images: [],
+    images: [
+      "/images/projects/xgap-1.jpeg",
+      "/images/projects/xgap-2.jpeg",
+    ],
 
     description:
-      "Evento deportivo para amantes del gimnasio y el crossfit.",
+      "Contenido audiovisual de vídeo para redes sociales.",
   },
 
   // 5) Tour FPV: Nova Vila Enoturismo
