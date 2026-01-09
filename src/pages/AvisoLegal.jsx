@@ -21,10 +21,10 @@ export default function AvisoLegal() {
               Identificación del titular
             </h2>
             <ul className="space-y-2 text-zinc-300">
-              <li>Responsable: io Rodríguez (Kulmen Visuals)</li>
+              <li>Responsable: Io Elena Rodríguez Otero</li>
               <li>Actividad: producción audiovisual y servicios de vídeo</li>
-              <li>NIF/CIF: pendiente de indicar</li>
-              <li>Domicilio: Galicia, España</li>
+              <li>NIF/CIF: 77545770M</li>
+              <li>Domicilio: Ribeira de Abaixo 7, A Estrada, 36685.</li>
               <li>Correo de contacto: hola@kulmenvisuals.com</li>
             </ul>
           </div>
