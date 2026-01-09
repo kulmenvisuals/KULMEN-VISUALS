@@ -1,42 +1,7 @@
 // src/data/projects.js
 
 export const projects = [
-  // 1) Videoclip: Sislah, Albella | MIÉNTETE
-  {
-    id: "sislah-albella-mientete",
-    slug: "sislah-albella-mientete",
-
-    title: "Videoclip · MIÉNTETE",
-    client: "Sislah, Albella",
-    year: 2024,
-
-    category: "Videoclip / Música",
-    type: ["Videoclip", "Música"],
-    roles: ["Cámara", "FPV", "Montaje"],
-    location: "Madrid",
-
-    // Miniatura: thumbnail de YouTube
-    thumbnail: "https://img.youtube.com/vi/C_knrGpZW0k/maxresdefault.jpg",
-
-    // YouTube embed
-    youtubeUrl: "https://www.youtube.com/embed/C_knrGpZW0k",
-
-    // Fallback local
-    videoUrl: null,
-    poster: null,
-
-    images: [
-      "/images/projects/mientete-1.png",
-      "/images/projects/mientete-2.png",
-    ],
-
-    description:
-      "Videoclip rodado en Madrid para Sislah y Albella. Rodado íntegramente en estudio con una propuesta visual centrada en el color, la silueta y el movimiento como elementos narrativos principales. La estética (marcada por tonos rosados, siluetas y primeros planos expresivos) busca un equilibrio entre minimalismo, carácter pop y una lectura visual directa, sin elementos superfluos.",
-    extra:
-      "La direccion se centro en coreografiar la camara dentro del set, usando luz y color para recortar siluetas y potenciar el movimiento como hilo narrativo.",
-  },
-
-  // 2) Reportaje: Banca March · Lynda Benglis
+  // 1) Reportaje: Banca March · Lynda Benglis
   {
     id: "banca-march-lynda-benglis",
     slug: "banca-march-lynda-benglis",
@@ -69,7 +34,7 @@ export const projects = [
       "El foco estuvo en el montaje de la exposicion y la relacion entre obra y espacio, con un tratamiento documental sobrio y observacional.",
   },
 
-  // 3) Patrocinio: Cobre San Rafael x Campus Xacobeo (SD Compostela)
+  // 2) Patrocinio: Cobre San Rafael x Campus Xacobeo (SD Compostela)
   {
     id: "cobre-san-rafael-campus-xacobeo",
     slug: "cobre-san-rafael-campus-xacobeo",
@@ -100,6 +65,38 @@ export const projects = [
 
     description:
       "Pieza para redes sociales del patrocinio de Cobre San Rafael junto al Campus Xacobeo del Compostela. Cobertura dinámica en campo para transmitir energía, afición y vínculo con el territorio.",
+    extra: null,
+  },
+
+  // 3) RRSS: Norvento Technpower
+  {
+    id: "rrss-norvento-technpower",
+    slug: "rrss-norvento-technpower",
+
+    title: "RRSS · Norvento Technpower",
+    client: "Norvento Technpower",
+    year: 2025,
+
+    category: "RRSS / Producto",
+    type: ["RRSS", "Producto"],
+    roles: ["Grabación", "Edición"],
+    location: "Lugo",
+
+    thumbnail: "/images/projects/norvento-1.png",
+
+    instagramUrl: "https://www.instagram.com/reel/DO74XDZiI9O/",
+
+    youtubeUrl: null,
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "/images/projects/norvento-1.png",
+      "/images/projects/norvento-2.png",
+    ],
+
+    description:
+      "Grabación y edición de vídeos educativos y de producto para RRSS.",
     extra: null,
   },
 
@@ -135,7 +132,7 @@ export const projects = [
     extra: null,
   },
 
-  // 5) Evento deportivo: HXGAP RACE
+  // 5) RRSS: XGAP Fitness Center
   {
     id: "hxgap-race",
     slug: "hxgap-race",
@@ -192,36 +189,39 @@ export const projects = [
       "Tour FPV para Nova Vila Enoturismo orientado a redes sociales, con recorrido inmersivo del espacio.",
   },
 
-  // 7) RRSS: Norvento Technpower
+  // 7) Videoclip: Sislah, Albella | MIÉNTETE
   {
-    id: "rrss-norvento-technpower",
-    slug: "rrss-norvento-technpower",
+    id: "sislah-albella-mientete",
+    slug: "sislah-albella-mientete",
 
-    title: "RRSS · Norvento Technpower",
-    client: "Norvento Technpower",
-    year: 2025,
+    title: "Videoclip · MIÉNTETE",
+    client: "Sislah, Albella",
+    year: 2024,
 
-    category: "RRSS / Producto",
-    type: ["RRSS", "Producto"],
-    roles: ["Grabación", "Edición"],
-    location: "Lugo",
+    category: "Videoclip / Música",
+    type: ["Videoclip", "Música"],
+    roles: ["Cámara", "FPV", "Montaje"],
+    location: "Madrid",
 
-    thumbnail: "/images/projects/norvento-1.png",
+    // Miniatura: thumbnail de YouTube
+    thumbnail: "https://img.youtube.com/vi/C_knrGpZW0k/maxresdefault.jpg",
 
-    instagramUrl: "https://www.instagram.com/reel/DO74XDZiI9O/",
+    // YouTube embed
+    youtubeUrl: "https://www.youtube.com/embed/C_knrGpZW0k",
 
-    youtubeUrl: null,
+    // Fallback local
     videoUrl: null,
     poster: null,
 
     images: [
-      "/images/projects/norvento-1.png",
-      "/images/projects/norvento-2.png",
+      "/images/projects/mientete-1.png",
+      "/images/projects/mientete-2.png",
     ],
 
     description:
-      "Grabación y edición de vídeos educativos y de producto para RRSS.",
-    extra: null,
+      "Videoclip rodado en Madrid para Sislah y Albella. Rodado íntegramente en estudio con una propuesta visual centrada en el color, la silueta y el movimiento como elementos narrativos principales. La estética (marcada por tonos rosados, siluetas y primeros planos expresivos) busca un equilibrio entre minimalismo, carácter pop y una lectura visual directa, sin elementos superfluos.",
+    extra:
+      "La direccion se centro en coreografiar la camara dentro del set, usando luz y color para recortar siluetas y potenciar el movimiento como hilo narrativo.",
   },
 
   // 8) Videoclip: Mamá, Sislah
