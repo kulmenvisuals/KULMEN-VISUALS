@@ -157,28 +157,60 @@ export const projects = [
       "Tour FPV para Nova Vila Enoturismo orientado a redes sociales, con recorrido inmersivo del espacio.",
   },
 
-    // 5) Videoclip: Mamá, Sislah
-{
-  id: "mama-sislah-madrid",
-  slug: "mama-sislah-madrid",
-  title: "MAMÁ — Sislah",
-  client: "Sislah",
-  year: 2024, 
-  type: ["Videoclip","Musica"],
-  category: "videoclip",
-  roles: ["Dirección de foto", "Cámara", "Operadora FPV", "Edición"],
-  location: "Madrid",
-  coords: [40.4168, -3.7038],
-  thumbnail: "https://img.youtube.com/vi/MYtznjHXaYw/maxresdefault.jpg",
-  youtubeUrl: "https://www.youtube.com/embed/MYtznjHXaYw",
-  poster: null,
-  images: [
-    "/images/projects/mama-1.png",
-    "/images/projects/mama-2.png",
-  ],
-  description:
-    "Videoclip rodado en estudio con un enfoque íntimo y contenido, donde la luz, el encuadre y el ritmo acompañan el tono emocional del tema.",
-},
+  // 6) RRSS: Norvento Technpower
+  {
+    id: "rrss-norvento-technpower",
+    slug: "rrss-norvento-technpower",
+
+    title: "RRSS · Norvento Technpower",
+    client: "Norvento Technpower",
+    year: 2025,
+
+    category: "RRSS / Producto",
+    type: ["RRSS", "Producto"],
+    roles: ["Grabación", "Edición"],
+    location: "Lugo",
+
+    thumbnail: "/images/projects/norvento-1.png",
+
+    instagramUrl: "https://www.instagram.com/reel/DO74XDZiI9O/",
+
+    youtubeUrl: null,
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "/images/projects/norvento-1.png",
+      "/images/projects/norvento-2.png",
+    ],
+
+    description:
+      "Grabación y edición de vídeos educativos y de producto para RRSS.",
+    extra: null,
+  },
+
+  // 7) Videoclip: Mamá, Sislah
+  {
+    id: "mama-sislah-madrid",
+    slug: "mama-sislah-madrid",
+    title: "MAMÁ — Sislah",
+    client: "Sislah",
+    year: 2024, 
+    type: ["Videoclip","Musica"],
+    category: "videoclip",
+    roles: ["Dirección de foto", "Cámara", "Operadora FPV", "Edición"],
+    location: "Madrid",
+    coords: [40.4168, -3.7038],
+    thumbnail: "https://img.youtube.com/vi/MYtznjHXaYw/maxresdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/embed/MYtznjHXaYw",
+    poster: null,
+    images: [
+      "/images/projects/mama-1.png",
+      "/images/projects/mama-2.png",
+    ],
+    description:
+      "Videoclip rodado en estudio con un enfoque íntimo y contenido, donde la luz, el encuadre y el ritmo acompañan el tono emocional del tema.",
+  },
 
 ]
 
