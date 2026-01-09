@@ -103,7 +103,39 @@ export const projects = [
     extra: null,
   },
 
-  // 4) Evento deportivo: HXGAP RACE
+  // 4) Evento: Cobre San Rafael x Cross Country Touro
+  {
+    id: "cobre-san-rafael-cross-country-touro",
+    slug: "cobre-san-rafael-cross-country-touro",
+
+    title: "Cobre San Rafael x Cross Country Touro",
+    client: "Cobre San Rafael",
+    year: 2025,
+
+    category: "Deporte / Evento",
+    type: ["Deporte", "Evento"],
+    roles: ["Operadora de cámara", "Operadora de dron estabilizado", "Edición"],
+    location: "Galicia",
+
+    thumbnail: "/images/projects/cross-1.png",
+
+    instagramUrl: "https://www.instagram.com/p/DPV-FUnDnV1/",
+
+    youtubeUrl: null,
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "/images/projects/cross-2.png",
+      "/images/projects/cross-3.png",
+    ],
+
+    description:
+      "Cobertura del evento y edición.",
+    extra: null,
+  },
+
+  // 5) Evento deportivo: HXGAP RACE
   {
     id: "hxgap-race",
     slug: "hxgap-race",
@@ -133,7 +165,7 @@ export const projects = [
       "Contenido audiovisual de vídeo para redes sociales.",
   },
 
-  // 5) Tour FPV: Nova Vila Enoturismo
+  // 6) Tour FPV: Nova Vila Enoturismo
   {
     id: "tour-fpv-nova-vila-enoturismo",
     slug: "tour-fpv-nova-vila-enoturismo",
@@ -160,7 +192,7 @@ export const projects = [
       "Tour FPV para Nova Vila Enoturismo orientado a redes sociales, con recorrido inmersivo del espacio.",
   },
 
-  // 6) RRSS: Norvento Technpower
+  // 7) RRSS: Norvento Technpower
   {
     id: "rrss-norvento-technpower",
     slug: "rrss-norvento-technpower",
@@ -192,7 +224,7 @@ export const projects = [
     extra: null,
   },
 
-  // 7) Videoclip: Mamá, Sislah
+  // 8) Videoclip: Mamá, Sislah
   {
     id: "mama-sislah-madrid",
     slug: "mama-sislah-madrid",
