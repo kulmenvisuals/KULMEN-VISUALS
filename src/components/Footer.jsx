@@ -57,11 +57,11 @@ export default function Footer() {
             <Link to="/proyectos" className="text-zinc-300 hover:text-amber-300 transition">
               Proyectos
             </Link>
-            <Link to="/blog" className="text-zinc-300 hover:text-amber-300 transition">
-              Blog
-            </Link>
             <Link to="/sobre-mi" className="text-zinc-300 hover:text-amber-300 transition">
               Sobre mí
+            </Link>
+            <Link to="/blog" className="text-zinc-300 hover:text-amber-300 transition">
+              Blog
             </Link>
             <Link to="/contacto" className="text-zinc-300 hover:text-amber-300 transition">
               Contacto
