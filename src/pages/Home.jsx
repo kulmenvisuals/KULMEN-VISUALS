@@ -90,12 +90,18 @@ export default function Home() {
       <section className="relative min-h-[70vh] md:h-[80vh] overflow-hidden pt-20 pb-10 md:pt-24">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src={`${import.meta.env.BASE_URL}videos/hero.mp4`}
           autoPlay
           muted
           loop
           playsInline
-        />
+          preload="auto"
+          poster={`${import.meta.env.BASE_URL}images/hero-poster.webp`}
+        >
+          <source
+            src={`${import.meta.env.BASE_URL}videos/hero.mp4`}
+            type="video/mp4"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/65" />
 
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
