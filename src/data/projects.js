@@ -8,6 +8,7 @@ export const projects = [
 
     title: "Reportaje · Lynda Benglis para Banca March",
     client: "Banca March",
+    agency: "Starporcasa",
     year: 2024,
 
     category: "Reportaje / Arte",
