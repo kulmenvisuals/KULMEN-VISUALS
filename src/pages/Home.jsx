@@ -175,6 +175,9 @@ export default function Home() {
             <Link to="/servicios" className="kv-button-secondary">
               Ver servicios
             </Link>
+            <Link to="/contacto" className="kv-button-primary md:hidden">
+              Iniciar proyecto
+            </Link>
           </div>
 
           <form
