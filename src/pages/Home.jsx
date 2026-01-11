@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Film, Plane, Scissors, Share2, Briefcase, Calendar, Building2 } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
@@ -68,6 +68,9 @@ const homeSchema = {
 }
 
 export default function Home() {
+  const [showVideo, setShowVideo] = useState(false)
+  const [useMobileVideo, setUseMobileVideo] = useState(false)
+
   useEffect(() => {
     const existing = document.querySelector(
       'script[data-lightwidget="kulmenvisuals"]'
@@ -80,6 +83,46 @@ export default function Home() {
     document.body.appendChild(script)
   }, [])
 
+  useEffect(() => {
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const widthQuery = window.matchMedia('(min-width: 768px)')
+
+    const updateVideo = () => {
+      const allowVideo = !motionQuery.matches
+      setShowVideo(allowVideo)
+      setUseMobileVideo(!widthQuery.matches)
+    }
+
+    updateVideo()
+
+    const addListener = (query, handler) => {
+      if (query.addEventListener) {
+        query.addEventListener('change', handler)
+      } else {
+        query.addListener(handler)
+      }
+    }
+    const removeListener = (query, handler) => {
+      if (query.removeEventListener) {
+        query.removeEventListener('change', handler)
+      } else {
+        query.removeListener(handler)
+      }
+    }
+
+    addListener(motionQuery, updateVideo)
+    addListener(widthQuery, updateVideo)
+
+    return () => {
+      removeListener(motionQuery, updateVideo)
+      removeListener(widthQuery, updateVideo)
+    }
+  }, [])
+
+  const heroVideoSrc = useMobileVideo
+    ? `${import.meta.env.BASE_URL}videos/hero-mobile.mp4`
+    : `${import.meta.env.BASE_URL}videos/hero.mp4`
+
   return (
     <div className="bg-zinc-950 text-zinc-50">
       <script
@@ -88,20 +131,32 @@ export default function Home() {
       />
       {/* HERO con vídeo de fondo */}
       <section className="relative min-h-[70vh] md:h-[80vh] overflow-hidden pt-20 pb-10 md:pt-24">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster={`${import.meta.env.BASE_URL}images/hero-poster.webp`}
-        >
-          <source
-            src={`${import.meta.env.BASE_URL}videos/hero.mp4`}
-            type="video/mp4"
+        {showVideo ? (
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={`${import.meta.env.BASE_URL}images/hero-poster.webp`}
+            aria-hidden="true"
+          >
+            <source
+              src={heroVideoSrc}
+              type="video/mp4"
+            />
+          </video>
+        ) : (
+          <img
+            className="absolute inset-0 w-full h-full object-cover"
+            src={`${import.meta.env.BASE_URL}images/hero-poster.webp`}
+            alt=""
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
-        </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/85 md:from-black/55 md:via-black/35 md:to-black/75" />
 
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
@@ -119,9 +174,6 @@ export default function Home() {
           <div className="flex flex-wrap gap-3">
             <Link to="/servicios" className="kv-button-secondary">
               Ver servicios
-            </Link>
-            <Link to="/contacto" className="kv-button-primary">
-              Iniciar proyecto
             </Link>
           </div>
 
