@@ -117,7 +117,10 @@ export default function Home() {
             Rodaje, FPV y edición pensados para redes, campañas y web. 
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link to="/proyectos" className="kv-button-primary">
+            <Link to="/contacto" className="kv-button-primary md:hidden">
+              Iniciar proyecto
+            </Link>
+            <Link to="/proyectos" className="kv-button-primary hidden md:inline-flex">
               Ver proyectos
             </Link>
           </div>
