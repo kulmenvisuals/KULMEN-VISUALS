@@ -102,7 +102,7 @@ export default function Home() {
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/85 md:from-black/55 md:via-black/35 md:to-black/75" />
 
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
           <p className="kv-eyebrow text-zinc-300 mb-4">
@@ -205,39 +205,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Últimos trabajos */}
-      <section className="max-w-6xl mx-auto px-4 py-10 md:py-14">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
-          <div>
-            <h2 className="kv-section-title mb-2">Últimos trabajos</h2>
-            <p className="kv-body-muted max-w-md">
-              Proyectos audiovisuales para marcas, eventos y espacios en Galicia.
-            </p>
-          </div>
-          <Link
-            to="/proyectos"
-            className="kv-button-secondary text-sm"
-          >
-            Ver proyectos completos
-          </Link>
-        </div>
-
-        {featuredProjects.length === 0 ? (
-          <p className="kv-body-muted text-zinc-500">
-            Aún no hay proyectos cargados en <code>data/projects.js</code>.
-          </p>
-        ) : (
-          <div className="grid gap-6 md:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.id || project.slug} project={project} />
-            ))}
-          </div>
-        )}
-      </section>
-
-
       {/* Servicios de producción audiovisual */}
-      <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
+      <section className="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
         <div className="flex flex-col gap-6 md:gap-10">
           <div>
             <h2 className="kv-section-title mb-3">
@@ -322,6 +291,36 @@ export default function Home() {
             </article>
           </div>
         </div>
+      </section>
+
+      {/* Últimos trabajos */}
+      <section className="max-w-6xl mx-auto px-4 pt-6 md:pt-10 pb-10 md:pb-14">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div>
+            <h2 className="kv-section-title mb-2">Últimos trabajos</h2>
+            <p className="kv-body-muted max-w-md">
+              Proyectos audiovisuales para marcas, eventos y espacios en Galicia.
+            </p>
+          </div>
+          <Link
+            to="/proyectos"
+            className="kv-button-secondary text-sm"
+          >
+            Ver proyectos completos
+          </Link>
+        </div>
+
+        {featuredProjects.length === 0 ? (
+          <p className="kv-body-muted text-zinc-500">
+            Aún no hay proyectos cargados en <code>data/projects.js</code>.
+          </p>
+        ) : (
+          <div className="grid gap-6 md:grid-cols-3">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.id || project.slug} project={project} />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Proyectos con los que trabajo */}
