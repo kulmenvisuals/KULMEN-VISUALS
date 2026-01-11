@@ -102,7 +102,7 @@ export default function Home() {
             type="video/mp4"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/75" />
 
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
           <p className="kv-eyebrow text-zinc-300 mb-4">
