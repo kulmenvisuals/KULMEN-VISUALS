@@ -128,7 +128,7 @@ export default function Home() {
           <form
             action="https://formspree.io/f/xyzdkrka"
             method="POST"
-            className="mt-6 w-full max-w-2xl kv-crystal rounded-2xl p-3 md:p-4 flex flex-col gap-3"
+            className="mt-6 w-full max-w-2xl kv-crystal rounded-2xl p-3 md:p-4 hidden md:flex flex-col gap-3"
           >
             <input
               type="hidden"
