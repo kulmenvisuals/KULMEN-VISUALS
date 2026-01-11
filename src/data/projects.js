@@ -41,6 +41,7 @@ export const projects = [
 
     title: "Patrocinio · Cobre San Rafael x Campus Xacobeo",
     client: "Cobre San Rafael · SD Compostela",
+    agency: "Orestes Comunica",
     year: 2025,
 
     category: "Deporte",
@@ -75,6 +76,7 @@ export const projects = [
 
     title: "RRSS · Norvento Technpower",
     client: "Norvento Technpower",
+    agency: "Orestes Comunica",
     year: 2025,
 
     category: "RRSS / Producto",
@@ -107,6 +109,7 @@ export const projects = [
 
     title: "Cobre San Rafael x Cross Country Touro",
     client: "Cobre San Rafael",
+    agency: "Orestes Comunica",
     year: 2025,
 
     category: "Deporte / Evento",

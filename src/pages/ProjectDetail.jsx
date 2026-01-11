@@ -182,6 +182,14 @@ export default function ProjectDetail() {
                     <p className="text-zinc-200">{project.client}</p>
                   </div>
                 )}
+                {project.agency && (
+                  <div>
+                    <h2 className="kv-eyebrow text-zinc-500 mb-1">
+                      Agencia
+                    </h2>
+                    <p className="text-zinc-200">{project.agency}</p>
+                  </div>
+                )}
                 {Array.isArray(project.roles) && project.roles.length > 0 && (
                   <div>
                     <h2 className="kv-eyebrow text-zinc-500 mb-1">
@@ -231,6 +239,14 @@ export default function ProjectDetail() {
                     Cliente
                   </h2>
                   <p className="text-zinc-200">{project.client}</p>
+                </div>
+              )}
+              {project.agency && (
+                <div>
+                  <h2 className="kv-eyebrow text-zinc-500 mb-1">
+                    Agencia
+                  </h2>
+                  <p className="text-zinc-200">{project.agency}</p>
                 </div>
               )}
               {Array.isArray(project.roles) && project.roles.length > 0 && (
