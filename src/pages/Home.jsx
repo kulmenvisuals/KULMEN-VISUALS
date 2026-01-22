@@ -36,29 +36,64 @@ const serviceTeasers = [
 
 const faqItems = [
   {
-    question: '¿Qué tipo de vídeos realizas?',
+    question: '¿Qué tipo de proyectos audiovisuales realizas?',
     answer:
-      'Producción audiovisual para marcas, eventos y espacios: spots, aftermovies, vídeos de producto y contenido para redes.',
+      'Trabajo principalmente en vídeo para marcas, eventos y turismo: spots y piezas cortas para campañas, videoclips, aftermovies, resúmenes de eventos, recorridos con dron FPV y contenido pensado para redes sociales (Reels, Shorts, TikTok). También desarrollo piezas más completas para web o presentación de proyectos.',
   },
   {
-    question: '¿Trabajas solo en Galicia?',
+    question: '¿En qué zona trabajas? ¿Solo en Galicia?',
     answer:
-      'Base en Pontevedra, con producciones en toda Galicia y desplazamientos puntuales si el proyecto lo requiere.',
+      'Estoy basada en Galicia, pero puedo desplazarme a otras zonas de España si el proyecto lo requiere. Para proyectos fuera de Galicia suelo plantear un presupuesto cerrado que incluya desplazamiento, dietas y alojamiento, para que tengas el coste total desde el principio.',
   },
   {
-    question: '¿Qué incluye el servicio de FPV?',
+    question: '¿Qué diferencia hay entre un dron “normal” y un dron FPV?',
     answer:
-      'Planificación de vuelo, piloto FPV y planos dinámicos listos para integrarse en la edición final.',
+      'El dron clásico se usa para planos estables y panorámicos (vistas aéreas, contexto del lugar). El dron FPV permite planos mucho más dinámicos: persecución de vehículos, recorridos entre personas, entrada y salida de espacios, giros rápidos. Es ideal para deporte, eventos, turismo y negocios donde interesa enseñar el espacio de forma inmersiva.',
   },
   {
-    question: '¿Cuánto tarda un proyecto?',
+    question: '¿Qué servicios ofreces además del rodaje?',
     answer:
-      'Según el alcance. Habitualmente entre 2 y 6 semanas desde la preproducción hasta la entrega final.',
+      'No solo grabo: preproducción (definición de objetivo, guion básico, estructura y planificación), rodaje (cámara de cine, dron FPV, dron aéreo y sonido básico), postproducción (montaje, corrección de color, limpieza de audio, música con licencia y rótulos básicos) y contenido con IA como apoyo puntual.',
   },
   {
-    question: '¿Entregas versiones para redes?',
+    question: '¿Cómo es el proceso de trabajo desde que pido un presupuesto?',
     answer:
-      'Sí, adapto el contenido a formatos vertical, cuadrado o 16:9 con duraciones pensadas para campañas y web.',
+      'Contacto inicial, propuesta, planificación, rodaje y montaje con entregas. Empezamos definiendo objetivo, fechas y localización, preparo la propuesta, cerramos guion y calendario, grabamos y envío una primera versión para comentarios antes de la entrega final.',
+  },
+  {
+    question: '¿Cuánto cuesta un vídeo con dron FPV o una pieza completa?',
+    answer:
+      'El precio depende del tipo de proyecto, duración del rodaje, localizaciones, si hay dron/cámara o ambos, y la complejidad de la edición. Suelo preparar un presupuesto cerrado tras una breve llamada o correo para definir alcance y necesidades.',
+  },
+  {
+    question: '¿Cuánto tardas en entregar el material?',
+    answer:
+      'Depende del proyecto: eventos y aftermovies sencillos entre 3 y 10 días laborables; spots, videoclips y proyectos más complejos entre 2 y 4 semanas. Si hay fecha límite, se planifica desde el inicio.',
+  },
+  {
+    question: '¿Te encargas de los permisos para volar drones?',
+    answer:
+      'Sí. Trabajo con la regulación vigente de UAS/drones en España: reviso el espacio aéreo y gestiono coordinación y solicitudes cuando es necesario. Si un vuelo no es viable, propongo alternativas.',
+  },
+  {
+    question: '¿Qué formatos de entrega recibo?',
+    answer:
+      'Entrego formato horizontal (16:9) para web o YouTube y, si el proyecto lo incluye, versiones verticales (9:16) para Reels, TikTok o Shorts. Los archivos se entregan por enlace en .mp4 de alta calidad.',
+  },
+  {
+    question: '¿Puedo pedir solo edición si ya tengo el material grabado?',
+    answer:
+      'Sí. Puedo encargarme solo de postproducción: ordenar material, montar, corregir color, añadir música y preparar versiones para redes. Reviso una muestra antes para asegurar la calidad.',
+  },
+  {
+    question: '¿Qué papel tiene la inteligencia artificial (IA) en tus proyectos?',
+    answer:
+      'La IA es un recurso de apoyo: moodboards, storyboards rápidos, variaciones de contenido y, en casos concretos, imágenes o animaciones generadas cuando aporta valor creativo.',
+  },
+  {
+    question: '¿Cómo puedo pedir un presupuesto o empezar un proyecto?',
+    answer:
+      'Puedes contactar desde el formulario de la web o escribir a hola@kulmenvisuals.com. Si incluyes tipo de proyecto, localización, fechas aproximadas y objetivo, podré darte una respuesta más precisa.',
   },
 ]
 
