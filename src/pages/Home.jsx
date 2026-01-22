@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Film, Plane, Scissors, Share2, Briefcase, Calendar, Building2 } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
+import { setPageMeta } from '../utils/seo.js'
 
 const featuredProjects = Array.isArray(projects) ? projects.slice(0, 3) : []
 
@@ -33,12 +34,40 @@ const serviceTeasers = [
   },
 ]
 
+const faqItems = [
+  {
+    question: '¿Qué tipo de vídeos realizas?',
+    answer:
+      'Producción audiovisual para marcas, eventos y espacios: spots, aftermovies, vídeos de producto y contenido para redes.',
+  },
+  {
+    question: '¿Trabajas solo en Galicia?',
+    answer:
+      'Base en Pontevedra, con producciones en toda Galicia y desplazamientos puntuales si el proyecto lo requiere.',
+  },
+  {
+    question: '¿Qué incluye el servicio de FPV?',
+    answer:
+      'Planificación de vuelo, piloto FPV y planos dinámicos listos para integrarse en la edición final.',
+  },
+  {
+    question: '¿Cuánto tarda un proyecto?',
+    answer:
+      'Según el alcance. Habitualmente entre 2 y 6 semanas desde la preproducción hasta la entrega final.',
+  },
+  {
+    question: '¿Entregas versiones para redes?',
+    answer:
+      'Sí, adapto el contenido a formatos vertical, cuadrado o 16:9 con duraciones pensadas para campañas y web.',
+  },
+]
 
 const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
+      "@id": "https://kulmenvisuals.com/#organization",
       name: "Kulmen Visuals",
       url: "https://kulmenvisuals.com",
       email: "hola@kulmenvisuals.com",
@@ -53,6 +82,7 @@ const homeSchema = {
     },
     {
       "@type": "LocalBusiness",
+      "@id": "https://kulmenvisuals.com/#localbusiness",
       name: "Kulmen Visuals",
       url: "https://kulmenvisuals.com",
       telephone: "+34 652405654",
@@ -64,12 +94,56 @@ const homeSchema = {
       },
       areaServed: "ES",
     },
+    {
+      "@type": "Service",
+      name: "Producción audiovisual",
+      serviceType: "Producción audiovisual",
+      provider: { "@id": "https://kulmenvisuals.com/#organization" },
+      areaServed: "Galicia",
+      url: "https://kulmenvisuals.com/servicios",
+    },
+    {
+      "@type": "Service",
+      name: "FPV cinematográfico",
+      serviceType: "Drones FPV",
+      provider: { "@id": "https://kulmenvisuals.com/#organization" },
+      areaServed: "Galicia",
+      url: "https://kulmenvisuals.com/servicios",
+    },
+    {
+      "@type": "Service",
+      name: "Edición y postproducción",
+      serviceType: "Postproducción de vídeo",
+      provider: { "@id": "https://kulmenvisuals.com/#organization" },
+      areaServed: "Galicia",
+      url: "https://kulmenvisuals.com/servicios",
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://kulmenvisuals.com/#faq",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
   ],
 }
 
 export default function Home() {
   const [showVideo, setShowVideo] = useState(false)
   const [useMobileVideo, setUseMobileVideo] = useState(false)
+
+  useEffect(() => {
+    setPageMeta({
+      title: 'Producción audiovisual y FPV en Galicia | Kulmen Visuals',
+      description:
+        'Producción audiovisual y drones FPV en Galicia para marcas, eventos y espacios. Rodaje, edición y contenido para web, redes y campañas publicitarias de impacto.',
+    })
+  }, [])
 
   useEffect(() => {
     const existing = document.querySelector(
@@ -351,6 +425,37 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
+        <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <h2 className="kv-section-title mb-3">
+              Producción audiovisual en Galicia con enfoque estratégico
+            </h2>
+            <p className="kv-body-muted mb-4">
+              Me encargo de todo el flujo: concepto, guion, rodaje, FPV y
+              postproducción. El objetivo es que el vídeo no solo se vea bien,
+              sino que cumpla una función clara dentro de tu marketing o evento.
+            </p>
+            <p className="kv-body-muted">
+              Trabajo con marcas, organizadores y espacios que necesitan piezas
+              con ritmo, narrativa y versiones listas para campañas, web y
+              redes sociales.
+            </p>
+          </div>
+          <div className="kv-glass-soft rounded-2xl border border-white/10 p-5">
+            <h3 className="kv-card-title text-zinc-100 mb-3">
+              Qué incluye cada proyecto
+            </h3>
+            <ul className="kv-body-muted space-y-2">
+              <li>Preproducción con objetivos y guion técnico.</li>
+              <li>Rodaje con cámara de cine y dron FPV.</li>
+              <li>Edición, color, sonido y música con licencia.</li>
+              <li>Adaptación a formatos para redes y campañas.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Últimos trabajos */}
       <section className="max-w-6xl mx-auto px-4 pt-6 md:pt-10 pb-10 md:pb-14">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
@@ -495,6 +600,30 @@ export default function Home() {
                   {service.texto}
                 </p>
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <div className="flex flex-col gap-8">
+          <div>
+            <h2 className="kv-section-title mb-2">Preguntas frecuentes</h2>
+            <p className="kv-body-muted max-w-2xl">
+              Respuestas rápidas sobre producción audiovisual, FPV y entregas.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {faqItems.map((item) => (
+              <article
+                key={item.question}
+                className="kv-glass-soft rounded-2xl border border-white/10 p-5"
+              >
+                <h3 className="kv-card-title text-zinc-100 mb-2">
+                  {item.question}
+                </h3>
+                <p className="kv-body-muted">{item.answer}</p>
               </article>
             ))}
           </div>
