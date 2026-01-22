@@ -639,15 +639,20 @@ export default function Home() {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {faqItems.map((item) => (
-              <article
+              <details
                 key={item.question}
-                className="kv-glass-soft rounded-2xl border border-white/10 p-5"
+                className="group kv-glass-soft rounded-2xl border border-white/10 p-5"
               >
-                <h3 className="kv-card-title text-zinc-100 mb-2">
-                  {item.question}
-                </h3>
-                <p className="kv-body-muted">{item.answer}</p>
-              </article>
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4">
+                  <span className="kv-card-title text-zinc-100">
+                    {item.question}
+                  </span>
+                  <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full border border-white/20 text-zinc-300 transition-transform duration-300 group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="kv-body-muted mt-3">{item.answer}</p>
+              </details>
             ))}
           </div>
         </div>
