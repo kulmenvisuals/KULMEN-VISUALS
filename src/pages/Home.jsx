@@ -454,9 +454,6 @@ export default function Home() {
           <div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-amber-500/10 blur-3xl" />
           <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
             <div>
-              <p className="kv-eyebrow text-zinc-400 mb-3">
-                Estrategia · Producción · Distribución
-              </p>
               <h2 className="kv-section-title mb-4">
                 Producción audiovisual en Galicia con enfoque estratégico
               </h2>
