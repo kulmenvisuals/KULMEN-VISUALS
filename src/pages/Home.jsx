@@ -147,13 +147,13 @@ export default function Home() {
 
   useEffect(() => {
     const existing = document.querySelector(
-      'script[data-lightwidget="kulmenvisuals"]'
+      'script[data-lightwidget="ce3de15a58f8556ead8d9037c0893a66"]'
     )
     if (existing) return
     const script = document.createElement('script')
     script.src = 'https://cdn.lightwidget.com/widgets/lightwidget.js'
     script.async = true
-    script.setAttribute('data-lightwidget', 'kulmenvisuals')
+    script.setAttribute('data-lightwidget', 'ce3de15a58f8556ead8d9037c0893a66')
     document.body.appendChild(script)
   }, [])
 
