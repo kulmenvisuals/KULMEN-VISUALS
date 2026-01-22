@@ -62,6 +62,52 @@ const servicesSchema = {
   "@graph": [
     {
       "@type": "Service",
+      "@id": "https://kulmenvisuals.com/#kulmen-services",
+      name: "Producción audiovisual y dron FPV en Galicia",
+      serviceType: "Servicios audiovisuales, grabación con dron FPV y postproducción",
+      provider: {
+        "@id": "https://kulmenvisuals.com/#kulmen-business",
+      },
+      areaServed: [
+        {
+          "@type": "AdministrativeArea",
+          name: "Galicia",
+        },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Servicios Kulmen Visuals",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            name: "Cine y Publicidad",
+            description: "Spots y piezas cortas para campañas, webs y lanzamientos de producto.",
+          },
+          {
+            "@type": "Offer",
+            name: "FPV Profesional",
+            description: "Planos FPV para vehículos, deporte y recorridos inmersivos en espacios y negocios.",
+          },
+          {
+            "@type": "Offer",
+            name: "Eventos y Cultura",
+            description: "Aftermovies, resúmenes de evento y clips verticales listos para redes.",
+          },
+          {
+            "@type": "Offer",
+            name: "Turismo y Territorio",
+            description: "Piezas que muestran el lugar con contexto: paisaje, actividad y personas.",
+          },
+          {
+            "@type": "Offer",
+            name: "Contenido con IA",
+            description: "Uso de IA para moodboards, storyboards, variaciones de contenido y piezas 100% generadas cuando tiene sentido.",
+          },
+        ],
+      },
+    },
+    {
+      "@type": "Service",
       name: "Grabación con drones FPV",
       serviceType: "Drones FPV",
       areaServed: "ES",

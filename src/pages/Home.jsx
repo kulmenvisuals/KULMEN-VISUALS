@@ -655,7 +655,7 @@ export default function Home() {
         <div className="overflow-hidden rounded-2xl">
           <iframe
             title="Kulmen Visuals Instagram feed"
-            src="https://cdn.lightwidget.com/widgets/2519ad266e6d5a7cb28dd291383745f2.html"
+            src="https://lightwidget.com/widgets/ce3de15a58f8556ead8d9037c0893a66.html"
             scrolling="no"
             allowTransparency={true}
             className="lightwidget-widget w-full border-0 overflow-hidden"
