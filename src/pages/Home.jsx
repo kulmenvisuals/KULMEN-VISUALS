@@ -146,18 +146,6 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    const existing = document.querySelector(
-      'script[data-lightwidget="ce3de15a58f8556ead8d9037c0893a66"]'
-    )
-    if (existing) return
-    const script = document.createElement('script')
-    script.src = 'https://cdn.lightwidget.com/widgets/lightwidget.js'
-    script.async = true
-    script.setAttribute('data-lightwidget', 'ce3de15a58f8556ead8d9037c0893a66')
-    document.body.appendChild(script)
-  }, [])
-
-  useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     const widthQuery = window.matchMedia('(min-width: 768px)')
 
@@ -650,19 +638,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Instagram preview */}
-      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <div className="overflow-hidden rounded-2xl">
-          <iframe
-            title="Kulmen Visuals Instagram feed"
-            src="https://lightwidget.com/widgets/ce3de15a58f8556ead8d9037c0893a66.html"
-            scrolling="no"
-            allowTransparency={true}
-            className="lightwidget-widget w-full border-0 overflow-hidden"
-            style={{ height: "clamp(520px, 70vw, 820px)" }}
-          />
-        </div>
-      </section>
     </div>
   )
 }
