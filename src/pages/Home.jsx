@@ -449,32 +449,52 @@ export default function Home() {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
-        <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <h2 className="kv-section-title mb-3">
-              Producción audiovisual en Galicia con enfoque estratégico
-            </h2>
-            <p className="kv-body-muted mb-4">
-              Me encargo de todo el flujo: concepto, guion, rodaje, FPV y
-              postproducción. El objetivo es que el vídeo no solo se vea bien,
-              sino que cumpla una función clara dentro de tu marketing o evento.
-            </p>
-            <p className="kv-body-muted">
-              Trabajo con marcas, organizadores y espacios que necesitan piezas
-              con ritmo, narrativa y versiones listas para campañas, web y
-              redes sociales.
-            </p>
-          </div>
-          <div className="kv-glass-soft rounded-2xl border border-white/10 p-5">
-            <h3 className="kv-card-title text-zinc-100 mb-3">
-              Qué incluye cada proyecto
-            </h3>
-            <ul className="kv-body-muted space-y-2">
-              <li>Preproducción con objetivos y guion técnico.</li>
-              <li>Rodaje con cámara de cine y dron FPV.</li>
-              <li>Edición, color, sonido y música con licencia.</li>
-              <li>Adaptación a formatos para redes y campañas.</li>
-            </ul>
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-950 via-zinc-950/80 to-zinc-900/60 px-5 py-8 md:px-8 md:py-10">
+          <div className="pointer-events-none absolute -top-24 -right-10 h-56 w-56 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-amber-500/10 blur-3xl" />
+          <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <p className="kv-eyebrow text-zinc-400 mb-3">
+                Estrategia · Producción · Distribución
+              </p>
+              <h2 className="kv-section-title mb-4">
+                Producción audiovisual en Galicia con enfoque estratégico
+              </h2>
+              <p className="kv-body-muted mb-4">
+                Me encargo de todo el flujo: concepto, guion, rodaje, FPV y
+                postproducción. El objetivo es que el vídeo no solo se vea bien,
+                sino que cumpla una función clara dentro de tu marketing o evento.
+              </p>
+              <p className="kv-body-muted">
+                Trabajo con marcas, organizadores y espacios que necesitan piezas
+                con ritmo, narrativa y versiones listas para campañas, web y
+                redes sociales.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <span className="kv-chip text-[11px]">Marcas</span>
+                <span className="kv-chip text-[11px]">Eventos</span>
+                <span className="kv-chip text-[11px]">Turismo</span>
+                <span className="kv-chip text-[11px]">FPV Cinemático</span>
+              </div>
+            </div>
+            <div className="kv-glass rounded-2xl border border-white/10 p-5 md:p-6">
+              <h3 className="kv-card-title text-zinc-100 mb-4">
+                Qué incluye cada proyecto
+              </h3>
+              <ul className="space-y-3 text-sm text-zinc-300">
+                {[
+                  'Preproducción con objetivos y guion técnico.',
+                  'Rodaje con cámara de cine y dron FPV.',
+                  'Edición, color, sonido y música con licencia.',
+                  'Adaptación a formatos para redes y campañas.',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_12px_rgba(251,191,36,0.65)]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
