@@ -646,6 +646,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CTA final */}
+      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 className="kv-section-title mb-2">
+              ¿Tienes un proyecto en mente?
+            </h2>
+            <p className="kv-lede max-w-md">
+              Escríbeme para ver si encaja lo que necesitas con lo
+              que puedo ofrecerte. Sin compromiso. Comencemos a impulsar tu presencia.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contacto" className="kv-button-primary kv-button-accent">
+              Pedir presupuesto
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
         <div className="flex flex-col gap-8">
           <div>
@@ -671,26 +691,6 @@ export default function Home() {
                 <p className="kv-body-muted mt-3">{item.answer}</p>
               </details>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA final */}
-      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <h2 className="kv-section-title mb-2">
-              ¿Tienes un proyecto en mente?
-            </h2>
-            <p className="kv-lede max-w-md">
-              Escríbeme para ver si encaja lo que necesitas con lo
-              que puedo ofrecerte. Sin compromiso. Comencemos a impulsar tu presencia.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary kv-button-accent">
-              Pedir presupuesto
-            </Link>
           </div>
         </div>
       </section>
