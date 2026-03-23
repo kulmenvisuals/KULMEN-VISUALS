@@ -113,7 +113,7 @@ const homeSchema = {
         addressCountry: "ES",
       },
       areaServed: "ES",
-      sameAs: ["https://www.instagram.com/kulmenvisuals/"],
+      sameAs: ["https://www.instagram.com/io.kulmen/"],
     },
     {
       "@type": "LocalBusiness",

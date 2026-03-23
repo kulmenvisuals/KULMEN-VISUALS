@@ -122,7 +122,7 @@ export default function Footer() {
           </div>
           <div className="kv-caption flex w-full items-center justify-between gap-3 text-zinc-600 md:w-auto md:justify-end">
             <a
-              href="https://www.instagram.com/kulmenvisuals/"
+              href="https://www.instagram.com/io.kulmen/"
               target="_blank"
               rel="noreferrer"
               className="kv-crystal rounded-full p-2 text-zinc-200 hover:text-amber-100 hover:border-amber-200/70 transition"

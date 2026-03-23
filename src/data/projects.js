@@ -1,6 +1,32 @@
 // src/data/projects.js
 
 export const projects = [
+  // 1) Vídeo inmobiliario: Grupo Country Homes
+  {
+    id: "video-inmobiliario-grupo-country-homes",
+    slug: "video-inmobiliario-grupo-country-homes",
+
+    title: "Vídeo inmobiliario · Grupo Country Homes",
+    client: "Grupo Country Homes",
+
+    category: "Espacios / Inmobiliario",
+    type: ["Espacios", "Inmobiliario"],
+    roles: ["Grabación", "Edición"],
+
+    thumbnail: "https://img.youtube.com/vi/um5LqwcuABo/maxresdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/embed/um5LqwcuABo",
+
+    videoUrl: null,
+    poster: null,
+
+    images: [],
+
+    description:
+      "Vídeo inmobiliario para Grupo Country Homes, planteado para mostrar el espacio con claridad, ritmo y una presentación visual cuidada.",
+    extra:
+      "La pieza está orientada a enseñar la vivienda de forma atractiva y funcional, destacando recorrido, amplitud y detalles clave para su presentación online.",
+  },
+
   // 1) Reportaje: Banca March · Lynda Benglis
   {
     id: "banca-march-lynda-benglis",

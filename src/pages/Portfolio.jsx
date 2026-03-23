@@ -7,9 +7,11 @@ import { projects } from "../data/projects.js"
 const clientLogos = [
   { name: "XGAP Fitness Center", src: "/images/logo-xgap.png" },
   { name: "Orestes Comunica", src: "/images/logo-orestes-comunica.webp" },
+  { name: "Orballo", src: "/images/orballo_logo.jpg" },
   { name: "Cobre San Rafael", src: "/images/logo-cobre-san-rafael.jpg" },
   { name: "Norvento Technpower", src: "/images/logo-norvento-technpower.jpg" },
   { name: "Banca March", src: "/images/logo-banca-march.webp" },
+  { name: "Grupo Country Homes", src: "/images/logo-gch.png" },
 ].reverse()
 
 export default function Portfolio() {
