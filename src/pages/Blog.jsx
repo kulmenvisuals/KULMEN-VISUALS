@@ -1,8 +1,7 @@
 // src/pages/Blog.jsx
-import { useEffect, useMemo } from "react"
+import { useMemo } from "react"
 import { Link } from "react-router-dom"
 import { blogPosts } from "../data/blogPosts.js"
-import { setPageMeta } from "../utils/seo.js"
 
 const formatDate = (value) =>
   new Date(value).toLocaleDateString("es-ES", {
@@ -15,14 +14,6 @@ export default function Blog() {
   const posts = useMemo(() => {
     if (!Array.isArray(blogPosts)) return []
     return [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date))
-  }, [])
-
-  useEffect(() => {
-    setPageMeta({
-      title: "Blog de FPV y producción audiovisual en Galicia | Kulmen Visuals",
-      description:
-        "Artículos sobre FPV, producción audiovisual y vídeo para marcas en Galicia. Consejos prácticos, planificación y enfoque creativo.",
-    })
   }, [])
 
   return (

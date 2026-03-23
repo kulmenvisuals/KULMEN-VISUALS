@@ -2,18 +2,7 @@
 import { useParams, Link } from "react-router-dom"
 import { projects } from "../data/projects.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
-
-// Normaliza strings para comparar slugs aunque tengan acentos/espacios
-function normalizeSlug(value) {
-  if (!value) return ""
-  return value
-    .toString()
-    .toLowerCase()
-    .normalize("NFD") // quita acentos
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-") // todo lo que no sea letra/numero → "-"
-    .replace(/(^-|-$)/g, "") // quita guiones al principio/fin
-}
+import { normalizeSlug } from "../utils/slug.js"
 
 export default function ProjectDetail() {
   const { slug } = useParams()
@@ -30,7 +19,7 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <main className="bg-zinc-950 text-zinc-50 min-h-screen">
+      <div className="bg-zinc-950 text-zinc-50 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 py-24 space-y-4">
           <h1 className="kv-page-title mb-2">Proyecto no encontrado</h1>
           <p className="kv-body-muted">
@@ -58,7 +47,7 @@ export default function ProjectDetail() {
             Volver al portfolio
           </Link>
         </div>
-      </main>
+      </div>
     )
   }
 
@@ -73,7 +62,7 @@ export default function ProjectDetail() {
 
   return (
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
-      <main className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
+      <div className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
         {/* Migas + volver */}
         <div className="kv-caption text-zinc-500 flex items-center gap-2">
           <Link to="/proyectos" className="hover:text-amber-300">
@@ -309,7 +298,7 @@ export default function ProjectDetail() {
             </Link>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   )
 }

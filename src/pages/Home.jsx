@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Film, Plane, Scissors, Share2, Briefcase, Calendar, Building2 } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
-import { setPageMeta } from '../utils/seo.js'
 
 const featuredProjects = Array.isArray(projects) ? projects.slice(0, 3) : []
 
@@ -173,14 +172,6 @@ export default function Home() {
   const [useMobileVideo, setUseMobileVideo] = useState(false)
 
   useEffect(() => {
-    setPageMeta({
-      title: 'Producción audiovisual y FPV en Galicia | Kulmen Visuals',
-      description:
-        'Producción audiovisual y drones FPV en Galicia para marcas, eventos y espacios. Rodaje, edición y contenido para web, redes y campañas publicitarias de impacto.',
-    })
-  }, [])
-
-  useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     const widthQuery = window.matchMedia('(min-width: 768px)')
 
@@ -251,7 +242,7 @@ export default function Home() {
             alt=""
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/85 md:from-black/55 md:via-black/35 md:to-black/75" />

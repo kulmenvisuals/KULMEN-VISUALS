@@ -2,13 +2,13 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
-import { Camera, Drone, Heart, Scissors, Video } from "lucide-react"
+import { Camera, Drone, Heart, Scissors } from "lucide-react"
 import { fases, especialidades } from "../data/servicios.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 
 const assetBase = import.meta.env.BASE_URL
 const heroVideo = `${assetBase}videos/hero.mp4`
-const heroPoster = `${assetBase}images/hero_poster.jpg`
+const heroPoster = `${assetBase}images/hero-poster.jpg`
 
 const equipmentGroups = [
   {
@@ -277,7 +277,7 @@ export default function Servicios() {
   const fase = fasesList.find((f) => f.id === faseActiva) ?? fasesList[0] ?? {}
 
   return (
-    <main className="bg-zinc-950 text-zinc-100">
+    <div className="bg-zinc-950 text-zinc-100">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
@@ -540,6 +540,6 @@ export default function Servicios() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

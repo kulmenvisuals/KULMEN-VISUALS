@@ -2,27 +2,24 @@ import fs from "node:fs"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { blogPosts } from "../src/data/blogPosts.js"
-
-const siteUrl = "https://kulmenvisuals.com"
-
-const staticRoutes = [
-  "/",
-  "/servicios",
-  "/proyectos",
-  "/sobre-mi",
-  "/blog",
-  "/contacto",
-]
+import { projects } from "../src/data/projects.js"
+import { getBlogPostPath, getProjectPath, siteUrl, staticRoutes } from "../src/utils/routes.js"
 
 const today = new Date().toISOString().slice(0, 10)
 
 const blogRoutes = blogPosts.map((post) => ({
-  loc: `/blog/${post.slug || post.id}`,
+  loc: getBlogPostPath(post),
   lastmod: post.date || today,
+}))
+
+const projectRoutes = projects.map((project) => ({
+  loc: getProjectPath(project),
+  lastmod: today,
 }))
 
 const routes = [
   ...staticRoutes.map((loc) => ({ loc, lastmod: today })),
+  ...projectRoutes,
   ...blogRoutes,
 ]
 

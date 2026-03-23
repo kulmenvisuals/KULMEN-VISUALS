@@ -1,8 +1,8 @@
 // src/pages/BlogPost.jsx
-import { useEffect, useMemo } from "react"
+import { useMemo } from "react"
 import { Link, useParams } from "react-router-dom"
 import { blogPosts } from "../data/blogPosts.js"
-import { setPageMeta } from "../utils/seo.js"
+import { normalizeSlug } from "../utils/slug.js"
 
 const formatDate = (value) =>
   new Date(value).toLocaleDateString("es-ES", {
@@ -10,17 +10,6 @@ const formatDate = (value) =>
     month: "long",
     day: "numeric",
   })
-
-function normalizeSlug(value) {
-  if (!value) return ""
-  return value
-    .toString()
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "")
-}
 
 export default function BlogPost() {
   const { slug } = useParams()
@@ -35,17 +24,9 @@ export default function BlogPost() {
     )
   }, [slug])
 
-  useEffect(() => {
-    if (!post) return
-    setPageMeta({
-      title: `${post.title} | Kulmen Visuals`,
-      description: post.excerpt,
-    })
-  }, [post])
-
   if (!post) {
     return (
-      <main className="bg-zinc-950 text-zinc-50 min-h-screen">
+      <div className="bg-zinc-950 text-zinc-50 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 py-24 space-y-4">
           <h1 className="kv-page-title mb-2">Artículo no encontrado</h1>
           <p className="kv-body-muted">
@@ -66,7 +47,7 @@ export default function BlogPost() {
             Volver al blog
           </Link>
         </div>
-      </main>
+      </div>
     )
   }
 
@@ -77,7 +58,7 @@ export default function BlogPost() {
 
   return (
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
-      <main className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
+      <div className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
         <div className="kv-caption text-zinc-500 flex items-center gap-2">
           <Link to="/blog" className="hover:text-amber-300">
             Blog
@@ -194,7 +175,7 @@ export default function BlogPost() {
             </div>
           </section>
         )}
-      </main>
+      </div>
     </div>
   )
 }
