@@ -4,6 +4,7 @@ import AvisoLegal from './pages/AvisoLegal.jsx'
 import Blog from './pages/Blog.jsx'
 import BlogPost from './pages/BlogPost.jsx'
 import Contacto from './pages/Contacto.jsx'
+import ContactoGracias from './pages/ContactoGracias.jsx'
 import Cookies from './pages/Cookies.jsx'
 import Home from './pages/Home.jsx'
 import NotFound from './pages/NotFound.jsx'
@@ -23,6 +24,7 @@ export function AppRouter() {
         <Route path="servicios" element={<Servicios />} />
         <Route path="sobre-mi" element={<SobreMi />} />
         <Route path="contacto" element={<Contacto />} />
+        <Route path="contacto/gracias" element={<ContactoGracias />} />
         <Route path="blog" element={<Blog />} />
         <Route path="blog/:slug" element={<BlogPost />} />
         <Route path="aviso-legal" element={<AvisoLegal />} />

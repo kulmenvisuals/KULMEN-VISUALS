@@ -231,6 +231,16 @@ export function resolveRouteSeo(pathname = '/') {
     })
   }
 
+  if (path === '/contacto/gracias') {
+    return buildSeo({
+      title: 'Solicitud enviada | Kulmen Visuals',
+      description:
+        'Confirmacion de envio del formulario de contacto de Kulmen Visuals.',
+      pathname: path,
+      robots: 'noindex, nofollow',
+    })
+  }
+
   if (path === '/blog') {
     return buildSeo({
       title: 'Blog de FPV y produccion audiovisual en Galicia | Kulmen Visuals',

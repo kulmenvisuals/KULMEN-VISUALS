@@ -12,6 +12,7 @@ export const staticRoutes = [
   '/sobre-mi',
   '/blog',
   '/contacto',
+  '/contacto/gracias',
   '/aviso-legal',
   '/politica-privacidad',
   '/cookies',

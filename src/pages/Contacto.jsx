@@ -69,6 +69,12 @@ export default function Contacto() {
             method="POST"
             className="space-y-5"
           >
+            <input
+              type="hidden"
+              name="_next"
+              value="https://kulmenvisuals.com/contacto/gracias"
+            />
+
             {/* Asunto del email que me llega */}
             <input
               type="hidden"
