@@ -1,6 +1,37 @@
 // src/data/projects.js
 
 export const projects = [
+  // 0) Anuncio oficial: AE League 2026
+  {
+    id: "ae-league-2026-anuncio-oficial",
+    slug: "ae-league-2026-anuncio-oficial",
+
+    title: "Anuncio oficial · AE League 2026",
+    client: "AE League",
+    year: 2026,
+
+    category: "Deporte / Evento",
+    type: ["Spot", "Deporte", "Evento"],
+    location: "A Estrada, Galicia",
+
+    thumbnail: "https://img.youtube.com/vi/-S6_EVetoAo/maxresdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/embed/-S6_EVetoAo",
+
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "https://img.youtube.com/vi/-S6_EVetoAo/1.jpg",
+      "https://img.youtube.com/vi/-S6_EVetoAo/2.jpg",
+      "https://img.youtube.com/vi/-S6_EVetoAo/3.jpg",
+    ],
+
+    description:
+      "Pieza audiovisual de anuncio oficial para AE League 2026, torneo gallego de fútbol 7 que se celebra en A Estrada. El vídeo presenta la identidad del torneo y sirve como lanzamiento de su nueva edición.",
+    extra:
+      "La información oficial del torneo, categorías, calendario e inscripciones está disponible en aeleague.es.",
+  },
+
   // 1) Vídeo inmobiliario: Grupo Country Homes
   {
     id: "video-inmobiliario-grupo-country-homes",
