@@ -19,7 +19,7 @@ export default function Header() {
         <Link to="/" className="flex items-center" aria-label="Kulmen Visuals">
           <img
             src="/logo-kulmen-visuals.png"
-            alt=""
+            alt="Kulmen Visuals"
             className="h-10 md:h-12 w-auto"
           />
         </Link>

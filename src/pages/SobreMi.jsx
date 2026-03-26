@@ -1,5 +1,6 @@
 // src/pages/SobreMi.jsx
 import { Link } from "react-router-dom"
+import { usePageSeo, useJsonLd, siteUrl } from "../utils/seo.js"
 
 // Ruta de la foto (sirve en dev y en GitHub Pages)
 const fotoIo = `${import.meta.env.BASE_URL}images/io-portrait.jpg`
@@ -40,7 +41,32 @@ const aboutBlocks = [
   },
 ]
 
+const sobreMiSeo = {
+  title: 'Sobre mi | Produccion audiovisual y drones FPV en Galicia',
+  description:
+    'Conoce a io, creadora audiovisual y piloto de drones FPV en Galicia. Produccion completa de video para marcas, eventos y proyectos culturales.',
+  pathname: '/sobre-mi',
+  image: '/images/io-portrait.jpg',
+}
+
+const sobreMiJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'io Rodríguez',
+  url: `${siteUrl}/sobre-mi`,
+  image: `${siteUrl}/images/io-portrait.jpg`,
+  jobTitle: 'Realizadora audiovisual y piloto de drones FPV',
+  description:
+    'Creadora audiovisual y piloto de drones FPV en Galicia. Producción completa de vídeo para marcas, eventos y proyectos culturales.',
+  worksFor: { '@type': 'Organization', name: 'Kulmen Visuals', url: siteUrl },
+  address: { '@type': 'PostalAddress', addressRegion: 'Galicia', addressCountry: 'ES' },
+  sameAs: ['https://www.instagram.com/io.kulmen/'],
+}
+
 export default function SobreMi() {
+  usePageSeo(sobreMiSeo)
+  useJsonLd(sobreMiJsonLd)
+
   return (
     <div className="bg-zinc-950 text-zinc-50">
       {/* Hero con foto + texto */}

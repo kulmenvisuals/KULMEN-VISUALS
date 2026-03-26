@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react"
 
-export default function BeforeAfterSlider({ before, after, className = "" }) {
+export default function BeforeAfterSlider({ before, after, beforeLabel = "Vídeo sin editar", afterLabel = "Vídeo editado", className = "" }) {
   const ref = useRef(null)
   const [x, setX] = useState(50) // porcentaje
 
@@ -29,9 +29,9 @@ export default function BeforeAfterSlider({ before, after, className = "" }) {
 
   return (
     <div ref={ref} className={`relative overflow-hidden rounded-xl border border-zinc-800 aspect-video ${className}`}>
-      <img src={after} alt="after" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={after} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0" style={{ width: `${x}%`, overflow: "hidden" }}>
-        <img src={before} alt="before" className="w-full h-full object-cover" />
+        <img src={before} alt={beforeLabel} className="w-full h-full object-cover" />
       </div>
       {/* Divider */}
       <div className="absolute top-0 bottom-0" style={{ left: `${x}%` }}>

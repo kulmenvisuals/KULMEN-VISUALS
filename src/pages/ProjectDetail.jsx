@@ -1,8 +1,11 @@
 // src/pages/ProjectDetail.jsx
+import { useMemo } from "react"
 import { useParams, Link } from "react-router-dom"
 import { projects } from "../data/projects.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 import { normalizeSlug } from "../utils/slug.js"
+import { usePageSeo, useJsonLd, siteUrl } from "../utils/seo.js"
+import { defaultOgImage } from "../utils/routes.js"
 
 export default function ProjectDetail() {
   const { slug } = useParams()
@@ -16,6 +19,49 @@ export default function ProjectDetail() {
       normalizeSlug(p.title) === slugNorm
     )
   })
+
+  const pageSeo = useMemo(() => project ? {
+    title: `${project.title} | Kulmen Visuals`,
+    description: project.description || 'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.',
+    pathname: `/proyectos/${project.slug || project.id}`,
+    image: project.thumbnail || project.images?.[0] || defaultOgImage,
+  } : {
+    title: 'Proyecto no encontrado | Kulmen Visuals',
+    pathname: '/proyectos',
+    robots: 'noindex, nofollow',
+  }, [project])
+
+  const jsonLdSchema = useMemo(() => {
+    if (!project) return null
+    const thumbnailUrl = `${siteUrl}${project.thumbnail || project.images?.[0] || defaultOgImage}`
+    const projectDescription = project.description || 'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.'
+    const authorRef = { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` }
+    const projectSlug = project.slug || project.id
+
+    return project.youtubeUrl
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'VideoObject',
+          name: project.title,
+          description: projectDescription,
+          thumbnailUrl,
+          embedUrl: project.youtubeUrl,
+          uploadDate: project.year ? `${project.year}-01-01` : undefined,
+          author: authorRef,
+        }
+      : {
+          '@context': 'https://schema.org',
+          '@type': 'CreativeWork',
+          name: project.title,
+          description: projectDescription,
+          image: thumbnailUrl,
+          url: `${siteUrl}/proyectos/${projectSlug}`,
+          creator: authorRef,
+        }
+  }, [project])
+
+  usePageSeo(pageSeo)
+  useJsonLd(jsonLdSchema)
 
   if (!project) {
     return (

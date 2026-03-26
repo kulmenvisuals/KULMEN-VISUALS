@@ -3,6 +3,8 @@ import { useMemo } from "react"
 import { Link, useParams } from "react-router-dom"
 import { blogPosts } from "../data/blogPosts.js"
 import { normalizeSlug } from "../utils/slug.js"
+import { usePageSeo, useJsonLd, siteUrl } from "../utils/seo.js"
+import { defaultOgImage } from "../utils/routes.js"
 
 const formatDate = (value) =>
   new Date(value).toLocaleDateString("es-ES", {
@@ -23,6 +25,42 @@ export default function BlogPost() {
         normalizeSlug(item.title) === slugNorm,
     )
   }, [slug])
+
+  const pageSeo = useMemo(() => post ? {
+    title: `${post.title} | Kulmen Visuals`,
+    description: post.excerpt,
+    pathname: `/blog/${post.slug}`,
+    ogType: 'article',
+    image: post.cover || defaultOgImage,
+  } : {
+    title: 'Artículo no encontrado | Kulmen Visuals',
+    pathname: '/blog',
+    robots: 'noindex, nofollow',
+  }, [post])
+
+  const jsonLdSchema = useMemo(() => {
+    if (!post) return null
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      image: `${siteUrl}${post.cover || defaultOgImage}`,
+      datePublished: post.date,
+      url: `${siteUrl}/blog/${post.slug}`,
+      keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
+      author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Kulmen Visuals',
+        url: siteUrl,
+        logo: { '@type': 'ImageObject', url: `${siteUrl}/logo-kulmen-visuals.png` },
+      },
+    }
+  }, [post])
+
+  usePageSeo(pageSeo)
+  useJsonLd(jsonLdSchema)
 
   if (!post) {
     return (

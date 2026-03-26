@@ -54,30 +54,33 @@ export default function Portfolio() {
       </section>
 
       {/* Clientes */}
-      <section className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-        <div className="flex flex-col gap-6 md:gap-10">
+      <section className="py-14 md:py-20 border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 mb-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
           <div>
-            <h2 className="kv-section-title mb-3">
-              Clientes con los que he trabajado
-            </h2>
-            <p className="kv-body-muted max-w-2xl">
-              Algunas marcas con las que he trabajado.
-            </p>
+            <p className="kv-eyebrow text-zinc-500 mb-2">Marcas</p>
+            <h2 className="kv-section-title">Han confiado en mí</h2>
           </div>
-          <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-            {clientLogos.map((client) => (
-              <div
-                key={client.name}
-                className="group rounded-2xl border border-white/10 bg-zinc-950/40 px-4 py-5 flex flex-col items-center justify-center text-center gap-3 transition hover:border-amber-300/30"
-              >
-                <div className="h-12 md:h-14 w-full flex items-center justify-center">
-                  <img
-                    src={client.src}
-                    alt={client.name}
-                    className="h-full w-auto max-w-[120px] md:max-w-[140px] object-contain grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100"
-                    loading="lazy"
-                  />
-                </div>
+          <p className="kv-body-muted text-zinc-500 sm:text-right max-w-xs">
+            Desde startups hasta empresas consolidadas.
+          </p>
+        </div>
+
+        {/* Marquee strip */}
+        <div className="relative overflow-hidden">
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-32 z-10 bg-gradient-to-r from-zinc-950 to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-32 z-10 bg-gradient-to-l from-zinc-950 to-transparent" />
+
+          <div className="flex items-center gap-20 animate-marquee w-max py-4">
+            {[...clientLogos, ...clientLogos].map((client, i) => (
+              <div key={i} className="group flex-shrink-0 h-10 flex items-center">
+                <img
+                  src={client.src}
+                  alt={client.name}
+                  title={client.name}
+                  className="h-full w-auto max-w-[140px] object-contain grayscale opacity-35 transition duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>

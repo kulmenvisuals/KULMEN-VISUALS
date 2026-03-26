@@ -7,6 +7,8 @@ import {
   siteUrl,
 } from './routes.js'
 
+export { siteUrl }
+
 const defaultSeo = {
   title: 'Produccion audiovisual y FPV en Galicia | Kulmen Visuals',
   description:
@@ -48,6 +50,7 @@ function buildSeo(overrides = {}) {
     ogDescription: seo.ogDescription || seo.description,
     ogType: seo.ogType || 'website',
     robots: seo.robots || 'index, follow',
+    jsonLd: seo.jsonLd || null,
   }
 }
 
@@ -150,10 +153,30 @@ export function usePageSeo(seo) {
   ])
 }
 
+export function useJsonLd(schema) {
+  useEffect(() => {
+    if (typeof document === 'undefined' || !schema) return
+
+    const id = 'jsonld-page'
+    let el = document.getElementById(id)
+    if (!el) {
+      el = document.createElement('script')
+      el.type = 'application/ld+json'
+      el.id = id
+      document.head.appendChild(el)
+    }
+    el.textContent = JSON.stringify(schema)
+
+    return () => {
+      document.getElementById(id)?.remove()
+    }
+  }, [schema])
+}
+
 export function renderHeadTags(seoInput) {
   const seo = buildSeo(seoInput)
 
-  return [
+  const tags = [
     `<title>${escapeHtml(seo.title)}</title>`,
     `<meta name="description" content="${escapeAttribute(seo.description)}" />`,
     `<meta name="robots" content="${escapeAttribute(seo.robots)}" />`,
@@ -168,7 +191,13 @@ export function renderHeadTags(seoInput) {
     `<meta name="twitter:title" content="${escapeAttribute(seo.ogTitle)}" />`,
     `<meta name="twitter:description" content="${escapeAttribute(seo.ogDescription)}" />`,
     `<meta name="twitter:image" content="${escapeAttribute(seo.image)}" />`,
-  ].join('\n    ')
+  ]
+
+  if (seo.jsonLd) {
+    tags.push(`<script type="application/ld+json">${JSON.stringify(seo.jsonLd)}</script>`)
+  }
+
+  return tags.join('\n    ')
 }
 
 export function resolveRouteSeo(pathname = '/') {
@@ -201,13 +230,39 @@ export function resolveRouteSeo(pathname = '/') {
     const project = findProjectBySlug(slug)
 
     if (project) {
+      const thumbnailUrl = absoluteUrl(project.thumbnail || project.images?.[0] || defaultOgImage)
+      const projectDescription =
+        project.description ||
+        'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.'
+      const authorRef = { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` }
+
+      const jsonLd = project.youtubeUrl
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'VideoObject',
+            name: project.title,
+            description: projectDescription,
+            thumbnailUrl,
+            embedUrl: project.youtubeUrl,
+            uploadDate: project.year ? `${project.year}-01-01` : undefined,
+            author: authorRef,
+          }
+        : {
+            '@context': 'https://schema.org',
+            '@type': 'CreativeWork',
+            name: project.title,
+            description: projectDescription,
+            image: thumbnailUrl,
+            url: absoluteUrl(path),
+            creator: authorRef,
+          }
+
       return buildSeo({
         title: `${project.title} | Kulmen Visuals`,
-        description:
-          project.description ||
-          'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.',
+        description: projectDescription,
         pathname: path,
         image: project.thumbnail || project.images?.[0] || defaultOgImage,
+        jsonLd,
       })
     }
   }
@@ -219,6 +274,19 @@ export function resolveRouteSeo(pathname = '/') {
         'Conoce a io, creadora audiovisual y piloto de drones FPV en Galicia. Produccion completa de video para marcas, eventos y proyectos culturales.',
       pathname: path,
       image: '/images/io-portrait.jpg',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'io Rodríguez',
+        url: `${siteUrl}/sobre-mi`,
+        image: `${siteUrl}/images/io-portrait.jpg`,
+        jobTitle: 'Realizadora audiovisual y piloto de drones FPV',
+        description:
+          'Creadora audiovisual y piloto de drones FPV en Galicia. Producción completa de vídeo para marcas, eventos y proyectos culturales.',
+        worksFor: { '@type': 'Organization', name: 'Kulmen Visuals', url: siteUrl },
+        address: { '@type': 'PostalAddress', addressRegion: 'Galicia', addressCountry: 'ES' },
+        sameAs: ['https://www.instagram.com/io.kulmen/'],
+      },
     })
   }
 
@@ -261,6 +329,23 @@ export function resolveRouteSeo(pathname = '/') {
         pathname: path,
         ogType: 'article',
         image: post.cover || defaultOgImage,
+        jsonLd: {
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: post.title,
+          description: post.excerpt,
+          image: absoluteUrl(post.cover || defaultOgImage),
+          datePublished: post.date,
+          url: absoluteUrl(path),
+          keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
+          author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Kulmen Visuals',
+            url: siteUrl,
+            logo: { '@type': 'ImageObject', url: `${siteUrl}/logo-kulmen-visuals.png` },
+          },
+        },
       })
     }
   }
