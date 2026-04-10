@@ -17,7 +17,7 @@ export default function BriefModal({ open, onClose }) {
 
         <form
           className="mt-4 space-y-3"
-          action="https://formspree.io/f/your-id" // <-- cambia por tu endpoint o maneja onSubmit
+          action="https://formspree.io/f/xyzdkrka"
           method="POST"
         >
           <div className="grid grid-cols-2 gap-2">

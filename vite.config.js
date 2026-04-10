@@ -5,4 +5,11 @@ export default defineConfig({
   plugins: [react()],
   // nombre EXACTO del repo entre barras:
   base: '/',
+  server: {
+    headers: {
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'SAMEORIGIN',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+    },
+  },
 })

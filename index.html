@@ -96,8 +96,8 @@
     <script>
       (function () {
         var redirect = sessionStorage.getItem("redirect")
-        if (redirect) {
-          sessionStorage.removeItem("redirect")
+        sessionStorage.removeItem("redirect")
+        if (redirect && /^\/[^/\\]/.test(redirect)) {
           history.replaceState(null, "", redirect)
         }
       })()
