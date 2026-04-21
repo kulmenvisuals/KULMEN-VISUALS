@@ -60,7 +60,7 @@ const sobreMiJsonLd = {
     'Creadora audiovisual y piloto de drones FPV en Galicia. Producción completa de vídeo para marcas, eventos y proyectos culturales.',
   worksFor: { '@type': 'Organization', name: 'Kulmen Visuals', url: siteUrl },
   address: { '@type': 'PostalAddress', addressRegion: 'Galicia', addressCountry: 'ES' },
-  sameAs: ['https://www.instagram.com/io.kulmen/'],
+  sameAs: ['https://www.instagram.com/kulmenvisuals/'],
 }
 
 export default function SobreMi() {
