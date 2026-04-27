@@ -3,7 +3,7 @@ import { projects } from '../data/projects.js'
 import { normalizeSlug } from './slug.js'
 
 export const siteUrl = 'https://kulmenvisuals.com'
-export const defaultOgImage = '/images/hero-poster.jpg'
+export const defaultOgImage = '/images/og-cover.jpg'
 
 export const staticRoutes = [
   '/',

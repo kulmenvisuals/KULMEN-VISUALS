@@ -12,7 +12,7 @@ export { siteUrl }
 const defaultSeo = {
   title: 'Produccion audiovisual y FPV en Galicia | Kulmen Visuals',
   description:
-    'Produccion audiovisual y drones FPV en Galicia para marcas, eventos y espacios. Rodaje, edicion y contenido para web, redes y campanas publicitarias de impacto.',
+    'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto.',
   pathname: '/',
   ogType: 'website',
   image: defaultOgImage,
@@ -211,7 +211,7 @@ export function resolveRouteSeo(pathname = '/') {
     return buildSeo({
       title: 'Servicios de produccion audiovisual y dron FPV en Galicia | Kulmen Visuals',
       description:
-        'Servicios de video, dron FPV, grabacion y postproduccion para marcas, eventos, turismo y espacios en Galicia.',
+        'Producción audiovisual completa en Galicia: vídeo para marcas, FPV profesional, edición y contenido para redes. Conoce todos los servicios de Kulmen Visuals.',
       pathname: path,
     })
   }
@@ -236,6 +236,9 @@ export function resolveRouteSeo(pathname = '/') {
         'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.'
       const authorRef = { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` }
 
+      const videoId = project.youtubeUrl?.split('/embed/')?.[1]?.split('?')?.[0]
+      const contentUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : undefined
+
       const jsonLd = project.youtubeUrl
         ? {
             '@context': 'https://schema.org',
@@ -244,6 +247,7 @@ export function resolveRouteSeo(pathname = '/') {
             description: projectDescription,
             thumbnailUrl,
             embedUrl: project.youtubeUrl,
+            contentUrl,
             uploadDate: project.year ? `${project.year}-01-01` : undefined,
             author: authorRef,
           }
@@ -253,7 +257,7 @@ export function resolveRouteSeo(pathname = '/') {
             name: project.title,
             description: projectDescription,
             image: thumbnailUrl,
-            url: absoluteUrl(path),
+            url: project.instagramUrl || absoluteUrl(path),
             creator: authorRef,
           }
 
@@ -271,7 +275,7 @@ export function resolveRouteSeo(pathname = '/') {
     return buildSeo({
       title: 'Sobre mi | Produccion audiovisual y drones FPV en Galicia',
       description:
-        'Conoce a io, creadora audiovisual y piloto de drones FPV en Galicia. Produccion completa de video para marcas, eventos y proyectos culturales.',
+        'Soy io Rodríguez, creadora audiovisual y piloto de drones FPV en Galicia. Trabajo para marcas, eventos y proyectos culturales que necesitan vídeo de verdad.',
       pathname: path,
       image: '/images/io-portrait.jpg',
       jsonLd: {
@@ -313,7 +317,7 @@ export function resolveRouteSeo(pathname = '/') {
     return buildSeo({
       title: 'Blog de FPV y produccion audiovisual en Galicia | Kulmen Visuals',
       description:
-        'Articulos sobre FPV, produccion audiovisual y video para marcas en Galicia. Guias practicas, planificacion y enfoque creativo.',
+        'Blog de producción audiovisual y drones FPV en Galicia. Guías prácticas sobre vídeo para marcas, turismo y eventos.',
       pathname: path,
     })
   }

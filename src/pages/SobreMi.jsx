@@ -44,7 +44,7 @@ const aboutBlocks = [
 const sobreMiSeo = {
   title: 'Sobre mi | Produccion audiovisual y drones FPV en Galicia',
   description:
-    'Conoce a io, creadora audiovisual y piloto de drones FPV en Galicia. Produccion completa de video para marcas, eventos y proyectos culturales.',
+    'Soy io Rodríguez, creadora audiovisual y piloto de drones FPV en Galicia. Trabajo para marcas, eventos y proyectos culturales que necesitan vídeo de verdad.',
   pathname: '/sobre-mi',
   image: '/images/io-portrait.jpg',
 }
@@ -78,7 +78,7 @@ export default function SobreMi() {
               Sobre mí
             </p>
             <h1 className="kv-page-title mb-4">
-              io · Kulmen Visuals
+              io Rodríguez — Creadora audiovisual y piloto FPV en Galicia
             </h1>
 
             <p className="kv-lede mb-4 max-w-xl">

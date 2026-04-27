@@ -7,18 +7,39 @@ import { getBlogPostPath, getProjectPath, siteUrl, staticRoutes } from "../src/u
 
 const today = new Date().toISOString().slice(0, 10)
 
+const PRIORITY = {
+  '/': { changefreq: 'weekly', priority: '1.0' },
+  '/servicios': { changefreq: 'monthly', priority: '0.9' },
+  '/proyectos': { changefreq: 'monthly', priority: '0.9' },
+  '/sobre-mi': { changefreq: 'monthly', priority: '0.8' },
+  '/blog': { changefreq: 'weekly', priority: '0.9' },
+  '/contacto': { changefreq: 'monthly', priority: '0.8' },
+  '/contacto/gracias': { changefreq: 'yearly', priority: '0.1' },
+  '/aviso-legal': { changefreq: 'yearly', priority: '0.2' },
+  '/politica-privacidad': { changefreq: 'yearly', priority: '0.2' },
+  '/cookies': { changefreq: 'yearly', priority: '0.2' },
+}
+
 const blogRoutes = blogPosts.map((post) => ({
   loc: getBlogPostPath(post),
   lastmod: post.date || today,
+  changefreq: 'monthly',
+  priority: '0.8',
 }))
 
 const projectRoutes = projects.map((project) => ({
   loc: getProjectPath(project),
   lastmod: today,
+  changefreq: 'monthly',
+  priority: '0.7',
 }))
 
 const routes = [
-  ...staticRoutes.map((loc) => ({ loc, lastmod: today })),
+  ...staticRoutes.map((loc) => ({
+    loc,
+    lastmod: today,
+    ...(PRIORITY[loc] || { changefreq: 'monthly', priority: '0.5' }),
+  })),
   ...projectRoutes,
   ...blogRoutes,
 ]
@@ -30,6 +51,8 @@ ${routes
     (route) => `  <url>
     <loc>${siteUrl}${route.loc}</loc>
     <lastmod>${route.lastmod}</lastmod>
+    <changefreq>${route.changefreq}</changefreq>
+    <priority>${route.priority}</priority>
   </url>`,
   )
   .join("\n")}

@@ -239,7 +239,7 @@ export default function Home() {
           <img
             className="absolute inset-0 w-full h-full object-cover"
             src={`${import.meta.env.BASE_URL}images/hero-poster.webp`}
-            alt=""
+            alt="Grabación FPV cinematográfico para marca en Galicia — Kulmen Visuals"
             loading="eager"
             decoding="async"
             fetchPriority="high"

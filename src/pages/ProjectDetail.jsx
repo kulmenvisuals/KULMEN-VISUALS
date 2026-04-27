@@ -38,6 +38,9 @@ export default function ProjectDetail() {
     const authorRef = { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` }
     const projectSlug = project.slug || project.id
 
+    const videoId = project.youtubeUrl?.split('/embed/')?.[1]?.split('?')?.[0]
+    const contentUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : undefined
+
     return project.youtubeUrl
       ? {
           '@context': 'https://schema.org',
@@ -46,6 +49,7 @@ export default function ProjectDetail() {
           description: projectDescription,
           thumbnailUrl,
           embedUrl: project.youtubeUrl,
+          contentUrl,
           uploadDate: project.year ? `${project.year}-01-01` : undefined,
           author: authorRef,
         }
@@ -55,7 +59,7 @@ export default function ProjectDetail() {
           name: project.title,
           description: projectDescription,
           image: thumbnailUrl,
-          url: `${siteUrl}/proyectos/${projectSlug}`,
+          url: project.instagramUrl || `${siteUrl}/proyectos/${projectSlug}`,
           creator: authorRef,
         }
   }, [project])

@@ -19,7 +19,7 @@ export default function Header() {
         <Link to="/" className="flex items-center" aria-label="Kulmen Visuals">
           <img
             src="/logo-kulmen-visuals.png"
-            alt="Kulmen Visuals"
+            alt="Kulmen Visuals — Productora audiovisual en Galicia"
             className="h-10 md:h-12 w-auto"
           />
         </Link>

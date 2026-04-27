@@ -23,7 +23,7 @@ export default function ProjectCard({ project }) {
           {project.thumbnail && (
             <img
               src={project.thumbnail}
-              alt={project.title}
+              alt={`${project.title} — Kulmen Visuals`}
               className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.04]"
             />
           )}

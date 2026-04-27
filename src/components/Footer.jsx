@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <img
               src="/logo-kulmen-visuals.png"
-              alt="Kulmen Visuals"
+              alt="Kulmen Visuals — Productora audiovisual en Galicia"
               className="h-10 w-auto"
             />
             <p className="kv-caption text-zinc-500 mt-2">
