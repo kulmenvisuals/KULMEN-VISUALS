@@ -47,6 +47,7 @@ export default function BlogPost() {
       description: post.excerpt,
       image: `${siteUrl}${post.cover || defaultOgImage}`,
       datePublished: post.date,
+      dateModified: post.date,
       url: `${siteUrl}/blog/${post.slug}`,
       keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
       author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` },

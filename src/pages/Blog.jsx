@@ -2,6 +2,7 @@
 import { useMemo } from "react"
 import { Link } from "react-router-dom"
 import { blogPosts } from "../data/blogPosts.js"
+import { usePageSeo } from "../utils/seo.js"
 
 const formatDate = (value) =>
   new Date(value).toLocaleDateString("es-ES", {
@@ -10,7 +11,16 @@ const formatDate = (value) =>
     day: "numeric",
   })
 
+const blogSeo = {
+  title: 'Blog de FPV y produccion audiovisual en Galicia | Kulmen Visuals',
+  description:
+    'Blog de producción audiovisual y drones FPV en Galicia. Guías prácticas sobre vídeo para marcas, turismo y eventos.',
+  pathname: '/blog',
+}
+
 export default function Blog() {
+  usePageSeo(blogSeo)
+
   const posts = useMemo(() => {
     if (!Array.isArray(blogPosts)) return []
     return [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date))

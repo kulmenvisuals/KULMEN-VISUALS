@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Camera, Drone, Heart, Scissors } from "lucide-react"
 import { fases, especialidades } from "../data/servicios.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
+import { usePageSeo, useJsonLd } from "../utils/seo.js"
 
 const assetBase = import.meta.env.BASE_URL
 const heroVideo = `${assetBase}videos/hero.mp4`
@@ -18,12 +19,14 @@ const equipmentGroups = [
     items: [
       {
         name: "Blackmagic 4K",
+        alt: "Cámara Blackmagic 4K — equipo de rodaje Kulmen Visuals",
         desc: "Look cinematográfico y rango dinámico para piezas con intención visual.",
         tags: ["Spots", "Narrativa", "Entrevistas cuidadas"],
         image: `${assetBase}images/blackmagic.jpg`,
       },
       {
         name: "Lumix S5II",
+        alt: "Lumix S5II — cámara principal de producción Kulmen Visuals",
         desc: "Full frame ágil y fiable en poca luz para rodajes rápidos.",
         tags: ["Eventos", "Entrevistas", "Run & gun"],
         image: `${assetBase}images/lumix-s5ii.jpeg`,
@@ -37,18 +40,21 @@ const equipmentGroups = [
     items: [
       {
         name: "DJI Mini 4 Pro",
+        alt: "DJI Mini 4 Pro — dron de rodaje aéreo Kulmen Visuals",
         desc: "Compacto y discreto, ideal para tomas limpias de localización.",
         tags: ["Turismo", "Exteriores", "Establishing shots"],
         image: `${assetBase}images/dji-mini-4pro.webp`,
       },
       {
         name: "FPV Mark 5",
+        alt: "FPV Mark 5 — dron FPV cinematográfico Kulmen Visuals",
         desc: "Velocidad y energía con vuelos dinámicos y agresivos.",
         tags: ["Deporte", "Acción", "Adrenalina"],
         image: `${assetBase}images/geprc-mark5.jpg`,
       },
       {
         name: "GEPRC Cinelog 30 V3",
+        alt: "GEPRC Cinelog 30 V3 — dron FPV indoor Kulmen Visuals",
         desc: "Cinewhoop estable para interiores y vuelos cercanos.",
         tags: ["Eventos indoor", "Recorridos", "Espacios reducidos"],
         image: `${assetBase}images/geprc-cinelog-30-v3.png`,
@@ -269,7 +275,16 @@ const mainServices = [
   },
 ]
 
+const serviciosSeo = {
+  title: 'Servicios de produccion audiovisual y dron FPV en Galicia | Kulmen Visuals',
+  description:
+    'Producción audiovisual completa en Galicia: vídeo para marcas, FPV profesional, edición y contenido para redes. Conoce todos los servicios de Kulmen Visuals.',
+  pathname: '/servicios',
+}
+
 export default function Servicios() {
+  usePageSeo(serviciosSeo)
+
   const fasesList = Array.isArray(fases) ? fases : []
   const especialidadesList = Array.isArray(especialidades) ? especialidades : []
 
@@ -489,7 +504,7 @@ export default function Servicios() {
                         <div className="aspect-[16/9] w-full overflow-hidden">
                           <img
                             src={item.image}
-                            alt={item.name}
+                            alt={item.alt || item.name}
                             className="h-full w-full object-cover"
                             loading="lazy"
                           />

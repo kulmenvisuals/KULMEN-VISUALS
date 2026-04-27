@@ -118,6 +118,10 @@ export function applyPageSeo(seoInput) {
     property: 'og:image',
     content: seo.image,
   })
+  setMetaTag('meta[property="og:site_name"]', {
+    property: 'og:site_name',
+    content: 'Kulmen Visuals',
+  })
   setMetaTag('meta[name="twitter:card"]', {
     name: 'twitter:card',
     content: 'summary_large_image',
@@ -187,6 +191,7 @@ export function renderHeadTags(seoInput) {
     `<meta property="og:url" content="${escapeAttribute(seo.ogUrl)}" />`,
     `<meta property="og:image" content="${escapeAttribute(seo.image)}" />`,
     '<meta property="og:locale" content="es_ES" />',
+    '<meta property="og:site_name" content="Kulmen Visuals" />',
     '<meta name="twitter:card" content="summary_large_image" />',
     `<meta name="twitter:title" content="${escapeAttribute(seo.ogTitle)}" />`,
     `<meta name="twitter:description" content="${escapeAttribute(seo.ogDescription)}" />`,
@@ -340,6 +345,7 @@ export function resolveRouteSeo(pathname = '/') {
           description: post.excerpt,
           image: absoluteUrl(post.cover || defaultOgImage),
           datePublished: post.date,
+          dateModified: post.date,
           url: absoluteUrl(path),
           keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
           author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` },

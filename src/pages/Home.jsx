@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Film, Plane, Scissors, Share2, Briefcase, Calendar, Building2 } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
+import { usePageSeo } from '../utils/seo.js'
 
 const featuredProjects = Array.isArray(projects) ? projects.slice(0, 3) : []
 
@@ -167,7 +168,16 @@ const homeSchema = {
   ],
 }
 
+const homeSeo = {
+  title: 'Produccion audiovisual y FPV en Galicia | Kulmen Visuals',
+  description:
+    'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto.',
+  pathname: '/',
+}
+
 export default function Home() {
+  usePageSeo(homeSeo)
+
   const [showVideo, setShowVideo] = useState(false)
   const [useMobileVideo, setUseMobileVideo] = useState(false)
 
