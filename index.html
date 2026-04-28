@@ -19,16 +19,74 @@
     <!-- End Google Tag Manager -->
     <!-- Meta Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1322084273160079');
-      fbq('track', 'PageView');
+      window.__META_PIXEL_ID = '1322084273160079'
+      window.__metaPixelState = {
+        loaded: false,
+        lastTrackedPath: null,
+      }
+
+      function getCookieYesConsentValue(key) {
+        var consentCookie = document.cookie
+          .split('; ')
+          .find(function (entry) {
+            return entry.indexOf('cookieyes-consent=') === 0
+          })
+
+        if (!consentCookie) return null
+
+        var consentValue = consentCookie.slice('cookieyes-consent='.length)
+
+        try {
+          return decodeURIComponent(consentValue)
+            .split(',')
+            .reduce(function (acc, pair) {
+              var parts = pair.split(':')
+              if (parts.length === 2) {
+                acc[parts[0]] = parts[1]
+              }
+              return acc
+            }, {})[key] || null
+        } catch {
+          return null
+        }
+      }
+
+      function hasMetaPixelConsent() {
+        return (
+          getCookieYesConsentValue('consent') === 'yes' &&
+          getCookieYesConsentValue('advertisement') === 'yes'
+        )
+      }
+
+      function loadMetaPixel() {
+        if (window.__metaPixelState.loaded || !hasMetaPixelConsent()) return
+
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js')
+
+        fbq('init', window.__META_PIXEL_ID)
+        fbq('track', 'PageView')
+        window.__metaPixelState.loaded = true
+        window.__metaPixelState.lastTrackedPath =
+          window.location.pathname + window.location.search + window.location.hash
+      }
+
+      window.loadMetaPixel = loadMetaPixel
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadMetaPixel, { once: true })
+      } else {
+        loadMetaPixel()
+      }
+
+      document.addEventListener('cookieyes_banner_load', loadMetaPixel)
+      document.addEventListener('cookieyes_consent_update', loadMetaPixel)
     </script>
     <!-- End Meta Pixel Code -->
     <!--app-head-->
@@ -124,11 +182,6 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2KSJM89"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <!-- Meta Pixel Code (noscript) -->
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1322084273160079&ev=PageView&noscript=1"
-    alt="" /></noscript>
-    <!-- End Meta Pixel Code (noscript) -->
     <div id="root"><!--app-html--></div>
     <script>
       (function () {
