@@ -21,8 +21,32 @@
     <script>
       window.__META_PIXEL_ID = '1322084273160079'
       window.__metaPixelState = {
+        initialized: false,
         loaded: false,
         lastTrackedPath: null,
+        scriptRequested: false,
+      }
+
+      function ensureMetaPixelStub() {
+        if (window.fbq) return
+
+        var n = function () {
+          if (n.callMethod) {
+            n.callMethod.apply(n, arguments)
+          } else {
+            n.queue.push(arguments)
+          }
+        }
+
+        n.push = n
+        n.loaded = true
+        n.version = '2.0'
+        n.queue = []
+
+        window.fbq = n
+        if (!window._fbq) {
+          window._fbq = n
+        }
       }
 
       function getCookieYesConsentValue(key) {
@@ -58,30 +82,50 @@
         )
       }
 
+      function initMetaPixel() {
+        ensureMetaPixelStub()
+
+        if (window.__metaPixelState.initialized) return
+
+        window.fbq('init', window.__META_PIXEL_ID)
+        window.__metaPixelState.initialized = true
+      }
+
       function loadMetaPixel() {
-        if (window.__metaPixelState.loaded || !hasMetaPixelConsent()) return
+        initMetaPixel()
 
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js')
+        if (
+          window.__metaPixelState.loaded ||
+          window.__metaPixelState.scriptRequested ||
+          !hasMetaPixelConsent()
+        ) return
 
-        fbq('init', window.__META_PIXEL_ID)
-        fbq('track', 'PageView')
-        window.__metaPixelState.loaded = true
-        window.__metaPixelState.lastTrackedPath =
-          window.location.pathname + window.location.search + window.location.hash
+        window.__metaPixelState.scriptRequested = true
+
+        var script = document.createElement('script')
+        script.async = true
+        script.src = 'https://connect.facebook.net/en_US/fbevents.js'
+        script.onload = function () {
+          window.__metaPixelState.loaded = true
+          fbq('track', 'PageView')
+          window.__metaPixelState.lastTrackedPath =
+            window.location.pathname + window.location.search + window.location.hash
+        }
+        script.onerror = function () {
+          window.__metaPixelState.scriptRequested = false
+        }
+        document.head.appendChild(script)
       }
 
       window.loadMetaPixel = loadMetaPixel
 
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadMetaPixel, { once: true })
+        document.addEventListener('DOMContentLoaded', function () {
+          initMetaPixel()
+          loadMetaPixel()
+        }, { once: true })
       } else {
+        initMetaPixel()
         loadMetaPixel()
       }
 
