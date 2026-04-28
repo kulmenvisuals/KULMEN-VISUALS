@@ -81,6 +81,7 @@
       function loadAnalytics() {
         var gtagScript = document.createElement('script')
         gtagScript.async = true
+        gtagScript.setAttribute('data-cookieyes', 'cookieyes-analytics')
         gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJW41LXWZ4'
         document.head.appendChild(gtagScript)
         gtag('config', 'G-YJW41LXWZ4')
