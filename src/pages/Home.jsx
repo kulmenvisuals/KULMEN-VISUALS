@@ -231,7 +231,7 @@ export default function Home() {
       <section className="relative min-h-[70vh] md:h-[80vh] overflow-hidden pt-20 pb-10 md:pt-24">
         {showVideo ? (
           <video
-            className="absolute inset-0 w-full h-full object-cover"
+            className="pointer-events-none absolute inset-0 w-full h-full object-cover"
             autoPlay
             muted
             loop
@@ -247,7 +247,7 @@ export default function Home() {
           </video>
         ) : (
           <img
-            className="absolute inset-0 w-full h-full object-cover"
+            className="pointer-events-none absolute inset-0 w-full h-full object-cover"
             src={`${import.meta.env.BASE_URL}images/hero-poster.webp`}
             alt="Grabación FPV cinematográfico para marca en Galicia — Kulmen Visuals"
             loading="eager"
@@ -255,7 +255,7 @@ export default function Home() {
             fetchPriority="high"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/85 md:from-black/55 md:via-black/35 md:to-black/75" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/85 md:from-black/55 md:via-black/35 md:to-black/75" />
 
         <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
           <p className="kv-eyebrow text-zinc-300 mb-4">
@@ -317,7 +317,7 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-4 mt-6 md:mt-8 pb-10 md:pb-16">
         <div className="grid gap-4 md:grid-cols-3">
           <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-            <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
             </div>
@@ -331,7 +331,7 @@ export default function Home() {
             </div>
           </article>
           <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-            <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
             </div>
@@ -345,7 +345,7 @@ export default function Home() {
             </div>
           </article>
           <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-            <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
               <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
             </div>
@@ -374,7 +374,7 @@ export default function Home() {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
@@ -392,7 +392,7 @@ export default function Home() {
               </div>
             </article>
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
@@ -410,7 +410,7 @@ export default function Home() {
               </div>
             </article>
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
@@ -428,7 +428,7 @@ export default function Home() {
               </div>
             </article>
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
@@ -541,7 +541,7 @@ export default function Home() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
@@ -560,7 +560,7 @@ export default function Home() {
               </div>
             </article>
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
@@ -578,7 +578,7 @@ export default function Home() {
               </div>
             </article>
             <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
-              <div className="absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
                 <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
