@@ -6,15 +6,14 @@ function MetaPixelTracker() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    if (typeof window.fbq !== 'function' || !window.fbq.callMethod) return
-    if (!window.__metaPixelState?.loaded) return
+    if (typeof window.fbq !== 'function') return
 
     const currentPath = `${location.pathname}${location.search}${location.hash}`
 
-    if (window.__metaPixelState.lastTrackedPath === currentPath) return
+    if (window.__metaPixelLastTrackedPath === currentPath) return
 
     window.fbq('track', 'PageView')
-    window.__metaPixelState.lastTrackedPath = currentPath
+    window.__metaPixelLastTrackedPath = currentPath
   }, [location.hash, location.pathname, location.search])
 
   return null
