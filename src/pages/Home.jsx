@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Film, Plane, Scissors, Share2, Briefcase, Calendar, Building2 } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
@@ -177,9 +177,31 @@ const homeSeo = {
 
 export default function Home() {
   usePageSeo(homeSeo)
+  const navigate = useNavigate()
 
   const [showVideo, setShowVideo] = useState(false)
   const [useMobileVideo, setUseMobileVideo] = useState(false)
+
+  async function handleHeroSubmit(e) {
+    e.preventDefault()
+    const data = new FormData(e.target)
+    try {
+      await fetch('https://formspree.io/f/xyzdkrka', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      })
+    } catch (_) {}
+
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', {
+        content_name: 'Hero form',
+        content_category: 'Produccion audiovisual',
+      })
+    }
+
+    navigate('/contacto/gracias')
+  }
 
   useEffect(() => {
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -279,8 +301,7 @@ export default function Home() {
           </div>
 
           <form
-            action="https://formspree.io/f/xyzdkrka"
-            method="POST"
+            onSubmit={handleHeroSubmit}
             className="mt-6 w-full max-w-2xl kv-crystal rounded-2xl p-3 md:p-4 hidden md:flex flex-col gap-3"
           >
             <input

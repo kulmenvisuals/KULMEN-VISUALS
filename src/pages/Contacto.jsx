@@ -1,6 +1,37 @@
 // src/pages/Contacto.jsx
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Contacto() {
+  const navigate = useNavigate()
+  const [submitting, setSubmitting] = useState(false)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setSubmitting(true)
+    const form = e.target
+    const data = new FormData(form)
+
+    try {
+      await fetch('https://formspree.io/f/xyzdkrka', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      })
+    } catch (_) {
+      // continuar igualmente — Formspree gestiona reintentos
+    }
+
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', {
+        content_name: 'Formulario de contacto',
+        content_category: 'Produccion audiovisual',
+      })
+    }
+
+    navigate('/contacto/gracias')
+  }
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
       <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:items-start">
@@ -65,17 +96,9 @@ export default function Contacto() {
         {/* FORMULARIO FUNCIONAL CON FORMSPREE */}
         <div className="kv-glass rounded-3xl border border-zinc-800/80 px-6 py-8 md:px-8 md:py-10">
           <form
-            action="https://formspree.io/f/xyzdkrka"
-            method="POST"
+            onSubmit={handleSubmit}
             className="space-y-5"
           >
-            <input
-              type="hidden"
-              name="_next"
-              value="https://kulmenvisuals.com/contacto/gracias"
-            />
-
-            {/* Asunto del email que me llega */}
             <input
               type="hidden"
               name="_subject"
@@ -220,9 +243,10 @@ export default function Contacto() {
 
             <button
               type="submit"
-              className="w-full sm:w-auto px-5 py-3 rounded-full bg-amber-400 text-black font-semibold text-sm hover:bg-amber-300 transition"
+              disabled={submitting}
+              className="w-full sm:w-auto px-5 py-3 rounded-full bg-amber-400 text-black font-semibold text-sm hover:bg-amber-300 transition disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Enviar solicitud
+              {submitting ? 'Enviando…' : 'Enviar solicitud'}
             </button>
           </form>
         </div>
