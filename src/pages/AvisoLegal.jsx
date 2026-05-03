@@ -87,7 +87,7 @@ export default function AvisoLegal() {
           <p className="kv-body-muted max-w-xl">
             Si necesitas ampliar esta información, puedes escribirme y te respondo lo antes posible.
           </p>
-          <Link to="/contacto" className="kv-button-primary kv-button-accent">
+          <Link to="/contacto/" className="kv-button-primary kv-button-accent">
             Contactar
           </Link>
         </div>

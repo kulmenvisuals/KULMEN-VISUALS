@@ -17,7 +17,7 @@ export default function NotFound() {
             Volver al inicio
           </Link>
           <Link
-            to="/proyectos"
+            to="/proyectos/"
             className="inline-flex px-5 py-2.5 rounded-full border border-zinc-600 text-sm text-zinc-100 hover:border-amber-300 hover:text-amber-200 transition"
           >
             Ver portfolio

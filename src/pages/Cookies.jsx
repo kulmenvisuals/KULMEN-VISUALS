@@ -63,7 +63,7 @@ export default function Cookies() {
           <p className="kv-body-muted max-w-xl">
             Si necesitas más detalles sobre el uso de cookies, puedes escribirme y te respondo.
           </p>
-          <Link to="/contacto" className="kv-button-primary kv-button-accent">
+          <Link to="/contacto/" className="kv-button-primary kv-button-accent">
             Contactar
           </Link>
         </div>

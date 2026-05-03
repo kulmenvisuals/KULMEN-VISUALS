@@ -276,7 +276,7 @@ const mainServices = [
 ]
 
 const serviciosSeo = {
-  title: 'Servicios de produccion audiovisual y dron FPV en Galicia | Kulmen Visuals',
+  title: 'Servicios de producción audiovisual y dron FPV en Galicia | Kulmen Visuals',
   description:
     'Producción audiovisual completa en Galicia: vídeo para marcas, FPV profesional, edición y contenido para redes. Conoce todos los servicios de Kulmen Visuals.',
   pathname: '/servicios',
@@ -559,7 +559,7 @@ export default function Servicios() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary kv-button-accent">
+            <Link to="/contacto/" className="kv-button-primary kv-button-accent">
               Pedir presupuesto
             </Link>
           </div>

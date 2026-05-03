@@ -3,6 +3,7 @@ import { useMemo } from "react"
 import { Link, useParams } from "react-router-dom"
 import { blogPosts } from "../data/blogPosts.js"
 import { normalizeSlug } from "../utils/slug.js"
+import { getBlogPostPath } from "../utils/routes.js"
 import { usePageSeo, useJsonLd, siteUrl } from "../utils/seo.js"
 import { defaultOgImage } from "../utils/routes.js"
 
@@ -29,7 +30,7 @@ export default function BlogPost() {
   const pageSeo = useMemo(() => post ? {
     title: `${post.title} | Kulmen Visuals`,
     description: post.excerpt,
-    pathname: `/blog/${post.slug}`,
+    pathname: getBlogPostPath(post),
     ogType: 'article',
     image: post.cover || defaultOgImage,
   } : {
@@ -48,9 +49,9 @@ export default function BlogPost() {
       image: `${siteUrl}${post.cover || defaultOgImage}`,
       datePublished: post.date,
       dateModified: post.date,
-      url: `${siteUrl}/blog/${post.slug}`,
+      url: `${siteUrl}${getBlogPostPath(post)}`,
       keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
-      author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` },
+      author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi/` },
       publisher: {
         '@type': 'Organization',
         name: 'Kulmen Visuals',
@@ -80,7 +81,7 @@ export default function BlogPost() {
           </p>
 
           <Link
-            to="/blog"
+            to="/blog/"
             className="inline-flex mt-6 px-4 py-2 rounded-full bg-amber-400 text-black font-semibold hover:bg-amber-300 transition"
           >
             Volver al blog
@@ -99,7 +100,7 @@ export default function BlogPost() {
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
       <div className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
         <div className="kv-caption text-zinc-500 flex items-center gap-2">
-          <Link to="/blog" className="hover:text-amber-300">
+          <Link to="/blog/" className="hover:text-amber-300">
             Blog
           </Link>
           <span>•</span>
@@ -165,7 +166,7 @@ export default function BlogPost() {
                 Si quieres aplicar estas ideas a tu marca, puedo ayudarte a
                 definir el enfoque y producir la pieza adecuada.
               </p>
-              <Link to="/contacto" className="kv-button-primary kv-button-accent">
+              <Link to="/contacto/" className="kv-button-primary kv-button-accent">
                 Solicitar propuesta
               </Link>
             </div>
@@ -190,7 +191,7 @@ export default function BlogPost() {
               {relatedPosts.map((item) => (
                 <Link
                   key={item.id}
-                  to={`/blog/${item.slug}`}
+                  to={getBlogPostPath(item)}
                   className="group rounded-2xl border border-zinc-800/70 bg-zinc-950/60 overflow-hidden"
                 >
                   <div className="aspect-[16/10] w-full overflow-hidden">

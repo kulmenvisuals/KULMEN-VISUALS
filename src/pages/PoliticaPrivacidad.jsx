@@ -95,7 +95,7 @@ export default function PoliticaPrivacidad() {
           <p className="kv-body-muted max-w-xl">
             Si tienes dudas sobre esta política o sobre tus derechos, puedes contactarme directamente.
           </p>
-          <Link to="/contacto" className="kv-button-primary kv-button-accent">
+          <Link to="/contacto/" className="kv-button-primary kv-button-accent">
             Contactar
           </Link>
         </div>

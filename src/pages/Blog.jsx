@@ -2,6 +2,7 @@
 import { useMemo } from "react"
 import { Link } from "react-router-dom"
 import { blogPosts } from "../data/blogPosts.js"
+import { getBlogPostPath } from "../utils/routes.js"
 import { usePageSeo } from "../utils/seo.js"
 
 const formatDate = (value) =>
@@ -12,7 +13,7 @@ const formatDate = (value) =>
   })
 
 const blogSeo = {
-  title: 'Blog de FPV y produccion audiovisual en Galicia | Kulmen Visuals',
+  title: 'Blog de FPV y producción audiovisual en Galicia | Kulmen Visuals',
   description:
     'Blog de producción audiovisual y drones FPV en Galicia. Guías prácticas sobre vídeo para marcas, turismo y eventos.',
   pathname: '/blog',
@@ -83,7 +84,7 @@ export default function Blog() {
                   </div>
                   <div className="pt-4 mt-auto">
                     <Link
-                      to={`/blog/${post.slug}`}
+                      to={getBlogPostPath(post)}
                       className="kv-button-secondary"
                     >
                       Leer artículo
@@ -108,7 +109,7 @@ export default function Blog() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary kv-button-accent">
+            <Link to="/contacto/" className="kv-button-primary kv-button-accent">
               Hablemos de tu proyecto
             </Link>
           </div>

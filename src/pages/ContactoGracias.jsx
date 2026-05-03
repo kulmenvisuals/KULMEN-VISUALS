@@ -8,11 +8,10 @@ export default function ContactoGracias() {
           Recibido.
         </h1>
         <p className="kv-lede text-zinc-300 max-w-2xl mx-auto">
-          Ya tengo tu mensaje.<br />
-          Ahora toca leerlo bien y responder con criterio.
+          Gracias, ya tengo tu mensaje.<br />
         </p>
         <p className="kv-body-muted text-zinc-400 max-w-xl mx-auto mt-4">
-          En 24–48h tendrás respuesta.<br />
+          Pronto tendrás respuesta.<br />
           Si el proyecto encaja, te propondré el siguiente paso.
         </p>
 
@@ -20,7 +19,7 @@ export default function ContactoGracias() {
           <Link to="/" className="kv-button-secondary">
             Volver al inicio
           </Link>
-          <Link to="/proyectos" className="kv-button-primary kv-button-accent">
+          <Link to="/proyectos/" className="kv-button-primary kv-button-accent">
             Ver proyectos
           </Link>
         </div>

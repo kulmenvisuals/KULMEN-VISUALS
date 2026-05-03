@@ -24,16 +24,18 @@ export default function BriefModal({ open, onClose }) {
         body: data,
         headers: { Accept: 'application/json' },
       })
-    } catch (_) {}
+    } catch {
+      // continuar igualmente — Formspree gestiona reintentos
+    }
 
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', {
         content_name: 'Brief modal',
-        content_category: 'Produccion audiovisual',
+        content_category: 'Producción audiovisual',
       })
     }
 
-    navigate('/contacto/gracias')
+    navigate('/contacto/gracias/')
   }
 
   if (!open) return null

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
+import { getProjectPath } from "../utils/routes.js"
 
 export default function ProjectCard({ project }) {
   if (!project) return null
 
-  const slug = project.id || project.slug
-  const href = `/proyectos/${slug}`
+  const href = getProjectPath(project)
 
   const typeText = Array.isArray(project.type)
     ? project.type.join(" · ")

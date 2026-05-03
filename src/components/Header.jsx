@@ -4,9 +4,9 @@ import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const nav = [
-  { to: "/proyectos", label: "Proyectos" },
-  { to: "/servicios", label: "Servicios" },
-  { to: "/sobre-mi", label: "Sobre mí" },
+  { to: "/proyectos/", label: "Proyectos" },
+  { to: "/servicios/", label: "Servicios" },
+  { to: "/sobre-mi/", label: "Sobre mí" },
 ]
 
 export default function Header() {
@@ -40,7 +40,7 @@ export default function Header() {
             </NavLink>
           ))}
           
-          <Link to="/contacto" className="kv-button-primary kv-button-accent ml-2">
+          <Link to="/contacto/" className="kv-button-primary kv-button-accent ml-2">
             Hablemos
           </Link>
         </nav>
@@ -82,7 +82,7 @@ export default function Header() {
 
               <div className="pt-2">
                 <Link
-                  to="/contacto"
+                  to="/contacto/"
                   onClick={() => setOpen(false)}
                   className="kv-button-primary kv-button-accent w-full justify-center"
                 >

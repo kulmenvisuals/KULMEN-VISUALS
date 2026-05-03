@@ -4,13 +4,15 @@ import {
   findBlogPostBySlug,
   findProjectBySlug,
   normalizePathname,
+  routes,
   siteUrl,
+  withTrailingSlash,
 } from './routes.js'
 
 export { siteUrl }
 
 const defaultSeo = {
-  title: 'Produccion audiovisual y FPV en Galicia | Kulmen Visuals',
+  title: 'Producción audiovisual y FPV en Galicia | Kulmen Visuals',
   description:
     'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto.',
   pathname: '/',
@@ -36,6 +38,10 @@ function absoluteUrl(value = '/') {
   return `${siteUrl}${value.startsWith('/') ? value : `/${value}`}`
 }
 
+function absolutePageUrl(pathname = '/') {
+  return absoluteUrl(withTrailingSlash(pathname))
+}
+
 function buildSeo(overrides = {}) {
   const seo = { ...defaultSeo, ...overrides }
 
@@ -43,9 +49,9 @@ function buildSeo(overrides = {}) {
     ...seo,
     title: seo.title,
     description: seo.description,
-    canonical: absoluteUrl(seo.pathname),
+    canonical: absolutePageUrl(seo.pathname),
     image: absoluteUrl(seo.image),
-    ogUrl: absoluteUrl(seo.pathname),
+    ogUrl: absolutePageUrl(seo.pathname),
     ogTitle: seo.ogTitle || seo.title,
     ogDescription: seo.ogDescription || seo.description,
     ogType: seo.ogType || 'website',
@@ -214,7 +220,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/servicios') {
     return buildSeo({
-      title: 'Servicios de produccion audiovisual y dron FPV en Galicia | Kulmen Visuals',
+      title: 'Servicios de producción audiovisual y dron FPV en Galicia | Kulmen Visuals',
       description:
         'Producción audiovisual completa en Galicia: vídeo para marcas, FPV profesional, edición y contenido para redes. Conoce todos los servicios de Kulmen Visuals.',
       pathname: path,
@@ -239,7 +245,11 @@ export function resolveRouteSeo(pathname = '/') {
       const projectDescription =
         project.description ||
         'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.'
-      const authorRef = { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` }
+      const authorRef = {
+        '@type': 'Person',
+        name: 'io Rodríguez',
+        url: absolutePageUrl(routes.sobreMi),
+      }
 
       const videoId = project.youtubeUrl?.split('/embed/')?.[1]?.split('?')?.[0]
       const contentUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : undefined
@@ -262,7 +272,7 @@ export function resolveRouteSeo(pathname = '/') {
             name: project.title,
             description: projectDescription,
             image: thumbnailUrl,
-            url: project.instagramUrl || absoluteUrl(path),
+            url: project.instagramUrl || absolutePageUrl(path),
             creator: authorRef,
           }
 
@@ -278,7 +288,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/sobre-mi') {
     return buildSeo({
-      title: 'Sobre mi | Produccion audiovisual y drones FPV en Galicia',
+      title: 'Sobre mí | Producción audiovisual y drones FPV en Galicia',
       description:
         'Soy io Rodríguez, creadora audiovisual y piloto de drones FPV en Galicia. Trabajo para marcas, eventos y proyectos culturales que necesitan vídeo de verdad.',
       pathname: path,
@@ -287,7 +297,7 @@ export function resolveRouteSeo(pathname = '/') {
         '@context': 'https://schema.org',
         '@type': 'Person',
         name: 'io Rodríguez',
-        url: `${siteUrl}/sobre-mi`,
+        url: absolutePageUrl(routes.sobreMi),
         image: `${siteUrl}/images/io-portrait.jpg`,
         jobTitle: 'Realizadora audiovisual y piloto de drones FPV',
         description:
@@ -303,7 +313,7 @@ export function resolveRouteSeo(pathname = '/') {
     return buildSeo({
       title: 'Contacto | Presupuesto audiovisual y FPV en Galicia',
       description:
-        'Solicita presupuesto para video, dron FPV, eventos o contenido de marca en Galicia y resto de Espana.',
+        'Solicita presupuesto para vídeo, dron FPV, eventos o contenido de marca en Galicia y resto de España.',
       pathname: path,
     })
   }
@@ -312,7 +322,7 @@ export function resolveRouteSeo(pathname = '/') {
     return buildSeo({
       title: 'Solicitud enviada | Kulmen Visuals',
       description:
-        'Confirmacion de envio del formulario de contacto de Kulmen Visuals.',
+        'Confirmación de envío del formulario de contacto de Kulmen Visuals.',
       pathname: path,
       robots: 'noindex, nofollow',
     })
@@ -320,7 +330,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/blog') {
     return buildSeo({
-      title: 'Blog de FPV y produccion audiovisual en Galicia | Kulmen Visuals',
+      title: 'Blog de FPV y producción audiovisual en Galicia | Kulmen Visuals',
       description:
         'Blog de producción audiovisual y drones FPV en Galicia. Guías prácticas sobre vídeo para marcas, turismo y eventos.',
       pathname: path,
@@ -346,9 +356,13 @@ export function resolveRouteSeo(pathname = '/') {
           image: absoluteUrl(post.cover || defaultOgImage),
           datePublished: post.date,
           dateModified: post.date,
-          url: absoluteUrl(path),
+          url: absolutePageUrl(path),
           keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
-          author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` },
+          author: {
+            '@type': 'Person',
+            name: 'io Rodríguez',
+            url: absolutePageUrl(routes.sobreMi),
+          },
           publisher: {
             '@type': 'Organization',
             name: 'Kulmen Visuals',
@@ -364,33 +378,33 @@ export function resolveRouteSeo(pathname = '/') {
     return buildSeo({
       title: 'Aviso legal | Kulmen Visuals',
       description:
-        'Informacion legal, condiciones de uso y titularidad del sitio web de Kulmen Visuals.',
+        'Información legal, condiciones de uso y titularidad del sitio web de Kulmen Visuals.',
       pathname: path,
     })
   }
 
   if (path === '/politica-privacidad') {
     return buildSeo({
-      title: 'Politica de privacidad | Kulmen Visuals',
+      title: 'Política de privacidad | Kulmen Visuals',
       description:
-        'Informacion sobre el tratamiento de datos personales en la web de Kulmen Visuals.',
+        'Información sobre el tratamiento de datos personales en la web de Kulmen Visuals.',
       pathname: path,
     })
   }
 
   if (path === '/cookies') {
     return buildSeo({
-      title: 'Politica de cookies | Kulmen Visuals',
+      title: 'Política de cookies | Kulmen Visuals',
       description:
-        'Informacion sobre el uso de cookies en la web de Kulmen Visuals.',
+        'Información sobre el uso de cookies en la web de Kulmen Visuals.',
       pathname: path,
     })
   }
 
   return buildSeo({
-    title: 'Pagina no encontrada | Kulmen Visuals',
+    title: 'Página no encontrada | Kulmen Visuals',
     description:
-      'La pagina solicitada no esta disponible. Puedes seguir navegando por los servicios, proyectos y articulos de Kulmen Visuals.',
+      'La página solicitada no está disponible. Puedes seguir navegando por los servicios, proyectos y artículos de Kulmen Visuals.',
     pathname: path,
     robots: 'noindex, nofollow',
   })

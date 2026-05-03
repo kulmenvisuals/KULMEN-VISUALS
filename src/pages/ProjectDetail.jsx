@@ -5,7 +5,7 @@ import { projects } from "../data/projects.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 import { normalizeSlug } from "../utils/slug.js"
 import { usePageSeo, useJsonLd, siteUrl } from "../utils/seo.js"
-import { defaultOgImage } from "../utils/routes.js"
+import { defaultOgImage, getProjectPath } from "../utils/routes.js"
 
 export default function ProjectDetail() {
   const { slug } = useParams()
@@ -23,7 +23,7 @@ export default function ProjectDetail() {
   const pageSeo = useMemo(() => project ? {
     title: `${project.title} | Kulmen Visuals`,
     description: project.description || 'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.',
-    pathname: `/proyectos/${project.slug || project.id}`,
+    pathname: getProjectPath(project),
     image: project.thumbnail || project.images?.[0] || defaultOgImage,
   } : {
     title: 'Proyecto no encontrado | Kulmen Visuals',
@@ -35,8 +35,7 @@ export default function ProjectDetail() {
     if (!project) return null
     const thumbnailUrl = `${siteUrl}${project.thumbnail || project.images?.[0] || defaultOgImage}`
     const projectDescription = project.description || 'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.'
-    const authorRef = { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi` }
-    const projectSlug = project.slug || project.id
+    const authorRef = { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi/` }
 
     const videoId = project.youtubeUrl?.split('/embed/')?.[1]?.split('?')?.[0]
     const contentUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : undefined
@@ -59,7 +58,7 @@ export default function ProjectDetail() {
           name: project.title,
           description: projectDescription,
           image: thumbnailUrl,
-          url: project.instagramUrl || `${siteUrl}/proyectos/${projectSlug}`,
+          url: project.instagramUrl || `${siteUrl}${getProjectPath(project)}`,
           creator: authorRef,
         }
   }, [project])
@@ -103,7 +102,7 @@ export default function ProjectDetail() {
           </p>
 
           <Link
-            to="/proyectos"
+            to="/proyectos/"
             className="inline-flex mt-6 px-4 py-2 rounded-full bg-amber-400 text-black font-semibold hover:bg-amber-300 transition"
           >
             Volver al portfolio
@@ -127,7 +126,7 @@ export default function ProjectDetail() {
       <div className="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-14 md:pb-20 space-y-10">
         {/* Migas + volver */}
         <div className="kv-caption text-zinc-500 flex items-center gap-2">
-          <Link to="/proyectos" className="hover:text-amber-300">
+          <Link to="/proyectos/" className="hover:text-amber-300">
             Portfolio
           </Link>
           <span>•</span>
@@ -355,7 +354,7 @@ export default function ProjectDetail() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary kv-button-accent">
+            <Link to="/contacto/" className="kv-button-primary kv-button-accent">
               Hablemos de tu proyecto
             </Link>
           </div>

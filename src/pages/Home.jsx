@@ -135,7 +135,7 @@ const homeSchema = {
       serviceType: "Producción audiovisual",
       provider: { "@id": "https://kulmenvisuals.com/#organization" },
       areaServed: "Galicia",
-      url: "https://kulmenvisuals.com/servicios",
+      url: "https://kulmenvisuals.com/servicios/",
     },
     {
       "@type": "Service",
@@ -143,7 +143,7 @@ const homeSchema = {
       serviceType: "Drones FPV",
       provider: { "@id": "https://kulmenvisuals.com/#organization" },
       areaServed: "Galicia",
-      url: "https://kulmenvisuals.com/servicios",
+      url: "https://kulmenvisuals.com/servicios/",
     },
     {
       "@type": "Service",
@@ -151,7 +151,7 @@ const homeSchema = {
       serviceType: "Postproducción de vídeo",
       provider: { "@id": "https://kulmenvisuals.com/#organization" },
       areaServed: "Galicia",
-      url: "https://kulmenvisuals.com/servicios",
+      url: "https://kulmenvisuals.com/servicios/",
     },
     {
       "@type": "FAQPage",
@@ -169,7 +169,7 @@ const homeSchema = {
 }
 
 const homeSeo = {
-  title: 'Produccion audiovisual y FPV en Galicia | Kulmen Visuals',
+  title: 'Producción audiovisual y FPV en Galicia | Kulmen Visuals',
   description:
     'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto.',
   pathname: '/',
@@ -191,16 +191,18 @@ export default function Home() {
         body: data,
         headers: { Accept: 'application/json' },
       })
-    } catch (_) {}
+    } catch {
+      // continuar igualmente — Formspree gestiona reintentos
+    }
 
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', {
         content_name: 'Hero form',
-        content_category: 'Produccion audiovisual',
+        content_category: 'Producción audiovisual',
       })
     }
 
-    navigate('/contacto/gracias')
+    navigate('/contacto/gracias/')
   }
 
   useEffect(() => {
@@ -292,10 +294,10 @@ export default function Home() {
             Rodaje, FPV y edición pensados para redes, campañas y web. 
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link to="/servicios" className="kv-button-secondary">
+            <Link to="/servicios/" className="kv-button-secondary">
               Ver servicios
             </Link>
-            <Link to="/contacto" className="kv-button-primary md:hidden">
+            <Link to="/contacto/" className="kv-button-primary md:hidden">
               Iniciar proyecto
             </Link>
           </div>
@@ -528,7 +530,7 @@ export default function Home() {
             </p>
           </div>
           <Link
-            to="/proyectos"
+            to="/proyectos/"
             className="kv-button-secondary text-sm"
           >
             Ver proyectos completos
@@ -681,7 +683,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary kv-button-accent">
+            <Link to="/contacto/" className="kv-button-primary kv-button-accent">
               Pedir presupuesto
             </Link>
           </div>

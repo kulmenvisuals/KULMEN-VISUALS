@@ -3,21 +3,22 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { blogPosts } from "../src/data/blogPosts.js"
 import { projects } from "../src/data/projects.js"
-import { getBlogPostPath, getProjectPath, siteUrl, staticRoutes } from "../src/utils/routes.js"
+import { getBlogPostPath, getProjectPath, routes, siteUrl, sitemapStaticRoutes } from "../src/utils/routes.js"
 
-const today = new Date().toISOString().slice(0, 10)
+const today = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Europe/Madrid',
+}).format(new Date())
 
 const PRIORITY = {
   '/': { changefreq: 'weekly', priority: '1.0' },
-  '/servicios': { changefreq: 'monthly', priority: '0.9' },
-  '/proyectos': { changefreq: 'monthly', priority: '0.9' },
-  '/sobre-mi': { changefreq: 'monthly', priority: '0.8' },
-  '/blog': { changefreq: 'weekly', priority: '0.9' },
-  '/contacto': { changefreq: 'monthly', priority: '0.8' },
-  '/contacto/gracias': { changefreq: 'yearly', priority: '0.1' },
-  '/aviso-legal': { changefreq: 'yearly', priority: '0.2' },
-  '/politica-privacidad': { changefreq: 'yearly', priority: '0.2' },
-  '/cookies': { changefreq: 'yearly', priority: '0.2' },
+  [routes.servicios]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.proyectos]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.sobreMi]: { changefreq: 'monthly', priority: '0.8' },
+  [routes.blog]: { changefreq: 'weekly', priority: '0.9' },
+  [routes.contacto]: { changefreq: 'monthly', priority: '0.8' },
+  [routes.avisoLegal]: { changefreq: 'yearly', priority: '0.2' },
+  [routes.politicaPrivacidad]: { changefreq: 'yearly', priority: '0.2' },
+  [routes.cookies]: { changefreq: 'yearly', priority: '0.2' },
 }
 
 const blogRoutes = blogPosts.map((post) => ({
@@ -34,8 +35,8 @@ const projectRoutes = projects.map((project) => ({
   priority: '0.7',
 }))
 
-const routes = [
-  ...staticRoutes.map((loc) => ({
+const sitemapEntries = [
+  ...sitemapStaticRoutes.map((loc) => ({
     loc,
     lastmod: today,
     ...(PRIORITY[loc] || { changefreq: 'monthly', priority: '0.5' }),
@@ -46,7 +47,7 @@ const routes = [
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes
+${sitemapEntries
   .map(
     (route) => `  <url>
     <loc>${siteUrl}${route.loc}</loc>

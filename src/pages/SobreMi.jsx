@@ -42,7 +42,7 @@ const aboutBlocks = [
 ]
 
 const sobreMiSeo = {
-  title: 'Sobre mi | Produccion audiovisual y drones FPV en Galicia',
+  title: 'Sobre mí | Producción audiovisual y drones FPV en Galicia',
   description:
     'Soy io Rodríguez, creadora audiovisual y piloto de drones FPV en Galicia. Trabajo para marcas, eventos y proyectos culturales que necesitan vídeo de verdad.',
   pathname: '/sobre-mi',
@@ -53,7 +53,7 @@ const sobreMiJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'io Rodríguez',
-  url: `${siteUrl}/sobre-mi`,
+  url: `${siteUrl}/sobre-mi/`,
   image: `${siteUrl}/images/io-portrait.jpg`,
   jobTitle: 'Realizadora audiovisual y piloto de drones FPV',
   description:
@@ -187,7 +187,7 @@ export default function SobreMi() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link to="/contacto" className="kv-button-primary kv-button-accent">
+            <Link to="/contacto/" className="kv-button-primary kv-button-accent">
               Contactar
             </Link>
           </div>

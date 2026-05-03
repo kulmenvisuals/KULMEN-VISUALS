@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           <Link
-            to="/contacto"
+            to="/contacto/"
             className="kv-button-primary kv-button-accent"
           >
             Hablemos de tu proyecto
@@ -51,19 +51,19 @@ export default function Footer() {
             <Link to="/" className="text-zinc-300 hover:text-amber-300 transition">
               Inicio
             </Link>
-            <Link to="/servicios" className="text-zinc-300 hover:text-amber-300 transition">
+            <Link to="/servicios/" className="text-zinc-300 hover:text-amber-300 transition">
               Servicios
             </Link>
-            <Link to="/proyectos" className="text-zinc-300 hover:text-amber-300 transition">
+            <Link to="/proyectos/" className="text-zinc-300 hover:text-amber-300 transition">
               Proyectos
             </Link>
-            <Link to="/sobre-mi" className="text-zinc-300 hover:text-amber-300 transition">
+            <Link to="/sobre-mi/" className="text-zinc-300 hover:text-amber-300 transition">
               Sobre mí
             </Link>
-            <Link to="/blog" className="text-zinc-300 hover:text-amber-300 transition">
+            <Link to="/blog/" className="text-zinc-300 hover:text-amber-300 transition">
               Blog
             </Link>
-            <Link to="/contacto" className="text-zinc-300 hover:text-amber-300 transition">
+            <Link to="/contacto/" className="text-zinc-300 hover:text-amber-300 transition">
               Contacto
             </Link>
           </nav>
@@ -100,21 +100,21 @@ export default function Footer() {
           <p className="kv-caption text-zinc-600">© {year} Kulmen Visuals</p>
           <div className="kv-caption text-zinc-600 flex flex-wrap items-center justify-center gap-2">
             <Link
-              to="/aviso-legal"
+              to="/aviso-legal/"
               className="hover:text-amber-300 transition"
             >
               Aviso legal
             </Link>
             <span aria-hidden="true">·</span>
             <Link
-              to="/politica-privacidad"
+              to="/politica-privacidad/"
               className="hover:text-amber-300 transition"
             >
               Política de privacidad
             </Link>
             <span aria-hidden="true">·</span>
             <Link
-              to="/cookies"
+              to="/cookies/"
               className="hover:text-amber-300 transition"
             >
               Cookies

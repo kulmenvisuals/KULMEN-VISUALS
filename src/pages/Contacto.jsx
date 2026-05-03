@@ -2,14 +2,36 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+const objectiveFieldName = 'objetivo[]'
+
 export default function Contacto() {
   const navigate = useNavigate()
   const [submitting, setSubmitting] = useState(false)
 
+  function syncObjectiveValidity(form) {
+    const checkboxes = Array.from(
+      form.querySelectorAll(`input[name="${objectiveFieldName}"]`),
+    )
+    const hasSelection = checkboxes.some((checkbox) => checkbox.checked)
+    const message = hasSelection ? '' : 'Selecciona al menos una opción.'
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.setCustomValidity(message)
+    })
+
+    return hasSelection
+  }
+
   async function handleSubmit(e) {
     e.preventDefault()
+    const form = e.currentTarget
+
+    if (!syncObjectiveValidity(form)) {
+      form.reportValidity()
+      return
+    }
+
     setSubmitting(true)
-    const form = e.target
     const data = new FormData(form)
 
     try {
@@ -18,18 +40,18 @@ export default function Contacto() {
         body: data,
         headers: { Accept: 'application/json' },
       })
-    } catch (_) {
+    } catch {
       // continuar igualmente — Formspree gestiona reintentos
     }
 
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'Lead', {
         content_name: 'Formulario de contacto',
-        content_category: 'Produccion audiovisual',
+        content_category: 'Producción audiovisual',
       })
     }
 
-    navigate('/contacto/gracias')
+    navigate('/contacto/gracias/')
   }
 
   return (
@@ -199,16 +221,16 @@ export default function Contacto() {
                   "Web",
                   "Uso interno",
                   "Aún no lo tengo claro",
-                ].map((option, index) => (
+                ].map((option) => (
                   <label
                     key={option}
                     className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/60 px-3 py-2"
                   >
                     <input
                       type="checkbox"
-                      name="objetivo[]"
+                      name={objectiveFieldName}
                       value={option}
-                      required={index === 0}
+                      onChange={(event) => syncObjectiveValidity(event.currentTarget.form)}
                       className="h-4 w-4 accent-amber-400"
                     />
                     <span>{option}</span>

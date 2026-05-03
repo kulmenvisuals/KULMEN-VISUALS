@@ -5,18 +5,33 @@ import { normalizeSlug } from './slug.js'
 export const siteUrl = 'https://kulmenvisuals.com'
 export const defaultOgImage = '/images/og-cover.jpg'
 
+export const routes = {
+  home: '/',
+  servicios: '/servicios/',
+  proyectos: '/proyectos/',
+  sobreMi: '/sobre-mi/',
+  blog: '/blog/',
+  contacto: '/contacto/',
+  contactoGracias: '/contacto/gracias/',
+  avisoLegal: '/aviso-legal/',
+  politicaPrivacidad: '/politica-privacidad/',
+  cookies: '/cookies/',
+}
+
 export const staticRoutes = [
-  '/',
-  '/servicios',
-  '/proyectos',
-  '/sobre-mi',
-  '/blog',
-  '/contacto',
-  '/contacto/gracias',
-  '/aviso-legal',
-  '/politica-privacidad',
-  '/cookies',
+  routes.home,
+  routes.servicios,
+  routes.proyectos,
+  routes.sobreMi,
+  routes.blog,
+  routes.contacto,
+  routes.contactoGracias,
+  routes.avisoLegal,
+  routes.politicaPrivacidad,
+  routes.cookies,
 ]
+
+export const sitemapStaticRoutes = staticRoutes.filter((route) => route !== routes.contactoGracias)
 
 export function normalizePathname(pathname = '/') {
   const [cleanPath] = pathname.split(/[?#]/)
@@ -28,12 +43,17 @@ export function normalizePathname(pathname = '/') {
   return cleanPath.endsWith('/') ? cleanPath.slice(0, -1) : cleanPath
 }
 
+export function withTrailingSlash(pathname = '/') {
+  const normalized = normalizePathname(pathname)
+  return normalized === '/' ? '/' : `${normalized}/`
+}
+
 export function getProjectPath(project) {
-  return `/proyectos/${project.slug || project.id}`
+  return withTrailingSlash(`/proyectos/${project.slug || project.id}`)
 }
 
 export function getBlogPostPath(post) {
-  return `/blog/${post.slug || post.id}`
+  return withTrailingSlash(`/blog/${post.slug || post.id}`)
 }
 
 export function findProjectBySlug(slug) {
