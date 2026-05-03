@@ -1,5 +1,5 @@
 // src/pages/ProjectDetail.jsx
-import { useMemo } from "react"
+import { useMemo, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { projects } from "../data/projects.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
@@ -66,6 +66,18 @@ export default function ProjectDetail() {
 
   usePageSeo(pageSeo)
   useJsonLd(jsonLdSchema)
+
+  useEffect(() => {
+    if (!project) return
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', {
+        content_name: project.title,
+        content_category: project.category ?? 'Proyecto audiovisual',
+        content_type: 'product',
+        content_ids: [project.id],
+      })
+    }
+  }, [project])
 
   if (!project) {
     return (

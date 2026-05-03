@@ -6,6 +6,12 @@ export default function BriefModal({ open, onClose }) {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : ""
+    if (open && typeof window.fbq === 'function') {
+      window.fbq('trackCustom', 'BriefModalOpen', {
+        content_name: 'Brief modal servicios',
+        content_category: 'Servicios',
+      })
+    }
     return () => (document.body.style.overflow = "")
   }, [open])
 

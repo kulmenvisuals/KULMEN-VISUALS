@@ -84,6 +84,11 @@ export default function Contacto() {
                   <a
                     href="mailto:hola@kulmenvisuals.com"
                     className="text-amber-300 hover:text-amber-200"
+                    onClick={() => {
+                      if (typeof window.fbq === 'function') {
+                        window.fbq('track', 'Contact')
+                      }
+                    }}
                   >
                     hola@kulmenvisuals.com
                   </a>

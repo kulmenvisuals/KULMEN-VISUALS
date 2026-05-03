@@ -4,13 +4,16 @@ export default function ContactoGracias() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16 md:py-24">
       <div className="kv-glass rounded-3xl border border-zinc-800/80 px-6 py-10 md:px-10 md:py-12 text-center">
-        <p className="kv-eyebrow text-zinc-500 mb-3">Mensaje enviado</p>
         <h1 className="kv-page-title text-zinc-50 mb-4">
-          Gracias, he recibido tu solicitud.
+          Recibido.
         </h1>
         <p className="kv-lede text-zinc-300 max-w-2xl mx-auto">
-          Revisaré la información y te responderé en un plazo de 24–48 horas
-          laborables.
+          Ya tengo tu mensaje.<br />
+          Ahora toca leerlo bien y responder con criterio.
+        </p>
+        <p className="kv-body-muted text-zinc-400 max-w-xl mx-auto mt-4">
+          En 24–48h tendrás respuesta.<br />
+          Si el proyecto encaja, te propondré el siguiente paso.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

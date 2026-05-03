@@ -1,5 +1,5 @@
 // src/pages/Servicios.jsx
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { Camera, Drone, Heart, Scissors } from "lucide-react"
@@ -284,6 +284,16 @@ const serviciosSeo = {
 
 export default function Servicios() {
   usePageSeo(serviciosSeo)
+
+  useEffect(() => {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'ViewContent', {
+        content_name: 'Servicios de producción audiovisual',
+        content_category: 'Servicios',
+        content_type: 'product',
+      })
+    }
+  }, [])
 
   const fasesList = Array.isArray(fases) ? fases : []
   const especialidadesList = Array.isArray(especialidades) ? especialidades : []
