@@ -1,10 +1,34 @@
 import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function BriefModal({ open, onClose }) {
+  const navigate = useNavigate()
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : ""
     return () => (document.body.style.overflow = "")
   }, [open])
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    const data = new FormData(e.target)
+    try {
+      await fetch('https://formspree.io/f/xyzdkrka', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      })
+    } catch (_) {}
+
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', {
+        content_name: 'Brief modal',
+        content_category: 'Produccion audiovisual',
+      })
+    }
+
+    navigate('/contacto/gracias')
+  }
 
   if (!open) return null
 
@@ -17,8 +41,7 @@ export default function BriefModal({ open, onClose }) {
 
         <form
           className="mt-4 space-y-3"
-          action="https://formspree.io/f/xyzdkrka"
-          method="POST"
+          onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-2 gap-2">
             <select className="bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2" name="objetivo" required>
