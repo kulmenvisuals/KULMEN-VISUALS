@@ -13,6 +13,15 @@ import Portfolio from './pages/Portfolio.jsx'
 import ProjectDetail from './pages/ProjectDetail.jsx'
 import Servicios from './pages/Servicios.jsx'
 import SobreMi from './pages/SobreMi.jsx'
+import ServiciosGrabacion from './pages/ServiciosGrabacion.jsx'
+import GrabacionFPV from './pages/GrabacionFPV.jsx'
+import DronCinePublicidad from './pages/DronCinePublicidad.jsx'
+import VideoCorporativo from './pages/VideoCorporativo.jsx'
+import DronEventos from './pages/DronEventos.jsx'
+import DronInmobiliarias from './pages/DronInmobiliarias.jsx'
+import AlquilerDrones from './pages/AlquilerDrones.jsx'
+import GaliciaGrabacion from './pages/GaliciaGrabacion.jsx'
+import PontevedraGrabacion from './pages/PontevedraGrabacion.jsx'
 
 export function AppRouter() {
   return (
@@ -30,6 +39,21 @@ export function AppRouter() {
         <Route path="aviso-legal" element={<AvisoLegal />} />
         <Route path="politica-privacidad" element={<PoliticaPrivacidad />} />
         <Route path="cookies" element={<Cookies />} />
+        {/* SEO landing pages — drones */}
+        <Route path="servicios-grabacion-con-drones" element={<ServiciosGrabacion />} />
+        <Route path="grabacion-con-drones-fpv" element={<GrabacionFPV />} />
+        <Route path="dron-para-cine-y-publicidad" element={<DronCinePublicidad />} />
+        <Route path="video-corporativo-con-dron" element={<VideoCorporativo />} />
+        <Route path="dron-para-eventos" element={<DronEventos />} />
+        <Route path="dron-para-inmobiliarias" element={<DronInmobiliarias />} />
+        <Route path="alquiler-drones-con-piloto" element={<AlquilerDrones />} />
+        {/* SEO landing pages — local */}
+        <Route path="galicia">
+          <Route path="grabacion-con-drones" element={<GaliciaGrabacion />} />
+        </Route>
+        <Route path="pontevedra">
+          <Route path="grabacion-con-drones" element={<PontevedraGrabacion />} />
+        </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

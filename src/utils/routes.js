@@ -16,6 +16,15 @@ export const routes = {
   avisoLegal: '/aviso-legal/',
   politicaPrivacidad: '/politica-privacidad/',
   cookies: '/cookies/',
+  serviciosGrabacion: '/servicios-grabacion-con-drones/',
+  grabacionFPV: '/grabacion-con-drones-fpv/',
+  dronCinePublicidad: '/dron-para-cine-y-publicidad/',
+  videoCorporativo: '/video-corporativo-con-dron/',
+  dronEventos: '/dron-para-eventos/',
+  dronInmobiliarias: '/dron-para-inmobiliarias/',
+  alquilerDrones: '/alquiler-drones-con-piloto/',
+  galiciaGrabacion: '/galicia/grabacion-con-drones/',
+  pontevedraGrabacion: '/pontevedra/grabacion-con-drones/',
 }
 
 export const staticRoutes = [
@@ -29,6 +38,15 @@ export const staticRoutes = [
   routes.avisoLegal,
   routes.politicaPrivacidad,
   routes.cookies,
+  routes.serviciosGrabacion,
+  routes.grabacionFPV,
+  routes.dronCinePublicidad,
+  routes.videoCorporativo,
+  routes.dronEventos,
+  routes.dronInmobiliarias,
+  routes.alquilerDrones,
+  routes.galiciaGrabacion,
+  routes.pontevedraGrabacion,
 ]
 
 export const sitemapStaticRoutes = staticRoutes.filter((route) => route !== routes.contactoGracias)

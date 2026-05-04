@@ -19,6 +19,15 @@ const PRIORITY = {
   [routes.avisoLegal]: { changefreq: 'yearly', priority: '0.2' },
   [routes.politicaPrivacidad]: { changefreq: 'yearly', priority: '0.2' },
   [routes.cookies]: { changefreq: 'yearly', priority: '0.2' },
+  [routes.serviciosGrabacion]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.grabacionFPV]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.dronCinePublicidad]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.videoCorporativo]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.dronEventos]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.dronInmobiliarias]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.alquilerDrones]: { changefreq: 'monthly', priority: '0.9' },
+  [routes.galiciaGrabacion]: { changefreq: 'monthly', priority: '0.8' },
+  [routes.pontevedraGrabacion]: { changefreq: 'monthly', priority: '0.8' },
 }
 
 const blogRoutes = blogPosts.map((post) => ({

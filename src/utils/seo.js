@@ -12,9 +12,9 @@ import {
 export { siteUrl }
 
 const defaultSeo = {
-  title: 'Producción audiovisual y FPV en Galicia | Kulmen Visuals',
+  title: 'Grabación con drones profesionales en España | FPV, cine y corporativo',
   description:
-    'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto.',
+    'Grabación con drones profesionales en España: FPV, cine, vídeo corporativo, eventos e inmobiliaria. Piloto certificado con permisos AESA en Galicia. Solicita presupuesto.',
   pathname: '/',
   ogType: 'website',
   image: defaultOgImage,
@@ -397,6 +397,87 @@ export function resolveRouteSeo(pathname = '/') {
       title: 'Política de cookies | Kulmen Visuals',
       description:
         'Información sobre el uso de cookies en la web de Kulmen Visuals.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/servicios-grabacion-con-drones') {
+    return buildSeo({
+      title: 'Servicios de grabación con drones | FPV, eventos, empresa y rodajes',
+      description:
+        'Grabación con drones profesionales en España: FPV, cine, vídeo corporativo, eventos e inmobiliaria. Piloto con permisos AESA. Presupuesto sin compromiso.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/grabacion-con-drones-fpv') {
+    return buildSeo({
+      title: 'Grabación con drones FPV | Vuelos inmersivos para publicidad y eventos',
+      description:
+        'Grabación con drones FPV en España: planos dinámicos e inmersivos para publicidad, eventos y marcas. Piloto certificado, Cinewhoop para interiores. Presupuesto sin compromiso.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/dron-para-cine-y-publicidad') {
+    return buildSeo({
+      title: 'Dron para cine y publicidad | Rodajes aéreos profesionales',
+      description:
+        'Dron para rodaje de cine y publicidad en España. Planos aéreos cinematográficos para spots, campañas y producciones. Piloto certificado con permisos.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/video-corporativo-con-dron') {
+    return buildSeo({
+      title: 'Vídeo corporativo con dron | Empresas, industria e instalaciones',
+      description:
+        'Vídeo corporativo con dron para empresas, industria e instalaciones. Muestra tus instalaciones desde el aire con calidad profesional. Piloto certificado con permisos.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/dron-para-eventos') {
+    return buildSeo({
+      title: 'Grabación con dron para eventos | Festivales, conciertos y marcas',
+      description:
+        'Grabación con dron para eventos en España: festivales, conciertos, activaciones de marca y conferencias. FPV y cinematográfico. Piloto certificado con permisos.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/dron-para-inmobiliarias') {
+    return buildSeo({
+      title: 'Servicios de dron para inmobiliarias | Vídeo y foto aérea de propiedades',
+      description:
+        'Dron para inmobiliaria: foto y vídeo aéreo de propiedades, parcelas y urbanizaciones en España. Piloto certificado con permisos. Acelera la venta con imágenes únicas.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/alquiler-drones-con-piloto') {
+    return buildSeo({
+      title: 'Alquiler de drones con piloto | Servicio profesional con permisos',
+      description:
+        'Alquiler de drones con piloto profesional en España. Dron + piloto certificado con permisos AESA incluidos para rodajes, eventos y empresas. Presupuesto sin compromiso.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/galicia/grabacion-con-drones') {
+    return buildSeo({
+      title: 'Grabación con drones en Galicia | FPV, cine, eventos y corporativo',
+      description:
+        'Grabación con drones en Galicia: FPV, cine, eventos corporativos e inmobiliaria. Piloto certificado con base en Pontevedra. Cobertura en toda la comunidad.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/pontevedra/grabacion-con-drones') {
+    return buildSeo({
+      title: 'Grabación con drones en Pontevedra | FPV, rodajes y empresa',
+      description:
+        'Grabación con drones en Pontevedra y provincia: FPV, vídeo corporativo, eventos e inmobiliaria. Base local, respuesta en 24 horas. Piloto certificado con permisos AESA.',
       pathname: path,
     })
   }
