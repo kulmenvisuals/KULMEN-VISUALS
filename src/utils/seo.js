@@ -12,9 +12,9 @@ import {
 export { siteUrl }
 
 const defaultSeo = {
-  title: 'Grabación con drones profesionales en España | FPV, cine y corporativo',
+  title: 'Producción audiovisual y FPV en Galicia | Kulmen Visuals',
   description:
-    'Grabación con drones profesionales en España: FPV, cine, vídeo corporativo, eventos e inmobiliaria. Piloto certificado con permisos AESA en Galicia. Solicita presupuesto.',
+    'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto.',
   pathname: '/',
   ogType: 'website',
   image: defaultOgImage,

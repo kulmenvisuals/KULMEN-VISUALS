@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Film, Plane, Scissors, Share2, Briefcase, Calendar, Building2, Key, MapPin } from 'lucide-react'
+import { Film, Plane, Scissors, Share2, Briefcase, Calendar, Building2 } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
 import { usePageSeo } from '../utils/seo.js'
@@ -169,9 +169,9 @@ const homeSchema = {
 }
 
 const homeSeo = {
-  title: 'Grabación con drones profesionales en España | FPV, cine y corporativo',
+  title: 'Producción audiovisual y FPV en Galicia | Kulmen Visuals',
   description:
-    'Grabación con drones profesionales en España: FPV, cine, vídeo corporativo, eventos e inmobiliaria. Piloto certificado con permisos AESA en Galicia. Solicita presupuesto.',
+    'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto.',
   pathname: '/',
 }
 
@@ -286,12 +286,12 @@ export default function Home() {
             Kulmen Visuals · Galicia
           </p>
           <h1 className="kv-hero-title mb-6">
-            Grabación con drones profesionales
-            <span className="text-zinc-200"> en España.</span>
+            Producción audiovisual <br className="hidden md:block" />
+            <span className="text-zinc-200"> con FPV cinematográfico en Galicia.</span>
           </h1>
           <p className="kv-lede max-w-xl mb-8">
-            FPV, cine, corporativo y eventos. Piloto certificado con permisos AESA.
-            Producción completa desde Galicia para proyectos en toda España.
+            Vídeos para marcas y eventos que necesitan destacar de verdad.
+            Rodaje, FPV y edición pensados para redes, campañas y web.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link to="/servicios/" className="kv-button-secondary">
@@ -516,94 +516,6 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Servicios de grabación con drones */}
-      <section className="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
-        <div className="flex flex-col gap-6 md:gap-10">
-          <div>
-            <h2 className="kv-section-title mb-3">
-              Servicios de grabación con drones
-            </h2>
-            <p className="kv-body-muted max-w-2xl">
-              FPV, cinematográfico, corporativo, eventos e inmobiliaria. Piloto certificado con permisos AESA para cualquier tipo de proyecto.
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {[
-              { to: '/grabacion-con-drones-fpv/', icon: Plane, title: 'Grabación con drones FPV', desc: 'Planos dinámicos e inmersivos para publicidad, eventos y marcas.' },
-              { to: '/dron-para-cine-y-publicidad/', icon: Film, title: 'Dron para cine y publicidad', desc: 'Planos aéreos cinematográficos para spots y rodajes profesionales.' },
-              { to: '/video-corporativo-con-dron/', icon: Briefcase, title: 'Vídeo corporativo con dron', desc: 'Instalaciones, industria y empresa desde una perspectiva única.' },
-              { to: '/dron-para-eventos/', icon: Calendar, title: 'Grabación con dron para eventos', desc: 'Festivales, conciertos y activaciones con cobertura aérea completa.' },
-              { to: '/dron-para-inmobiliarias/', icon: Building2, title: 'Dron para inmobiliarias', desc: 'Foto y vídeo aéreo de propiedades para acelerar la venta.' },
-              { to: '/alquiler-drones-con-piloto/', icon: Key, title: 'Alquiler de drones con piloto', desc: 'Dron + piloto certificado para tu producción o proyecto.' },
-            ].map((s) => (
-              <Link
-                key={s.to}
-                to={s.to}
-                className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]"
-              >
-                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
-                </div>
-                <div className="relative">
-                  <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
-                    <s.icon size={16} />
-                  </div>
-                  <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
-                    {s.title}
-                  </h3>
-                  <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
-                    {s.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="flex items-center gap-4">
-            <Link to="/servicios-grabacion-con-drones/" className="kv-button-secondary text-sm">
-              Ver todos los servicios de drones
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Zonas de operación */}
-      <section className="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-950 via-zinc-950/80 to-zinc-900/60 px-5 py-8 md:px-8 md:py-10">
-          <div className="pointer-events-none absolute -top-24 -right-10 h-56 w-56 rounded-full bg-amber-400/10 blur-3xl" />
-          <div className="flex items-center gap-3 mb-5">
-            <MapPin size={16} className="text-amber-300" />
-            <h2 className="kv-section-title">Zonas donde operamos</h2>
-          </div>
-          <p className="kv-body-muted max-w-2xl mb-6">
-            Base en Pontevedra (Galicia) con cobertura en toda España. Para proyectos fuera de Galicia se incluye el desplazamiento en el presupuesto cerrado.
-          </p>
-          <div className="grid gap-3 md:grid-cols-2">
-            <Link
-              to="/galicia/grabacion-con-drones/"
-              className="kv-glass-soft rounded-xl p-4 border border-white/10 hover:border-amber-300/30 transition-colors group"
-            >
-              <span className="kv-card-title text-zinc-200 group-hover:text-amber-200 transition-colors block">
-                Grabación con drones en Galicia
-              </span>
-              <p className="kv-card-body text-zinc-400 mt-1">
-                Cobertura en toda la comunidad: Pontevedra, Vigo, A Coruña, Santiago y más.
-              </p>
-            </Link>
-            <Link
-              to="/pontevedra/grabacion-con-drones/"
-              className="kv-glass-soft rounded-xl p-4 border border-white/10 hover:border-amber-300/30 transition-colors group"
-            >
-              <span className="kv-card-title text-zinc-200 group-hover:text-amber-200 transition-colors block">
-                Grabación con drones en Pontevedra
-              </span>
-              <p className="kv-card-body text-zinc-400 mt-1">
-                Servicio local con base en Pontevedra. Respuesta rápida y conocimiento del territorio.
-              </p>
-            </Link>
           </div>
         </div>
       </section>
