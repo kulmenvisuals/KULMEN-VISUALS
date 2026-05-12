@@ -50,7 +50,12 @@ export const projects = [
     videoUrl: null,
     poster: null,
 
-    images: [],
+    images: [
+      "/images/projects/video-inmobiliario-galicia-1-1620.png",
+      "/images/projects/video-inmobiliario-galicia-2-1620.png",
+      "/images/projects/video-inmobiliario-galicia-3-1620.png",
+      "/images/projects/video-inmobiliario-galicia-4-1620.png",
+    ],
 
     description:
       "Vídeo inmobiliario para Grupo Country Homes, planteado para mostrar el espacio con claridad, ritmo y una presentación visual cuidada.",
