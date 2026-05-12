@@ -123,6 +123,19 @@ export default function ProjectDetail() {
   const hasLocalVideo = Boolean(project.videoUrl)
   const hasInstagram = Boolean(instagramEmbedUrl)
   const useInstagramSplit = hasInstagram && !hasYoutube && !hasVimeo && !hasLocalVideo
+  const hasMultipleVideos = Array.isArray(project.videos) && project.videos.length > 0
+  const hasOnlyVerticalVideos = hasMultipleVideos && project.videos.every((video) => video.aspect === "9/16")
+  const hasTwoLandscapeVideos = hasMultipleVideos && project.videos.length === 2 && project.videos.every((video) => video.aspect === "16/9")
+
+  const multipleVideosLayout = hasOnlyVerticalVideos
+    ? project.videos.length >= 4
+      ? "flex flex-col gap-6 items-center md:grid md:grid-cols-2 xl:grid-cols-4 md:items-start"
+      : project.videos.length === 3
+        ? "flex flex-col gap-6 items-center md:grid md:grid-cols-2 xl:grid-cols-3 md:items-start"
+        : "flex flex-col gap-6 items-center md:grid md:grid-cols-2 md:items-start"
+    : hasTwoLandscapeVideos
+      ? "grid gap-6 md:grid-cols-2"
+      : "flex flex-col gap-6 items-center"
 
   return (
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
@@ -155,20 +168,16 @@ export default function ProjectDetail() {
         </header>
 
         {/* MÚLTIPLES VÍDEOS */}
-        {Array.isArray(project.videos) && project.videos.length > 0 && (
-          <section className={
-            project.videos.length === 2 && project.videos.every(v => v.aspect === '16/9')
-              ? 'grid gap-6 md:grid-cols-2'
-              : 'flex flex-col gap-6 items-center'
-          }>
+        {hasMultipleVideos && (
+          <section className={multipleVideosLayout}>
             {project.videos.map((video, i) => {
-              const isVertical = video.aspect === '9/16'
+              const isVertical = video.aspect === "9/16"
               return (
                 <div
                   key={i}
-                  className={`${isVertical ? 'w-full max-w-[320px]' : 'w-full'} rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]`}
+                  className={`${isVertical ? "w-full max-w-[320px] md:max-w-none" : "w-full"} rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]`}
                 >
-                  <div className={isVertical ? 'aspect-[9/16]' : 'aspect-video'}>
+                  <div className={isVertical ? "aspect-[9/16]" : "aspect-video"}>
                     <iframe
                       src={video.url}
                       title={video.title || project.title}
@@ -185,7 +194,7 @@ export default function ProjectDetail() {
         )}
 
         {/* VIDEO PRINCIPAL (único) */}
-        {!(Array.isArray(project.videos) && project.videos.length > 0) && (hasYoutube || hasVimeo || hasInstagram || hasLocalVideo) && !useInstagramSplit && (
+        {!hasMultipleVideos && (hasYoutube || hasVimeo || hasInstagram || hasLocalVideo) && !useInstagramSplit && (
           <section>
             {hasYoutube ? (
               // YouTube
@@ -232,7 +241,7 @@ export default function ProjectDetail() {
           </section>
         )}
 
-        {!(Array.isArray(project.videos) && project.videos.length > 0) && useInstagramSplit ? (
+        {!hasMultipleVideos && useInstagramSplit ? (
           <section className="grid gap-8 lg:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] items-start">
             <div className="w-full max-w-[220px] sm:max-w-[260px] lg:max-w-none mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
               <div className="aspect-[9/16]">

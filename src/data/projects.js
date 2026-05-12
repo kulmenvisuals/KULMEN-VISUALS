@@ -70,30 +70,30 @@ export const projects = [
     type: ["Espacios", "Inmobiliario", "RRSS"],
     roles: ["Grabación", "Edición"],
 
-    thumbnail: "https://vumbnail.com/1191493306.jpg",
+    thumbnail: "https://img.youtube.com/vi/ydFF5vgR4BA/maxresdefault.jpg",
 
     videos: [
       {
-        platform: "vimeo",
-        url: "https://player.vimeo.com/video/1191493306?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+        platform: "youtube",
+        url: "https://www.youtube.com/embed/ydFF5vgR4BA",
         aspect: "9/16",
-        title: "Land of Eve — Pazo Friol",
+        title: "Land of Eve — Vídeo 1",
       },
       {
-        platform: "vimeo",
-        url: "https://player.vimeo.com/video/1187808211?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+        platform: "youtube",
+        url: "https://www.youtube.com/embed/kV5JlJE4-Rc",
         aspect: "9/16",
         title: "Land of Eve — Vídeo 2",
       },
       {
-        platform: "vimeo",
-        url: "https://player.vimeo.com/video/1187808272?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+        platform: "youtube",
+        url: "https://www.youtube.com/embed/3BjmalWa9Fk",
         aspect: "9/16",
         title: "Land of Eve — Vídeo 3",
       },
       {
-        platform: "vimeo",
-        url: "https://player.vimeo.com/video/1191493998?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+        platform: "youtube",
+        url: "https://www.youtube.com/embed/n1upt6GEGfc",
         aspect: "9/16",
         title: "Land of Eve — Vídeo 4",
       },
