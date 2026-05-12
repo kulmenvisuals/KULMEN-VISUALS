@@ -92,6 +92,47 @@ export const projects = [
       "El foco estuvo en el montaje de la exposicion y la relacion entre obra y espacio, con un tratamiento documental sobrio y observacional.",
   },
 
+  // 1b) UGC: Orballo
+  {
+    id: "ugc-orballo",
+    slug: "ugc-orballo",
+
+    title: "UGC · Orballo",
+    client: "Orballo",
+    year: 2025,
+
+    category: "UGC / RRSS",
+    type: ["UGC", "RRSS"],
+    roles: ["Grabación", "Edición"],
+
+    thumbnail: "https://vumbnail.com/1187803876.jpg",
+
+    videos: [
+      {
+        platform: "vimeo",
+        url: "https://player.vimeo.com/video/1187803876?badge=0&autopause=0&player_id=0&app_id=58479",
+        aspect: "9/16",
+        title: "Orballo — Promo día de la madre",
+      },
+      {
+        platform: "vimeo",
+        url: "https://player.vimeo.com/video/1187805532?h=5e38c38869",
+        aspect: "16/9",
+        title: "Orballo — UGC",
+      },
+    ],
+
+    youtubeUrl: null,
+    vimeoUrl: null,
+    videoUrl: null,
+    poster: null,
+    images: [],
+
+    description:
+      "Contenido UGC para Orballo: dos piezas pensadas para redes sociales, con un formato vertical para stories y reels y uno horizontal para feed y web.",
+    extra: null,
+  },
+
   // 2) Patrocinios: Cobre San Rafael (Orestes Comunica)
   {
     id: "patrocinios-cobre-san-rafael",

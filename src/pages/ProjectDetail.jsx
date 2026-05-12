@@ -154,8 +154,38 @@ export default function ProjectDetail() {
           </div>
         </header>
 
-        {/* VIDEO PRINCIPAL */}
-        {(hasYoutube || hasVimeo || hasInstagram || hasLocalVideo) && !useInstagramSplit && (
+        {/* MÚLTIPLES VÍDEOS */}
+        {Array.isArray(project.videos) && project.videos.length > 0 && (
+          <section className={
+            project.videos.length === 2 && project.videos.every(v => v.aspect === '16/9')
+              ? 'grid gap-6 md:grid-cols-2'
+              : 'flex flex-col gap-6 items-center'
+          }>
+            {project.videos.map((video, i) => {
+              const isVertical = video.aspect === '9/16'
+              return (
+                <div
+                  key={i}
+                  className={`${isVertical ? 'w-full max-w-[320px]' : 'w-full'} rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]`}
+                >
+                  <div className={isVertical ? 'aspect-[9/16]' : 'aspect-video'}>
+                    <iframe
+                      src={video.url}
+                      title={video.title || project.title}
+                      className="w-full h-full"
+                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              )
+            })}
+          </section>
+        )}
+
+        {/* VIDEO PRINCIPAL (único) */}
+        {!(Array.isArray(project.videos) && project.videos.length > 0) && (hasYoutube || hasVimeo || hasInstagram || hasLocalVideo) && !useInstagramSplit && (
           <section>
             {hasYoutube ? (
               // YouTube
@@ -202,7 +232,7 @@ export default function ProjectDetail() {
           </section>
         )}
 
-        {useInstagramSplit ? (
+        {!(Array.isArray(project.videos) && project.videos.length > 0) && useInstagramSplit ? (
           <section className="grid gap-8 lg:grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] items-start">
             <div className="w-full max-w-[220px] sm:max-w-[260px] lg:max-w-none mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
               <div className="aspect-[9/16]">
