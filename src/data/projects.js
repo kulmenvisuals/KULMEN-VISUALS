@@ -110,7 +110,7 @@ export const projects = [
     videos: [
       {
         platform: "vimeo",
-        url: "https://player.vimeo.com/video/1187803876?badge=0&autopause=0&player_id=0&app_id=58479",
+        url: "https://player.vimeo.com/video/1187803876?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1",
         aspect: "9/16",
         title: "Orballo — Promo día de la madre",
       },
@@ -150,7 +150,7 @@ export const projects = [
 
     thumbnail: "https://vumbnail.com/1187801714.jpg",
 
-    vimeoUrl: "https://player.vimeo.com/video/1187801714?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+    vimeoUrl: "https://player.vimeo.com/video/1187801714?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1",
 
     youtubeUrl: null,
     videoUrl: null,
