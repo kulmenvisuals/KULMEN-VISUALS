@@ -110,6 +110,47 @@ export const projects = [
     extra: null,
   },
 
+  // 1b) Vídeo inmobiliario RRSS: Pazo en Lugo
+  {
+    id: "video-inmobiliario-rrss-pazo-lugo",
+    slug: "video-inmobiliario-rrss-pazo-lugo",
+
+    title: "Vídeo inmobiliario RRSS · Pazo en Lugo",
+    client: "Pazo en Lugo",
+
+    category: "Espacios / Inmobiliario / RRSS",
+    type: ["Espacios", "Inmobiliario", "RRSS"],
+    roles: ["Grabación", "Edición"],
+    location: "Lugo",
+
+    thumbnail: "https://img.youtube.com/vi/t9hFH0-vLIc/maxresdefault.jpg",
+
+    videos: [
+      {
+        platform: "youtube",
+        url: "https://www.youtube.com/embed/t9hFH0-vLIc",
+        aspect: "9/16",
+        title: "Pazo en Lugo — Vídeo 1",
+      },
+      {
+        platform: "youtube",
+        url: "https://www.youtube.com/embed/aDN48wkqg_E",
+        aspect: "9/16",
+        title: "Pazo en Lugo — Vídeo 2",
+      },
+    ],
+
+    youtubeUrl: null,
+    vimeoUrl: null,
+    videoUrl: null,
+    poster: null,
+    images: [],
+
+    description:
+      "Piezas verticales para redes sociales centradas en mostrar el espacio de un pazo en Lugo con ritmo ágil y enfoque inmobiliario.",
+    extra: null,
+  },
+
   // 1) Reportaje: Banca March · Lynda Benglis
   {
     id: "banca-march-lynda-benglis",
@@ -207,6 +248,32 @@ export const projects = [
 
     description:
       "Pieza audiovisual para los patrocinios de Cobre San Rafael, producida junto a la agencia Orestes Comunica. El vídeo recoge el vínculo de la empresa con el territorio y el deporte gallego a través de las acciones de patrocinio que impulsa.",
+    extra: null,
+  },
+
+  // 2b) Patrocinio: Velero Peregrina CSR
+  {
+    id: "velero-peregrina-csr",
+    slug: "velero-peregrina-csr",
+
+    title: "Patrocinio · Velero Peregrina CSR",
+    client: "Cobre San Rafael",
+    agency: "Orestes Comunica",
+    year: 2025,
+
+    category: "Corporativo / Deporte / Evento",
+    type: ["Corporativo", "Deporte", "Eventos"],
+    roles: ["Grabación", "Edición"],
+
+    thumbnail: "https://vumbnail.com/1187805348.jpg",
+    vimeoUrl: "https://player.vimeo.com/video/1187805348",
+    youtubeUrl: null,
+    videoUrl: null,
+    poster: null,
+    images: [],
+
+    description:
+      "Pieza audiovisual del patrocinio de Velero Peregrina CSR para Cobre San Rafael, producida junto a Orestes Comunica.",
     extra: null,
   },
 
