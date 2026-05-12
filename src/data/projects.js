@@ -157,7 +157,7 @@ export const projects = [
     type: ["UGC", "RRSS"],
     roles: ["Grabación", "Edición"],
 
-    thumbnail: "https://vumbnail.com/1187803876.jpg",
+    thumbnail: "https://img.youtube.com/vi/w4uyxYVJqiA/maxresdefault.jpg",
     cardPlaceholder: {
       eyebrow: "UGC · Orballo",
       title: "Vista previa no disponible",
@@ -165,8 +165,8 @@ export const projects = [
 
     videos: [
       {
-        platform: "vimeo",
-        url: "https://player.vimeo.com/video/1187803876?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1",
+        platform: "youtube",
+        url: "https://www.youtube.com/embed/w4uyxYVJqiA",
         aspect: "9/16",
         title: "Orballo — Promo día de la madre",
       },
