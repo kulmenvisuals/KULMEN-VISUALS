@@ -106,6 +106,10 @@ export const projects = [
     roles: ["Grabación", "Edición"],
 
     thumbnail: "https://vumbnail.com/1187803876.jpg",
+    cardPlaceholder: {
+      eyebrow: "UGC · Orballo",
+      title: "Vista previa no disponible",
+    },
 
     videos: [
       {
@@ -113,12 +117,6 @@ export const projects = [
         url: "https://player.vimeo.com/video/1187803876?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1",
         aspect: "9/16",
         title: "Orballo — Promo día de la madre",
-      },
-      {
-        platform: "vimeo",
-        url: "https://player.vimeo.com/video/1187805532?h=5e38c38869",
-        aspect: "16/9",
-        title: "Orballo — UGC",
       },
     ],
 
@@ -149,6 +147,10 @@ export const projects = [
     location: "Galicia",
 
     thumbnail: "https://vumbnail.com/1187801714.jpg",
+    cardPlaceholder: {
+      eyebrow: "Cobre San Rafael",
+      title: "Vista previa no disponible",
+    },
 
     vimeoUrl: "https://player.vimeo.com/video/1187801714?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1",
 
