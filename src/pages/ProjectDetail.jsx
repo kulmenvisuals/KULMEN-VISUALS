@@ -125,14 +125,17 @@ export default function ProjectDetail() {
   const useInstagramSplit = hasInstagram && !hasYoutube && !hasVimeo && !hasLocalVideo
   const hasMultipleVideos = Array.isArray(project.videos) && project.videos.length > 0
   const hasOnlyVerticalVideos = hasMultipleVideos && project.videos.every((video) => video.aspect === "9/16")
+  const verticalVideosCount = hasOnlyVerticalVideos ? project.videos.length : 0
   const hasTwoLandscapeVideos = hasMultipleVideos && project.videos.length === 2 && project.videos.every((video) => video.aspect === "16/9")
 
   const multipleVideosLayout = hasOnlyVerticalVideos
-    ? project.videos.length >= 4
+    ? verticalVideosCount >= 4
       ? "flex flex-col gap-6 items-center md:grid md:grid-cols-2 xl:grid-cols-4 md:items-start"
-      : project.videos.length === 3
-        ? "flex flex-col gap-6 items-center md:grid md:grid-cols-2 xl:grid-cols-3 md:items-start"
-        : "flex flex-col gap-6 items-center md:grid md:grid-cols-2 md:items-start"
+      : verticalVideosCount === 3
+        ? "flex flex-col gap-6 items-center md:grid md:grid-cols-2 xl:grid-cols-3 md:justify-items-center md:items-start"
+        : verticalVideosCount === 2
+          ? "flex flex-col gap-6 items-center md:grid md:grid-cols-2 md:justify-items-center md:items-start"
+          : "flex flex-col gap-6 items-center"
     : hasTwoLandscapeVideos
       ? "grid gap-6 md:grid-cols-2"
       : "flex flex-col gap-6 items-center"
@@ -172,10 +175,16 @@ export default function ProjectDetail() {
           <section className={multipleVideosLayout}>
             {project.videos.map((video, i) => {
               const isVertical = video.aspect === "9/16"
+              const verticalCardClass = verticalVideosCount >= 4
+                ? "w-full max-w-[320px] md:max-w-none"
+                : verticalVideosCount === 3
+                  ? "w-full max-w-[320px] xl:max-w-none"
+                  : "w-full max-w-[320px] md:max-w-[280px] lg:max-w-[300px]"
+
               return (
                 <div
                   key={i}
-                  className={`${isVertical ? "w-full max-w-[320px] md:max-w-none" : "w-full"} rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]`}
+                  className={`${isVertical ? verticalCardClass : "w-full"} rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]`}
                 >
                   <div className={isVertical ? "aspect-[9/16]" : "aspect-video"}>
                     <iframe
