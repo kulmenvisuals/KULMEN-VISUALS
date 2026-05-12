@@ -199,11 +199,6 @@ export const projects = [
     location: "Galicia",
 
     thumbnail: "/images/projects/Video-corporativo-fpv-galicia.png",
-    cardPlaceholder: {
-      eyebrow: "Cobre San Rafael",
-      title: "Vista previa no disponible",
-    },
-
     vimeoUrl: null,
     youtubeUrl: "https://www.youtube.com/embed/rVydjna50tM",
     videoUrl: null,
