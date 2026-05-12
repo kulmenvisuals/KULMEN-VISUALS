@@ -39,16 +39,18 @@ export default function ProjectDetail() {
 
     const videoId = project.youtubeUrl?.split('/embed/')?.[1]?.split('?')?.[0]
     const contentUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : undefined
+    const vimeoId = project.vimeoUrl?.match(/vimeo\.com\/video\/(\d+)/)?.[1]
+    const vimeoContentUrl = vimeoId ? `https://vimeo.com/${vimeoId}` : undefined
 
-    return project.youtubeUrl
+    return (project.youtubeUrl || project.vimeoUrl)
       ? {
           '@context': 'https://schema.org',
           '@type': 'VideoObject',
           name: project.title,
           description: projectDescription,
           thumbnailUrl,
-          embedUrl: project.youtubeUrl,
-          contentUrl,
+          embedUrl: project.youtubeUrl || project.vimeoUrl,
+          contentUrl: contentUrl || vimeoContentUrl,
           uploadDate: project.year ? `${project.year}-01-01` : undefined,
           author: authorRef,
         }
@@ -117,9 +119,10 @@ export default function ProjectDetail() {
     ? `${project.instagramUrl.replace(/\/$/, "")}/embed`
     : null
   const hasYoutube = Boolean(project.youtubeUrl)
+  const hasVimeo = Boolean(project.vimeoUrl)
   const hasLocalVideo = Boolean(project.videoUrl)
   const hasInstagram = Boolean(instagramEmbedUrl)
-  const useInstagramSplit = hasInstagram && !hasYoutube && !hasLocalVideo
+  const useInstagramSplit = hasInstagram && !hasYoutube && !hasVimeo && !hasLocalVideo
 
   return (
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
@@ -152,7 +155,7 @@ export default function ProjectDetail() {
         </header>
 
         {/* VIDEO PRINCIPAL */}
-        {(hasYoutube || hasInstagram || hasLocalVideo) && !useInstagramSplit && (
+        {(hasYoutube || hasVimeo || hasInstagram || hasLocalVideo) && !useInstagramSplit && (
           <section>
             {hasYoutube ? (
               // YouTube
@@ -162,6 +165,18 @@ export default function ProjectDetail() {
                   title={project.title}
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            ) : hasVimeo ? (
+              // Vimeo
+              <div className="aspect-video w-full rounded-2xl overflow-hidden border border-zinc-800 bg-black shadow-[0_25px_70px_rgba(0,0,0,0.7)]">
+                <iframe
+                  src={project.vimeoUrl}
+                  title={project.title}
+                  className="w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
               </div>

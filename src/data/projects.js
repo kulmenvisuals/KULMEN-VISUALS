@@ -92,7 +92,36 @@ export const projects = [
       "El foco estuvo en el montaje de la exposicion y la relacion entre obra y espacio, con un tratamiento documental sobrio y observacional.",
   },
 
-  // 2) Patrocinio: Cobre San Rafael x Campus Xacobeo (SD Compostela)
+  // 2) Patrocinios: Cobre San Rafael (Orestes Comunica)
+  {
+    id: "patrocinios-cobre-san-rafael",
+    slug: "patrocinios-cobre-san-rafael",
+
+    title: "Patrocinios · Cobre San Rafael",
+    client: "Cobre San Rafael",
+    agency: "Orestes Comunica",
+    year: 2025,
+
+    category: "Corporativo / Deporte",
+    type: ["Corporativo", "Deporte", "Eventos"],
+    roles: ["Grabación", "Edición"],
+    location: "Galicia",
+
+    thumbnail: "https://vumbnail.com/1187801714.jpg",
+
+    vimeoUrl: "https://player.vimeo.com/video/1187801714?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+
+    youtubeUrl: null,
+    videoUrl: null,
+    poster: null,
+    images: [],
+
+    description:
+      "Pieza audiovisual para los patrocinios de Cobre San Rafael, producida junto a la agencia Orestes Comunica. El vídeo recoge el vínculo de la empresa con el territorio y el deporte gallego a través de las acciones de patrocinio que impulsa.",
+    extra: null,
+  },
+
+  // 3) Patrocinio: Cobre San Rafael x Campus Xacobeo (SD Compostela)
   {
     id: "cobre-san-rafael-campus-xacobeo",
     slug: "cobre-san-rafael-campus-xacobeo",
