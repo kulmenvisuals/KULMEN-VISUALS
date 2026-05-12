@@ -199,11 +199,6 @@ export const projects = [
     roles: ["Grabación", "Edición"],
 
     thumbnail: "https://img.youtube.com/vi/w4uyxYVJqiA/maxresdefault.jpg",
-    cardPlaceholder: {
-      eyebrow: "UGC · Orballo",
-      title: "Vista previa no disponible",
-    },
-
     videos: [
       {
         platform: "youtube",
