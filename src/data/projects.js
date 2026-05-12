@@ -58,6 +58,58 @@ export const projects = [
       "La pieza está orientada a enseñar la vivienda de forma atractiva y funcional, destacando recorrido, amplitud y detalles clave para su presentación online.",
   },
 
+  // 1a) Vídeo inmobiliario RRSS: Land of Eve
+  {
+    id: "land-of-eve-video-inmobiliario-rrss",
+    slug: "land-of-eve-video-inmobiliario-rrss",
+
+    title: "Vídeo inmobiliario RRSS · Land of Eve",
+    client: "Land of Eve",
+
+    category: "Espacios / Inmobiliario / RRSS",
+    type: ["Espacios", "Inmobiliario", "RRSS"],
+    roles: ["Grabación", "Edición"],
+
+    thumbnail: "https://vumbnail.com/1191493306.jpg",
+
+    videos: [
+      {
+        platform: "vimeo",
+        url: "https://player.vimeo.com/video/1191493306?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+        aspect: "9/16",
+        title: "Land of Eve — Pazo Friol",
+      },
+      {
+        platform: "vimeo",
+        url: "https://player.vimeo.com/video/1187808211?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+        aspect: "9/16",
+        title: "Land of Eve — Vídeo 2",
+      },
+      {
+        platform: "vimeo",
+        url: "https://player.vimeo.com/video/1187808272?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+        aspect: "9/16",
+        title: "Land of Eve — Vídeo 3",
+      },
+      {
+        platform: "vimeo",
+        url: "https://player.vimeo.com/video/1191493998?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479",
+        aspect: "9/16",
+        title: "Land of Eve — Vídeo 4",
+      },
+    ],
+
+    youtubeUrl: null,
+    vimeoUrl: null,
+    videoUrl: null,
+    poster: null,
+    images: [],
+
+    description:
+      "Serie de vídeos inmobiliarios para RRSS producida para Land of Eve, pensada para presentar espacios con un formato vertical, ágil y directo.",
+    extra: null,
+  },
+
   // 1) Reportaje: Banca March · Lynda Benglis
   {
     id: "banca-march-lynda-benglis",
@@ -127,7 +179,7 @@ export const projects = [
     images: [],
 
     description:
-      "Contenido UGC para Orballo: dos piezas pensadas para redes sociales, con un formato vertical para stories y reels y uno horizontal para feed y web.",
+      "Contenido UGC para Orballo pensado para redes sociales, con un formato vertical orientado a stories y reels.",
     extra: null,
   },
 
@@ -146,15 +198,14 @@ export const projects = [
     roles: ["Grabación", "Edición"],
     location: "Galicia",
 
-    thumbnail: "https://vumbnail.com/1187801714.jpg",
+    thumbnail: "/images/projects/Video-corporativo-fpv-galicia.png",
     cardPlaceholder: {
       eyebrow: "Cobre San Rafael",
       title: "Vista previa no disponible",
     },
 
-    vimeoUrl: "https://player.vimeo.com/video/1187801714?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1",
-
-    youtubeUrl: null,
+    vimeoUrl: null,
+    youtubeUrl: "https://www.youtube.com/embed/rVydjna50tM",
     videoUrl: null,
     poster: null,
     images: [],
