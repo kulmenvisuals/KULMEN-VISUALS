@@ -277,6 +277,33 @@ export const projects = [
     extra: null,
   },
 
+  // 2c) Patrocinio: Pilot Rallye de Cobre San Rafael
+  {
+    id: "patrocinio-pilot-rallye-cobre-san-rafael",
+    slug: "patrocinio-pilot-rallye-cobre-san-rafael",
+
+    title: "Patrocinio · Pilot Rallye de Cobre San Rafael",
+    client: "Cobre San Rafael",
+    agency: "Orestes Comunica",
+    year: 2025,
+
+    category: "Corporativo / Deporte / Evento",
+    type: ["Corporativo", "Deporte", "Eventos"],
+    roles: ["Grabación", "Piloto de dron FPV", "Edición"],
+    location: "Galicia",
+
+    thumbnail: "https://img.youtube.com/vi/riE3cFCA-pM/maxresdefault.jpg",
+
+    youtubeUrl: "https://www.youtube.com/embed/riE3cFCA-pM",
+    videoUrl: null,
+    poster: null,
+    images: [],
+
+    description:
+      "Pieza audiovisual del patrocinio de Pilot Rallye para Cobre San Rafael, producida junto a la agencia Orestes Comunica.",
+    extra: null,
+  },
+
   // 3) Patrocinio: Cobre San Rafael x Campus Xacobeo (SD Compostela)
   {
     id: "cobre-san-rafael-campus-xacobeo",
@@ -293,12 +320,9 @@ export const projects = [
     location: "Santiago de Compostela",
 
   
-    thumbnail: "/images/projects/cobre-touro-2.png",
+    thumbnail: "https://img.youtube.com/vi/gJlNWpcF3G8/maxresdefault.jpg",
 
-    // Enlace a Instagram
-    instagramUrl: "https://www.instagram.com/p/DMuqh9yoWBN/",
-
-    youtubeUrl: null,
+    youtubeUrl: "https://www.youtube.com/embed/gJlNWpcF3G8",
     videoUrl: null,
     poster: null,
 
@@ -360,11 +384,9 @@ export const projects = [
     roles: ["Operadora de cámara", "Operadora de dron estabilizado", "Edición"],
     location: "Galicia",
 
-    thumbnail: "/images/projects/cross-1.png",
+    thumbnail: "https://img.youtube.com/vi/0JiD8UT_EHc/maxresdefault.jpg",
 
-    instagramUrl: "https://www.instagram.com/p/DPV-FUnDnV1/",
-
-    youtubeUrl: null,
+    youtubeUrl: "https://www.youtube.com/embed/0JiD8UT_EHc",
     videoUrl: null,
     poster: null,
 
