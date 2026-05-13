@@ -282,7 +282,7 @@ export const projects = [
     id: "patrocinio-pilot-rallye-cobre-san-rafael",
     slug: "patrocinio-pilot-rallye-cobre-san-rafael",
 
-    title: "Patrocinio · Pilot Rallye de Cobre San Rafael",
+    title: "Patrocinio · CSR x Piloto de Rallye Iván Casal",
     client: "Cobre San Rafael",
     agency: "Orestes Comunica",
     year: 2025,
