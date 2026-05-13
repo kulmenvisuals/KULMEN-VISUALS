@@ -300,7 +300,7 @@ export const projects = [
     images: [],
 
     description:
-      "Pieza audiovisual del patrocinio de Pilot Rallye para Cobre San Rafael, producida junto a la agencia Orestes Comunica.",
+      "Pieza audiovisual del patrocinio del Piloto de Rallye Iván Casal por parte de Cobre San Rafael, producida junto a la agencia Orestes Comunica.",
     extra: null,
   },
 

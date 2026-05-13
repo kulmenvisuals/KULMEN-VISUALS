@@ -34,7 +34,7 @@ export default function Blog() {
         <h1 className="kv-page-title mb-3">
           Blog de producción audiovisual y FPV en Galicia.
         </h1>
-        <p className="kv-body-muted max-w-2xl">
+        <p className="kv-body-muted max-w-2xl">Pieza audiovisual del patrocinio de Pilot Rallye para Cobre San Rafael, producida junto a la agencia Orestes Comunica.
           Guías y artículos prácticos sobre vídeo para marcas, turismo y
           eventos. Enfoque claro, planificación realista y recursos para mejorar
           tu presencia online.
