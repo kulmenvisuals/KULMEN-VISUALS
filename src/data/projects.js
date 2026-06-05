@@ -45,7 +45,7 @@ export const projects = [
     type: ["Spot", "Documental"],
     roles: ["Grabación", "Edición", "Piloto de dron FPV", "Dron estabilizado"],
 
-    thumbnail: "https://img.youtube.com/vi/yxJbeSQxR2Y/maxresdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/yxJbeSQxR2Y/hqdefault.jpg",
     youtubeUrl: "https://www.youtube.com/embed/yxJbeSQxR2Y",
 
     videoUrl: null,
