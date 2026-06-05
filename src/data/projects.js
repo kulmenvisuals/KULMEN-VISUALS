@@ -492,7 +492,36 @@ export const projects = [
       "La direccion se centro en coreografiar la camara dentro del set, usando luz y color para recortar siluetas y potenciar el movimiento como hilo narrativo.",
   },
 
-  // 8) Videoclip: Mamá, Sislah
+  // 8) Anuncio documental: Villa Boutique 1880
+  {
+    id: "anuncio-documental-villa-boutique-1880",
+    slug: "anuncio-documental-villa-boutique-1880",
+
+    title: "Anuncio documental · Villa Boutique 1880",
+    client: "Villa Boutique 1880",
+    year: 2026,
+
+    category: "Documental / Anuncio",
+    type: ["Spot", "Documental"],
+    roles: ["Grabación", "Edición", "Piloto de dron FPV", "Dron estabilizado"],
+
+    thumbnail: "https://img.youtube.com/vi/yxJbeSQxR2Y/maxresdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/embed/yxJbeSQxR2Y",
+
+    videoUrl: null,
+    poster: null,
+    images: [
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/1.jpg",
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/2.jpg",
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/3.jpg",
+    ],
+
+    description:
+      "Anuncio documental para Villa Boutique 1880. Desarrollo completo de grabación y edición, con uso de dron FPV y dron estabilizado para capturar el espacio con dinamismo y elegancia.",
+    extra: null,
+  },
+
+  // 9) Videoclip: Mamá, Sislah
   {
     id: "mama-sislah-madrid",
     slug: "mama-sislah-madrid",
