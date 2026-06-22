@@ -26,6 +26,8 @@ export default function ProjectCard({ project, showPortfolioPlaceholder = false 
               src={project.thumbnail}
               alt={`${project.title} — Kulmen Visuals`}
               className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.04]"
+              width="1280"
+              height="720"
             />
           )}
 

@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preconnect hints para dominios externos críticos -->
+    <link rel="preconnect" href="https://cdn-cookieyes.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://connect.facebook.net" />
     <!-- CookieYes banner -->
     <script
       id="cookieyes"
       type="text/javascript"
+      async
       src="https://cdn-cookieyes.com/client_data/12e11da90bdfb3cd2ddf8838/script.js"
     ></script>
     <!-- End CookieYes banner -->
@@ -54,7 +59,7 @@
     <title>Producción audiovisual y FPV en Galicia | Kulmen Visuals</title>
     <meta
       name="description"
-      content="Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto."
+      content="Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Pide presupuesto sin compromiso."
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://kulmenvisuals.com/" />
@@ -66,6 +71,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kulmenvisuals.com/" />
     <meta property="og:image" content="https://kulmenvisuals.com/images/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="Kulmen Visuals" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -77,34 +84,6 @@
     <meta name="twitter:image" content="https://kulmenvisuals.com/images/og-cover.jpg" />
     <!--/app-head-->
     <link rel="sitemap" type="application/xml" href="https://kulmenvisuals.com/sitemap.xml" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": ["LocalBusiness", "VideoProductionCompany"],
-        "@id": "https://kulmenvisuals.com/#kulmen-business",
-        "name": "Kulmen Visuals",
-        "description": "Productora audiovisual y servicios de drones FPV en Galicia",
-        "url": "https://kulmenvisuals.com",
-        "logo": "https://kulmenvisuals.com/logo-kulmen-visuals.png",
-        "image": "https://kulmenvisuals.com/images/hero-poster.webp",
-        "founder": {
-          "@type": "Person",
-          "name": "io Rodríguez",
-          "jobTitle": "Creadora audiovisual y piloto FPV",
-          "url": "https://kulmenvisuals.com/sobre-mi/"
-        },
-        "areaServed": {
-          "@type": "State",
-          "name": "Galicia",
-          "containedIn": { "@type": "Country", "name": "España" }
-        },
-        "serviceType": ["Producción audiovisual", "FPV cinematográfico", "Edición de vídeo"],
-        "email": "hola@kulmenvisuals.com",
-        "telephone": "+34 652405654",
-        "priceRange": "€€",
-        "sameAs": ["https://www.instagram.com/kulmenvisuals/"]
-      }
-    </script>
     <!-- Google tag (gtag.js) -->
     <script>
       window.dataLayer = window.dataLayer || []
