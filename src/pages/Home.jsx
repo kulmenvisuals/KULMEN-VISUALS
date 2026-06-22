@@ -7,6 +7,33 @@ import { usePageSeo } from '../utils/seo.js'
 
 const featuredProjects = Array.isArray(projects) ? projects.slice(0, 3) : []
 
+const serviceTeasers = [
+  {
+    id: 'pre',
+    titulo: 'Preproducción',
+    texto:
+      'Ideas, guion y planificación. Te ayudo a bajar a tierra la idea, definir objetivos y diseñar una pieza que tenga sentido para tu marca.',
+  },
+  {
+    id: 'rodaje',
+    titulo: 'Rodaje',
+    texto:
+      'Cámaras de cine, dron FPV y sonido. Desde localización y logística hasta dirección de rodaje, trabajando ágil y con cabeza.',
+  },
+  {
+    id: 'post',
+    titulo: 'Montaje & color',
+    texto:
+      'Edición, corrección de color y entrega en formatos listos para redes, web o campañas. Ritmo cuidado y narrativa clara.',
+  },
+  {
+    id: 'ia',
+    titulo: 'Contenido con IA',
+    texto:
+      'Apoyo creativo con IA para adaptar, versionar y multiplicar tus piezas sin perder coherencia visual ni de mensaje.',
+  },
+]
+
 const faqItems = [
   {
     question: '¿Qué tipo de proyectos audiovisuales realizas?',
@@ -19,7 +46,7 @@ const faqItems = [
       'Estoy basada en Galicia, pero puedo desplazarme a otras zonas de España si el proyecto lo requiere. Para proyectos fuera de Galicia suelo plantear un presupuesto cerrado que incluya desplazamiento, dietas y alojamiento, para que tengas el coste total desde el principio.',
   },
   {
-    question: '¿Qué diferencia hay entre un dron "normal" y un dron FPV?',
+    question: '¿Qué diferencia hay entre un dron “normal” y un dron FPV?',
     answer:
       'El dron clásico se usa para planos estables y panorámicos (vistas aéreas, contexto del lugar). El dron FPV permite planos mucho más dinámicos: persecución de vehículos, recorridos entre personas, entrada y salida de espacios, giros rápidos. Es ideal para deporte, eventos, turismo y negocios donde interesa enseñar el espacio de forma inmersiva.',
   },
@@ -156,51 +183,6 @@ const homeSeo = {
   pathname: '/',
 }
 
-const services = [
-  {
-    num: '01',
-    icon: <Film size={16} />,
-    titulo: 'Preproducción',
-    texto: 'Ideas, guion y planificación. Definimos objetivos y estructura para que cada rodaje tenga sentido dentro de tu estrategia.',
-  },
-  {
-    num: '02',
-    icon: <Plane size={16} />,
-    titulo: 'Rodaje & FPV',
-    texto: 'Cámara de cine y dron FPV. Desde localización y logística hasta dirección de rodaje, ágil y con cabeza.',
-  },
-  {
-    num: '03',
-    icon: <Scissors size={16} />,
-    titulo: 'Montaje & color',
-    texto: 'Edición, corrección de color y entrega en formatos listos para redes, web o campañas. Ritmo cuidado, narrativa clara.',
-  },
-  {
-    num: '04',
-    icon: <Share2 size={16} />,
-    titulo: 'Contenido con IA',
-    texto: 'Apoyo creativo con IA para adaptar, versionar y multiplicar tus piezas sin perder coherencia visual ni de mensaje.',
-  },
-]
-
-const clientTypes = [
-  {
-    icon: <Briefcase size={16} />,
-    titulo: 'Marcas',
-    texto: 'Vídeos de producto y campañas pensados para construir imagen de marca, lanzar novedades y generar contenido listo para redes y web.',
-  },
-  {
-    icon: <Calendar size={16} />,
-    titulo: 'Eventos',
-    texto: 'Piezas que amplifican el evento: teasers previos, contenido durante la acción y aftermovies que prolongan su impacto en el tiempo.',
-  },
-  {
-    icon: <Building2 size={16} />,
-    titulo: 'Espacios',
-    texto: 'Flythroughs y visitas inmersivas para inmobiliarias, alojamientos y negocios que necesitan mostrar sus espacios con claridad e impacto.',
-  },
-]
-
 export default function Home() {
   usePageSeo(homeSeo)
   const navigate = useNavigate()
@@ -277,9 +259,8 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
-
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[100dvh] overflow-hidden flex flex-col">
+      {/* HERO con vídeo de fondo */}
+      <section className="relative min-h-[70vh] md:h-[80vh] overflow-hidden pt-20 pb-10 md:pt-24">
         {showVideo ? (
           <video
             className="pointer-events-none absolute inset-0 w-full h-full object-cover"
@@ -291,7 +272,10 @@ export default function Home() {
             poster={`${import.meta.env.BASE_URL}images/hero-poster.webp`}
             aria-hidden="true"
           >
-            <source src={heroVideoSrc} type="video/mp4" />
+            <source
+              src={heroVideoSrc}
+              type="video/mp4"
+            />
           </video>
         ) : (
           <img
@@ -303,45 +287,39 @@ export default function Home() {
             fetchPriority="high"
           />
         )}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-zinc-950/98" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/85 md:from-black/55 md:via-black/35 md:to-black/75" />
 
-        {/* Content anchored to the bottom */}
-        <div className="relative z-10 mt-auto max-w-6xl mx-auto w-full px-4 pb-12 md:pb-16 pt-28">
-          <p className="kv-eyebrow text-zinc-400 mb-5">
+        <div className="relative z-10 h-full max-w-6xl mx-auto px-4 flex flex-col justify-center gap-4 md:gap-0">
+          <p className="kv-eyebrow text-zinc-300 mb-4">
             Kulmen Visuals · Galicia
           </p>
-
-          <h1 className="kv-display-title text-zinc-50 mb-6">
-            Producción<br />
-            audiovisual<br />
-            <span className="text-amber-400">con FPV.</span>
+          <h1 className="kv-hero-title mb-6">
+            Producción audiovisual <br className="hidden md:block" />
+            <span className="text-zinc-200"> con FPV cinematográfico en Galicia.</span>
           </h1>
-
           <p className="kv-lede max-w-xl mb-8">
             Vídeos para marcas y eventos que necesitan destacar de verdad.
-            Rodaje, FPV cinematográfico y edición pensados para redes, campañas y web.
+            Rodaje, FPV y edición pensados para redes, campañas y web.
           </p>
-
-          {/* Mobile CTAs */}
-          <div className="flex flex-wrap gap-3 mb-8 md:hidden">
-            <Link to="/contacto/" className="kv-button-primary kv-button-accent">
-              Iniciar proyecto
-            </Link>
+          <div className="flex flex-wrap gap-3">
             <Link to="/servicios/" className="kv-button-secondary">
               Ver servicios
             </Link>
+            <Link to="/contacto/" className="kv-button-primary md:hidden">
+              Iniciar proyecto
+            </Link>
           </div>
 
-          {/* Desktop lead form */}
           <form
             onSubmit={handleHeroSubmit}
-            className="w-full max-w-2xl kv-crystal rounded-2xl p-3 md:p-4 hidden md:flex flex-col gap-3 mb-8"
+            className="mt-6 w-full max-w-2xl kv-crystal rounded-2xl p-3 md:p-4 hidden md:flex flex-col gap-3"
           >
             <input
               type="hidden"
               name="_subject"
               value="Nuevo lead desde el hero de Kulmen Visuals"
             />
+            
             <div className="flex flex-col gap-3 md:flex-row md:items-center">
               <input
                 type="email"
@@ -364,78 +342,194 @@ export default function Home() {
               </button>
             </div>
           </form>
-
-          {/* Tag strip */}
-          <div className="flex flex-wrap gap-2">
-            {['FPV certificado', 'Cámara de cine', 'Postproducción', 'Marcas', 'Eventos', 'Galicia'].map((tag) => (
-              <span key={tag} className="kv-chip text-[11px]">{tag}</span>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ── STATS STRIP ──────────────────────────────────────────────── */}
-      <section className="border-b border-zinc-800/60 bg-zinc-950">
-        <div className="max-w-6xl mx-auto px-4 py-8 md:py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: '+25', label: 'proyectos realizados' },
-              { value: 'FPV', label: 'certificado AESA' },
-              { value: '3+', label: 'años de experiencia' },
-              { value: '≤10d', label: 'entrega media' },
-            ].map((stat, i) => (
-              <div
-                key={stat.value}
-                className={`flex flex-col ${i % 2 === 1 ? 'items-end text-right' : 'items-start'} md:items-center md:text-center`}
-              >
-                <span className="kv-stat-number">{stat.value}</span>
-                <span className="kv-caption text-zinc-500 mt-1">{stat.label}</span>
-              </div>
-            ))}
-          </div>
+      <section className="max-w-6xl mx-auto px-4 mt-6 md:mt-8 pb-10 md:pb-16">
+        <div className="grid gap-4 md:grid-cols-3">
+          <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+              <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+            </div>
+            <div className="relative">
+              <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
+                Producción completa, sin intermediarios ni fricción
+              </h3>
+              <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                Planificación, rodaje y edición en un solo flujo.
+              </p>
+            </div>
+          </article>
+          <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+              <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+            </div>
+            <div className="relative">
+              <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
+                Contenido diseñado para publicarse
+              </h3>
+              <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                Formatos, duración y encuadres adaptados a cada canal.
+              </p>
+            </div>
+          </article>
+          <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+              <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+            </div>
+            <div className="relative">
+              <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
+                Impacto visual desde el primer segundo
+              </h3>
+              <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                Movimiento, ritmo y planos pensados para retener.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
-      {/* ── SERVICES ─────────────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+      {/* Servicios de producción audiovisual */}
+      <section className="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
+        <div className="flex flex-col gap-6 md:gap-10">
           <div>
-            <h2 className="kv-section-title mb-3">Servicios de producción</h2>
-            <p className="kv-body-muted max-w-xl">
-              Producción integral — desde la idea hasta la pieza lista para publicar.
+            <h2 className="kv-section-title mb-3">
+              Servicios de producción audiovisual
+            </h2>
+            <p className="kv-body-muted max-w-2xl">
+              Producción integral con foco narrativo, fluidez y acabado profesional.
             </p>
           </div>
-          <Link to="/servicios/" className="kv-button-secondary text-sm shrink-0">
-            Ver todos los servicios →
-          </Link>
-        </div>
-
-        {/* Editorial numbered 2×2 grid */}
-        <div className="grid md:grid-cols-2 border border-zinc-800/60 rounded-3xl overflow-hidden">
-          {services.map((svc, i) => (
-            <article
-              key={svc.num}
-              className={[
-                'group flex gap-5 p-7 md:p-8 hover:bg-zinc-900/50 transition-colors duration-300',
-                i % 2 === 0 ? 'md:border-r border-zinc-800/60' : '',
-                i < 2 ? 'border-b border-zinc-800/60' : '',
-              ].join(' ')}
-            >
-              <span className="kv-service-num shrink-0 pt-0.5">{svc.num}</span>
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-amber-400">{svc.icon}</span>
-                  <h3 className="kv-card-title text-zinc-100">{svc.titulo}</h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Film size={16} />
                 </div>
-                <p className="kv-card-body text-zinc-400 group-hover:text-zinc-300 transition-colors">{svc.texto}</p>
+                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
+                  Producción audiovisual
+                </h3>
+                <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                  Rodaje de vídeo con enfoque narrativo y publicitario para marcas,
+                  eventos y proyectos.
+                </p>
               </div>
             </article>
-          ))}
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Plane size={16} />
+                </div>
+                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
+                  FPV cinematográfico
+                </h3>
+                <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                  Planos aéreos dinámicos e inmersivos que generan impacto, carácter,
+                  y diferenciación.
+                </p>
+              </div>
+            </article>
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Scissors size={16} />
+                </div>
+                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
+                  Edición y postproducción
+                </h3>
+                <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                  Montaje, ritmo, música y color para un acabado profesional listo para
+                  publicar.
+                </p>
+              </div>
+            </article>
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Share2 size={16} />
+                </div>
+                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
+                  Contenido para redes
+                </h3>
+                <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
+                  Versiones optimizadas por formato y plataforma para aprovechar cada
+                  rodaje al máximo.
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      {/* ── PORTFOLIO ────────────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
+      <section className="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-950 via-zinc-950/80 to-zinc-900/60 px-5 py-8 md:px-8 md:py-10">
+          <div className="pointer-events-none absolute -top-24 -right-10 h-56 w-56 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-amber-500/10 blur-3xl" />
+          <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <h2 className="kv-section-title mb-4">
+                Producción audiovisual en Galicia con enfoque estratégico
+              </h2>
+              <p className="kv-body-muted mb-4">
+                Me encargo de todo el flujo: concepto, guion, rodaje, FPV y
+                postproducción. El objetivo es que el vídeo no solo se vea bien,
+                sino que cumpla una función clara dentro de tu marketing o evento.
+              </p>
+              <p className="kv-body-muted">
+                Trabajo con marcas, organizadores y espacios que necesitan piezas
+                con ritmo, narrativa y versiones listas para campañas, web y
+                redes sociales.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <span className="kv-chip text-[11px]">Marcas</span>
+                <span className="kv-chip text-[11px]">Eventos</span>
+                <span className="kv-chip text-[11px]">Turismo</span>
+                <span className="kv-chip text-[11px]">FPV Cinemático</span>
+              </div>
+            </div>
+            <div className="kv-glass rounded-2xl border border-white/10 p-5 md:p-6">
+              <h3 className="kv-card-title text-zinc-100 mb-4">
+                Qué incluye cada proyecto
+              </h3>
+              <ul className="space-y-3 text-sm text-zinc-300">
+                {[
+                  'Preproducción con objetivos y guion técnico.',
+                  'Rodaje con cámara de cine y dron FPV.',
+                  'Edición, color, sonido y música con licencia.',
+                  'Adaptación a formatos para redes y campañas.',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-2 h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_12px_rgba(251,191,36,0.65)]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Últimos trabajos */}
+      <section className="max-w-6xl mx-auto px-4 pt-6 md:pt-10 pb-10 md:pb-14">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
           <div>
             <h2 className="kv-section-title mb-2">Últimos trabajos</h2>
@@ -443,8 +537,11 @@ export default function Home() {
               Proyectos audiovisuales para marcas, eventos y espacios en Galicia.
             </p>
           </div>
-          <Link to="/proyectos/" className="kv-button-secondary text-sm">
-            Ver proyectos completos →
+          <Link
+            to="/proyectos/"
+            className="kv-button-secondary text-sm"
+          >
+            Ver proyectos completos
           </Link>
         </div>
 
@@ -461,109 +558,147 @@ export default function Home() {
         )}
       </section>
 
-      {/* ── EDITORIAL STATEMENT ──────────────────────────────────────── */}
-      <section className="border-t border-b border-zinc-800/60 py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-[1.4fr_1fr] gap-10 md:gap-20 items-center">
-            <div>
-              <h2 className="kv-statement-title">
-                No solo grabo.<br />
-                <span className="text-zinc-600">Planifico. Dirijo. Edito.</span>
-              </h2>
-            </div>
-            <div className="space-y-5">
-              <p className="kv-body-muted">
-                Me encargo de todo el flujo: concepto, guion, rodaje, FPV y postproducción.
-                El objetivo es que el vídeo no solo se vea bien, sino que cumpla una función
-                clara dentro de tu marketing o evento.
-              </p>
-              <ul className="space-y-2 text-sm text-zinc-300">
-                {[
-                  'Preproducción con objetivos y guion técnico',
-                  'Rodaje con cámara de cine y dron FPV',
-                  'Edición, color, sonido y música con licencia',
-                  'Adaptación a formatos para redes y campañas',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,151,21,0.6)]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link to="/sobre-mi/" className="kv-button-secondary inline-flex text-sm">
-                Sobre mí →
-              </Link>
-            </div>
+      {/* Proyectos con los que trabajo */}
+      <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
+        <div className="flex flex-col gap-6 md:gap-10">
+          <div>
+            <h2 className="kv-section-title mb-3">
+              Proyectos con los que trabajo
+            </h2>
+            <p className="kv-body-muted max-w-2xl">
+              Trabajo con marcas, proyectos y eventos que necesitan una mirada cercana
+              y una producción ágil.
+            </p>
           </div>
-        </div>
-      </section>
-
-      {/* ── CLIENT TYPES ─────────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <div className="mb-10">
-          <h2 className="kv-section-title mb-3">¿Con quién trabajo?</h2>
-          <p className="kv-body-muted max-w-2xl">
-            Marcas, proyectos y eventos que necesitan una mirada cercana y una producción ágil.
-          </p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {clientTypes.map((item) => (
-            <article
-              key={item.titulo}
-              className="group relative overflow-hidden kv-glass-soft rounded-2xl p-5 md:p-6 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-400/40 hover:shadow-[0_20px_40px_-24px_rgba(245,151,21,0.45)]"
-            >
+          <div className="grid gap-4 md:grid-cols-3">
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
               <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-400/10 blur-2xl" />
-                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/8 blur-3xl" />
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
               </div>
               <div className="relative">
-                <div className="h-9 w-9 rounded-full border border-amber-400/30 bg-amber-400/10 flex items-center justify-center text-amber-400 mb-4">
-                  {item.icon}
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Briefcase size={16} />
                 </div>
-                <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors mb-2">
-                  {item.titulo}
+                <h3 className="kv-card-title text-zinc-100">
+                  Marcas
                 </h3>
-                <p className="kv-card-body text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                  {item.texto}
+                <p className="kv-card-body text-zinc-400 mt-2">
+                  Vídeos de producto y campañas pensados para construir imagen de marca,
+                  lanzar novedades y generar contenido listo para redes y web.
+
                 </p>
               </div>
             </article>
-          ))}
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Calendar size={16} />
+                </div>
+                <h3 className="kv-card-title text-zinc-100">
+                  Eventos
+                </h3>
+                <p className="kv-card-body text-zinc-400 mt-2">
+                  Piezas que amplifican el evento: teasers previos, contenido durante la acción y aftermovies que prolongan su impacto en el tiempo.
+
+                </p>
+              </div>
+            </article>
+            <article className="group relative overflow-hidden kv-glass-soft rounded-2xl p-4 md:p-5 border border-white/10 transition duration-300 ease-out hover:-translate-y-1 hover:border-amber-300/40 hover:shadow-[0_20px_40px_-24px_rgba(251,191,36,0.65)]">
+              <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute -top-10 -right-10 h-28 w-28 rounded-full bg-amber-300/10 blur-2xl" />
+                <div className="absolute -bottom-12 -left-12 h-32 w-32 rounded-full bg-amber-500/10 blur-3xl" />
+              </div>
+              <div className="relative">
+                <div className="h-9 w-9 rounded-full border border-amber-300/30 bg-amber-300/10 flex items-center justify-center text-amber-200 mb-3">
+                  <Building2 size={16} />
+                </div>
+                <h3 className="kv-card-title text-zinc-100">
+                  Espacios
+                </h3>
+                <p className="kv-card-body text-zinc-400 mt-2">
+                  Flythroughs y visitas inmersivas pensadas para inmobiliarias, promotoras,
+                   alojamientos turísticos y negocios que necesitan mostrar sus espacios con claridad, 
+                   impacto y diferenciación.
+
+                </p>
+              </div>
+            </article>
+          </div>
+          <p className="kv-lede">
+            El objetivo manda. La técnica se adapta para cumplirlo.
+          </p>
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
-        <div className="relative overflow-hidden rounded-3xl border border-amber-400/20 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 px-6 py-12 md:px-12 md:py-16">
-          <div className="pointer-events-none absolute -top-28 -right-20 h-80 w-80 rounded-full bg-amber-400/12 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-28 -left-20 h-80 w-80 rounded-full bg-amber-500/8 blur-3xl" />
-          <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div className="max-w-lg">
+      {/* Resumen de servicios*/}
+      <section className="border-t border-zinc-900/70 bg-zinc-950/90">
+        <div className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 mb-10">
+            <div className="max-w-md">
               <h2 className="kv-section-title mb-3">
-                ¿Tienes un proyecto en mente?
+                Realizo todo el proceso.
               </h2>
-              <p className="kv-lede">
-                Escríbeme para ver si encaja lo que necesitas con lo que puedo ofrecerte.
-                Sin compromiso. Comencemos a impulsar tu presencia.
+              <p className="kv-body-muted">
+                Desde la idea inicial hasta la pieza final lista para publicar. Planifico cada etapa
+                para que el rodaje fluya, la edición sea ágil y el resultado final cumpla el objetivo.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <Link to="/contacto/" className="kv-button-primary kv-button-accent">
-                Pedir presupuesto
-              </Link>
-              <a
-                href="mailto:hola@kulmenvisuals.com"
-                className="kv-button-secondary"
+            <div className="kv-body-muted max-w-sm" />
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-4">
+            {serviceTeasers.map((service) => (
+              <article
+                key={service.id}
+                className="relative kv-glass-soft rounded-2xl p-4 flex flex-col overflow-hidden group
+                           transition-transform duration-300 ease-out hover:-translate-y-1"
               >
-                Escribir un email
-              </a>
-            </div>
+                {/* Glow hover como en SobreMi */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute -top-20 -left-16 w-40 h-40 bg-amber-400/12 blur-3xl" />
+                  <div className="absolute -bottom-20 -right-10 w-36 h-36 bg-amber-500/10 blur-3xl" />
+                </div>
+
+                <div className="relative z-10">
+                <h3 className="kv-card-title mb-2 text-zinc-100">
+                  {service.titulo}
+                </h3>
+                <p className="kv-card-body text-zinc-300 leading-relaxed">
+                  {service.texto}
+                </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-4 pb-14 md:pb-20">
+      {/* CTA final */}
+      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
+        <div className="kv-glass rounded-3xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <h2 className="kv-section-title mb-2">
+              ¿Tienes un proyecto en mente?
+            </h2>
+            <p className="kv-lede max-w-md">
+              Escríbeme para ver si encaja lo que necesitas con lo
+              que puedo ofrecerte. Sin compromiso. Comencemos a impulsar tu presencia.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/contacto/" className="kv-button-primary kv-button-accent">
+              Pedir presupuesto
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 py-14 md:py-20">
         <div className="flex flex-col gap-8">
           <div>
             <h2 className="kv-section-title mb-2">Preguntas frecuentes</h2>
@@ -571,7 +706,7 @@ export default function Home() {
               Respuestas rápidas sobre producción audiovisual, FPV y entregas.
             </p>
           </div>
-          <div className="grid gap-3 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             {faqItems.map((item) => (
               <details
                 key={item.question}
@@ -581,16 +716,17 @@ export default function Home() {
                   <span className="kv-card-title text-zinc-100">
                     {item.question}
                   </span>
-                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/20 text-zinc-300 transition-transform duration-300 group-open:rotate-45">
+                  <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full border border-white/20 text-zinc-300 transition-transform duration-300 group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="kv-body-muted mt-3 text-zinc-400">{item.answer}</p>
+                <p className="kv-body-muted mt-3">{item.answer}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
+
     </div>
   )
 }

@@ -158,33 +158,6 @@
     @apply text-[11px] md:text-xs text-zinc-500;
   }
 
-  /* Hero display title — maximum visual impact */
-  .kv-display-title {
-    font-size: clamp(2.8rem, 8vw, 6rem);
-    line-height: 0.92;
-    letter-spacing: -0.035em;
-    font-weight: 700;
-    font-family: var(--kv-font-headings);
-  }
-
-  /* Editorial statement headline */
-  .kv-statement-title {
-    @apply text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.0];
-    font-family: var(--kv-font-headings);
-  }
-
-  /* Authority numbers in stats strip */
-  .kv-stat-number {
-    @apply text-3xl md:text-4xl font-bold tracking-tight text-zinc-50;
-    font-family: var(--kv-font-headings);
-  }
-
-  /* Service item numbers (01, 02, 03…) */
-  .kv-service-num {
-    @apply text-3xl font-bold text-zinc-800 leading-none select-none;
-    font-family: var(--kv-font-headings);
-  }
-
   /* Ajuste suave para cualquier card glass oscura */
   .kv-glass-dark {
     background: linear-gradient(
