@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kulmen Visuals — Brand System 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #09090b;
+      --charcoal: #111115;
+      --zinc-900: #18181b;
+      --zinc-800: #27272a;
+      --zinc-700: #3f3f46;
+      --zinc-600: #52525b;
+      --zinc-500: #71717a;
+      --zinc-400: #a1a1aa;
+      --zinc-300: #d4d4d8;
+      --zinc-100: #f4f4f5;
+      --white:    #fafafa;
+      --amber:    #F59715;
+      --amber-dim:#c97a0e;
+      --gap:      3px;
+      --font:     'Space Grotesk', sans-serif;
+      --radius:   4px;
+    }
+
+    html, body {
+      background: #0d0d10;
+      font-family: var(--font);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── Canvas ─────────────────────────────────────────────────────── */
+    .canvas {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 48px 32px 64px;
+    }
+
+    .canvas-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--zinc-800);
+    }
+
+    .canvas-header h1 {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--zinc-500);
+    }
+
+    .canvas-header .meta {
+      font-size: 11px;
+      color: var(--zinc-600);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── Grid ───────────────────────────────────────────────────────── */
+    .grid-3x3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: var(--gap);
+    }
+
+    .cell {
+      background: var(--charcoal);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── Panel 1 · Logo Cover ────────────────────────────────────────── */
+    .p-logo {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--black);
+      padding: 48px;
+      gap: 24px;
+    }
+
+    .logo-mark {
+      width: 64px;
+      height: 64px;
+    }
+
+    .wordmark {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .wordmark span {
+      color: var(--amber);
+    }
+
+    .p-logo-url {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--zinc-600);
+      margin-top: 8px;
+    }
+
+    /* ── Panel 2 · Logo Construction ─────────────────────────────────── */
+    .p-construction {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0f0f12;
+      padding: 40px;
+      gap: 20px;
+    }
+
+    .construction-label {
+      font-size: 9px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--zinc-600);
+      align-self: flex-start;
+    }
+
+    .mark-grid {
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
+
+    /* ── Panel 3 · Digital Application ───────────────────────────────── */
+    .p-digital {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+      aspect-ratio: 4/3;
+      background: #0a0a0d;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .browser-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      background: var(--zinc-900);
+      border-radius: 6px;
+      border: 1px solid var(--zinc-800);
+      margin-bottom: 16px;
+    }
+
+    .browser-dot { width: 7px; height: 7px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+
+    .browser-url {
+      flex: 1;
+      background: var(--zinc-800);
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 10px;
+      color: var(--zinc-500);
+      margin-left: 8px;
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    .nav-mock {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--zinc-800);
+      margin-bottom: 20px;
+    }
+
+    .nav-mock-logo {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-mock-logo span { color: var(--amber); }
+
+    .nav-mock-links {
+      display: flex;
+      gap: 16px;
+      font-size: 10px;
+      color: var(--zinc-500);
+    }
+
+    .nav-mock-cta {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 100px;
+      background: var(--amber);
+      color: var(--black);
+    }
+
+    .hero-mock {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .hero-mock-eyebrow {
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--zinc-600);
+    }
+
+    .hero-mock-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      color: var(--white);
+    }
+
+    .hero-mock-title em {
+      color: var(--amber);
+      font-style: normal;
+    }
+
+    .hero-mock-sub {
+      font-size: 10px;
+      color: var(--zinc-500);
+      max-width: 200px;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    /* ── Panel 4 · Brand Essence ──────────────────────────────────────── */
+    .p-essence {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      aspect-ratio: 4/3;
+      background: linear-gradient(145deg, #0e0e11, #141418);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .p-essence::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,151,21,0.12) 0%, transparent 70%);
+    }
+
+    .essence-label {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--zinc-600);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .tagline em {
+      color: var(--amber);
+      font-style: normal;
+    }
+
+    .tagline-sub {
+      font-size: 11px;
+      color: var(--zinc-500);
+      line-height: 1.6;
+    }
+
+    /* ── Panel 5 · Color System ───────────────────────────────────────── */
+    .p-color {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      aspect-ratio: 4/3;
+      background: var(--charcoal);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .color-label {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--zinc-600);
+    }
+
+    .color-swatches {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .swatch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .swatch-block {
+      width: 36px;
+      border-radius: 4px;
+      align-self: stretch;
+    }
+
+    .swatch-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .swatch-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--zinc-200);
+    }
+
+    .swatch-hex {
+      font-size: 10px;
+      color: var(--zinc-600);
+      font-family: 'Space Grotesk', monospace;
+      letter-spacing: 0.05em;
+    }
+
+    .swatch-role {
+      font-size: 9px;
+      color: var(--zinc-700);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── Panel 6 · Typography ─────────────────────────────────────────── */
+    .p-type {
+      grid-column: 3 / 4;
+      grid-row: 2 / 3;
+      aspect-ratio: 4/3;
+      background: #0c0c0f;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow: hidden;
+    }
+
+    .type-label {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--zinc-600);
+    }
+
+    .type-specimen {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .type-weight-tag {
+      font-size: 9px;
+      color: var(--zinc-700);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      width: 56px;
+      shrink-0;
+    }
+
+    .type-sample { color: var(--zinc-200); letter-spacing: -0.02em; }
+
+    .type-alphabet {
+      font-size: 10px;
+      color: var(--zinc-700);
+      letter-spacing: 0.08em;
+      line-height: 1.8;
+      margin-top: auto;
+      font-weight: 400;
+    }
+
+    .type-font-name {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .type-font-sub {
+      font-size: 10px;
+      color: var(--amber);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ── Panel 7 · Physical Application ──────────────────────────────── */
+    .p-physical {
+      grid-column: 1 / 2;
+      grid-row: 3 / 4;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #141418, #0d0d10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      position: relative;
+    }
+
+    .card-mock {
+      width: 220px;
+      aspect-ratio: 1.75 / 1;
+      background: linear-gradient(135deg, #1a1a1f, #111115);
+      border-radius: 8px;
+      border: 1px solid var(--zinc-800);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-mock::after {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245,151,21,0.15), transparent 70%);
+    }
+
+    .card-mock-logo {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .card-mock-logo span { color: var(--amber); }
+
+    .card-mock-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .card-mock-name {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--zinc-200);
+    }
+
+    .card-mock-role {
+      font-size: 9px;
+      color: var(--zinc-600);
+    }
+
+    .card-mock-contact {
+      font-size: 8px;
+      color: var(--zinc-700);
+      margin-top: 4px;
+      line-height: 1.7;
+    }
+
+    .card-mock-amber {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--amber);
+    }
+
+    .p-physical-label {
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--zinc-700);
+    }
+
+    /* ── Panel 8 · Image Direction ────────────────────────────────────── */
+    .p-image {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+      aspect-ratio: 4/3;
+      background: #080810;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+    }
+
+    .p-image-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 30%, rgba(245,151,21,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(40,40,60,0.8) 0%, transparent 60%),
+        linear-gradient(165deg, #0a0a14 0%, #060608 100%);
+    }
+
+    .p-image-lines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(245,151,21,0.5) 39px, rgba(245,151,21,0.5) 40px);
+    }
+
+    .p-image-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .p-image-tag {
+      display: inline-block;
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      border: 1px solid rgba(245,151,21,0.3);
+      border-radius: 100px;
+      padding: 3px 8px;
+      margin-bottom: 10px;
+    }
+
+    .p-image-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .p-image-sub {
+      font-size: 10px;
+      color: var(--zinc-600);
+    }
+
+    .p-image-corner {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .p-image-attr {
+      width: 48px;
+      height: 2px;
+      background: var(--amber);
+      border-radius: 2px;
+    }
+
+    /* ── Panel 9 · System Detail ──────────────────────────────────────── */
+    .p-system {
+      grid-column: 3 / 4;
+      grid-row: 3 / 4;
+      aspect-ratio: 4/3;
+      background: #0b0b0e;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .system-label {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--zinc-600);
+    }
+
+    .system-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .system-row-label {
+      font-size: 9px;
+      color: var(--zinc-700);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-mock {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--amber);
+      color: var(--black);
+      border: none;
+    }
+
+    .btn-secondary-mock {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.06);
+      color: var(--zinc-200);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .chip-mock {
+      font-size: 9px;
+      padding: 3px 9px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--zinc-400);
+    }
+
+    .input-mock {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 6px 12px;
+    }
+
+    .input-mock-text {
+      font-size: 10px;
+      color: var(--zinc-600);
+      flex: 1;
+    }
+
+    .input-mock-send {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Canvas footer ───────────────────────────────────────────────── */
+    .canvas-footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--zinc-800);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .canvas-footer p {
+      font-size: 10px;
+      color: var(--zinc-700);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .canvas-footer .amber-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .grid-3x3 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid-3x3 {
+        grid-template-columns: 1fr;
+      }
+      .canvas { padding: 24px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+
+    <!-- Header -->
+    <div class="canvas-header">
+      <h1>Kulmen Visuals — Sistema de marca</h1>
+      <span class="meta">Brand System · 2025 · v1.0</span>
+    </div>
+
+    <!-- 3×3 Grid -->
+    <div class="grid-3x3">
+
+      <!-- 01 · Logo Cover -->
+      <div class="cell p-logo">
+        <svg class="logo-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Viewfinder / film frame mark -->
+          <rect x="4" y="4" width="56" height="56" rx="6" stroke="#27272a" stroke-width="1.5" fill="none"/>
+          <!-- K letter formed by frame cuts -->
+          <line x1="22" y1="16" x2="22" y2="48" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="22" y1="32" x2="42" y2="16" stroke="#F59715" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="22" y1="32" x2="42" y2="48" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Corner marks (film sprockets) -->
+          <rect x="8" y="8" width="6" height="6" rx="1" fill="#3f3f46"/>
+          <rect x="50" y="8" width="6" height="6" rx="1" fill="#3f3f46"/>
+          <rect x="8" y="50" width="6" height="6" rx="1" fill="#3f3f46"/>
+          <rect x="50" y="50" width="6" height="6" rx="1" fill="#3f3f46"/>
+        </svg>
+        <div class="wordmark">KULMEN <span>VISUALS</span></div>
+        <div class="p-logo-url">kulmenvisuals.com</div>
+      </div>
+
+      <!-- 02 · Logo Construction -->
+      <div class="cell p-construction">
+        <span class="construction-label">Construcción del símbolo</span>
+        <div class="mark-grid">
+          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <!-- Construction grid -->
+            <line x1="60" y1="0" x2="60" y2="120" stroke="#27272a" stroke-width="0.5" stroke-dasharray="3,3"/>
+            <line x1="0" y1="60" x2="120" y2="60" stroke="#27272a" stroke-width="0.5" stroke-dasharray="3,3"/>
+            <circle cx="60" cy="60" r="50" stroke="#27272a" stroke-width="0.5"/>
+            <circle cx="60" cy="60" r="35" stroke="#1e1e22" stroke-width="0.5"/>
+            <!-- K mark large -->
+            <line x1="38" y1="24" x2="38" y2="96" stroke="#fafafa" stroke-width="4" stroke-linecap="round"/>
+            <line x1="38" y1="60" x2="82" y2="24" stroke="#F59715" stroke-width="4" stroke-linecap="round"/>
+            <line x1="38" y1="60" x2="82" y2="96" stroke="#fafafa" stroke-width="4" stroke-linecap="round"/>
+            <!-- Measurement points -->
+            <circle cx="38" cy="24" r="2.5" fill="#52525b"/>
+            <circle cx="38" cy="96" r="2.5" fill="#52525b"/>
+            <circle cx="38" cy="60" r="3" fill="#F59715"/>
+            <circle cx="82" cy="24" r="2.5" fill="#52525b"/>
+            <circle cx="82" cy="96" r="2.5" fill="#52525b"/>
+          </svg>
+        </div>
+        <div style="display:flex;gap:16px;font-size:10px;color:#52525b;margin-top:4px;">
+          <span>Vertical · Estabilidad</span>
+          <span style="color:#F59715">Diagonal · Movimiento</span>
+        </div>
+      </div>
+
+      <!-- 03 · Digital Application -->
+      <div class="cell p-digital">
+        <div>
+          <div class="browser-bar">
+            <div class="browser-dot dot-r"></div>
+            <div class="browser-dot dot-y"></div>
+            <div class="browser-dot dot-g"></div>
+            <div class="browser-url">kulmenvisuals.com</div>
+          </div>
+          <div class="nav-mock">
+            <div class="nav-mock-logo">KULMEN <span>VISUALS</span></div>
+            <div class="nav-mock-links">
+              <span>Proyectos</span>
+              <span>Servicios</span>
+              <span>Sobre mí</span>
+            </div>
+            <div class="nav-mock-cta">Hablemos</div>
+          </div>
+        </div>
+        <div class="hero-mock">
+          <div class="hero-mock-eyebrow">Kulmen Visuals · Galicia</div>
+          <div class="hero-mock-title">
+            Producción<br/>audiovisual<br/><em>con FPV.</em>
+          </div>
+          <div class="hero-mock-sub">
+            Vídeos para marcas y eventos que necesitan destacar de verdad.
+          </div>
+        </div>
+        <div style="font-size:9px;color:#52525b;letter-spacing:0.2em;text-transform:uppercase;margin-top:12px;">Aplicación digital</div>
+      </div>
+
+      <!-- 04 · Brand Essence -->
+      <div class="cell p-essence">
+        <div class="essence-label">Esencia de marca</div>
+        <div class="tagline">
+          Vídeo que<br/><em>conecta.</em>
+        </div>
+        <div class="tagline-sub">
+          No solo grabo. Planifico. Dirijo. Edito.<br/>
+          El objetivo manda. La técnica se adapta para cumplirlo.
+        </div>
+      </div>
+
+      <!-- 05 · Color System -->
+      <div class="cell p-color">
+        <div class="color-label">Sistema de color</div>
+        <div class="color-swatches">
+          <div class="swatch">
+            <div class="swatch-block" style="background:#F59715;"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Amber</span>
+              <span class="swatch-hex">#F59715</span>
+              <span class="swatch-role">Acento · Principal</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-block" style="background:#fafafa;"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Blanco</span>
+              <span class="swatch-hex">#FAFAFA</span>
+              <span class="swatch-role">Texto · Principal</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-block" style="background:#a1a1aa;"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Zinc 400</span>
+              <span class="swatch-hex">#A1A1AA</span>
+              <span class="swatch-role">Texto · Secundario</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-block" style="background:#27272a;"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Zinc 800</span>
+              <span class="swatch-hex">#27272A</span>
+              <span class="swatch-role">Bordes · Divisores</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-block" style="background:#09090b;"></div>
+            <div class="swatch-info">
+              <span class="swatch-name">Negro</span>
+              <span class="swatch-hex">#09090B</span>
+              <span class="swatch-role">Fondo · Base</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 · Typography -->
+      <div class="cell p-type">
+        <div class="type-label">Tipografía</div>
+        <div>
+          <div class="type-font-name">Space Grotesk</div>
+          <div class="type-font-sub">Fuente principal · Todos los usos</div>
+        </div>
+        <div class="type-specimen">
+          <div class="type-row">
+            <span class="type-weight-tag">700 Bold</span>
+            <span class="type-sample" style="font-size:20px;font-weight:700;">Galicia</span>
+          </div>
+          <div class="type-row">
+            <span class="type-weight-tag">600 SemiBold</span>
+            <span class="type-sample" style="font-size:16px;font-weight:600;">Producción</span>
+          </div>
+          <div class="type-row">
+            <span class="type-weight-tag">500 Medium</span>
+            <span class="type-sample" style="font-size:13px;font-weight:500;">FPV Cinematográfico</span>
+          </div>
+          <div class="type-row">
+            <span class="type-weight-tag">400 Regular</span>
+            <span class="type-sample" style="font-size:11px;font-weight:400;color:#a1a1aa;">Vídeo para marcas y eventos.</span>
+          </div>
+        </div>
+        <div class="type-alphabet">
+          A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br/>
+          0 1 2 3 4 5 6 7 8 9 · @ . ,
+        </div>
+      </div>
+
+      <!-- 07 · Physical Application -->
+      <div class="cell p-physical">
+        <div class="card-mock">
+          <div class="card-mock-logo">KULMEN <span>VISUALS</span></div>
+          <div class="card-mock-bottom">
+            <div class="card-mock-name">io Rodríguez</div>
+            <div class="card-mock-role">Creadora audiovisual · Piloto FPV</div>
+            <div class="card-mock-contact">
+              hola@kulmenvisuals.com<br/>
+              kulmenvisuals.com<br/>
+              +34 652 405 654
+            </div>
+          </div>
+          <div class="card-mock-amber"></div>
+        </div>
+        <span class="p-physical-label">Tarjeta de visita</span>
+      </div>
+
+      <!-- 08 · Image Direction -->
+      <div class="cell p-image">
+        <div class="p-image-bg"></div>
+        <div class="p-image-lines"></div>
+        <div class="p-image-corner">
+          <div class="p-image-attr"></div>
+          <div style="font-size:8px;color:#52525b;letter-spacing:0.2em;text-transform:uppercase;margin-top:4px;">Cinematic</div>
+        </div>
+        <div class="p-image-content">
+          <div class="p-image-tag">Dirección de imagen</div>
+          <div class="p-image-title">
+            Planos aéreos.<br/>Narrativa visual.
+          </div>
+          <div class="p-image-sub">
+            Dark · Cinemático · Editorial
+          </div>
+        </div>
+      </div>
+
+      <!-- 09 · System Detail -->
+      <div class="cell p-system">
+        <div class="system-label">Componentes del sistema</div>
+
+        <div class="system-row">
+          <div class="system-row-label">Botones</div>
+          <div class="btn-row">
+            <div class="btn-primary-mock">Pedir presupuesto</div>
+            <div class="btn-secondary-mock">Ver proyectos</div>
+          </div>
+        </div>
+
+        <div class="system-row">
+          <div class="system-row-label">Etiquetas</div>
+          <div class="chip-row">
+            <div class="chip-mock">FPV</div>
+            <div class="chip-mock">Galicia</div>
+            <div class="chip-mock">Marcas</div>
+            <div class="chip-mock">Eventos</div>
+            <div class="chip-mock">Turismo</div>
+          </div>
+        </div>
+
+        <div class="system-row">
+          <div class="system-row-label">Input de contacto</div>
+          <div class="input-mock">
+            <span class="input-mock-text">tu@email.com — ¿Qué te interesa?</span>
+            <div class="input-mock-send">
+              <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+                <path d="M1 4.5H8M5 1.5L8 4.5L5 7.5" stroke="#09090b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="system-row" style="margin-top:auto;">
+          <div style="display:flex;gap:8px;align-items:center;">
+            <div style="width:20px;height:20px;border-radius:4px;background:var(--amber);display:flex;align-items:center;justify-content:center;">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M2 5.5L4.5 8L9 3" stroke="#09090b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span style="font-size:10px;color:#71717a;">Certificado AESA · FPV</span>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;margin-top:6px;">
+            <div style="width:20px;height:20px;border-radius:4px;background:rgba(245,151,21,0.12);border:1px solid rgba(245,151,21,0.2);display:flex;align-items:center;justify-content:center;">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <circle cx="5.5" cy="5.5" r="3.5" stroke="#F59715" stroke-width="1.2"/>
+                <circle cx="5.5" cy="5.5" r="1" fill="#F59715"/>
+              </svg>
+            </div>
+            <span style="font-size:10px;color:#71717a;">Galicia · España</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /grid-3x3 -->
+
+    <!-- Footer -->
+    <div class="canvas-footer">
+      <p>© 2025 Kulmen Visuals · Todos los derechos reservados</p>
+      <div class="amber-dot"></div>
+      <p>Uso interno · No distribuir · v1.0</p>
+    </div>
+
+  </div>
+</body>
+</html>
