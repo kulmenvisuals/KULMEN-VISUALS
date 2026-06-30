@@ -61,7 +61,41 @@ export const projects = [
     extra: null,
   },
 
-  // 2) Vídeo inmobiliario: Grupo Country Homes
+  // 2) Reportaje: Banca March · Lynda Benglis
+  {
+    id: "banca-march-lynda-benglis",
+    slug: "banca-march-lynda-benglis",
+
+    title: "Reportaje · Lynda Benglis para Banca March",
+    client: "Banca March",
+    agency: "Starporcasa",
+    year: 2024,
+
+    category: "Reportaje / Arte",
+    type: ["Reportaje", "Arte", "Eventos"],
+    roles: ["Cámara", "Cobertura audiovisual"],
+    location: "Madrid",
+
+    thumbnail: "/images/projects/march-3.png",
+
+    // YouTube embed
+    youtubeUrl: "https://www.youtube.com/embed/qbNfBMfWglA",
+
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "/images/projects/march-1.png",
+      "/images/projects/march-2.png",
+    ],
+
+    description:
+      "Reportaje audiovisual alrededor de la obra de Lynda Benglis para Banca March, grabado en Madrid. Cobertura cuidada del proceso de montado de la exposición y del espacio. Estilo reportaje documental",
+    extra:
+      "El foco estuvo en el montaje de la exposicion y la relacion entre obra y espacio, con un tratamiento documental sobrio y observacional.",
+  },
+
+  // 3) Vídeo inmobiliario: Grupo Country Homes
   {
     id: "video-inmobiliario-grupo-country-homes",
     slug: "video-inmobiliario-grupo-country-homes",
@@ -183,40 +217,6 @@ export const projects = [
     description:
       "Piezas verticales para redes sociales centradas en mostrar el espacio de un pazo en Lugo con ritmo ágil y enfoque inmobiliario.",
     extra: null,
-  },
-
-  // 1) Reportaje: Banca March · Lynda Benglis
-  {
-    id: "banca-march-lynda-benglis",
-    slug: "banca-march-lynda-benglis",
-
-    title: "Reportaje · Lynda Benglis para Banca March",
-    client: "Banca March",
-    agency: "Starporcasa",
-    year: 2024,
-
-    category: "Reportaje / Arte",
-    type: ["Reportaje", "Arte", "Eventos"],
-    roles: ["Cámara", "Cobertura audiovisual"],
-    location: "Madrid",
-
-    thumbnail: "/images/projects/march-3.png",
-
-    // YouTube embed
-    youtubeUrl: "https://www.youtube.com/embed/qbNfBMfWglA",
-
-    videoUrl: null,
-    poster: null,
-
-    images: [
-      "/images/projects/march-1.png",
-      "/images/projects/march-2.png",
-    ],
-
-    description:
-      "Reportaje audiovisual alrededor de la obra de Lynda Benglis para Banca March, grabado en Madrid. Cobertura cuidada del proceso de montado de la exposición y del espacio. Estilo reportaje documental",
-    extra:
-      "El foco estuvo en el montaje de la exposicion y la relacion entre obra y espacio, con un tratamiento documental sobrio y observacional.",
   },
 
   // 1b) UGC: Orballo
