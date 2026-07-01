@@ -78,7 +78,7 @@ export default function SobreMi() {
               Sobre mí
             </p>
             <h1 className="kv-page-title mb-4">
-              io Rodríguez — Creadora audiovisual y piloto FPV en Galicia
+              io Rodríguez, creadora audiovisual y piloto FPV en Galicia
             </h1>
 
             <p className="kv-lede mb-4 max-w-xl">
@@ -120,7 +120,7 @@ export default function SobreMi() {
               />
             </div>
             <p className="kv-caption mt-3 text-zinc-500 text-center">
-              io — Kulmen Visuals
+              io, Kulmen Visuals
             </p>
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function SobreMi() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contacto/" className="kv-button-primary kv-button-accent">
-              Contactar
+              Pedir presupuesto
             </Link>
           </div>
         </div>

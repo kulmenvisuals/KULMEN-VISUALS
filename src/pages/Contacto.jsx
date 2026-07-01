@@ -80,7 +80,7 @@ export default function Contacto() {
                   Respuesta rápida
                 </p>
                 <p className="kv-body-muted">
-                  Responderé en un plazo de 24–48 h laborables.
+                  Responderé en un plazo de 24 a 48 horas laborables.
                 </p>
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function Contacto() {
                   name="nombre"
                   placeholder="Tu nombre"
                   required
-                  className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
+                  className="kv-input"
                 />
               </div>
 
@@ -162,7 +162,7 @@ export default function Contacto() {
                   type="email"
                   placeholder="tu@email.com"
                   required
-                  className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
+                  className="kv-input"
                 />
               </div>
             </div>
@@ -178,7 +178,7 @@ export default function Contacto() {
                 id="empresa"
                 name="empresa"
                 placeholder="Marca, evento o espacio"
-                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
+                className="kv-input"
               />
               <p className="kv-caption text-zinc-500 mt-2">
                 Deja este campo opcional si no tienes empresa.
@@ -196,7 +196,7 @@ export default function Contacto() {
                 id="tipo-proyecto"
                 name="tipo_proyecto"
                 required
-                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
+                className="kv-input"
               >
                 <option value="">Selecciona una opción</option>
                 <option value="Marca / Campaña">Marca / Campaña</option>
@@ -246,8 +246,8 @@ export default function Contacto() {
               <input
                 id="fecha"
                 name="fecha"
-                placeholder="Ej. marzo · Pontevedra"
-                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
+                placeholder="Ej. marzo, Pontevedra"
+                className="kv-input"
               />
             </div>
 
@@ -264,14 +264,14 @@ export default function Contacto() {
                 rows="6"
                 required
                 placeholder="Qué quieres comunicar, a quién va dirigido y qué resultado esperas del vídeo."
-                className="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-3 py-2 text-sm text-zinc-100"
+                className="kv-input"
               />
             </div>
 
             <button
               type="submit"
               disabled={submitting}
-              className="w-full sm:w-auto px-5 py-3 rounded-full bg-amber-400 text-black font-semibold text-sm hover:bg-amber-300 transition disabled:opacity-60 disabled:cursor-not-allowed"
+              className="kv-button-primary kv-button-accent w-full sm:w-auto px-6 py-3 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {submitting ? 'Enviando…' : 'Enviar solicitud'}
             </button>

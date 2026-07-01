@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion as Motion } from "framer-motion"
 import { Link } from "react-router-dom"
 
 export default function HeroServicios() {
@@ -7,23 +7,23 @@ export default function HeroServicios() {
       <div className="absolute inset-0 pointer-events-none opacity-30"
            style={{ background: "radial-gradient(1200px 600px at 80% -10%, rgba(255,196,0,0.25), transparent)" }} />
       <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
-        <motion.h1
+        <Motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-6xl font-bold tracking-tight"
         >
           Imaginamos. Rodamos. Damos vida a las ideas.
-        </motion.h1>
-        <motion.p
+        </Motion.h1>
+        <Motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
           className="text-zinc-300 mt-3 max-w-2xl"
         >
           Proyectos audiovisuales completos: de la preproducción al master final. Estética de cine, dominio técnico y narrativa con propósito.
-        </motion.p>
-        <motion.div
+        </Motion.p>
+        <Motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -35,7 +35,7 @@ export default function HeroServicios() {
           <Link to="/contacto/" className="kv-button-primary kv-button-accent">
             Cuéntanos tu idea
           </Link>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   )

@@ -110,7 +110,7 @@ export default function Blog() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contacto/" className="kv-button-primary kv-button-accent">
-              Hablemos de tu proyecto
+              Pedir presupuesto
             </Link>
           </div>
         </div>

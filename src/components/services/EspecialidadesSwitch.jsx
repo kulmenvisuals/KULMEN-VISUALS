@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion as Motion, AnimatePresence } from "framer-motion"
 
 export default function EspecialidadesSwitch({ items = [] }) {
   const [id, setId] = useState(items[0]?.id)
@@ -30,7 +30,7 @@ export default function EspecialidadesSwitch({ items = [] }) {
         </div>
 
         <AnimatePresence mode="wait">
-          <motion.div
+          <Motion.div
             key={id}
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export default function EspecialidadesSwitch({ items = [] }) {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </Motion.div>
         </AnimatePresence>
       </div>
     </section>

@@ -68,7 +68,7 @@ const data = {
       },
       {
         title: 'Empresas industriales y PYMES',
-        desc: 'El tejido empresarial gallego —construcción, naval, alimentación, energía— necesita vídeos corporativos que muestren su capacidad real. El dron es la herramienta más efectiva para hacerlo.',
+        desc: 'El tejido empresarial gallego (construcción, naval, alimentación, energía) necesita vídeos corporativos que muestren su capacidad real. El dron es la herramienta más efectiva para hacerlo.',
       },
     ],
   },

@@ -396,7 +396,7 @@ export default function ProjectDetail() {
                 >
                   <img
                     src={src}
-                    alt={`${project.title} — imagen ${idx + 1}`}
+                    alt={`${project.title}, imagen ${idx + 1}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -418,7 +418,7 @@ export default function ProjectDetail() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link to="/contacto/" className="kv-button-primary kv-button-accent">
-              Hablemos de tu proyecto
+              Pedir presupuesto
             </Link>
           </div>
         </section>

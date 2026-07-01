@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion as Motion, AnimatePresence } from "framer-motion"
 import PreproPanel from "./panels/PreproPanel"
 import ProPanel from "./panels/ProPanel"
 import PostPanel from "./panels/PostPanel"
@@ -34,7 +34,7 @@ export default function ProcesoTabs({ fases = [] }) {
 
       <div className="mt-6">
         <AnimatePresence mode="wait">
-          <motion.div
+          <Motion.div
             key={tab}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function ProcesoTabs({ fases = [] }) {
             {tab === "pro" && <ProPanel modos={current.modos} />}
             {tab === "post" && <PostPanel beforeAfter={current.beforeAfter} bullets={current.bullets} />}
             {tab === "ia" && <IAPanel presets={current.presets} nota={current.nota} />}
-          </motion.div>
+          </Motion.div>
         </AnimatePresence>
       </div>
     </section>

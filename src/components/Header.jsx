@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { NavLink, Link } from "react-router-dom"
 import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion as Motion, AnimatePresence, useReducedMotion } from "framer-motion"
 
 const nav = [
   { to: "/proyectos/", label: "Proyectos" },
@@ -11,68 +11,73 @@ const nav = [
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const reduceMotion = useReducedMotion()
 
   return (
     <header className="sticky top-0 z-50 kv-header">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center" aria-label="Kulmen Visuals">
+        <Link to="/" className="flex items-center" aria-label="Kulmen Visuals, inicio">
           <img
             src="/logo-kulmen-visuals.png"
-            alt="Kulmen Visuals — Productora audiovisual en Galicia"
+            alt="Kulmen Visuals, productora audiovisual en Galicia"
             className="h-10 md:h-12 w-auto"
+            width="180"
+            height="48"
           />
         </Link>
 
-        {/* Navegación desktop */}
-        <nav className="hidden md:flex items-center gap-6 text-xs md:text-sm font-semibold">
+        <nav className="hidden md:flex items-center gap-7 text-sm font-medium" aria-label="Principal">
           {nav.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `hover:text-amber-300 transition ${
-                  isActive ? "text-amber-400" : "text-zinc-300"
+                `relative py-1 transition hover:text-amber-200 ${
+                  isActive
+                    ? "text-amber-400 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:bg-amber-400/70"
+                    : "text-zinc-300"
                 }`
               }
             >
               {item.label}
             </NavLink>
           ))}
-          
-          <Link to="/contacto/" className="kv-button-primary kv-button-accent ml-2">
-            Hablemos
+
+          <Link to="/contacto/" className="kv-button-primary kv-button-accent ml-1">
+            Pedir presupuesto
           </Link>
         </nav>
 
-        {/* Botón menú mobile */}
         <button
-          className="md:hidden text-zinc-100"
+          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-zinc-100 border border-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/70"
           onClick={() => setOpen((o) => !o)}
-          aria-label="Abrir menú"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {/* Menú mobile */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
+          <Motion.div
+            initial={reduceMotion ? false : { height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden border-t border-zinc-800/80 bg-zinc-950/95 backdrop-blur-xl"
+            exit={reduceMotion ? undefined : { height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden overflow-hidden border-t border-white/5 bg-zinc-950/95 backdrop-blur-xl"
           >
-            <div className="px-4 py-4 space-y-2">
+            <div className="px-4 py-4 space-y-1">
               {nav.map((item) => (
                 <NavLink
                   key={item.to}
                   to={item.to}
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
-                    `block py-2 text-sm font-semibold ${
-                      isActive ? "text-amber-400" : "text-zinc-200"
+                    `block rounded-lg px-3 py-2.5 text-sm font-semibold transition ${
+                      isActive
+                        ? "text-amber-400 bg-white/5"
+                        : "text-zinc-200 hover:bg-white/5"
                     }`
                   }
                 >
@@ -80,17 +85,17 @@ export default function Header() {
                 </NavLink>
               ))}
 
-              <div className="pt-2">
+              <div className="pt-3">
                 <Link
                   to="/contacto/"
                   onClick={() => setOpen(false)}
                   className="kv-button-primary kv-button-accent w-full justify-center"
                 >
-                  Hablemos
+                  Pedir presupuesto
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </Motion.div>
         )}
       </AnimatePresence>
     </header>
