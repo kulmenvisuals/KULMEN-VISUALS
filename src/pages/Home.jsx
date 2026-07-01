@@ -354,7 +354,7 @@ export default function Home() {
             </div>
             <div className="relative">
               <h3 className="kv-card-title text-zinc-100 group-hover:text-amber-100 transition-colors">
-                Producción completa, sin intermediarios ni fricción
+                Producción completa, sin fricción
               </h3>
               <p className="kv-card-body text-zinc-400 mt-2 group-hover:text-zinc-200 transition-colors">
                 Planificación, rodaje y edición en un solo flujo.
