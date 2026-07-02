@@ -464,6 +464,15 @@ export function resolveRouteSeo(pathname = '/') {
     })
   }
 
+  if (path === '/piloto-de-drones-galicia') {
+    return buildSeo({
+      title: 'Piloto de drones en Galicia | Operadora FPV y estabilizado certificada',
+      description:
+        'Piloto de drones profesional en Galicia: FPV, estabilizado e interiores. Operadora UAS registrada en AESA, certificada EASA, con seguro y gestión de permisos. Base en Pontevedra, cobertura en toda Galicia.',
+      pathname: path,
+    })
+  }
+
   if (path === '/galicia/grabacion-con-drones') {
     return buildSeo({
       title: 'Grabación con drones en Galicia | FPV, cine, eventos y corporativo',

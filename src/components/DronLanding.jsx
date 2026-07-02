@@ -1,13 +1,19 @@
 import { Link } from 'react-router-dom'
 import { CheckCircle2, Shield, MapPin } from 'lucide-react'
-import { usePageSeo, useJsonLd } from '../utils/seo.js'
+import { usePageSeo } from '../utils/seo.js'
 
 export default function DronLanding({ data }) {
   usePageSeo(data.seo)
-  useJsonLd(data.schema)
 
   return (
     <div className="bg-zinc-950 text-zinc-50">
+      {/* Schema inline: presente en el HTML prerenderizado para crawlers sin JS */}
+      {data.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(data.schema) }}
+        />
+      )}
       {/* HERO */}
       <section className="relative border-b border-zinc-800/60">
         <div className="max-w-4xl mx-auto px-4 py-14 md:py-20">

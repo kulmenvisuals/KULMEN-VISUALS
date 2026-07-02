@@ -20,6 +20,7 @@ import VideoCorporativo from './pages/VideoCorporativo.jsx'
 import DronEventos from './pages/DronEventos.jsx'
 import DronInmobiliarias from './pages/DronInmobiliarias.jsx'
 import AlquilerDrones from './pages/AlquilerDrones.jsx'
+import PilotoDronesGalicia from './pages/PilotoDronesGalicia.jsx'
 import GaliciaGrabacion from './pages/GaliciaGrabacion.jsx'
 import PontevedraGrabacion from './pages/PontevedraGrabacion.jsx'
 
@@ -47,6 +48,7 @@ export function AppRouter() {
         <Route path="dron-para-eventos" element={<DronEventos />} />
         <Route path="dron-para-inmobiliarias" element={<DronInmobiliarias />} />
         <Route path="alquiler-drones-con-piloto" element={<AlquilerDrones />} />
+        <Route path="piloto-de-drones-galicia" element={<PilotoDronesGalicia />} />
         {/* SEO landing pages — local */}
         <Route path="galicia">
           <Route path="grabacion-con-drones" element={<GaliciaGrabacion />} />

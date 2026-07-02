@@ -7,6 +7,7 @@ const footerNav = [
   { to: "/servicios/", label: "Servicios" },
   { to: "/proyectos/", label: "Proyectos" },
   { to: "/sobre-mi/", label: "Sobre mí" },
+  { to: "/piloto-de-drones-galicia/", label: "Piloto de drones en Galicia" },
   { to: "/blog/", label: "Blog" },
   { to: "/contacto/", label: "Contacto" },
 ]

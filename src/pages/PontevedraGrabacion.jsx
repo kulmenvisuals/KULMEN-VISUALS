@@ -107,6 +107,11 @@ const data = {
 
   serviciosRelacionados: [
     {
+      to: '/piloto-de-drones-galicia/',
+      label: 'Piloto de drones en Galicia',
+      desc: 'Operadora FPV y estabilizado certificada, con permisos y seguro.',
+    },
+    {
       to: '/grabacion-con-drones-fpv/',
       label: 'Grabación con drones FPV',
       desc: 'Planos dinámicos para eventos y marcas en Pontevedra.',

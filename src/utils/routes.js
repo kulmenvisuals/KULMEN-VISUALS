@@ -23,6 +23,7 @@ export const routes = {
   dronEventos: '/dron-para-eventos/',
   dronInmobiliarias: '/dron-para-inmobiliarias/',
   alquilerDrones: '/alquiler-drones-con-piloto/',
+  pilotoDronesGalicia: '/piloto-de-drones-galicia/',
   galiciaGrabacion: '/galicia/grabacion-con-drones/',
   pontevedraGrabacion: '/pontevedra/grabacion-con-drones/',
 }
@@ -45,6 +46,7 @@ export const staticRoutes = [
   routes.dronEventos,
   routes.dronInmobiliarias,
   routes.alquilerDrones,
+  routes.pilotoDronesGalicia,
   routes.galiciaGrabacion,
   routes.pontevedraGrabacion,
 ]
