@@ -24,24 +24,28 @@ const servicios = [
     titulo: 'Producción audiovisual',
     texto:
       'Rodaje con enfoque narrativo y publicitario para marcas, eventos y proyectos.',
+    to: '/produccion-audiovisual-galicia/',
   },
   {
     id: 'fpv',
     titulo: 'FPV cinematográfico',
     texto:
       'Planos aéreos dinámicos e inmersivos que generan impacto y diferenciación.',
+    to: '/grabacion-con-drones-fpv/',
   },
   {
     id: 'edicion',
     titulo: 'Edición y postproducción',
     texto:
       'Montaje, ritmo, música y color para un acabado profesional listo para publicar.',
+    to: '/edicion-y-postproduccion-de-video/',
   },
   {
     id: 'redes',
     titulo: 'Contenido para redes',
     texto:
       'Versiones optimizadas por formato y plataforma para aprovechar cada rodaje al máximo.',
+    to: '/contenido-para-redes-sociales/',
   },
 ]
 
@@ -181,7 +185,7 @@ const homeSchema = {
       serviceType: "Producción audiovisual",
       provider: { "@id": "https://kulmenvisuals.com/#localbusiness" },
       areaServed: "Galicia",
-      url: "https://kulmenvisuals.com/servicios/",
+      url: "https://kulmenvisuals.com/produccion-audiovisual-galicia/",
     },
     {
       "@type": "Service",
@@ -189,7 +193,7 @@ const homeSchema = {
       serviceType: "Drones FPV",
       provider: { "@id": "https://kulmenvisuals.com/#localbusiness" },
       areaServed: "Galicia",
-      url: "https://kulmenvisuals.com/servicios/",
+      url: "https://kulmenvisuals.com/grabacion-con-drones-fpv/",
     },
     {
       "@type": "Service",
@@ -197,7 +201,7 @@ const homeSchema = {
       serviceType: "Postproducción de vídeo",
       provider: { "@id": "https://kulmenvisuals.com/#localbusiness" },
       areaServed: "Galicia",
-      url: "https://kulmenvisuals.com/servicios/",
+      url: "https://kulmenvisuals.com/edicion-y-postproduccion-de-video/",
     },
     {
       "@type": "FAQPage",
@@ -446,7 +450,7 @@ export default function Home() {
           {servicios.map((servicio, i) => (
             <Reveal key={servicio.id} delay={i * 0.05}>
               <Link
-                to="/servicios/"
+                to={servicio.to}
                 className="group grid gap-3 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_auto] md:items-center border-t border-white/10 py-8 md:py-10"
               >
                 <h3 className="text-2xl md:text-4xl font-semibold tracking-[-0.02em] text-zinc-200 group-hover:text-amber-300 transition-colors duration-300">

@@ -24,6 +24,9 @@ export const routes = {
   dronInmobiliarias: '/dron-para-inmobiliarias/',
   alquilerDrones: '/alquiler-drones-con-piloto/',
   pilotoDronesGalicia: '/piloto-de-drones-galicia/',
+  produccionAudiovisual: '/produccion-audiovisual-galicia/',
+  edicionPostproduccion: '/edicion-y-postproduccion-de-video/',
+  contenidoRedes: '/contenido-para-redes-sociales/',
   galiciaGrabacion: '/galicia/grabacion-con-drones/',
   pontevedraGrabacion: '/pontevedra/grabacion-con-drones/',
 }
@@ -47,6 +50,9 @@ export const staticRoutes = [
   routes.dronInmobiliarias,
   routes.alquilerDrones,
   routes.pilotoDronesGalicia,
+  routes.produccionAudiovisual,
+  routes.edicionPostproduccion,
+  routes.contenidoRedes,
   routes.galiciaGrabacion,
   routes.pontevedraGrabacion,
 ]

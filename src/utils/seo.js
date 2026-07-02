@@ -473,6 +473,33 @@ export function resolveRouteSeo(pathname = '/') {
     })
   }
 
+  if (path === '/produccion-audiovisual-galicia') {
+    return buildSeo({
+      title: 'Producción audiovisual en Galicia | Vídeo para marcas, empresas y eventos',
+      description:
+        'Servicio de producción audiovisual en Galicia: spots, vídeo corporativo, eventos y videoclips. Preproducción, rodaje con cámara de cine y dron FPV, y edición. Presupuesto cerrado sin compromiso.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/edicion-y-postproduccion-de-video') {
+    return buildSeo({
+      title: 'Edición y postproducción de vídeo | Montaje, color y formatos para redes',
+      description:
+        'Servicio profesional de edición y postproducción de vídeo: montaje, corrección de color, audio y versiones para redes. Desde tu material o desde rodaje propio. En remoto para toda España.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/contenido-para-redes-sociales') {
+    return buildSeo({
+      title: 'Contenido para redes sociales | Vídeo profesional para Reels, TikTok y Shorts',
+      description:
+        'Producción de contenido de vídeo para redes sociales: Reels, TikTok, Shorts y UGC para empresas. Grabación vertical, edición con gancho y packs mensuales. Base en Galicia, servicio en toda España.',
+      pathname: path,
+    })
+  }
+
   if (path === '/galicia/grabacion-con-drones') {
     return buildSeo({
       title: 'Grabación con drones en Galicia | FPV, cine, eventos y corporativo',

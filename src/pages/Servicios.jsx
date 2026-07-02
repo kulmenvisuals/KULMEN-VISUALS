@@ -202,6 +202,7 @@ const mainServices = [
   {
     id: "produccion-audiovisual",
     title: "Producción audiovisual",
+    href: "/produccion-audiovisual-galicia/",
     icon: Camera,
     intro:
       "Planificación y rodaje de vídeo para marcas, eventos y espacios, con un enfoque narrativo y visual coherente con el mensaje.",
@@ -220,6 +221,7 @@ const mainServices = [
   {
     id: "fpv-cinematografico",
     title: "FPV cinematográfico",
+    href: "/grabacion-con-drones-fpv/",
     icon: Drone,
     iconClassName: "h-6 w-6",
     intro:
@@ -239,6 +241,7 @@ const mainServices = [
   {
     id: "edicion-postproduccion",
     title: "Edición y postproducción",
+    href: "/edicion-y-postproduccion-de-video/",
     icon: Scissors,
     intro:
       "Montaje final del proyecto con atención al ritmo, la estructura y el uso real del vídeo.",
@@ -257,6 +260,7 @@ const mainServices = [
   {
     id: "contenido-redes",
     title: "Contenido para redes",
+    href: "/contenido-para-redes-sociales/",
     icon: Heart,
     intro:
       "Creación de piezas de vídeo pensadas específicamente para redes sociales, a partir de un enfoque claro y un material bien planteado desde el rodaje.",
@@ -403,6 +407,16 @@ export default function Servicios() {
                   <p className="text-sm text-amber-100/90 border-t border-amber-300/10 pt-3">
                     {service.result}
                   </p>
+
+                  {service.href && (
+                    <Link
+                      to={service.href}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-300 hover:text-amber-200 transition-colors"
+                    >
+                      Ver servicio en detalle
+                      <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  )}
                 </div>
               </article>
             ))}
