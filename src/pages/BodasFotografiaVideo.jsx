@@ -1,4 +1,3 @@
-Producción audiovisual con FPV cinematográfico en Galicia.// src/pages/BodasFotografiaVideo.jsx
 import ServiceLanding from '../components/ServiceLanding.jsx'
 
 const faqs = [
