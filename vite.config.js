@@ -11,4 +11,26 @@ export default defineConfig({
       'Referrer-Policy': 'strict-origin-when-cross-origin',
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Vendors estables en chunks propios: mejor caché entre deploys
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('framer-motion')) return 'motion'
+            if (id.includes('lucide-react')) return 'icons'
+            if (
+              id.includes('react-router') ||
+              id.includes('react-dom') ||
+              id.includes('/react/') ||
+              id.includes('scheduler')
+            ) {
+              return 'react-vendor'
+            }
+            return 'vendor'
+          }
+        },
+      },
+    },
+  },
 })

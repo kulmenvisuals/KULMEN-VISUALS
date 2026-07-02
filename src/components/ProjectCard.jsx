@@ -19,11 +19,11 @@ export default function ProjectCard({
   return (
     <Link
       to={href}
-      className="group block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 rounded-3xl"
+      className="group block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/70 focus-visible:ring-offset-4 focus-visible:ring-offset-zinc-950"
     >
-      <article className="relative rounded-3xl overflow-hidden flex flex-col h-full border border-white/10 bg-zinc-900/40 transition duration-300 group-hover:-translate-y-1 group-hover:border-white/20 group-hover:shadow-[0_24px_50px_-20px_rgba(3,3,6,0.8)]">
+      <article className="flex flex-col h-full">
         <div
-          className={`relative overflow-hidden ${
+          className={`relative overflow-hidden rounded-2xl border border-white/5 ${
             featured ? "aspect-video md:aspect-[21/9]" : "aspect-video"
           }`}
         >
@@ -31,7 +31,7 @@ export default function ProjectCard({
             <img
               src={project.thumbnail}
               alt={`${project.title}, proyecto de Kulmen Visuals`}
-              className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.04]"
+              className="w-full h-full object-cover transition duration-700 ease-out group-hover:scale-[1.05]"
               width="1280"
               height="720"
               loading="lazy"
@@ -54,29 +54,29 @@ export default function ProjectCard({
             </div>
           )}
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-80 group-hover:opacity-100 transition" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
         </div>
 
-        <div className={`flex-1 flex flex-col ${featured ? "p-5 md:p-6" : "p-4 md:p-5"}`}>
-          <div className="flex items-baseline justify-between gap-3 mb-1.5">
+        <div className={`flex-1 flex flex-col ${featured ? "pt-4 md:pt-5" : "pt-3.5"}`}>
+          <div className="flex items-baseline justify-between gap-3 mb-1">
             {project.client && (
               <p className="text-[11px] uppercase tracking-[0.16em] text-zinc-500 truncate">
                 {project.client}
               </p>
             )}
             {typeText && (
-              <p className="text-[11px] text-amber-300/90 shrink-0">{typeText}</p>
+              <p className="text-[11px] text-amber-300/80 shrink-0">{typeText}</p>
             )}
           </div>
           <h3
-            className={`font-semibold text-zinc-50 group-hover:text-amber-100 transition-colors ${
-              featured ? "text-lg md:text-2xl" : "text-sm md:text-base"
+            className={`font-semibold text-zinc-50 group-hover:text-amber-200 transition-colors duration-300 ${
+              featured ? "text-lg md:text-2xl tracking-tight" : "text-sm md:text-base"
             }`}
           >
             {project.title}
           </h3>
           {project.location && (
-            <p className="text-xs text-zinc-500 mt-1">{project.location}</p>
+            <p className="text-xs text-zinc-600 mt-1">{project.location}</p>
           )}
         </div>
       </article>

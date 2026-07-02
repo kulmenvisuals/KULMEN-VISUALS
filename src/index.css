@@ -85,13 +85,13 @@
   .kv-glass-soft {
     background: linear-gradient(
       160deg,
-      rgba(255, 255, 255, 0.07),
-      rgba(255, 255, 255, 0.02)
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
     );
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 14px 38px rgba(3, 3, 6, 0.45);
+    box-shadow: 0 14px 38px rgba(3, 3, 6, 0.35);
   }
 
   .kv-header {
@@ -152,7 +152,7 @@
   }
 
   .kv-hero-title {
-    @apply text-4xl md:text-5xl lg:text-[3.75rem] font-semibold tracking-tight leading-[1.04];
+    @apply text-[2.6rem] leading-[1.02] md:text-6xl lg:text-7xl font-semibold tracking-[-0.03em] md:leading-[0.98];
     font-family: var(--kv-font-headings);
     text-wrap: balance;
   }
@@ -164,7 +164,7 @@
   }
 
   .kv-section-title {
-    @apply text-2xl md:text-[2.1rem] md:leading-[1.15] font-semibold tracking-tight;
+    @apply text-[1.75rem] leading-[1.15] md:text-[2.5rem] md:leading-[1.1] font-semibold tracking-[-0.02em];
     font-family: var(--kv-font-headings);
     text-wrap: balance;
   }
@@ -197,6 +197,16 @@
       transition duration-200
       hover:border-zinc-600
       focus:outline-none focus:border-amber-400/60 focus:ring-2 focus:ring-amber-400/25;
+  }
+
+  .kv-grain {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.045;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   .kv-glass-dark {

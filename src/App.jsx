@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-50 flex flex-col">
+      <div className="kv-grain" aria-hidden="true" />
       <ScrollToTop />
       <MetaPixelTracker />
       <Header currentPath={location.pathname} />

@@ -373,7 +373,7 @@ export default function Home() {
             {/* Captura de lead en desktop */}
             <form
               onSubmit={handleHeroSubmit}
-              className="hidden md:flex w-full max-w-2xl kv-crystal rounded-2xl p-3 flex-col gap-3"
+              className="hidden md:flex w-full max-w-2xl flex-col gap-3"
             >
               <input
                 type="hidden"
@@ -410,8 +410,8 @@ export default function Home() {
       </section>
 
       {/* Logos de clientes: prueba social bajo el hero */}
-      <section className="border-b border-white/5 py-10 md:py-12" aria-label="Clientes">
-        <p className="text-center text-sm text-zinc-500 mb-8 px-4">
+      <section className="py-12 md:py-16" aria-label="Clientes">
+        <p className="text-center text-sm text-zinc-500 mb-10 px-4">
           Han confiado en Kulmen Visuals
         </p>
         <div className="relative overflow-hidden">
@@ -432,7 +432,7 @@ export default function Home() {
       </section>
 
       {/* Servicios: filas editoriales, no tarjetas */}
-      <section className="max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <section className="max-w-6xl mx-auto px-4 py-20 md:py-28">
         <Reveal>
           <h2 className="kv-section-title mb-3">
             Servicios de producción audiovisual
@@ -447,16 +447,16 @@ export default function Home() {
             <Reveal key={servicio.id} delay={i * 0.05}>
               <Link
                 to="/servicios/"
-                className="group grid gap-2 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)_auto] md:items-center border-t border-white/10 py-6 md:py-8 transition-colors hover:bg-white/[0.02] px-2 -mx-2 rounded-lg"
+                className="group grid gap-3 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_auto] md:items-center border-t border-white/10 py-8 md:py-10"
               >
-                <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-zinc-100 group-hover:text-amber-200 transition-colors">
+                <h3 className="text-2xl md:text-4xl font-semibold tracking-[-0.02em] text-zinc-200 group-hover:text-amber-300 transition-colors duration-300">
                   {servicio.titulo}
                 </h3>
-                <p className="text-sm md:text-base text-zinc-400 group-hover:text-zinc-300 transition-colors md:pr-8">
+                <p className="text-sm md:text-base text-zinc-500 group-hover:text-zinc-300 transition-colors duration-300 md:pr-10">
                   {servicio.texto}
                 </p>
                 <ArrowRight
-                  className="hidden md:block h-5 w-5 text-zinc-600 transition group-hover:text-amber-400 group-hover:translate-x-1"
+                  className="hidden md:block h-6 w-6 text-zinc-700 transition duration-300 group-hover:text-amber-400 group-hover:translate-x-1.5"
                   aria-hidden="true"
                 />
               </Link>
@@ -466,11 +466,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enfoque estratégico: split con lista de entregables */}
-      <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-24">
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/70 via-zinc-950 to-zinc-950 px-5 py-10 md:px-10 md:py-12">
-          <div className="pointer-events-none absolute -top-28 -right-16 h-64 w-64 rounded-full bg-amber-500/10 blur-3xl" />
-          <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr]">
+      {/* Enfoque estratégico: split editorial */}
+      <section className="border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 py-20 md:py-28">
+          <div className="grid gap-12 md:gap-16 md:grid-cols-[1.2fr_0.8fr]">
             <Reveal>
               <h2 className="kv-section-title mb-4">
                 Vídeo con enfoque estratégico, no solo bonito
@@ -494,31 +493,29 @@ export default function Home() {
               </ul>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="kv-glass rounded-2xl p-6 h-full">
-                <h3 className="kv-card-title text-zinc-100 mb-5">
-                  Qué incluye cada proyecto
-                </h3>
-                <ul className="space-y-3.5 text-sm text-zinc-300">
-                  {[
-                    'Preproducción con objetivos y guion técnico.',
-                    'Rodaje con cámara de cine y dron FPV.',
-                    'Edición, color, sonido y música con licencia.',
-                    'Adaptación a formatos para redes y campañas.',
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="kv-bullet mt-2" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <h3 className="kv-card-title text-zinc-100 mb-4">
+                Qué incluye cada proyecto
+              </h3>
+              <ul className="divide-y divide-white/10">
+                {[
+                  'Preproducción con objetivos y guion técnico.',
+                  'Rodaje con cámara de cine y dron FPV.',
+                  'Edición, color, sonido y música con licencia.',
+                  'Adaptación a formatos para redes y campañas.',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3.5 text-sm md:text-base text-zinc-300">
+                    <span className="kv-bullet mt-2" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           </div>
         </div>
       </section>
 
       {/* Últimos trabajos: destacado grande + dos secundarios */}
-      <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-24">
+      <section className="max-w-6xl mx-auto px-4 py-20 md:py-28">
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 md:mb-10">
             <div>
@@ -554,8 +551,8 @@ export default function Home() {
 
       {/* Detrás de la cámara: io */}
       <section className="border-t border-white/5 bg-zinc-950">
-        <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
-          <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-center">
+        <div className="max-w-6xl mx-auto px-4 py-20 md:py-28">
+          <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:items-center">
             <Reveal>
               <div className="relative max-w-sm mx-auto md:mx-0">
                 <div className="rounded-3xl overflow-hidden border border-white/10">
@@ -566,7 +563,6 @@ export default function Home() {
                     loading="lazy"
                   />
                 </div>
-                <div className="pointer-events-none absolute -bottom-6 -right-6 h-32 w-32 rounded-full bg-amber-500/15 blur-3xl" />
               </div>
             </Reveal>
             <Reveal delay={0.1}>
@@ -603,7 +599,7 @@ export default function Home() {
       </section>
 
       {/* Proceso completo */}
-      <section className="max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <section className="max-w-6xl mx-auto px-4 py-20 md:py-28">
         <Reveal>
           <h2 className="kv-section-title mb-3">Realizo todo el proceso</h2>
           <p className="kv-body-muted max-w-2xl mb-10 md:mb-14">
@@ -629,27 +625,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA final */}
-      <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-24">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-amber-400/20 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-950 px-6 py-12 md:px-12 md:py-16 text-center">
-            <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-56 w-[32rem] rounded-full bg-amber-500/10 blur-3xl" />
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              ¿Tienes un proyecto en mente?
+      {/* CTA final: editorial */}
+      <section className="border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 py-24 md:py-36 text-center">
+          <Reveal>
+            <h2 className="text-4xl md:text-6xl font-semibold tracking-[-0.03em] leading-[1.02] mb-6 [text-wrap:balance]">
+              ¿Tienes un proyecto <span className="text-amber-400">en mente</span>?
             </h2>
-            <p className="kv-lede max-w-lg mx-auto mb-8">
+            <p className="kv-lede max-w-lg mx-auto mb-10">
               Cuéntame qué necesitas y te respondo con una propuesta clara.
               Sin compromiso.
             </p>
-            <Link to="/contacto/" className="kv-button-primary kv-button-accent text-base px-7 py-3">
+            <Link to="/contacto/" className="kv-button-primary kv-button-accent text-base px-8 py-3.5">
               Pedir presupuesto
             </Link>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </section>
 
       {/* Preguntas frecuentes */}
-      <section className="max-w-3xl mx-auto px-4 pb-20 md:pb-28">
+      <section className="max-w-3xl mx-auto px-4 py-20 md:py-24 border-t border-white/5">
         <Reveal>
           <h2 className="kv-section-title mb-3">Preguntas frecuentes</h2>
           <p className="kv-body-muted mb-8">
