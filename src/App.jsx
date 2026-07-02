@@ -3,6 +3,7 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import MetaPixelTracker from './components/MetaPixelTracker.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import WhatsAppButton from './components/WhatsAppButton.jsx'
 import { resolveRouteSeo, usePageSeo } from './utils/seo.js'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       </main>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
