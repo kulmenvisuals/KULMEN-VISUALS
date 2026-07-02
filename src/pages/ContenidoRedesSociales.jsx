@@ -10,7 +10,7 @@ const faqs = [
   {
     question: '¿Cuánto cuesta el contenido de vídeo para redes?',
     answer:
-      'Un pack de 5 a 10 piezas producidas desde un mismo rodaje se mueve entre 700€ y 2.000€ según jornadas de grabación y nivel de edición. Para publicación sostenida, los packs mensuales con rodaje recurrente reducen el coste por pieza de forma considerable. Siempre con presupuesto cerrado.',
+      'Depende del número de piezas, las jornadas de grabación y el nivel de edición. Para publicación sostenida, los packs mensuales con rodaje recurrente suelen salir más rentables por pieza que los encargos sueltos. Te preparo siempre un presupuesto cerrado adaptado a tu volumen de publicación.',
   },
   {
     question: '¿Cuántos vídeos puede sacar una empresa de un solo rodaje?',
@@ -171,17 +171,6 @@ const data = {
     ],
   },
 
-  precios: {
-    title: 'Cuánto cuesta el contenido para redes',
-    text: 'Rangos habituales según volumen y periodicidad:',
-    items: [
-      ['Pack de 5-10 piezas desde un rodaje', '700€ - 2.000€'],
-      ['Pack mensual con rodaje recurrente', '600€ - 1.500€/mes'],
-      ['Pieza vertical suelta (grabación + edición)', '150€ - 400€'],
-      ['Recorrido FPV vertical de tu espacio', '500€ - 900€'],
-      ['Cobertura de evento con clips el mismo día', '400€ - 1.200€'],
-    ],
-  },
 
   relacionados: [
     {

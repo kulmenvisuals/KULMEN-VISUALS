@@ -25,7 +25,7 @@ const faqs = [
   {
     question: '¿Cuánto cuesta contratar un piloto de drones en Galicia?',
     answer:
-      'Una media jornada de vuelo con dron estabilizado y entrega de vídeo editado suele costar entre 400€ y 600€. La jornada completa, entre 600€ y 900€. Los rodajes FPV parten de 500€ a 700€ porque exigen más preparación y ensayos. El precio final depende de la localización, el espacio aéreo, la edición incluida y las versiones de entrega. Siempre trabajo con presupuesto cerrado por escrito.',
+      'Depende de la duración del vuelo, el tipo de dron (estabilizado o FPV), la localización, el espacio aéreo y la edición incluida. Cada proyecto es distinto, así que preparo siempre un presupuesto cerrado y desglosado por escrito antes de empezar, sin sorpresas ni cargos ocultos. Cuéntame tu proyecto y te lo preparo sin compromiso.',
   },
   {
     question: '¿Trabajas en toda Galicia?',
@@ -382,37 +382,6 @@ export default function PilotoDronesGalicia() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      {/* PRECIOS ORIENTATIVOS: datos concretos que los motores de IA citan */}
-      <section className="border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-4 py-14 md:py-20">
-          <h2 className="kv-section-title mb-3">
-            Cuánto cuesta contratar un piloto de drones en Galicia
-          </h2>
-          <p className="kv-body-muted max-w-2xl mb-8">
-            Cada proyecto se presupuesta cerrado y por escrito. Estos rangos
-            orientativos te sirven para situarte antes de pedir presupuesto:
-          </p>
-          <ul className="divide-y divide-white/10 border-y border-white/10">
-            {[
-              ['Media jornada de dron estabilizado con vídeo editado', '400€ - 600€'],
-              ['Jornada completa de vuelo con edición', '600€ - 900€'],
-              ['Rodaje FPV (exterior o interior) con edición', '500€ - 700€'],
-              ['Vídeo inmobiliario con dron', '400€ - 900€'],
-              ['Cobertura aérea de evento con aftermovie', '800€ - 2.500€'],
-            ].map(([concepto, precio]) => (
-              <li key={concepto} className="flex items-baseline justify-between gap-6 py-4">
-                <span className="text-sm md:text-base text-zinc-300">{concepto}</span>
-                <span className="font-semibold text-amber-300 whitespace-nowrap">{precio}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="kv-caption text-zinc-500 mt-4">
-            Rangos orientativos según localización, espacio aéreo y entregas.
-            El presupuesto final siempre se cierra antes de empezar.
-          </p>
         </div>
       </section>
 

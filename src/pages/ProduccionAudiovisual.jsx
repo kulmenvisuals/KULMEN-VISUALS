@@ -10,7 +10,7 @@ const faqs = [
   {
     question: '¿Cuánto cuesta una producción audiovisual en Galicia?',
     answer:
-      'Depende del alcance. Como referencia: un vídeo de marca de 60 a 90 segundos se mueve entre 800€ y 2.500€; un aftermovie de evento entre 600€ y 1.800€; un spot con guion y localizaciones entre 3.000€ y 8.000€. Siempre trabajo con presupuesto cerrado y desglosado antes de empezar.',
+      'Depende del alcance del proyecto: duración, número de localizaciones, si hay dron o cámara (o ambos) y la complejidad de la edición. No hay una tarifa fija porque cada pieza tiene necesidades distintas. Preparo siempre un presupuesto cerrado y desglosado antes de empezar, tras una breve llamada o correo para entender qué necesitas.',
   },
   {
     question: '¿Qué diferencia hay entre una productora grande y una creadora independiente?',
@@ -168,17 +168,6 @@ const data = {
     ],
   },
 
-  precios: {
-    title: 'Cuánto cuesta una producción audiovisual',
-    text: 'Rangos habituales para proyectos en Galicia con producción completa:',
-    items: [
-      ['Vídeo de marca o presentación (60-90 seg)', '800€ - 2.500€'],
-      ['Aftermovie de evento (2-4 min)', '600€ - 1.800€'],
-      ['Spot publicitario con guion y localizaciones', '3.000€ - 8.000€'],
-      ['Videoclip musical', '500€ - 3.000€'],
-      ['Pack de contenido para redes (5-10 piezas)', '700€ - 2.000€'],
-    ],
-  },
 
   relacionados: [
     {

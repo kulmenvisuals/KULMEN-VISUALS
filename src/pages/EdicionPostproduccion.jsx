@@ -15,7 +15,7 @@ const faqs = [
   {
     question: '¿Cuánto cuesta editar un vídeo?',
     answer:
-      'Como referencia: la edición de una pieza corta (hasta 2 minutos) desde material ya grabado se mueve entre 250€ y 500€; un aftermovie de evento entre 300€ y 700€; y las piezas verticales para redes, entre 80€ y 150€ por unidad según volumen. La corrección de color como servicio suelto, entre 100€ y 300€ por pieza. El precio depende sobre todo de la cantidad de material bruto y del acabado que busques.',
+      'Depende sobre todo de la cantidad de material bruto, la duración final y el acabado que busques: no es lo mismo un corte sencillo que un montaje con corrección de color y motion graphics. Reviso tu material y te preparo un presupuesto cerrado antes de empezar, sin sorpresas.',
   },
   {
     question: '¿Trabajas la edición en remoto?',
@@ -171,17 +171,6 @@ const data = {
     ],
   },
 
-  precios: {
-    title: 'Cuánto cuesta editar un vídeo',
-    text: 'Rangos habituales editando desde material ya grabado:',
-    items: [
-      ['Pieza corta (hasta 2 min) desde tus brutos', '250€ - 500€'],
-      ['Aftermovie de evento', '300€ - 700€'],
-      ['Pieza vertical para redes (por unidad, según volumen)', '80€ - 150€'],
-      ['Corrección de color por pieza', '100€ - 300€'],
-      ['Pack mensual de edición para redes', '400€ - 900€'],
-    ],
-  },
 
   relacionados: [
     {
