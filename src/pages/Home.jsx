@@ -219,7 +219,7 @@ const homeSchema = {
 }
 
 const homeSeo = {
-  title: 'Producción audiovisual y FPV en Galicia | Kulmen Visuals',
+  title: 'Producción audiovisual con drones FPV en Galicia | Kulmen Visuals',
   description:
     'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Pide presupuesto sin compromiso.',
   pathname: '/',
@@ -357,12 +357,13 @@ export default function Home() {
           <div className="max-w-3xl">
             <h1 className="kv-hero-title mb-5">
               Producción audiovisual con{' '}
-              <span className="text-amber-400">FPV cinematográfico</span> en
+              <span className="text-amber-400">drones FPV</span> en
               Galicia.
             </h1>
             <p className="kv-lede max-w-xl mb-8">
-              Vídeos para marcas y eventos que necesitan destacar de verdad.
-              Rodaje, FPV y edición pensados para redes, campañas y web.
+              Vídeos para marcas, espacios y eventos que necesitan destacar.
+              Grabación y edición pensados para obtener el mayor impacto en
+              redes, campañas y web.
             </p>
 
             <div className="flex flex-wrap gap-3 md:hidden">
