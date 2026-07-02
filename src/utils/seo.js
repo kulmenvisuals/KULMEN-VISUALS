@@ -500,6 +500,15 @@ export function resolveRouteSeo(pathname = '/') {
     })
   }
 
+  if (path === '/fotografia-y-video-de-bodas') {
+    return buildSeo({
+      title: 'Fotografía y vídeo de bodas en Galicia | FPV y entrega de anillos con dron',
+      description:
+        'Fotografía y vídeo de boda en Galicia: reportaje, película del día, planos aéreos FPV y entrega de anillos con dron. Piloto de drones certificada. Presupuesto sin compromiso.',
+      pathname: path,
+    })
+  }
+
   if (path === '/galicia/grabacion-con-drones') {
     return buildSeo({
       title: 'Grabación con drones en Galicia | FPV, cine, eventos y corporativo',

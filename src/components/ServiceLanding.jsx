@@ -81,6 +81,28 @@ export default function ServiceLanding({ data }) {
         </section>
       )}
 
+      {/* DESTACADO: un servicio concreto que merece explicación propia */}
+      {data.destacado && (
+        <section className="border-t border-white/5">
+          <div className="max-w-4xl mx-auto px-4 py-14 md:py-20">
+            <div className="rounded-3xl border border-amber-400/20 p-6 md:p-10">
+              <h2 className="kv-section-title mb-4">{data.destacado.title}</h2>
+              <p className="kv-body-muted max-w-2xl mb-6">{data.destacado.text}</p>
+              {data.destacado.items && (
+                <ul className="grid gap-3 md:grid-cols-2">
+                  {data.destacado.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm md:text-base text-zinc-300">
+                      <CheckCircle2 size={16} className="text-amber-300 mt-1 shrink-0" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* PROCESO */}
       {data.proceso && (
         <section className="border-t border-white/5">

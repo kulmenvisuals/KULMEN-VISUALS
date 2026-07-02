@@ -91,6 +91,7 @@ const pageSchema = {
           { '@type': 'Offer', name: 'Vídeo aéreo inmobiliario' },
           { '@type': 'Offer', name: 'Seguimiento de obra con dron' },
           { '@type': 'Offer', name: 'Dron para cine y publicidad' },
+          { '@type': 'Offer', name: 'Entrega de anillos con dron en bodas' },
         ],
       },
     },
@@ -195,6 +196,11 @@ const servicios = [
     title: 'Alquiler de dron con piloto',
     desc: 'Dron y piloto certificada para tu producción, con permisos y seguro incluidos.',
     to: '/alquiler-drones-con-piloto/',
+  },
+  {
+    title: 'Fotografía y vídeo de bodas',
+    desc: 'FPV y entrega de anillos con dron, coreografiada y ensayada.',
+    to: '/fotografia-y-video-de-bodas/',
   },
 ]
 

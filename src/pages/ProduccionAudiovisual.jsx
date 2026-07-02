@@ -171,6 +171,11 @@ const data = {
 
   relacionados: [
     {
+      to: '/fotografia-y-video-de-bodas/',
+      label: 'Fotografía y vídeo de bodas',
+      desc: 'FPV y entrega de anillos con dron para tu boda.',
+    },
+    {
       to: '/grabacion-con-drones-fpv/',
       label: 'Grabación con drones FPV',
       desc: 'Planos dinámicos e inmersivos que diferencian tu pieza.',

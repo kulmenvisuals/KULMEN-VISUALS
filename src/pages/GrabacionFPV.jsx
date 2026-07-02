@@ -116,6 +116,11 @@ const data = {
 
   relatedLinks: [
     {
+      to: '/fotografia-y-video-de-bodas/',
+      label: 'Fotografía y vídeo de bodas',
+      desc: 'FPV y entrega de anillos con dron para tu boda.',
+    },
+    {
       to: '/dron-para-cine-y-publicidad/',
       label: 'Dron para cine y publicidad',
       desc: 'Planos aéreos estabilizados para rodajes y campañas.',
