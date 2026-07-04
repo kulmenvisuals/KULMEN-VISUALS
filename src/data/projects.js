@@ -108,7 +108,7 @@ export const projects = [
     roles: ["Cámara", "Cobertura audiovisual"],
     location: "Madrid",
 
-    thumbnail: "/images/projects/march-3.png",
+    thumbnail: "/images/projects/march-3.jpg",
 
     // YouTube embed
     youtubeUrl: "https://www.youtube.com/embed/qbNfBMfWglA",
@@ -117,8 +117,8 @@ export const projects = [
     poster: null,
 
     images: [
-      "/images/projects/march-1.png",
-      "/images/projects/march-2.png",
+      "/images/projects/march-1.jpg",
+      "/images/projects/march-2.jpg",
     ],
 
     description:
@@ -146,10 +146,10 @@ export const projects = [
     poster: null,
 
     images: [
-      "/images/projects/video-inmobiliario-galicia-1-1620.png",
-      "/images/projects/video-inmobiliario-galicia-2-1620.png",
-      "/images/projects/video-inmobiliario-galicia-3-1620.png",
-      "/images/projects/video-inmobiliario-galicia-4-1620.png",
+      "/images/projects/video-inmobiliario-galicia-1-1620.jpg",
+      "/images/projects/video-inmobiliario-galicia-2-1620.jpg",
+      "/images/projects/video-inmobiliario-galicia-3-1620.jpg",
+      "/images/projects/video-inmobiliario-galicia-4-1620.jpg",
     ],
 
     description:
@@ -300,7 +300,7 @@ export const projects = [
     roles: ["Grabación", "Edición"],
     location: "Galicia",
 
-    thumbnail: "/images/projects/Video-corporativo-fpv-galicia.png",
+    thumbnail: "/images/projects/Video-corporativo-fpv-galicia.jpg",
     vimeoUrl: null,
     youtubeUrl: "https://www.youtube.com/embed/rVydjna50tM",
     videoUrl: null,
@@ -388,8 +388,8 @@ export const projects = [
     poster: null,
 
     images: [
-      "/images/projects/cobre-touro-3.png",
-      "/images/projects/cobre-touro-4.png",
+      "/images/projects/cobre-touro-3.jpg",
+      "/images/projects/cobre-touro-4.jpg",
     ],
 
     description:
@@ -412,7 +412,7 @@ export const projects = [
     roles: ["Grabación", "Edición"],
     location: "Lugo",
 
-    thumbnail: "/images/projects/norvento-1.png",
+    thumbnail: "/images/projects/norvento-1.jpg",
 
     instagramUrl: "https://www.instagram.com/reel/DO74XDZiI9O/",
 
@@ -421,8 +421,8 @@ export const projects = [
     poster: null,
 
     images: [
-      "/images/projects/norvento-1.png",
-      "/images/projects/norvento-2.png",
+      "/images/projects/norvento-1.jpg",
+      "/images/projects/norvento-2.jpg",
     ],
 
     description:
@@ -452,8 +452,8 @@ export const projects = [
     poster: null,
 
     images: [
-      "/images/projects/cross-2.png",
-      "/images/projects/cross-3.png",
+      "/images/projects/cross-2.jpg",
+      "/images/projects/cross-3.jpg",
     ],
 
     description:
@@ -475,7 +475,7 @@ export const projects = [
     roles: ["Cobertura audiovisual", "Edición"],
     location: "A Estrada",
 
-    thumbnail: "/images/projects/xgap-3.png",
+    thumbnail: "/images/projects/xgap-3.jpg",
 
     instagramUrl: "https://www.instagram.com/reel/DRkRXo0kX4J/",
     youtubeUrl: null,
@@ -543,8 +543,8 @@ export const projects = [
     poster: null,
 
     images: [
-      "/images/projects/mientete-1.png",
-      "/images/projects/mientete-2.png",
+      "/images/projects/mientete-1.jpg",
+      "/images/projects/mientete-2.jpg",
     ],
 
     description:
@@ -569,8 +569,8 @@ export const projects = [
     youtubeUrl: "https://www.youtube.com/embed/MYtznjHXaYw",
     poster: null,
     images: [
-      "/images/projects/mama-1.png",
-      "/images/projects/mama-2.png",
+      "/images/projects/mama-1.jpg",
+      "/images/projects/mama-2.jpg",
     ],
     description:
       "Videoclip rodado en estudio con un enfoque íntimo y contenido, donde la luz, el encuadre y el ritmo acompañan el tono emocional del tema.",

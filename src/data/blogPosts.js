@@ -130,7 +130,7 @@ export const blogPosts = [
     date: "2026-06-10",
     readTime: "6 min",
     category: "Espacios",
-    cover: `${assetBase}images/projects/video-inmobiliario-galicia-1-1620.png`,
+    cover: `${assetBase}images/projects/video-inmobiliario-galicia-1-1620.jpg`,
     tags: ["inmobiliaria", "dron", "vídeo inmobiliario", "Galicia"],
     sections: [
       {
@@ -339,7 +339,7 @@ export const blogPosts = [
     date: "2026-03-05",
     readTime: "7 min",
     category: "Presupuesto",
-    cover: `${assetBase}images/projects/mientete-1.png`,
+    cover: `${assetBase}images/projects/mientete-1.jpg`,
     tags: ["videoclip", "música", "presupuesto", "producción audiovisual"],
     sections: [
       {
@@ -507,7 +507,7 @@ export const blogPosts = [
     date: "2025-11-19",
     readTime: "7 min",
     category: "Eventos",
-    cover: `${assetBase}images/projects/cross-2.png`,
+    cover: `${assetBase}images/projects/cross-2.jpg`,
     tags: ["deporte", "eventos", "patrocinio", "aftermovie", "FPV"],
     sections: [
       {
@@ -559,7 +559,7 @@ export const blogPosts = [
     date: "2025-10-22",
     readTime: "6 min",
     category: "Redes",
-    cover: `${assetBase}images/projects/norvento-1.png`,
+    cover: `${assetBase}images/projects/norvento-1.jpg`,
     tags: ["vídeo vertical", "reels", "TikTok", "formatos", "redes sociales"],
     sections: [
       {
