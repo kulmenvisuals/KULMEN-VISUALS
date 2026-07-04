@@ -104,9 +104,9 @@ export const projects = [
     client: "Surfing The Lérez",
     year: 2026,
 
-    category: "Festival / Música / Aftermovie",
-    type: ["FPV", "Evento", "Aftermovie"],
-    roles: ["Cobertura con dron FPV", "Grabación de evento", "Edición"],
+    category: "Festival / Música / Cobertura FPV",
+    type: ["FPV", "Evento", "Festival"],
+    roles: ["Cobertura con dron FPV"],
     location: "Illa do Covo (Pontevedra)",
 
     thumbnail: "/images/projects/concierto-fpv-galicia-kulmen.jpg",
@@ -122,7 +122,7 @@ export const projects = [
     ],
 
     description:
-      "Cobertura con drones FPV y aftermovie del festival Surfing The Lérez 2026 en Pontevedra. El vídeo combina planos aéreos inmersivos y una edición dinámica para transmitir la escala del evento, la energía del público y el carácter de una de las citas musicales más reconocibles de Galicia.",
+      "Grabación de planos FPV para la cobertura audiovisual del festival Surfing The Lérez 2026 en Pontevedra. La aportación se centró en capturar tomas aéreas inmersivas para mostrar la escala del evento, la energía del público y el entorno del festival.",
     extra:
       "La edición 2026 se celebró los días 12 y 13 de junio en la Illa do Covo, con entrada gratuita, recogida solidaria de alimentos y programación repartida en cuatro escenarios. Fue además la edición de despedida del festival tras quince años de trayectoria en Pontevedra.",
   },
