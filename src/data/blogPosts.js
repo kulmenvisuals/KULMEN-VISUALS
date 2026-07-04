@@ -5,6 +5,68 @@ const assetBase =
 
 export const blogPosts = [
   {
+    id: "cobertura-drones-fpv-eventos-galicia",
+    slug: "cobertura-drones-fpv-eventos-galicia",
+    title: "Cobertura con drones FPV para eventos en Galicia: qué aporta y cómo se planifica",
+    excerpt:
+      "Qué puede aportar una cobertura con drones FPV en festivales, eventos de marca y competiciones en Galicia, cómo se organiza el vuelo y qué debe incluir un servicio profesional.",
+    date: "2026-07-04",
+    readTime: "7 min",
+    category: "Eventos",
+    cover: `${assetBase}images/blog-eventos.jpg`,
+    tags: ["drones FPV", "eventos", "Galicia", "aftermovie", "grabación aérea"],
+    sections: [
+      {
+        title: "Por qué el FPV funciona tan bien en un evento",
+        paragraphs: [
+          "La cobertura con drones FPV para eventos en Galicia aporta algo que la cámara en tierra no puede conseguir sola: contexto, recorrido y energía en un mismo plano. Un vuelo bien planteado enseña la dimensión del evento, conecta escenario, público y entorno, y convierte una jornada en una pieza con ritmo.",
+          "En festivales, activaciones de marca, ferias o pruebas deportivas, el FPV no sustituye al resto de cámaras: las completa. El resultado suele funcionar especialmente bien en aftermovies, reels y piezas de promoción para la siguiente edición.",
+        ],
+      },
+      {
+        title: "Qué tipos de eventos aprovechan mejor este formato",
+        bullets: [
+          "Festivales de música y cultura que necesitan un aftermovie con impacto visual.",
+          "Eventos deportivos donde interesa seguir recorridos, salidas, meta o zonas de público.",
+          "Ferias, congresos y eventos corporativos que quieren mostrar escala y ambiente.",
+          "Activaciones de marca en exterior donde el movimiento del público forma parte de la historia.",
+          "Eventos turísticos y gastronómicos que necesitan enseñar espacio, asistencia y atmósfera.",
+        ],
+      },
+      {
+        title: "Qué se planifica antes de volar",
+        paragraphs: [
+          "Un rodaje FPV serio no empieza al despegar. Primero se revisa el espacio aéreo, la presencia de público, los accesos, las rutas de vuelo seguras y los momentos clave del evento. También se define qué piezas hacen falta: aftermovie horizontal, clips verticales para redes, teaser o entrega rápida para prensa y organización.",
+          "En Galicia esto es especialmente importante porque muchos eventos se celebran en cascos urbanos, costa, zonas próximas a carreteras o espacios con afluencia alta de personas. Cuanto mejor se planifica el vuelo, más útil es el material y menos interfiere el dron en la experiencia del evento.",
+        ],
+      },
+      {
+        title: "La parte legal importa tanto como la estética",
+        paragraphs: [
+          "Cuando alguien busca un dron FPV para eventos en Galicia no debería fijarse solo en el vídeo final. La parte crítica está antes: piloto certificado, operador registrado en AESA, seguro, estudio del espacio aéreo y una operativa adaptada al tipo de evento. Sin eso, el riesgo no lo asume solo quien vuela: también la organización.",
+          "Además, no todos los vuelos son viables en cualquier condición. En eventos con público, el tipo de dron, la zona de operación y la distancia de seguridad condicionan qué planos se pueden hacer. Un proveedor serio plantea rutas realistas y propone alternativas cuando un plano no compensa el riesgo.",
+        ],
+      },
+      {
+        title: "Qué entregas suele necesitar un evento",
+        bullets: [
+          "Aftermovie principal de 45 a 90 segundos para web, YouTube o campaña posterior.",
+          "Clips verticales de 10 a 30 segundos para Reels, TikTok y Shorts.",
+          "Recursos brutos seleccionados para prensa, patrocinadores o agencia.",
+          "Versiones adaptadas para anunciar la próxima edición del evento.",
+          "Mini piezas por zonas, artistas, marcas colaboradoras o activaciones concretas.",
+        ],
+      },
+      {
+        title: "Cobertura FPV para eventos en Galicia: cuándo compensa",
+        paragraphs: [
+          "Compensa cuando el evento necesita comunicar magnitud, movimiento o experiencia. Si el objetivo es que quien no estuvo quiera ir a la próxima edición, el FPV suele ser de las herramientas más rentables del rodaje. También es útil cuando hay patrocinadores que esperan contenido visual de alto impacto para justificar su presencia.",
+          "Si estás organizando un festival, una competición o un evento de marca en Galicia, lo más eficiente es plantear la cobertura desde el inicio: qué momentos se graban, qué formatos se entregan y cómo se integra el dron con el resto del equipo de vídeo. Así el material final no solo se ve bien; también sirve para vender mejor el evento.",
+        ],
+      },
+    ],
+  },
+  {
     id: "cuanto-cuesta-grabar-con-dron",
     slug: "cuanto-cuesta-grabar-con-dron",
     title: "Cuánto cuesta grabar con dron en 2026: precios reales en España",
