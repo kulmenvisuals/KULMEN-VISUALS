@@ -1,38 +1,6 @@
 // src/data/projects.js
 
 export const projects = [
-  // 0) Cobertura FPV: Surfing The Lérez 2026
-  {
-    id: "cobertura-fpv-surfing-the-lerez-2026",
-    slug: "cobertura-fpv-surfing-the-lerez-2026",
-
-    title: "Cobertura FPV · Surfing The Lérez 2026",
-    client: "Surfing The Lérez",
-    year: 2026,
-
-    category: "Festival / Música / Aftermovie",
-    type: ["FPV", "Evento", "Aftermovie"],
-    roles: ["Cobertura con dron FPV", "Grabación de evento", "Edición"],
-    location: "Illa do Covo (Pontevedra)",
-
-    thumbnail: "https://img.youtube.com/vi/hiOG4r20MKQ/maxresdefault.jpg",
-    youtubeUrl: "https://www.youtube.com/embed/hiOG4r20MKQ",
-
-    videoUrl: null,
-    poster: null,
-
-    images: [
-      "https://img.youtube.com/vi/hiOG4r20MKQ/1.jpg",
-      "https://img.youtube.com/vi/hiOG4r20MKQ/2.jpg",
-      "https://img.youtube.com/vi/hiOG4r20MKQ/3.jpg",
-    ],
-
-    description:
-      "Cobertura con drones FPV y aftermovie del festival Surfing The Lérez 2026 en Pontevedra. El vídeo combina planos aéreos inmersivos y una edición dinámica para transmitir la escala del evento, la energía del público y el carácter de una de las citas musicales más reconocibles de Galicia.",
-    extra:
-      "La edición 2026 se celebró los días 12 y 13 de junio en la Illa do Covo, con entrada gratuita, recogida solidaria de alimentos y programación repartida en cuatro escenarios. Fue además la edición de despedida del festival tras quince años de trayectoria en Pontevedra.",
-  },
-
   // 0) Anuncio oficial: AE League 2026
   {
     id: "ae-league-2026-anuncio-oficial",
@@ -125,6 +93,38 @@ export const projects = [
       "Reportaje audiovisual alrededor de la obra de Lynda Benglis para Banca March, grabado en Madrid. Cobertura cuidada del proceso de montado de la exposición y del espacio. Estilo reportaje documental",
     extra:
       "El foco estuvo en el montaje de la exposicion y la relacion entre obra y espacio, con un tratamiento documental sobrio y observacional.",
+  },
+
+  // 3) Cobertura FPV: Surfing The Lérez 2026
+  {
+    id: "cobertura-fpv-surfing-the-lerez-2026",
+    slug: "cobertura-fpv-surfing-the-lerez-2026",
+
+    title: "Cobertura FPV · Surfing The Lérez 2026",
+    client: "Surfing The Lérez",
+    year: 2026,
+
+    category: "Festival / Música / Aftermovie",
+    type: ["FPV", "Evento", "Aftermovie"],
+    roles: ["Cobertura con dron FPV", "Grabación de evento", "Edición"],
+    location: "Illa do Covo (Pontevedra)",
+
+    thumbnail: "/images/projects/concierto-fpv-galicia-kulmen.jpg",
+    youtubeUrl: "https://www.youtube.com/embed/hiOG4r20MKQ",
+
+    videoUrl: null,
+    poster: null,
+
+    images: [
+      "https://img.youtube.com/vi/hiOG4r20MKQ/1.jpg",
+      "https://img.youtube.com/vi/hiOG4r20MKQ/2.jpg",
+      "https://img.youtube.com/vi/hiOG4r20MKQ/3.jpg",
+    ],
+
+    description:
+      "Cobertura con drones FPV y aftermovie del festival Surfing The Lérez 2026 en Pontevedra. El vídeo combina planos aéreos inmersivos y una edición dinámica para transmitir la escala del evento, la energía del público y el carácter de una de las citas musicales más reconocibles de Galicia.",
+    extra:
+      "La edición 2026 se celebró los días 12 y 13 de junio en la Illa do Covo, con entrada gratuita, recogida solidaria de alimentos y programación repartida en cuatro escenarios. Fue además la edición de despedida del festival tras quince años de trayectoria en Pontevedra.",
   },
 
   // 3) Vídeo inmobiliario: Grupo Country Homes

@@ -139,12 +139,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kulmenvisuals.com/proyectos/cobertura-fpv-surfing-the-lerez-2026/</loc>
-    <lastmod>2026-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://kulmenvisuals.com/proyectos/ae-league-2026-anuncio-oficial/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
@@ -158,6 +152,12 @@
   </url>
   <url>
     <loc>https://kulmenvisuals.com/proyectos/banca-march-lynda-benglis/</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kulmenvisuals.com/proyectos/cobertura-fpv-surfing-the-lerez-2026/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
