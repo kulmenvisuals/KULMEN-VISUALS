@@ -1,7 +1,36 @@
 // src/data/projects.js
 
 export const projects = [
-  // 0) Anuncio oficial: AE League 2026
+  // 0) Anuncio documental: Villa Boutique 1880
+  {
+    id: "anuncio-documental-villa-boutique-1880",
+    slug: "anuncio-documental-villa-boutique-1880",
+
+    title: "Anuncio documental · Villa Boutique 1880",
+    client: "Villa Boutique 1880",
+    year: 2026,
+
+    category: "Documental / Anuncio",
+    type: ["Spot", "Documental"],
+    roles: ["Grabación", "Edición", "Piloto de dron FPV", "Dron estabilizado"],
+
+    thumbnail: "https://img.youtube.com/vi/yxJbeSQxR2Y/hqdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/embed/yxJbeSQxR2Y",
+
+    videoUrl: null,
+    poster: null,
+    images: [
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/1.jpg",
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/2.jpg",
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/3.jpg",
+    ],
+
+    description:
+      "Anuncio documental para Villa Boutique 1880. Desarrollo completo de grabación y edición, con uso de dron FPV y dron estabilizado para capturar el espacio con dinamismo y elegancia.",
+    extra: null,
+  },
+
+  // 1) Anuncio oficial: AE League 2026
   {
     id: "ae-league-2026-anuncio-oficial",
     slug: "ae-league-2026-anuncio-oficial",
@@ -30,35 +59,6 @@ export const projects = [
       "Pieza audiovisual de anuncio oficial para AE League 2026, torneo gallego de fútbol 7 que se celebra en A Estrada. El vídeo presenta la identidad del torneo y sirve como lanzamiento de su nueva edición.",
     extra:
       "La información oficial del torneo, categorías, calendario e inscripciones está disponible en aeleague.es.",
-  },
-
-  // 1) Anuncio documental: Villa Boutique 1880
-  {
-    id: "anuncio-documental-villa-boutique-1880",
-    slug: "anuncio-documental-villa-boutique-1880",
-
-    title: "Anuncio documental · Villa Boutique 1880",
-    client: "Villa Boutique 1880",
-    year: 2026,
-
-    category: "Documental / Anuncio",
-    type: ["Spot", "Documental"],
-    roles: ["Grabación", "Edición", "Piloto de dron FPV", "Dron estabilizado"],
-
-    thumbnail: "https://img.youtube.com/vi/yxJbeSQxR2Y/hqdefault.jpg",
-    youtubeUrl: "https://www.youtube.com/embed/yxJbeSQxR2Y",
-
-    videoUrl: null,
-    poster: null,
-    images: [
-      "https://img.youtube.com/vi/yxJbeSQxR2Y/1.jpg",
-      "https://img.youtube.com/vi/yxJbeSQxR2Y/2.jpg",
-      "https://img.youtube.com/vi/yxJbeSQxR2Y/3.jpg",
-    ],
-
-    description:
-      "Anuncio documental para Villa Boutique 1880. Desarrollo completo de grabación y edición, con uso de dron FPV y dron estabilizado para capturar el espacio con dinamismo y elegancia.",
-    extra: null,
   },
 
   // 2) Reportaje: Banca March · Lynda Benglis

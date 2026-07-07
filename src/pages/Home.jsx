@@ -68,12 +68,6 @@ const proceso = [
     texto:
       'Edición, corrección de color y entrega en formatos listos para redes, web o campañas. Ritmo cuidado y narrativa clara.',
   },
-  {
-    id: 'ia',
-    titulo: 'Contenido con IA',
-    texto:
-      'Apoyo creativo con IA para adaptar, versionar y multiplicar tus piezas sin perder coherencia visual ni de mensaje.',
-  },
 ]
 
 const faqItems = [

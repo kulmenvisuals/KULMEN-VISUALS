@@ -103,11 +103,6 @@ const servicesSchema = {
             name: "Turismo y Territorio",
             description: "Piezas que muestran el lugar con contexto: paisaje, actividad y personas.",
           },
-          {
-            "@type": "Offer",
-            name: "Contenido con IA",
-            description: "Uso de IA para moodboards, storyboards, variaciones de contenido y piezas 100% generadas cuando tiene sentido.",
-          },
         ],
       },
     },
