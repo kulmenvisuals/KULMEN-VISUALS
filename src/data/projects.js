@@ -1,7 +1,36 @@
 // src/data/projects.js
 
 export const projects = [
-  // Drone tour FPV: Albergue O Lagar de Jesús
+  // 0) Anuncio documental: Villa Boutique 1880
+  {
+    id: "anuncio-documental-villa-boutique-1880",
+    slug: "anuncio-documental-villa-boutique-1880",
+
+    title: "Anuncio documental · Villa Boutique 1880",
+    client: "Villa Boutique 1880",
+    year: 2026,
+
+    category: "Documental / Anuncio",
+    type: ["Spot", "Documental"],
+    roles: ["Grabación", "Edición", "Piloto de dron FPV", "Dron estabilizado"],
+
+    thumbnail: "https://img.youtube.com/vi/yxJbeSQxR2Y/hqdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/embed/yxJbeSQxR2Y",
+
+    videoUrl: null,
+    poster: null,
+    images: [
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/1.jpg",
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/2.jpg",
+      "https://img.youtube.com/vi/yxJbeSQxR2Y/3.jpg",
+    ],
+
+    description:
+      "Anuncio documental para Villa Boutique 1880. Desarrollo completo de grabación y edición, con uso de dron FPV y dron estabilizado para capturar el espacio con dinamismo y elegancia.",
+    extra: null,
+  },
+
+  // 1) Drone tour FPV: Albergue O Lagar de Jesús
   {
     id: "drone-tour-fpv-albergue-o-lagar-de-jesus",
     slug: "drone-tour-fpv-albergue-o-lagar-de-jesus",
@@ -35,35 +64,6 @@ export const projects = [
       "Drone tour realizado íntegramente con dron FPV para O Lagar de Jesús, un albergue ubicado en Padrón, en el último tramo del Camino de Santiago. El vuelo recorre el alojamiento de forma continua e inmersiva para presentar sus espacios y su ambiente desde una perspectiva cercana.",
     extra:
       "El proyecto incluyó la gestión de permisos, la planificación del vuelo y la edición de versiones en español e inglés, además de una adaptación vertical para redes sociales.",
-  },
-
-  // 0) Anuncio documental: Villa Boutique 1880
-  {
-    id: "anuncio-documental-villa-boutique-1880",
-    slug: "anuncio-documental-villa-boutique-1880",
-
-    title: "Anuncio documental · Villa Boutique 1880",
-    client: "Villa Boutique 1880",
-    year: 2026,
-
-    category: "Documental / Anuncio",
-    type: ["Spot", "Documental"],
-    roles: ["Grabación", "Edición", "Piloto de dron FPV", "Dron estabilizado"],
-
-    thumbnail: "https://img.youtube.com/vi/yxJbeSQxR2Y/hqdefault.jpg",
-    youtubeUrl: "https://www.youtube.com/embed/yxJbeSQxR2Y",
-
-    videoUrl: null,
-    poster: null,
-    images: [
-      "https://img.youtube.com/vi/yxJbeSQxR2Y/1.jpg",
-      "https://img.youtube.com/vi/yxJbeSQxR2Y/2.jpg",
-      "https://img.youtube.com/vi/yxJbeSQxR2Y/3.jpg",
-    ],
-
-    description:
-      "Anuncio documental para Villa Boutique 1880. Desarrollo completo de grabación y edición, con uso de dron FPV y dron estabilizado para capturar el espacio con dinamismo y elegancia.",
-    extra: null,
   },
 
   // 1) Anuncio oficial: AE League 2026
