@@ -1,6 +1,42 @@
 // src/data/projects.js
 
 export const projects = [
+  // Drone tour FPV: Albergue O Lagar de Jesús
+  {
+    id: "drone-tour-fpv-albergue-o-lagar-de-jesus",
+    slug: "drone-tour-fpv-albergue-o-lagar-de-jesus",
+
+    title: "Drone tour FPV · O Lagar de Jesús",
+    client: "Albergue O Lagar de Jesús",
+    year: 2026,
+
+    category: "Turismo / Espacios / Drone tour FPV",
+    type: ["FPV", "Turismo", "Espacios"],
+    roles: [
+      "Gestión de permisos",
+      "Planificación de vuelo",
+      "Piloto de dron FPV",
+      "Edición multiformato",
+    ],
+    location: "Padrón, Galicia",
+
+    thumbnail: "https://img.youtube.com/vi/pNruh2kHs0A/maxresdefault.jpg",
+    youtubeUrl: "https://www.youtube.com/embed/pNruh2kHs0A",
+
+    videoUrl: null,
+    poster: null,
+    images: [
+      "https://img.youtube.com/vi/pNruh2kHs0A/1.jpg",
+      "https://img.youtube.com/vi/pNruh2kHs0A/2.jpg",
+      "https://img.youtube.com/vi/pNruh2kHs0A/3.jpg",
+    ],
+
+    description:
+      "Drone tour realizado íntegramente con dron FPV para O Lagar de Jesús, un albergue ubicado en Padrón, en el último tramo del Camino de Santiago. El vuelo recorre el alojamiento de forma continua e inmersiva para presentar sus espacios y su ambiente desde una perspectiva cercana.",
+    extra:
+      "El proyecto incluyó la gestión de permisos, la planificación del vuelo y la edición de versiones en español e inglés, además de una adaptación vertical para redes sociales.",
+  },
+
   // 0) Anuncio documental: Villa Boutique 1880
   {
     id: "anuncio-documental-villa-boutique-1880",
