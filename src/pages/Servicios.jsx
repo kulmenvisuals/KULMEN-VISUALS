@@ -406,7 +406,7 @@ export default function Servicios() {
                   {service.href && (
                     <Link
                       to={service.href}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-300 hover:text-amber-200 transition-colors"
+                      className="inline-flex items-center gap-2 rounded-full border border-amber-300/25 bg-amber-400/10 px-4 py-2.5 text-sm font-semibold text-amber-300 transition duration-300 hover:border-amber-300/45 hover:bg-amber-400/15 hover:text-amber-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
                     >
                       Ver servicio en detalle
                       <span aria-hidden="true">&rarr;</span>
