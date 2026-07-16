@@ -316,7 +316,7 @@ export default function Home() {
       />
 
       {/* HERO con vídeo de fondo */}
-      <section className="relative min-h-[78vh] md:min-h-[86vh] overflow-hidden flex items-center pt-16 pb-12 md:pt-20">
+      <section className="relative -mt-[5.25rem] md:-mt-[5.5rem] min-h-[84vh] md:min-h-[92vh] overflow-hidden flex items-center pt-28 pb-12 md:pt-32">
         {showVideo ? (
           <video
             className="pointer-events-none absolute inset-0 w-full h-full object-cover"

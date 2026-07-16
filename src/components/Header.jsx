@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 px-3 pt-3 md:px-6 md:pt-4">
-      <div className={`kv-header ${scrolled ? "kv-header--scrolled" : ""}`}>
+      <div className={`kv-header ${scrolled || open ? "kv-header--scrolled" : ""}`}>
         <div className="kv-header-bar">
           <Link to="/" className="kv-header-logo" aria-label="Kulmen Visuals, inicio">
             <img
