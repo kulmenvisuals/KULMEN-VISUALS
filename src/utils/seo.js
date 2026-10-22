@@ -11,6 +11,15 @@ import {
 
 export { siteUrl }
 
+const brandSuffix = ' | Kulmen Visuals'
+const maxTitleLength = 65
+
+// Añade la marca solo si el title no supera el límite recomendado.
+export function brandTitle(title = '') {
+  const full = `${title}${brandSuffix}`
+  return full.length <= maxTitleLength ? full : title
+}
+
 const defaultSeo = {
   title: 'Producción audiovisual con drones FPV en Galicia | Kulmen Visuals',
   description:
@@ -220,7 +229,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/servicios') {
     return buildSeo({
-      title: 'Servicios de producción audiovisual y dron FPV en Galicia | Kulmen Visuals',
+      title: 'Servicios de producción audiovisual y dron FPV en Galicia',
       description:
         'Producción audiovisual completa en Galicia: vídeo para marcas, FPV profesional, edición y contenido para redes. Conoce todos los servicios de Kulmen Visuals.',
       pathname: path,
@@ -277,7 +286,7 @@ export function resolveRouteSeo(pathname = '/') {
           }
 
       return buildSeo({
-        title: `${project.title} | Kulmen Visuals`,
+        title: brandTitle(project.title),
         description: projectDescription,
         pathname: path,
         image: project.thumbnail || project.images?.[0] || defaultOgImage,
@@ -343,7 +352,7 @@ export function resolveRouteSeo(pathname = '/') {
 
     if (post) {
       return buildSeo({
-        title: `${post.title} | Kulmen Visuals`,
+        title: brandTitle(post.seoTitle || post.title),
         description: post.excerpt,
         pathname: path,
         ogType: 'article',
@@ -448,7 +457,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/dron-para-inmobiliarias') {
     return buildSeo({
-      title: 'Servicios de dron para inmobiliarias | Vídeo y foto aérea de propiedades',
+      title: 'Dron para inmobiliarias | Vídeo y foto aérea de propiedades',
       description:
         'Dron para inmobiliaria: foto y vídeo aéreo de propiedades, parcelas y urbanizaciones en España. Piloto certificado con permisos. Acelera la venta con imágenes únicas.',
       pathname: path,
@@ -475,7 +484,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/produccion-audiovisual-galicia') {
     return buildSeo({
-      title: 'Producción audiovisual en Galicia | Vídeo para marcas, empresas y eventos',
+      title: 'Producción audiovisual en Galicia | Vídeo para marcas y eventos',
       description:
         'Servicio de producción audiovisual en Galicia: spots, vídeo corporativo, eventos y videoclips. Preproducción, rodaje con cámara de cine y dron FPV, y edición. Presupuesto cerrado sin compromiso.',
       pathname: path,
@@ -484,7 +493,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/edicion-y-postproduccion-de-video') {
     return buildSeo({
-      title: 'Edición y postproducción de vídeo | Montaje, color y formatos para redes',
+      title: 'Edición y postproducción de vídeo | Montaje, color y redes',
       description:
         'Servicio profesional de edición y postproducción de vídeo: montaje, corrección de color, audio y versiones para redes. Desde tu material o desde rodaje propio. En remoto para toda España.',
       pathname: path,
@@ -493,7 +502,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/contenido-para-redes-sociales') {
     return buildSeo({
-      title: 'Contenido para redes sociales | Vídeo profesional para Reels, TikTok y Shorts',
+      title: 'Contenido para redes sociales | Vídeo para Reels, TikTok y Shorts',
       description:
         'Producción de contenido de vídeo para redes sociales: Reels, TikTok, Shorts y UGC para empresas. Grabación vertical, edición con gancho y packs mensuales. Base en Galicia, servicio en toda España.',
       pathname: path,
@@ -502,7 +511,7 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/fotografia-y-video-de-bodas') {
     return buildSeo({
-      title: 'Fotografía y vídeo de bodas en Galicia | FPV y entrega de anillos con dron',
+      title: 'Fotografía y vídeo de bodas en Galicia | FPV y anillos con dron',
       description:
         'Fotografía y vídeo de boda en Galicia: reportaje, película del día, planos aéreos FPV y entrega de anillos con dron. Piloto de drones certificada. Presupuesto sin compromiso.',
       pathname: path,

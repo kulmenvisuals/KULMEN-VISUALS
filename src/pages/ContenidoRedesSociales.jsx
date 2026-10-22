@@ -46,7 +46,7 @@ const faqs = [
 
 const data = {
   seo: {
-    title: 'Contenido para redes sociales | Vídeo profesional para Reels, TikTok y Shorts',
+    title: 'Contenido para redes sociales | Vídeo para Reels, TikTok y Shorts',
     description:
       'Producción de contenido de vídeo para redes sociales: Reels, TikTok, Shorts y UGC para empresas. Grabación vertical, edición con gancho y packs mensuales. Base en Galicia, servicio en toda España.',
     pathname: '/contenido-para-redes-sociales',

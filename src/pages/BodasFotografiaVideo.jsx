@@ -45,7 +45,7 @@ const faqs = [
 
 const data = {
   seo: {
-    title: 'Fotografía y vídeo de bodas en Galicia | FPV y entrega de anillos con dron',
+    title: 'Fotografía y vídeo de bodas en Galicia | FPV y anillos con dron',
     description:
       'Fotografía y vídeo de boda en Galicia: reportaje, película del día, planos aéreos FPV y entrega de anillos con dron. Piloto de drones certificada. Presupuesto sin compromiso.',
     pathname: '/fotografia-y-video-de-bodas',

@@ -41,7 +41,7 @@ const faqs = [
 
 const data = {
   seo: {
-    title: 'Producción audiovisual en Galicia | Vídeo para marcas, empresas y eventos',
+    title: 'Producción audiovisual en Galicia | Vídeo para marcas y eventos',
     description:
       'Servicio de producción audiovisual en Galicia: spots, vídeo corporativo, eventos y videoclips. Preproducción, rodaje con cámara de cine y dron FPV, y edición. Presupuesto cerrado sin compromiso.',
     pathname: '/produccion-audiovisual-galicia',

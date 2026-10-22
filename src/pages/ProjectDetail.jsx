@@ -3,8 +3,10 @@ import { useMemo, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { projects } from "../data/projects.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
+import ProjectCard from "../components/ProjectCard.jsx"
 import { normalizeSlug } from "../utils/slug.js"
-import { usePageSeo, useJsonLd, siteUrl } from "../utils/seo.js"
+import { getRelatedItems, getProjectTerms } from "../utils/related.js"
+import { usePageSeo, useJsonLd, siteUrl, brandTitle } from "../utils/seo.js"
 import { defaultOgImage, getProjectPath } from "../utils/routes.js"
 
 export default function ProjectDetail() {
@@ -21,7 +23,7 @@ export default function ProjectDetail() {
   })
 
   const pageSeo = useMemo(() => project ? {
-    title: `${project.title} | Kulmen Visuals`,
+    title: brandTitle(project.title),
     description: project.description || 'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.',
     pathname: getProjectPath(project),
     image: project.thumbnail || project.images?.[0] || defaultOgImage,
@@ -123,6 +125,7 @@ export default function ProjectDetail() {
   const hasLocalVideo = Boolean(project.videoUrl)
   const hasInstagram = Boolean(instagramEmbedUrl)
   const useInstagramSplit = hasInstagram && !hasYoutube && !hasVimeo && !hasLocalVideo
+  const relatedProjects = getRelatedItems(projects, project, getProjectTerms, 3)
   const hasMultipleVideos = Array.isArray(project.videos) && project.videos.length > 0
   const hasOnlyVerticalVideos = hasMultipleVideos && project.videos.every((video) => video.aspect === "9/16")
   const verticalVideosCount = hasOnlyVerticalVideos ? project.videos.length : 0
@@ -400,6 +403,23 @@ export default function ProjectDetail() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Proyectos relacionados */}
+        {relatedProjects.length > 0 && (
+          <section className="space-y-4">
+            <div className="flex items-baseline justify-between gap-4">
+              <h2 className="kv-section-title">Más proyectos</h2>
+              <Link to="/proyectos/" className="kv-caption text-zinc-400 hover:text-amber-300">
+                Ver todo el portfolio
+              </Link>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {relatedProjects.map((item) => (
+                <ProjectCard key={item.id} project={item} />
               ))}
             </div>
           </section>

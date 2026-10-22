@@ -8,6 +8,7 @@ export const blogPosts = [
     id: "cobertura-drones-fpv-eventos-galicia",
     slug: "cobertura-drones-fpv-eventos-galicia",
     title: "Cobertura con drones FPV para eventos en Galicia: qué aporta y cómo se planifica",
+    seoTitle: "Drones FPV para eventos en Galicia: qué aportan y cómo se planifican",
     excerpt:
       "Qué puede aportar una cobertura con drones FPV en festivales, eventos de marca y competiciones en Galicia, cómo se organiza el vuelo y qué debe incluir un servicio profesional.",
     date: "2026-07-04",

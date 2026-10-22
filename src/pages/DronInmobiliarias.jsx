@@ -2,7 +2,7 @@ import DronLanding from '../components/DronLanding.jsx'
 
 const data = {
   seo: {
-    title: 'Servicios de dron para inmobiliarias | Vídeo y foto aérea de propiedades',
+    title: 'Dron para inmobiliarias | Vídeo y foto aérea de propiedades',
     description:
       'Dron para inmobiliaria: foto y vídeo aéreo de propiedades, parcelas y urbanizaciones en España. Piloto certificado con permisos. Acelera la venta con imágenes únicas.',
     pathname: '/dron-para-inmobiliarias',

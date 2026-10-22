@@ -46,7 +46,7 @@ const faqs = [
 
 const data = {
   seo: {
-    title: 'Edición y postproducción de vídeo | Montaje, color y formatos para redes',
+    title: 'Edición y postproducción de vídeo | Montaje, color y redes',
     description:
       'Servicio profesional de edición y postproducción de vídeo: montaje, corrección de color, audio y versiones para redes. Desde tu material o desde rodaje propio. En remoto para toda España.',
     pathname: '/edicion-y-postproduccion-de-video',

@@ -274,7 +274,7 @@ const mainServices = [
 ]
 
 const serviciosSeo = {
-  title: 'Servicios de producción audiovisual y dron FPV en Galicia | Kulmen Visuals',
+  title: 'Servicios de producción audiovisual y dron FPV en Galicia',
   description:
     'Producción audiovisual completa en Galicia: vídeo para marcas, FPV profesional, edición y contenido para redes. Conoce todos los servicios de Kulmen Visuals.',
   pathname: '/servicios',

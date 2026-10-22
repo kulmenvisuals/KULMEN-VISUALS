@@ -4,7 +4,8 @@ import { Link, useParams } from "react-router-dom"
 import { blogPosts } from "../data/blogPosts.js"
 import { normalizeSlug } from "../utils/slug.js"
 import { getBlogPostPath } from "../utils/routes.js"
-import { usePageSeo, useJsonLd, siteUrl } from "../utils/seo.js"
+import { getRelatedItems, getPostTerms } from "../utils/related.js"
+import { usePageSeo, useJsonLd, siteUrl, brandTitle } from "../utils/seo.js"
 import { defaultOgImage } from "../utils/routes.js"
 
 const formatDate = (value) =>
@@ -28,7 +29,7 @@ export default function BlogPost() {
   }, [slug])
 
   const pageSeo = useMemo(() => post ? {
-    title: `${post.title} | Kulmen Visuals`,
+    title: brandTitle(post.seoTitle || post.title),
     description: post.excerpt,
     pathname: getBlogPostPath(post),
     ogType: 'article',
@@ -91,10 +92,7 @@ export default function BlogPost() {
     )
   }
 
-  const relatedPosts = blogPosts
-    .filter((item) => item.id !== post.id)
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3)
+  const relatedPosts = getRelatedItems(blogPosts, post, getPostTerms, 3)
 
   return (
     <div className="bg-zinc-950 text-zinc-50 min-h-screen">
