@@ -49,6 +49,34 @@ const servicios = [
   },
 ]
 
+const zonasGalicia = [
+  {
+    zona: 'Pontevedra',
+    proyecto: 'Cobertura FPV de Surfing The Lérez',
+    to: '/proyectos/cobertura-fpv-surfing-the-lerez-2026/',
+  },
+  {
+    zona: 'Santiago de Compostela',
+    proyecto: 'Cobre San Rafael x Campus Xacobeo',
+    to: '/proyectos/cobre-san-rafael-campus-xacobeo/',
+  },
+  {
+    zona: 'A Estrada',
+    proyecto: 'Anuncio oficial de AE League 2026',
+    to: '/proyectos/ae-league-2026-anuncio-oficial/',
+  },
+  {
+    zona: 'Padrón',
+    proyecto: 'Drone tour FPV de O Lagar de Jesús',
+    to: '/proyectos/drone-tour-fpv-albergue-o-lagar-de-jesus/',
+  },
+  {
+    zona: 'Lugo',
+    proyecto: 'Vídeo inmobiliario de un pazo',
+    to: '/proyectos/video-inmobiliario-rrss-pazo-lugo/',
+  },
+]
+
 const proceso = [
   {
     id: 'pre',
@@ -71,6 +99,16 @@ const proceso = [
 ]
 
 const faqItems = [
+  {
+    question: '¿Qué hace una productora audiovisual?',
+    answer:
+      'Convierte una necesidad de comunicación en un vídeo terminado: define el objetivo y el guion, organiza y realiza el rodaje (cámara, dron, sonido) y se encarga de la edición, el color, la música y las versiones para cada canal. En Kulmen Visuals cubro las tres fases para empresas, marcas, eventos y espacios de toda Galicia.',
+  },
+  {
+    question: '¿Por qué elegir una productora audiovisual independiente y no una empresa grande?',
+    answer:
+      'Porque hablas directamente con quien graba y edita tu vídeo, sin intermediarios ni costes de estructura. Para pymes, eventos, turismo y contenido recurrente suele ser la opción más ágil y rentable. Cuando un proyecto necesita más equipo, lo sumo según la producción, manteniendo una sola interlocutora.',
+  },
   {
     question: '¿Qué tipo de proyectos audiovisuales realizas?',
     answer:
@@ -147,7 +185,7 @@ const homeSchema = {
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://kulmenvisuals.com/#localbusiness",
       name: "Kulmen Visuals",
-      description: "Productora audiovisual y servicios de drones FPV en Galicia",
+      description: "Productora audiovisual en Galicia: vídeo para empresas, publicidad, eventos, contenido para redes y grabación con drones FPV.",
       url: "https://kulmenvisuals.com",
       logo: "https://kulmenvisuals.com/logo-kulmen-visuals.png",
       image: "https://kulmenvisuals.com/images/hero-poster.webp",
@@ -160,11 +198,17 @@ const homeSchema = {
         addressRegion: "Galicia",
         addressCountry: "ES",
       },
-      areaServed: {
-        "@type": "State",
-        name: "Galicia",
-        containedInPlace: { "@type": "Country", name: "España" },
-      },
+      areaServed: [
+        {
+          "@type": "State",
+          name: "Galicia",
+          containedInPlace: { "@type": "Country", name: "España" },
+        },
+        ...["Pontevedra", "Vigo", "Santiago de Compostela", "A Coruña", "Lugo", "Ourense"].map((name) => ({
+          "@type": "City",
+          name,
+        })),
+      ],
       founder: {
         "@type": "Person",
         name: "io Rodríguez",
@@ -213,9 +257,9 @@ const homeSchema = {
 }
 
 const homeSeo = {
-  title: 'Producción audiovisual con drones FPV en Galicia | Kulmen Visuals',
+  title: 'Productora audiovisual en Galicia con drones FPV | Kulmen Visuals',
   description:
-    'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Pide presupuesto sin compromiso.',
+    'Productora audiovisual en Galicia: vídeo para empresas, publicidad, eventos y drones FPV. Base en Pontevedra y rodajes en toda Galicia. Pide presupuesto.',
   pathname: '/',
 }
 
@@ -350,14 +394,13 @@ export default function Home() {
         >
           <div className="max-w-3xl">
             <h1 className="kv-hero-title mb-5">
-              Producción audiovisual con{' '}
-              <span className="text-amber-400">drones FPV</span> en
-              Galicia.
+              Productora audiovisual en Galicia con{' '}
+              <span className="text-amber-400">drones FPV</span>.
             </h1>
             <p className="kv-lede max-w-xl mb-8">
-              Vídeos para marcas, espacios y eventos que necesitan destacar.
-              Grabación y edición pensados para obtener el mayor impacto en
-              redes, campañas y web.
+              Vídeo para empresas, marcas, espacios y eventos que necesitan
+              destacar. Preproducción, rodaje con cámara de cine y dron, y
+              edición pensada para redes, campañas y web.
             </p>
 
             <div className="flex flex-wrap gap-3 md:hidden">
@@ -463,6 +506,9 @@ export default function Home() {
           ))}
           <div className="border-t border-white/10" />
         </div>
+        <Link to="/servicios/" className="kv-button-secondary mt-10">
+          Ver todos los servicios audiovisuales
+        </Link>
       </section>
 
       {/* Enfoque estratégico: split editorial */}
@@ -546,6 +592,60 @@ export default function Home() {
             ))}
           </div>
         )}
+      </section>
+
+      {/* Cobertura local: proyectos reales por zona */}
+      <section className="border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 py-20 md:py-28">
+          <div className="grid gap-12 md:gap-16 md:grid-cols-[0.9fr_1.1fr]">
+            <Reveal>
+              <h2 className="kv-section-title mb-4">
+                Productora audiovisual en toda Galicia
+              </h2>
+              <p className="kv-body-muted mb-4">
+                Tengo base en Pontevedra y ruedo en las cuatro provincias. La
+                mayor parte de Galicia está a menos de dos horas, así que el
+                desplazamiento rara vez encarece el proyecto.
+              </p>
+              <p className="kv-body-muted mb-6">
+                Conocer el territorio ayuda: la luz cambiante, los permisos de
+                vuelo en cada zona y los lugares que funcionan en cámara, de las
+                Rías Baixas a la Ribeira Sacra.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link to="/galicia/grabacion-con-drones/" className="kv-button-secondary text-sm">
+                  Drones en Galicia
+                </Link>
+                <Link to="/pontevedra/grabacion-con-drones/" className="kv-button-secondary text-sm">
+                  Drones en Pontevedra
+                </Link>
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <ul className="divide-y divide-white/10 border-y border-white/10">
+                {zonasGalicia.map((item) => (
+                  <li key={item.to}>
+                    <Link
+                      to={item.to}
+                      className="group grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)_auto] items-center gap-4 py-4"
+                    >
+                      <span className="text-sm uppercase tracking-[0.14em] text-zinc-500">
+                        {item.zona}
+                      </span>
+                      <span className="text-zinc-200 group-hover:text-amber-300 transition-colors">
+                        {item.proyecto}
+                      </span>
+                      <ArrowRight
+                        className="h-4 w-4 text-zinc-700 transition duration-300 group-hover:text-amber-400 group-hover:translate-x-1"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
       </section>
 
       {/* Detrás de la cámara: io */}

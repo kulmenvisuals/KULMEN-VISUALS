@@ -25,9 +25,9 @@ export function brandTitle(title = '') {
 }
 
 const defaultSeo = {
-  title: 'Producción audiovisual con drones FPV en Galicia | Kulmen Visuals',
+  title: 'Productora audiovisual en Galicia con drones FPV | Kulmen Visuals',
   description:
-    'Productora audiovisual y piloto FPV en Galicia. Rodaje, drones FPV cinematográficos y edición para marcas, eventos y turismo. Solicita presupuesto.',
+    'Productora audiovisual en Galicia: vídeo para empresas, publicidad, eventos y drones FPV. Base en Pontevedra y rodajes en toda Galicia. Pide presupuesto.',
   pathname: '/',
   ogType: 'website',
   image: defaultOgImage,
@@ -290,9 +290,9 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/servicios') {
     return buildSeo({
-      title: 'Servicios de producción audiovisual y dron FPV en Galicia',
+      title: 'Productora de vídeo | Servicios audiovisuales para empresas',
       description:
-        'Producción audiovisual completa en Galicia: vídeo para marcas, FPV profesional, edición y contenido para redes. Conoce todos los servicios de Kulmen Visuals.',
+        'Productora de vídeo independiente en Galicia: vídeo corporativo, publicidad, eventos, redes sociales, drones FPV y edición. Proyecto cerrado, packs o jornadas.',
       pathname: path,
     })
   }
