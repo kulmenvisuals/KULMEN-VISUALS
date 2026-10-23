@@ -1,8 +1,12 @@
 import { useEffect } from 'react'
+import { blogPosts } from '../data/blogPosts.js'
+import { projects } from '../data/projects.js'
 import {
   defaultOgImage,
   findBlogPostBySlug,
   findProjectBySlug,
+  getBlogPostPath,
+  getProjectPath,
   normalizePathname,
   routes,
   siteUrl,
@@ -49,6 +53,34 @@ function absoluteUrl(value = '/') {
 
 function absolutePageUrl(pathname = '/') {
   return absoluteUrl(withTrailingSlash(pathname))
+}
+
+const organizationRef = {
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#localbusiness`,
+  name: 'Kulmen Visuals',
+  url: siteUrl,
+}
+
+function collectionSchema({ name, pathname, items }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    url: absolutePageUrl(pathname),
+    inLanguage: 'es-ES',
+    publisher: organizationRef,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: items.length,
+      itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        url: absolutePageUrl(item.path),
+      })),
+    },
+  }
 }
 
 function buildSeo(overrides = {}) {
@@ -159,6 +191,35 @@ export function applyPageSeo(seoInput) {
   })
 }
 
+// Añade un FAQPage generado desde las FAQs visibles si el schema aún no lo tiene.
+export function withFaqSchema(schema, faqs = []) {
+  if (!faqs.length) return schema
+
+  const graph = schema ? schema['@graph'] || [schema] : []
+  if (graph.some((node) => node['@type'] === 'FAQPage')) return schema
+
+  const faqPage = {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ...graph.map((node) => {
+        const copy = { ...node }
+        delete copy['@context']
+        return copy
+      }),
+      faqPage,
+    ],
+  }
+}
+
 export function usePageSeo(seo) {
   useEffect(() => {
     applyPageSeo(seo)
@@ -242,6 +303,11 @@ export function resolveRouteSeo(pathname = '/') {
       description:
         'Portfolio de proyectos audiovisuales, videos de marca, eventos, FPV y contenido para redes sociales producidos por Kulmen Visuals.',
       pathname: path,
+      jsonLd: collectionSchema({
+        name: 'Proyectos de Kulmen Visuals',
+        pathname: path,
+        items: projects.map((project) => ({ name: project.title, path: getProjectPath(project) })),
+      }),
     })
   }
 
@@ -324,6 +390,25 @@ export function resolveRouteSeo(pathname = '/') {
       description:
         'Solicita presupuesto para vídeo, dron FPV, eventos o contenido de marca en Galicia y resto de España.',
       pathname: path,
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contacto | Kulmen Visuals',
+        url: absolutePageUrl(path),
+        mainEntity: {
+          ...organizationRef,
+          email: 'hola@kulmenvisuals.com',
+          telephone: '+34 652405654',
+          contactPoint: {
+            '@type': 'ContactPoint',
+            contactType: 'customer service',
+            email: 'hola@kulmenvisuals.com',
+            telephone: '+34 652405654',
+            availableLanguage: 'es',
+            areaServed: 'ES',
+          },
+        },
+      },
     })
   }
 
@@ -343,6 +428,11 @@ export function resolveRouteSeo(pathname = '/') {
       description:
         'Blog de producción audiovisual y drones FPV en Galicia. Guías prácticas sobre vídeo para marcas, turismo y eventos.',
       pathname: path,
+      jsonLd: collectionSchema({
+        name: 'Blog de Kulmen Visuals',
+        pathname: path,
+        items: blogPosts.map((post) => ({ name: post.title, path: getBlogPostPath(post) })),
+      }),
     })
   }
 

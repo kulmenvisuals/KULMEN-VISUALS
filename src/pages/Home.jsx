@@ -144,7 +144,7 @@ const homeSchema = {
       publisher: { "@id": "https://kulmenvisuals.com/#localbusiness" },
     },
     {
-      "@type": ["LocalBusiness", "VideoProductionCompany"],
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://kulmenvisuals.com/#localbusiness",
       name: "Kulmen Visuals",
       description: "Productora audiovisual y servicios de drones FPV en Galicia",
@@ -163,7 +163,7 @@ const homeSchema = {
       areaServed: {
         "@type": "State",
         name: "Galicia",
-        containedIn: { "@type": "Country", name: "España" },
+        containedInPlace: { "@type": "Country", name: "España" },
       },
       founder: {
         "@type": "Person",

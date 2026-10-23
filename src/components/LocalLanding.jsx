@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Shield, CheckCircle2 } from 'lucide-react'
-import { usePageSeo } from '../utils/seo.js'
+import { usePageSeo, withFaqSchema } from '../utils/seo.js'
 
 export default function LocalLanding({ data }) {
   usePageSeo(data.seo)
+  const schema = withFaqSchema(data.schema, data.faqs)
 
   return (
     <div className="bg-zinc-950 text-zinc-50">
       {/* Schema inline: presente en el HTML prerenderizado para crawlers sin JS */}
-      {data.schema && (
+      {schema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(data.schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       )}
       {/* HERO */}
