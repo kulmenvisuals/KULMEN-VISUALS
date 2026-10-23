@@ -28,6 +28,7 @@ export const routes = {
   edicionPostproduccion: '/edicion-y-postproduccion-de-video/',
   contenidoRedes: '/contenido-para-redes-sociales/',
   bodasFotografiaVideo: '/fotografia-y-video-de-bodas/',
+  fotografiaAerea: '/fotografia-aerea-con-dron-galicia/',
   galiciaGrabacion: '/galicia/grabacion-con-drones/',
   pontevedraGrabacion: '/pontevedra/grabacion-con-drones/',
 }
@@ -55,6 +56,7 @@ export const staticRoutes = [
   routes.edicionPostproduccion,
   routes.contenidoRedes,
   routes.bodasFotografiaVideo,
+  routes.fotografiaAerea,
   routes.galiciaGrabacion,
   routes.pontevedraGrabacion,
 ]

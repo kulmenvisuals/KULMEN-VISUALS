@@ -25,6 +25,7 @@ import ProduccionAudiovisual from './pages/ProduccionAudiovisual.jsx'
 import EdicionPostproduccion from './pages/EdicionPostproduccion.jsx'
 import ContenidoRedesSociales from './pages/ContenidoRedesSociales.jsx'
 import BodasFotografiaVideo from './pages/BodasFotografiaVideo.jsx'
+import FotografiaAerea from './pages/FotografiaAerea.jsx'
 import GaliciaGrabacion from './pages/GaliciaGrabacion.jsx'
 import PontevedraGrabacion from './pages/PontevedraGrabacion.jsx'
 
@@ -57,6 +58,7 @@ export function AppRouter() {
         <Route path="edicion-y-postproduccion-de-video" element={<EdicionPostproduccion />} />
         <Route path="contenido-para-redes-sociales" element={<ContenidoRedesSociales />} />
         <Route path="fotografia-y-video-de-bodas" element={<BodasFotografiaVideo />} />
+        <Route path="fotografia-aerea-con-dron-galicia" element={<FotografiaAerea />} />
         {/* SEO landing pages — local */}
         <Route path="galicia">
           <Route path="grabacion-con-drones" element={<GaliciaGrabacion />} />

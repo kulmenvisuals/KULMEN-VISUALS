@@ -412,9 +412,9 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/servicios-grabacion-con-drones') {
     return buildSeo({
-      title: 'Servicios de grabación con drones | FPV, eventos, empresa y rodajes',
+      title: 'Grabación aérea con dron | Servicios de drones profesionales',
       description:
-        'Grabación con drones profesionales en España: FPV, cine, vídeo corporativo, eventos e inmobiliaria. Piloto con permisos AESA. Presupuesto sin compromiso.',
+        'Grabación aérea con dron en España: vídeo FPV, fotografía aérea, eventos, empresas e inmobiliaria. Piloto certificada EASA con más de 5 años de experiencia.',
       pathname: path,
     })
   }
@@ -514,6 +514,15 @@ export function resolveRouteSeo(pathname = '/') {
       title: 'Fotografía y vídeo de bodas en Galicia | FPV y anillos con dron',
       description:
         'Fotografía y vídeo de boda en Galicia: reportaje, película del día, planos aéreos FPV y entrega de anillos con dron. Piloto de drones certificada. Presupuesto sin compromiso.',
+      pathname: path,
+    })
+  }
+
+  if (path === '/fotografia-aerea-con-dron-galicia') {
+    return buildSeo({
+      title: 'Fotografía aérea con dron en Galicia | Fotos para empresas',
+      description:
+        'Fotografía aérea con dron en Galicia para inmobiliarias, alojamientos, obras y empresas. 20-30 fotos editadas en 24-48 h, RAW y 360°. Piloto certificada EASA.',
       pathname: path,
     })
   }

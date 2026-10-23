@@ -95,6 +95,33 @@ export default function DronLanding({ data }) {
         </section>
       )}
 
+      {/* GALERÍA (solo se muestra cuando hay imágenes) */}
+      {data.galeria?.items?.length > 0 && (
+        <section className="border-t border-zinc-900">
+          <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+            <h2 className="kv-section-title mb-3">{data.galeria.title}</h2>
+            {data.galeria.text && <p className="kv-body-muted max-w-2xl mb-8">{data.galeria.text}</p>}
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {data.galeria.items.map((item) => (
+                <figure key={item.src} className="space-y-2">
+                  <div className="overflow-hidden rounded-2xl border border-white/5 aspect-[4/3]">
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="h-full w-full object-cover"
+                      width="1200"
+                      height="900"
+                      loading="lazy"
+                    />
+                  </div>
+                  {item.caption && <figcaption className="kv-caption text-zinc-500">{item.caption}</figcaption>}
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* QUÉ INCLUYE */}
       {data.incluye && (
         <section className="border-t border-zinc-900 bg-zinc-950/60">
@@ -230,7 +257,7 @@ export default function DronLanding({ data }) {
               Pedir presupuesto
             </Link>
             <Link to="/servicios-grabacion-con-drones/" className="kv-button-secondary">
-              Ver todos los servicios
+              Todos los servicios de grabación aérea
             </Link>
           </div>
         </div>

@@ -5,6 +5,92 @@ const assetBase =
 
 export const blogPosts = [
   {
+    id: "fotografia-aerea-para-empresas",
+    slug: "fotografia-aerea-para-empresas",
+    title: "Fotografía aérea para empresas: usos, formatos y qué pedir antes de contratar",
+    seoTitle: "Fotografía aérea con dron para empresas: usos, formatos y permisos",
+    excerpt:
+      "Para qué usan la fotografía aérea con dron inmobiliarias, alojamientos, constructoras e industria, qué formatos existen y qué pedir antes de contratar.",
+    date: "2026-10-23",
+    readTime: "8 min",
+    category: "Espacios",
+    cover: `${assetBase}images/projects/video-inmobiliario-galicia-2-1620.jpg`,
+    tags: ["fotografía aérea", "dron", "empresas", "inmobiliaria", "construcción", "Galicia"],
+    service: {
+      to: "/fotografia-aerea-con-dron-galicia/",
+      label: "Servicio de fotografía aérea con dron en Galicia →",
+    },
+    sections: [
+      {
+        title: "Qué es la fotografía aérea con dron (y por qué no vale Google Maps)",
+        paragraphs: [
+          "La fotografía aérea con dron son fotos tomadas desde entre unos pocos metros y 120 metros de altura, con una cámara de alta resolución y un piloto que decide el encuadre, la hora y el punto de vista. No es lo mismo que una vista de satélite: la imagen es actual, tiene detalle real y se puede tomar en diagonal, que es el ángulo que mejor explica un espacio.",
+          "Para una empresa, la diferencia práctica es que la foto aérea se convierte en material de comunicación: sirve para vender una propiedad, llenar un alojamiento, presentar una obra a inversores o enseñar unas instalaciones en una licitación.",
+        ],
+      },
+      {
+        title: "Para qué la usan las empresas, sector por sector",
+        bullets: [
+          "Inmobiliarias: enseñar la parcela, los límites, el acceso y el entorno de una vivienda, pazo o finca. Es la foto que hace que el comprador entienda la propiedad antes de visitarla.",
+          "Alojamientos turísticos: casas rurales, cabañas y hoteles usan la foto aérea como portada en su web, Booking, Airbnb y Google. Enseña el paisaje, que muchas veces es el verdadero motivo de la reserva.",
+          "Obra y construcción: fotos desde los mismos puntos en cada visita para documentar el avance, informar a inversores y entidades financieras y preparar la venta de la promoción.",
+          "Empresas e industria: naves, fábricas y sedes vistas desde el aire para la web corporativa, memorias anuales, dosieres comerciales y licitaciones, donde la escala de las instalaciones es un argumento.",
+        ],
+      },
+      {
+        title: "Foto o vídeo aéreo: cuándo conviene cada uno",
+        paragraphs: [
+          "La foto aérea funciona donde el usuario mira y compara: portales inmobiliarios, fichas de alojamiento, catálogos, impresión y la ficha de Google. El vídeo funciona donde hay que captar atención en segundos: redes sociales, anuncios y la cabecera de una web.",
+          "En la práctica, lo más eficiente suele ser combinarlos en la misma sesión: el desplazamiento, la revisión del espacio aéreo y los permisos son los mismos, y se sale con material para todos los canales.",
+        ],
+      },
+      {
+        title: "Qué formatos existen y cuál necesitas",
+        bullets: [
+          "Foto editada: corrección de color, horizonte enderezado y retoque. Es el formato estándar para web, portales y redes.",
+          "HDR: combina varias exposiciones de la misma toma para que el cielo y las zonas en sombra se vean bien a la vez. Muy útil en inmobiliaria y en Galicia, donde los cielos cambian rápido y el contraste entre luz y sombra es fuerte.",
+          "Panorámica y 360°: imágenes amplias o esféricas que se integran en tours virtuales y fichas interactivas de propiedades y alojamientos.",
+          "RAW: el archivo original del sensor, sin procesar. Pídelo si tu agencia o equipo de diseño va a editar las fotos con su propio estilo.",
+        ],
+      },
+      {
+        title: "Permisos, seguro y privacidad",
+        paragraphs: [
+          "Quien vuela con fines profesionales en España tiene que estar registrado como operador UAS en AESA, tener el certificado de piloto correspondiente y un seguro de responsabilidad civil. Antes de cada vuelo debe revisar el espacio aéreo: cerca de aeropuertos, en núcleos urbanos o en espacios naturales protegidos hay que tramitar autorizaciones, y eso puede llevar semanas.",
+          "La privacidad también cuenta. Una foto aérea puede captar a vecinos, matrículas o el interior de otras parcelas. Un profesional encuadra para evitarlo y, si algo se cuela, lo retoca antes de entregar. Recuerda que la responsabilidad de publicar una imagen también alcanza a quien la usa.",
+        ],
+      },
+      {
+        title: "Cómo preparar el espacio para la sesión",
+        bullets: [
+          "Retira coches, contenedores y elementos provisionales de las zonas que se van a ver.",
+          "Ordena exteriores: toldos recogidos o abiertos según el estilo que quieras, piscina limpia, césped cortado.",
+          "Elige la hora con el piloto: la luz lateral de primera hora o de última de la tarde da volumen; el mediodía aplana.",
+          "Deja margen para el tiempo: en Galicia la lluvia y el viento obligan a veces a mover la sesión. Pregunta cómo se gestiona una reprogramación.",
+        ],
+      },
+      {
+        title: "Qué pedir en el presupuesto",
+        bullets: [
+          "Número de fotos editadas incluidas y si hay HDR o panorámicas.",
+          "Plazo de entrega de las fotos.",
+          "Si se entregan los RAW originales.",
+          "Qué usos están permitidos: web, portales, redes, impresión o publicidad.",
+          "Si incluye la revisión del espacio aéreo y los permisos.",
+          "Número de operador AESA y póliza de seguro del piloto.",
+          "Qué pasa si hay que aplazar la sesión por meteorología.",
+        ],
+      },
+      {
+        title: "Cómo lo trabajo en Kulmen Visuals",
+        paragraphs: [
+          "En una sesión típica entrego entre 20 y 30 fotos editadas en 24-48 horas, con HDR en los espacios que lo necesitan, panorámicas o 360° si el proyecto lo pide y los RAW originales si tu equipo los quiere. Reviso el espacio aéreo y gestiono los permisos, y puedo combinar la sesión de fotos con vídeo aéreo en el mismo desplazamiento.",
+          "He hecho fotografía aérea para inmobiliarias como Grupo Country Homes o Land of Eve y para alojamientos como Cabañas Ribeira Sacra y Seiscerocatro Suitel. Si tienes un espacio en Galicia que enseñar desde el aire, cuéntame qué necesitas y te preparo una propuesta cerrada.",
+        ],
+      },
+    ],
+  },
+  {
     id: "cobertura-drones-fpv-eventos-galicia",
     slug: "cobertura-drones-fpv-eventos-galicia",
     title: "Cobertura con drones FPV para eventos en Galicia: qué aporta y cómo se planifica",

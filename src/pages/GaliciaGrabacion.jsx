@@ -135,6 +135,11 @@ const data = {
       desc: 'Foto y vídeo aéreo de propiedades en Galicia.',
     },
     {
+      to: '/fotografia-aerea-con-dron-galicia/',
+      label: 'Fotografía aérea con dron en Galicia',
+      desc: 'Fotos aéreas para inmobiliarias, alojamientos, obras y empresas.',
+    },
+    {
       to: '/pontevedra/grabacion-con-drones/',
       label: 'Grabación con drones en Pontevedra',
       desc: 'Servicio específico para la provincia de Pontevedra.',

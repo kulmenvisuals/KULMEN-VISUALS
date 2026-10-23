@@ -167,6 +167,14 @@ export default function BlogPost() {
               <Link to="/contacto/" className="kv-button-primary kv-button-accent">
                 Solicitar propuesta
               </Link>
+              {post.service && (
+                <Link
+                  to={post.service.to}
+                  className="block kv-caption text-amber-300 hover:text-amber-200 underline decoration-amber-300/30 underline-offset-4"
+                >
+                  {post.service.label}
+                </Link>
+              )}
             </div>
 
             <div className="rounded-2xl border border-zinc-800/70 bg-zinc-950/60 p-5 space-y-3">

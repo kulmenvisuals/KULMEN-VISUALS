@@ -20,6 +20,7 @@ const servicePages = [
   routes.edicionPostproduccion,
   routes.contenidoRedes,
   routes.bodasFotografiaVideo,
+  routes.fotografiaAerea,
   routes.galiciaGrabacion,
   routes.pontevedraGrabacion,
 ]

@@ -121,6 +121,11 @@ const data = {
 
   relatedLinks: [
     {
+      to: '/fotografia-aerea-con-dron-galicia/',
+      label: 'Fotografía aérea con dron en Galicia',
+      desc: 'Fotos aéreas editadas, HDR y 360° en 24-48 horas.',
+    },
+    {
       to: '/alquiler-drones-con-piloto/',
       label: 'Alquiler de drones con piloto',
       desc: 'Para agencias con equipo de producción propio.',
