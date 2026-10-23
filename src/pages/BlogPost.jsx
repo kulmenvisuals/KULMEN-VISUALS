@@ -8,6 +8,37 @@ import { getRelatedItems, getPostTerms } from "../utils/related.js"
 import { usePageSeo, useJsonLd, siteUrl, brandTitle } from "../utils/seo.js"
 import { defaultOgImage } from "../utils/routes.js"
 
+// Formato ligero para el texto de los posts: [texto](/ruta/) y **negrita**.
+const inlinePattern = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g
+
+function renderInline(text) {
+  const parts = []
+  let lastIndex = 0
+
+  for (const match of text.matchAll(inlinePattern)) {
+    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index))
+
+    if (match[1]) {
+      const [, label, href] = match
+      const className = "text-amber-300 hover:text-amber-200 underline decoration-amber-300/30 underline-offset-4"
+      parts.push(
+        href.startsWith("/") ? (
+          <Link key={match.index} to={href} className={className}>{label}</Link>
+        ) : (
+          <a key={match.index} href={href} target="_blank" rel="noreferrer" className={className}>{label}</a>
+        ),
+      )
+    } else {
+      parts.push(<strong key={match.index} className="text-zinc-100 font-semibold">{match[3]}</strong>)
+    }
+
+    lastIndex = match.index + match[0].length
+  }
+
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex))
+  return parts
+}
+
 const formatDate = (value) =>
   new Date(value).toLocaleDateString("es-ES", {
     year: "numeric",
@@ -49,7 +80,7 @@ export default function BlogPost() {
       description: post.excerpt,
       image: `${siteUrl}${post.cover || defaultOgImage}`,
       datePublished: post.date,
-      dateModified: post.date,
+      dateModified: post.updated || post.date,
       url: `${siteUrl}${getBlogPostPath(post)}`,
       keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
       author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi/` },
@@ -111,7 +142,9 @@ export default function BlogPost() {
           </h1>
           <div className="kv-caption text-zinc-400 flex flex-wrap gap-4">
             <span className="uppercase tracking-[0.2em]">{post.category}</span>
-            <span>{formatDate(post.date)}</span>
+            <span>
+              {post.updated ? `Actualizado el ${formatDate(post.updated)}` : formatDate(post.date)}
+            </span>
             <span>{post.readTime}</span>
           </div>
           <p className="kv-lede text-zinc-300 max-w-3xl">
@@ -133,12 +166,18 @@ export default function BlogPost() {
           <article className="space-y-8">
             {post.sections.map((section) => (
               <div key={section.title} className="space-y-4">
-                <h2 className="kv-section-title text-zinc-100">
-                  {section.title}
-                </h2>
+                {section.level === 3 ? (
+                  <h3 className="kv-card-title text-zinc-100 text-lg md:text-xl">
+                    {section.title}
+                  </h3>
+                ) : (
+                  <h2 className="kv-section-title text-zinc-100">
+                    {section.title}
+                  </h2>
+                )}
                 {section.paragraphs?.map((paragraph) => (
                   <p key={paragraph} className="kv-body-muted text-zinc-300">
-                    {paragraph}
+                    {renderInline(paragraph)}
                   </p>
                 ))}
                 {section.bullets && (
@@ -146,11 +185,28 @@ export default function BlogPost() {
                     {section.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-3">
                         <span className="kv-bullet mt-2 shrink-0" />
-                        <span>{bullet}</span>
+                        <span>{renderInline(bullet)}</span>
                       </li>
                     ))}
                   </ul>
                 )}
+                {section.steps && (
+                  <ol className="space-y-3 text-zinc-300">
+                    {section.steps.map((step, i) => (
+                      <li key={step} className="flex gap-3">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-amber-300/40 text-xs font-semibold text-amber-200">
+                          {i + 1}
+                        </span>
+                        <span>{renderInline(step)}</span>
+                      </li>
+                    ))}
+                  </ol>
+                )}
+                {section.closing?.map((paragraph) => (
+                  <p key={paragraph} className="kv-body-muted text-zinc-300">
+                    {renderInline(paragraph)}
+                  </p>
+                ))}
               </div>
             ))}
           </article>

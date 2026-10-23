@@ -33,7 +33,7 @@ const PRIORITY = {
 
 const blogRoutes = blogPosts.map((post) => ({
   loc: getBlogPostPath(post),
-  lastmod: post.date || today,
+  lastmod: post.updated || post.date || today,
   changefreq: 'monthly',
   priority: '0.8',
 }))

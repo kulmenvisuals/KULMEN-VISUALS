@@ -454,7 +454,7 @@ export function resolveRouteSeo(pathname = '/') {
           description: post.excerpt,
           image: absoluteUrl(post.cover || defaultOgImage),
           datePublished: post.date,
-          dateModified: post.date,
+          dateModified: post.updated || post.date,
           url: absolutePageUrl(path),
           keywords: Array.isArray(post.tags) ? post.tags.join(', ') : undefined,
           author: {

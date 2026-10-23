@@ -748,52 +748,106 @@ export const blogPosts = [
   {
     id: "fpv-vs-dron-convencional",
     slug: "fpv-vs-dron-convencional",
-    title: "FPV vs dron convencional: cuál necesita tu proyecto",
+    title: "Dron FPV vs dron convencional: cuál elegir para tu proyecto",
+    seoTitle: "Dron FPV vs dron convencional: cuál elegir y cuándo combinarlos",
     excerpt:
-      "No son rivales sino herramientas distintas. Te explico qué hace bien cada uno, cuándo combinarlos y cómo decidir según tu tipo de proyecto.",
+      "Diferencias entre dron FPV y dron convencional: cómo se pilotan, qué planos consigue cada uno, cuándo combinarlos y qué tener en cuenta al grabar en Galicia.",
     date: "2026-03-20",
-    readTime: "6 min",
+    updated: "2026-10-23",
+    readTime: "9 min",
     category: "FPV",
     cover: `${assetBase}images/blog-fpv.jpg`,
-    tags: ["FPV", "dron", "producción audiovisual", "cinematografía"],
+    tags: ["FPV", "dron", "dron estabilizado", "drone tour", "grabación aérea", "Galicia"],
+    service: {
+      to: "/grabacion-con-drones-fpv/",
+      label: "Servicio de grabación con drones FPV →",
+    },
     sections: [
       {
-        title: "Qué hace cada uno bien",
+        title: "Dos herramientas, dos lenguajes visuales",
         paragraphs: [
-          "El dron convencional (DJI Mini, Mavic o similar) está pensado para estabilidad. Planos altos, panorámicas, orbits lentos alrededor de un edificio o paisaje. Es predecible, fácil de controlar y genera imágenes limpias en la mayoría de condiciones.",
-          "El dron FPV está diseñado para movimiento. Permite entrar dentro de espacios, perseguir vehículos o personas, hacer transiciones imposibles con ópticas convencionales y generar esa sensación inmersiva que el espectador siente físicamente. A cambio, es más difícil de volar, más sensible al viento y requiere más experiencia del piloto.",
+          "Elegir entre un dron FPV y uno convencional define el tipo de historia que vas a contar desde el aire, mucho más que el aparato que vas a usar. Muchos clientes llegan pidiendo \"un vídeo con dron\" sin saber que existen dos herramientas muy distintas, cada una con un lenguaje visual propio. Una ofrece calma, precisión y planos limpios. La otra ofrece velocidad, cercanía y una sensación de vuelo que pega al espectador a la pantalla.",
+          "La confusión es comprensible. Desde fuera, los dos son pequeños aparatos con hélices y una cámara. En la práctica se pilotan de forma diferente, requieren habilidades distintas y producen resultados que no tienen nada que ver. Elegir mal puede convertir un vídeo inmobiliario en un mareo o una competición deportiva en una secuencia plana y sin emoción.",
+          "Esta comparativa está pensada para quien necesita decidir con criterio: agencias inmobiliarias, organizadores de eventos, parejas que preparan su boda, marcas que buscan un anuncio o clubes deportivos. La idea es que sepas exactamente qué pedir y por qué antes de contratar una [grabación aérea con dron](/servicios-grabacion-con-drones/).",
         ],
       },
       {
-        title: "Cuándo usar solo dron convencional",
+        title: "Diferencias fundamentales entre drones FPV y convencionales",
+        paragraphs: [
+          "Un dron convencional, también llamado estabilizado, está diseñado para mantenerse quieto en el aire con una precisión sorprendente. Usa GPS, sensores de posición y un gimbal de tres ejes que mantiene la cámara nivelada aunque sople el viento. El piloto puede soltar los mandos y el aparato se queda exactamente donde está. Eso permite planos lentos, cenitales y panorámicas suaves con muy poco margen de error.",
+          "El dron FPV (First Person View) funciona de otra manera. El piloto lleva unas gafas que muestran en tiempo real lo que ve la cámara, como si estuviera sentado dentro del aparato. Normalmente vuela en modo manual (también llamado modo acro), sin estabilización automática de posición, por lo que cada movimiento depende de las manos del piloto. El resultado son trayectorias fluidas, giros cerrados y pasos por huecos estrechos que un dron convencional no puede hacer.",
+          "Las diferencias clave se resumen así:",
+        ],
         bullets: [
-          "Fotografía o vídeo aéreo de edificios, parcelas o infraestructuras.",
-          "Proyectos donde prima la estabilidad y el plano limpio.",
-          "Presupuestos ajustados donde no hay margen para la variedad técnica.",
-          "Interiores con muy poco espacio (el FPV necesita margen para maniobrar).",
+          "**Estabilidad:** el convencional se mantiene fijo en el aire. El FPV está siempre en movimiento.",
+          "**Velocidad:** un FPV supera con facilidad los 100 km/h. El estabilizado prioriza el control.",
+          "**Curva de aprendizaje:** pilotar FPV con soltura exige cientos de horas de práctica, simulador incluido.",
+          "**Estética:** planos serenos y descriptivos frente a planos dinámicos e inmersivos.",
         ],
       },
       {
-        title: "Cuándo el FPV marca la diferencia",
-        bullets: [
-          "Eventos deportivos: carreras, surf, escalada, ciclismo de montaña.",
-          "Turismo y hostelería: recorridos por bodega, restaurante o alojamiento rural.",
-          "Marcas que quieren diferenciarse con contenido visualmente dinámico.",
-          "Spots donde la cámara tiene que seguir la acción sin cortes.",
-        ],
-      },
-      {
-        title: "La combinación que más funciona",
+        title: "Drones estabilizados: la mejor opción para fotografía y vídeo tradicional",
         paragraphs: [
-          "En proyectos de marca con presupuesto medio, la combinación habitual es: dron convencional para los planos de contexto y establecimiento de lugar, FPV para la secuencia de acción o el recorrido del espacio, y cámara en mano para los detalles y los planos de personas.",
-          "Esa mezcla da variedad de ritmo al montaje y permite contar una historia completa: dónde estás, cómo se vive el espacio y qué hace la marca.",
+          "Cuando el objetivo es mostrar algo con claridad, el dron estabilizado no tiene rival. Su capacidad para quedarse quieto permite componer cada encuadre con calma, ajustar la exposición y repetir una toma tantas veces como haga falta. Además, la mayoría de modelos actuales graban en 4K o superior, con sensores que manejan bien las luces difíciles del amanecer o del atardecer. Para [fotografía aérea](/fotografia-aerea-con-dron-galicia/), donde cada imagen tiene que ser nítida y estar bien nivelada, es la herramienta lógica.",
+          "También es la opción más versátil para trabajar en espacios abiertos con el cliente presente. Puede elevarse a 60 metros, mostrar el conjunto y descender lentamente hacia un detalle concreto sin que nadie se maree viendo el resultado. Son planos que el público entiende sin esfuerzo y que encajan en casi cualquier montaje.",
         ],
       },
       {
-        title: "Qué preguntarle a tu realizador antes de decidir",
+        title: "Aplicaciones en inmobiliaria y eventos",
+        level: 3,
         paragraphs: [
-          "No es necesario que sepas de antemano si quieres FPV o no. Cuéntale al realizador qué quieres transmitir y qué va a hacer el espectador con ese vídeo. A partir de ahí, la decisión técnica es cosa suya.",
-          "Lo que sí conviene aclarar: si hay espacio suficiente para volar FPV de forma segura, si el proyecto requiere autorización especial de vuelo y si el plazo permite los repasos de calibración que necesita el FPV para dar lo mejor.",
+          "La fotografía y el vídeo inmobiliario exterior son probablemente el uso más claro. Un [dron para inmobiliarias](/dron-para-inmobiliarias/) permite destacar el exterior de una vivienda y, sobre todo, su entorno: la cercanía a la playa, la parcela, las vistas o los accesos. Es información que un comprador valora y que desde el suelo no se puede transmitir.",
+          "En [bodas](/fotografia-y-video-de-bodas/) funciona como cámara auxiliar: tomas aéreas de la finca, la salida de los novios o el grupo completo de invitados. Lo mismo ocurre en los resúmenes de [eventos](/dron-para-eventos/), donde aporta contexto y escala. Y en vídeos publicitarios estándar sigue siendo la elección más segura cuando la marca quiere planos limpios y elegantes.",
+        ],
+      },
+      {
+        title: "Drones FPV: innovación y adrenalina en la grabación aérea",
+        paragraphs: [
+          "El dron FPV entra en juego cuando el objetivo es sorprender. Su gran valor está en la sensación que genera: el espectador siente que vuela, que atraviesa puertas, que roza el suelo y se eleva de golpe. Esa inmersión es difícil de conseguir con cualquier otra herramienta, incluidos los estabilizadores de mano o las grúas de cine.",
+          "Los modelos de tipo cinewhoop, con protectores alrededor de las hélices, permiten volar en interiores con una seguridad razonable. Los drones FPV de mayor tamaño se reservan para exteriores, donde pueden alcanzar velocidad y perseguir vehículos o deportistas. En ambos casos, el resultado suele grabarse en una cámara de acción y estabilizarse después por software, lo que da esa fluidez tan característica.",
+          "No es la herramienta adecuada para todo. Un FPV no sirve para una foto fija de una fachada ni para un plano general de cinco segundos sin movimiento. Su terreno es el plano secuencia, el ritmo y la emoción. Si es lo que buscas, aquí explico cómo trabajo la [grabación con drones FPV](/grabacion-con-drones-fpv/).",
+        ],
+      },
+      {
+        title: "Drone tour FPV y seguimiento de acción",
+        level: 3,
+        paragraphs: [
+          "El drone tour FPV es una de sus aplicaciones más llamativas: un único vuelo que recorre una casa por dentro y por fuera, entra por el jardín, cruza el salón, sube la escalera y sale por una ventana hacia la terraza. El comprador entiende la distribución en un minuto y, además, lo recuerda. Un ejemplo real es el [drone tour FPV de O Lagar de Jesús](/proyectos/drone-tour-fpv-albergue-o-lagar-de-jesus/), un albergue en Padrón grabado íntegramente en un vuelo FPV.",
+          "En competiciones deportivas, el FPV permite seguir la acción desde muy cerca, con una perspectiva que enfatiza la velocidad y el esfuerzo: un ciclista en un descenso, una regata o una carrera de trail, como en la [cobertura FPV de Surfing The Lérez](/proyectos/cobertura-fpv-surfing-the-lerez-2026/). Y en eventos que buscan una sensación inmersiva y única, como lanzamientos de producto o festivales, aporta ese plano que todo el mundo comparte.",
+        ],
+      },
+      {
+        title: "Grabación con drones en Galicia: paisajes y desafíos técnicos",
+        paragraphs: [
+          "Galicia es un territorio espectacular para volar, pero también exigente. La [grabación con drones en Galicia](/galicia/grabacion-con-drones/) ofrece costa abrupta, rías, viñedos en bancales, pazos, faros y bosques atlánticos que ganan muchísimo vistos desde arriba. Un plano estabilizado sobre los acantilados de la Costa da Morte o un recorrido FPV entre las viñas de la Ribeira Sacra tienen un impacto visual enorme.",
+          "El principal desafío es el clima. El viento en la costa puede ser constante y racheado, y eso afecta sobre todo a los drones más ligeros. La niebla y la llovizna aparecen con poca antelación, de modo que conviene planificar con margen y tener fechas alternativas. La luz cambiante, en cambio, es un aliado: los cielos con nubes dan una textura que muchas zonas soleadas no tienen.",
+          "Hay que contar también con la normativa. Buena parte del litoral y algunos espacios naturales tienen restricciones, y las zonas cercanas a aeropuertos como Alvedro, Lavacolla o Peinador requieren coordinación previa. Un operador profesional revisa estas limitaciones antes de aceptar el encargo, y es una pregunta que siempre deberías hacer al contratar. Lo explico en detalle en [requisitos para grabar con dron en Galicia](/blog/requisitos-grabar-dron-galicia/).",
+        ],
+      },
+      {
+        title: "Cómo elegir el mejor vídeo con dron FPV en Galicia para tu proyecto",
+        paragraphs: [
+          "La elección empieza por una pregunta sencilla: ¿quieres mostrar o quieres impactar? Si necesitas que el espectador entienda un espacio, una ubicación o una escala, el dron estabilizado es lo adecuado. Si lo que buscas es que se quede mirando y comparta el vídeo, un vídeo con dron FPV en Galicia puede marcar la diferencia, sobre todo en propiedades singulares, bodegas o eventos con mucho movimiento.",
+          "Antes de contratar, conviene revisar algunos puntos:",
+        ],
+        steps: [
+          "**Pide trabajos anteriores del mismo tipo.** Un buen piloto de estabilizado no tiene por qué dominar el FPV, y al revés.",
+          "**Comprueba que el operador está registrado en AESA** y que tiene seguro de responsabilidad civil.",
+          "**Pregunta por la planificación del vuelo.** En un drone tour interior, la ruta debe ensayarse y la casa debe estar preparada: puertas abiertas, objetos recogidos y luces encendidas.",
+          "**Define la duración final.** Un drone tour FPV funciona mejor entre 45 y 90 segundos. Más allá, pierde fuerza.",
+          "**Valora un paquete combinado** si el proyecto lo admite, ya que muchas veces la mejor pieza mezcla ambos tipos de planos.",
+        ],
+        closing: [
+          "El presupuesto suele ser mayor en FPV por el tiempo de ensayo y la habilidad que requiere, pero el resultado justifica la diferencia cuando el proyecto busca destacar. Si quieres cifras de referencia, las tienes en [cuánto cuesta grabar con dron](/blog/cuanto-cuesta-grabar-con-dron/).",
+        ],
+      },
+      {
+        title: "Conclusión: la combinación de tecnologías para un resultado profesional",
+        paragraphs: [
+          "No hay un ganador absoluto en el enfrentamiento entre dron FPV y dron convencional, porque cada uno resuelve una necesidad diferente. El estabilizado es la base: fiable, preciso y perfecto para mostrar exteriores inmobiliarios, acompañar una boda, resumir un evento o rodar un anuncio clásico. El FPV es el recurso que sorprende: recorre una casa de punta a punta, persigue a un deportista a pocos metros o convierte un evento en una experiencia que el público siente.",
+          "Los proyectos más completos suelen combinar ambos. Un plano estabilizado que sitúa la vivienda frente a la ría, seguido de un drone tour FPV que entra por la puerta principal y sale por la terraza, da al espectador contexto y emoción en el mismo minuto. Esa mezcla es la que distingue un vídeo correcto de uno que se recuerda.",
+          "En Kulmen Visuals trabajo con las dos herramientas: un GEPRC Mark 5 para FPV en exteriores, un cinewhoop GEPRC Cinelog 30 V3 para interiores y un DJI Mini 4 Pro estabilizado para planos limpios y fotografía aérea. Como [piloto de drones en Galicia](/piloto-de-drones-galicia/), elijo el equipo según lo que pida cada plano, no al revés.",
+          "Si tienes un proyecto en mente, piensa primero en lo que quieres que sienta quien lo vea. A partir de ahí, la herramienta se elige casi sola.",
         ],
       },
     ],
