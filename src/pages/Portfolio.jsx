@@ -39,6 +39,7 @@ export default function Portfolio() {
 
       {/* Grid de proyectos */}
       <section className="max-w-6xl mx-auto px-4 pb-16 md:pb-20">
+        <h2 className="sr-only">Todos los proyectos</h2>
         {filtered.length === 0 ? (
           <p className="kv-body-muted text-zinc-500">
             No hay proyectos disponibles o no coinciden con el filtro
