@@ -1,49 +1,58 @@
 // src/pages/ProduccionAudiovisual.jsx
+// Landing de "producción de vídeos para empresas". La búsqueda "productora
+// audiovisual Galicia" la trabaja la home: no reutilizar ese enfoque aquí.
 import ServiceLanding from '../components/ServiceLanding.jsx'
+
+const pageUrl = 'https://kulmenvisuals.com/produccion-audiovisual-galicia/'
 
 const faqs = [
   {
-    question: '¿Qué incluye un servicio de producción audiovisual completo?',
+    question: '¿Qué tipos de vídeo puedo encargar para mi empresa?',
     answer:
-      'Las tres fases del proyecto: preproducción (definición de objetivo, guion, localización y planificación), rodaje (cámara de cine, dron FPV y estabilizado, y sonido) y postproducción (montaje, corrección de color, música con licencia y entrega en los formatos pactados). Trabajas con una sola interlocutora durante todo el proceso.',
+      'Presentación de empresa, vídeo de producto o servicio, entrevistas y testimonios, formación interna, employer branding para atraer talento, patrocinios y eventos de empresa, y contenido para redes. Muchas veces conviene planificar varias piezas desde un mismo rodaje.',
   },
   {
-    question: '¿Cuánto cuesta una producción audiovisual en Galicia?',
+    question: '¿Hay que parar la actividad de la empresa para grabar?',
     answer:
-      'Depende del alcance del proyecto: duración, número de localizaciones, si hay dron o cámara (o ambos) y la complejidad de la edición. No hay una tarifa fija porque cada pieza tiene necesidades distintas. Preparo siempre un presupuesto cerrado y desglosado antes de empezar, tras una breve llamada o correo para entender qué necesitas.',
+      'No. Trabajo con un equipo reducido y discreto, organizo el rodaje por zonas o turnos y, si hace falta, grabo a primera hora, al cierre o en fin de semana. Tu equipo sigue trabajando mientras grabamos.',
   },
   {
-    question: '¿Qué diferencia hay entre una productora grande y una creadora independiente?',
+    question: '¿Puedo usar el vídeo en anuncios, ferias y en la web?',
     answer:
-      'Una productora grande aporta estructura para proyectos con muchos frentes simultáneos: varios sets, actores, arte. Una creadora independiente que cubre todo el proceso aporta agilidad, menos coste de estructura y una comunicación directa: la persona con la que hablas es la que graba y edita tu pieza. Para pymes, eventos y contenido recurrente, esa cercanía suele dar mejor resultado por euro invertido.',
+      'Sí. El vídeo se entrega con uso comercial libre: web, redes sociales, ferias, presentaciones y campañas de publicidad de pago, sin costes extra por uso. La música va con licencia comercial.',
+  },
+  {
+    question: '¿Haces versiones en otros idiomas?',
+    answer:
+      'Sí. Entrego subtítulos en español o en otros idiomas, versiones completas en otro idioma y locución profesional cuando la pieza la necesita. Es habitual en empresas que exportan o que trabajan con turismo internacional.',
+  },
+  {
+    question: '¿Cuánto cuesta un vídeo para empresa?',
+    answer:
+      'Depende del tipo de pieza, las jornadas de rodaje, las localizaciones, si hay entrevistas, dron o locución, y de cuántas versiones necesitas. Preparo un presupuesto cerrado y desglosado tras una breve llamada. En el blog tienes una guía con precios orientativos de vídeo corporativo en Galicia.',
+  },
+  {
+    question: '¿En cuánto tiempo se entrega?',
+    answer:
+      'Piezas sencillas y vídeos de evento, entre 3 y 10 días laborables. Vídeos corporativos, de producto o con entrevistas y más postproducción, entre 2 y 4 semanas. Si hay una fecha límite, como una feria, se planifica desde el inicio.',
+  },
+  {
+    question: '¿Qué necesitas de mi empresa para empezar?',
+    answer:
+      'El objetivo del vídeo, a quién va dirigido y dónde se va a publicar. Con eso preparo la propuesta. Para el rodaje, una persona de contacto, acceso a las instalaciones y, si hay entrevistas, que las personas sepan con antelación qué se les va a preguntar.',
   },
   {
     question: '¿Trabajas solo en Galicia?',
     answer:
-      'Mi base está en Pontevedra y la mayoría de proyectos son en Galicia (Vigo, Santiago, A Coruña, Lugo, Ourense y sus comarcas). Para el resto de España preparo un presupuesto cerrado que incluye desplazamiento, dietas y alojamiento, de forma que conoces el coste total desde el principio.',
-  },
-  {
-    question: '¿Qué equipo utilizas en los rodajes?',
-    answer:
-      'Cámara de cine Blackmagic 4K y Lumix S5II full frame para el material en tierra, dron FPV para planos dinámicos, cinewhoop para interiores y dron estabilizado DJI para tomas aéreas limpias. El equipo se elige según lo que pida cada proyecto.',
-  },
-  {
-    question: '¿En cuánto tiempo se entrega un vídeo?',
-    answer:
-      'Eventos y piezas sencillas, entre 3 y 10 días laborables. Spots, vídeos de marca y proyectos con más postproducción, entre 2 y 4 semanas. Si hay una fecha límite, se planifica desde el inicio y se cumple.',
-  },
-  {
-    question: '¿El vídeo sirve también para redes sociales?',
-    answer:
-      'Sí, y conviene plantearlo desde el guion. De un mismo rodaje salen la pieza principal horizontal y versiones verticales de 15 a 60 segundos para Reels, TikTok y Shorts. Es la forma más eficiente de producir: un rodaje, un mes de contenido.',
+      'Mi base está en Pontevedra y la mayoría de proyectos son en Galicia, pero también me desplazo al resto de España. El desplazamiento va incluido en el presupuesto cerrado.',
   },
 ]
 
 const data = {
   seo: {
-    title: 'Producción audiovisual en Galicia | Vídeo para marcas y eventos',
+    title: 'Producción de vídeos para empresas en Galicia | Kulmen Visuals',
     description:
-      'Servicio de producción audiovisual en Galicia: spots, vídeo corporativo, eventos y videoclips. Preproducción, rodaje con cámara de cine y dron FPV, y edición. Presupuesto cerrado sin compromiso.',
+      'Producción de vídeos para empresas en Galicia: presentación de empresa, producto, testimonios, formación y RRHH. Subtítulos, idiomas y uso comercial libre.',
     pathname: '/produccion-audiovisual-galicia',
   },
 
@@ -52,32 +61,34 @@ const data = {
     '@graph': [
       {
         '@type': 'Service',
-        '@id': 'https://kulmenvisuals.com/produccion-audiovisual-galicia/#service',
-        name: 'Producción audiovisual en Galicia',
-        serviceType: 'Producción audiovisual',
+        '@id': `${pageUrl}#service`,
+        name: 'Producción de vídeos para empresas',
+        serviceType: 'Producción de vídeo corporativo',
         description:
-          'Producción audiovisual completa en Galicia: preproducción, rodaje con cámara de cine y drones FPV, y postproducción. Vídeo para marcas, empresas, eventos y videoclips.',
+          'Producción de vídeos para empresas en Galicia: presentación de empresa, vídeo de producto, entrevistas y testimonios, formación y employer branding. Subtítulos, versiones en otros idiomas, locución y uso comercial libre.',
         provider: { '@id': 'https://kulmenvisuals.com/#localbusiness' },
         areaServed: [
           { '@type': 'AdministrativeArea', name: 'Galicia' },
           { '@type': 'Country', name: 'España' },
         ],
-        url: 'https://kulmenvisuals.com/produccion-audiovisual-galicia/',
+        audience: { '@type': 'BusinessAudience', name: 'Empresas y pymes' },
+        url: pageUrl,
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Producción audiovisual',
+          name: 'Vídeos para empresas',
           itemListElement: [
-            { '@type': 'Offer', name: 'Vídeo de marca y spots publicitarios' },
-            { '@type': 'Offer', name: 'Vídeo corporativo y de empresa' },
-            { '@type': 'Offer', name: 'Cobertura audiovisual de eventos' },
-            { '@type': 'Offer', name: 'Videoclips musicales' },
-            { '@type': 'Offer', name: 'Vídeo para turismo y territorio' },
-          ],
+            'Vídeo de presentación de empresa',
+            'Vídeo de producto o servicio',
+            'Entrevistas y testimonios',
+            'Vídeo de formación y employer branding',
+            'Vídeo de patrocinio y eventos de empresa',
+            'Contenido de vídeo para redes de empresa',
+          ].map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } })),
         },
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://kulmenvisuals.com/produccion-audiovisual-galicia/#faq',
+        '@id': `${pageUrl}#faq`,
         mainEntity: faqs.map((item) => ({
           '@type': 'Question',
           name: item.question,
@@ -89,60 +100,75 @@ const data = {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://kulmenvisuals.com/' },
           { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://kulmenvisuals.com/servicios/' },
-          { '@type': 'ListItem', position: 3, name: 'Producción audiovisual en Galicia', item: 'https://kulmenvisuals.com/produccion-audiovisual-galicia/' },
+          { '@type': 'ListItem', position: 3, name: 'Producción de vídeos para empresas', item: pageUrl },
         ],
       },
     ],
   },
 
-  eyebrow: 'Servicio · Galicia y España',
-  h1: 'Producción audiovisual en Galicia',
+  eyebrow: 'Vídeo para empresas · Galicia y España',
+  h1: 'Producción de vídeos para empresas en Galicia',
   intro:
-    'Soy io Rodríguez, creadora audiovisual con base en Pontevedra. Produzco vídeo profesional para marcas, empresas y eventos en toda Galicia: spots, vídeo corporativo, aftermovies y videoclips, cubriendo el proceso completo desde la idea hasta la pieza final lista para publicar.',
+    'Soy io Rodríguez y produzco vídeos para empresas desde Pontevedra: presentación de empresa, producto, entrevistas, formación y contenido para redes. Me encargo del proceso completo, del guion a la entrega, con una sola interlocutora y presupuesto cerrado.',
   intro2:
-    'Trabajo con cámara de cine, dron FPV y dron estabilizado, y edito todo el material yo misma. Un solo interlocutor, presupuesto cerrado y piezas pensadas para cumplir un objetivo: vender, llenar un evento o posicionar una marca.',
+    'He trabajado para empresas como Norvento Technpower, Cobre San Rafael o Banca March, también a través de agencias. Cada vídeo se entrega con uso comercial libre, subtítulos o versiones en otros idiomas si los necesitas, y listo para web, ferias, redes y campañas.',
 
   incluye: {
-    title: 'Qué incluye la producción completa',
-    text: 'Cada proyecto cubre las tres fases, sin subcontratas ni intermediarios:',
+    title: 'Qué incluye un vídeo para empresa',
+    text: 'Producción completa, sin subcontratas ni intermediarios:',
     items: [
-      'Preproducción: objetivo, guion, localización y planificación de rodaje',
-      'Rodaje con cámara de cine (Blackmagic 4K, Lumix S5II) y sonido',
-      'Dron FPV y dron estabilizado cuando aportan al proyecto',
-      'Montaje, ritmo y narrativa adaptados al canal de destino',
-      'Corrección de color y música con licencia comercial',
-      'Entrega en horizontal y vertical, lista para web, campañas y redes',
+      'Briefing: objetivo, público y canales donde se va a usar el vídeo',
+      'Guion, plan de rodaje y preparación de entrevistas',
+      'Rodaje con cámara de cine (Blackmagic 4K, Lumix S5II) y sonido para entrevistas',
+      'Dron estabilizado o FPV si las instalaciones lo merecen',
+      'Montaje, corrección de color y música con licencia comercial',
+      'Subtítulos, versiones en otros idiomas y locución profesional',
+      'Versiones horizontal y vertical para web, ferias y redes',
+      'Uso comercial libre, también en publicidad de pago',
     ],
   },
 
   tipos: {
-    title: 'Tipos de proyecto que produzco',
-    text: 'Del spot de campaña al aftermovie: el enfoque cambia, el estándar de acabado no.',
+    title: 'Tipos de vídeo para empresas',
+    text: 'Cada pieza responde a un objetivo distinto. Muchas salen del mismo rodaje.',
     items: [
       {
-        title: 'Vídeo de marca y spots',
-        desc: 'Piezas de 30 a 90 segundos con enfoque publicitario: lanzamientos, campañas y presentación de producto o servicio.',
+        title: 'Presentación de empresa',
+        desc: 'Quiénes sois, qué hacéis y cómo trabajáis: instalaciones, equipo y proceso. La pieza base para la web y las presentaciones comerciales.',
       },
       {
-        title: 'Vídeo corporativo',
-        desc: 'Presentación de empresa, instalaciones y equipo. Con dron para industria, naves y espacios grandes.',
+        title: 'Producto o servicio',
+        desc: 'Un vídeo que enseña y explica lo que vendes: uso, detalles, ventajas. Para fichas de producto, ferias, comerciales y anuncios.',
       },
       {
-        title: 'Eventos y aftermovies',
-        desc: 'Cobertura de festivales, competiciones deportivas y eventos de empresa, con clips el mismo día y aftermovie final.',
+        title: 'Entrevistas y testimonios',
+        desc: 'Clientes, directivos o empleados hablando a cámara con sonido cuidado. La prueba social que más convence en B2B.',
       },
       {
-        title: 'Videoclips',
-        desc: 'Dirección, rodaje y montaje de videoclips musicales, en estudio o localización.',
+        title: 'Formación y RRHH',
+        desc: 'Vídeos de formación interna, onboarding y employer branding para atraer talento y enseñar cómo es trabajar en tu empresa.',
       },
       {
-        title: 'Turismo y territorio',
-        desc: 'Piezas para destinos, alojamientos, bodegas y experiencias que necesitan atraer visitantes.',
+        title: 'Patrocinios y eventos de empresa',
+        desc: 'Piezas que rentabilizan un patrocinio o un evento corporativo, como las que produje para Cobre San Rafael con la agencia Orestes Comunica.',
       },
       {
-        title: 'Espacios e inmobiliario',
-        desc: 'Recorridos FPV y vídeo aéreo para propiedades, hoteles y locales que quieren enseñarse de verdad.',
+        title: 'Contenido para redes de empresa',
+        desc: 'Clips verticales de producto, proceso y equipo para LinkedIn, Instagram o TikTok, sueltos o en packs mensuales.',
       },
+    ],
+  },
+
+  destacado: {
+    title: 'Grabar en tu empresa sin parar la actividad',
+    text: 'Un rodaje no debería costarte una jornada de producción. Por eso lo organizo para que tu equipo siga trabajando mientras grabamos:',
+    items: [
+      'Equipo reducido y discreto, sin montajes aparatosos',
+      'Horarios flexibles: primera hora, cierre o fin de semana',
+      'Rodaje planificado por zonas o turnos',
+      'Entrevistas preparadas para no robar tiempo a nadie',
+      'Permisos de vuelo gestionados si se graba con dron',
+      'Una sola persona de contacto durante todo el proceso',
     ],
   },
 
@@ -151,67 +177,61 @@ const data = {
     items: [
       {
         title: 'Propuesta',
-        desc: 'Una llamada o correo para entender objetivo, fechas y presupuesto. Te envío propuesta y presupuesto cerrado.',
+        desc: 'Una llamada para entender objetivo, público, fechas y presupuesto. Te envío propuesta y presupuesto cerrado.',
       },
       {
         title: 'Preproducción',
-        desc: 'Guion, localizaciones, permisos si hay dron y calendario de rodaje acordado contigo.',
+        desc: 'Guion, preguntas de entrevista, localizaciones dentro de la empresa y calendario de rodaje acordado contigo.',
       },
       {
         title: 'Rodaje',
-        desc: 'Grabación ágil y planificada, con cámara, dron y sonido según lo definido. Sin sorpresas de última hora.',
+        desc: 'Grabación planificada por bloques, con cámara, sonido y dron si hace falta, sin interrumpir la actividad.',
       },
       {
         title: 'Edición y entrega',
-        desc: 'Primera versión para tus comentarios, revisión incluida y entrega final en todos los formatos pactados.',
+        desc: 'Primera versión para tus comentarios, revisión incluida y entrega con subtítulos, idiomas y formatos pactados.',
       },
     ],
   },
 
-
   relacionados: [
     {
-      to: '/fotografia-y-video-de-bodas/',
-      label: 'Fotografía y vídeo de bodas',
-      desc: 'FPV y entrega de anillos con dron para tu boda.',
-    },
-    {
-      to: '/grabacion-con-drones-fpv/',
-      label: 'Grabación con drones FPV',
-      desc: 'Planos dinámicos e inmersivos que diferencian tu pieza.',
-    },
-    {
-      to: '/edicion-y-postproduccion-de-video/',
-      label: 'Edición y postproducción de vídeo',
-      desc: 'Montaje, color y entrega si ya tienes el material grabado.',
+      to: '/video-corporativo-con-dron/',
+      label: 'Vídeo corporativo con dron',
+      desc: 'Instalaciones, industria y naves vistas desde el aire.',
     },
     {
       to: '/contenido-para-redes-sociales/',
       label: 'Contenido para redes sociales',
-      desc: 'Reels, TikTok y Shorts producidos con constancia.',
+      desc: 'Reels, TikTok y Shorts para empresas, en packs mensuales.',
     },
     {
-      to: '/video-corporativo-con-dron/',
-      label: 'Vídeo corporativo con dron',
-      desc: 'Empresas, industria e instalaciones desde el aire.',
+      to: '/edicion-y-postproduccion-de-video/',
+      label: 'Edición y postproducción de vídeo',
+      desc: 'Si ya tienes material grabado y necesitas montarlo.',
     },
     {
-      to: '/piloto-de-drones-galicia/',
-      label: 'Piloto de drones en Galicia',
-      desc: 'Operadora FPV y estabilizado certificada, con permisos.',
+      to: '/blog/cuanto-cuesta-video-corporativo-galicia/',
+      label: 'Cuánto cuesta un vídeo corporativo en Galicia',
+      desc: 'Guía con rangos de precio y qué los hace variar.',
     },
     {
-      to: '/dron-para-eventos/',
-      label: 'Dron para eventos',
-      desc: 'Cobertura aérea de festivales y competiciones.',
+      to: '/servicios/',
+      label: 'Todos los servicios audiovisuales',
+      desc: 'Catálogo completo y formas de contratación.',
+    },
+    {
+      to: '/',
+      label: 'Productora audiovisual en Galicia',
+      desc: 'Quién soy, proyectos y zonas donde trabajo.',
     },
   ],
 
   faqs,
 
   cta: {
-    title: '¿Producimos tu próximo vídeo?',
-    desc: 'Cuéntame el objetivo y te preparo una propuesta con presupuesto cerrado. Sin compromiso.',
+    title: '¿Qué vídeo necesita tu empresa?',
+    desc: 'Cuéntame el objetivo y dónde lo vas a usar. Te preparo una propuesta con presupuesto cerrado, sin compromiso.',
   },
 }
 

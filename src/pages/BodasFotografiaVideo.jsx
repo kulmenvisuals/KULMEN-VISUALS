@@ -190,8 +190,8 @@ const data = {
       desc: 'Operadora FPV y estabilizado certificada, con permisos y seguro.',
     },
     {
-      to: '/produccion-audiovisual-galicia/',
-      label: 'Producción audiovisual en Galicia',
+      to: '/',
+      label: 'Productora audiovisual en Galicia',
       desc: 'Si buscas también vídeo para otro tipo de evento o marca.',
     },
     {

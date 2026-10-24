@@ -21,9 +21,9 @@ const clientLogos = [
 const servicios = [
   {
     id: 'produccion',
-    titulo: 'Producción audiovisual',
+    titulo: 'Vídeo para empresas',
     texto:
-      'Rodaje con enfoque narrativo y publicitario para marcas, eventos y proyectos.',
+      'Presentación de empresa, producto, testimonios y formación, del guion a la entrega.',
     to: '/produccion-audiovisual-galicia/',
   },
   {
@@ -219,8 +219,8 @@ const homeSchema = {
     },
     {
       "@type": "Service",
-      name: "Producción audiovisual",
-      serviceType: "Producción audiovisual",
+      name: "Producción de vídeos para empresas",
+      serviceType: "Producción de vídeo corporativo",
       provider: { "@id": "https://kulmenvisuals.com/#localbusiness" },
       areaServed: "Galicia",
       url: "https://kulmenvisuals.com/produccion-audiovisual-galicia/",

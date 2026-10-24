@@ -574,9 +574,9 @@ export function resolveRouteSeo(pathname = '/') {
 
   if (path === '/produccion-audiovisual-galicia') {
     return buildSeo({
-      title: 'Producción audiovisual en Galicia | Vídeo para marcas y eventos',
+      title: 'Producción de vídeos para empresas en Galicia | Kulmen Visuals',
       description:
-        'Servicio de producción audiovisual en Galicia: spots, vídeo corporativo, eventos y videoclips. Preproducción, rodaje con cámara de cine y dron FPV, y edición. Presupuesto cerrado sin compromiso.',
+        'Producción de vídeos para empresas en Galicia: presentación de empresa, producto, testimonios, formación y RRHH. Subtítulos, idiomas y uso comercial libre.',
       pathname: path,
     })
   }

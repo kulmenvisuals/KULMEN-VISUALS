@@ -175,8 +175,8 @@ const data = {
   relacionados: [
     {
       to: '/produccion-audiovisual-galicia/',
-      label: 'Producción audiovisual en Galicia',
-      desc: 'Para piezas de marca y campañas con producción completa.',
+      label: 'Producción de vídeos para empresas',
+      desc: 'Vídeo corporativo, de producto y campañas con producción completa.',
     },
     {
       to: '/edicion-y-postproduccion-de-video/',

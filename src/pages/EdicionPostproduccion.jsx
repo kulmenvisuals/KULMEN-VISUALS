@@ -175,7 +175,7 @@ const data = {
   relacionados: [
     {
       to: '/produccion-audiovisual-galicia/',
-      label: 'Producción audiovisual en Galicia',
+      label: 'Producción de vídeos para empresas',
       desc: 'Si necesitas también el rodaje: producción completa.',
     },
     {

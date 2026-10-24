@@ -65,15 +65,15 @@ const equipmentGroups = [
 const mainServices = [
   {
     id: "produccion-audiovisual",
-    title: "Producción audiovisual",
+    title: "Producción de vídeo para empresas",
     href: "/produccion-audiovisual-galicia/",
     icon: Camera,
     intro:
-      "Planificación y rodaje de vídeo para marcas, eventos y espacios, con un enfoque narrativo y visual coherente con el mensaje.",
+      "Planificación, rodaje y edición de vídeo para empresas y marcas, con un enfoque narrativo y visual coherente con el mensaje.",
     usage: [
-      "Vídeos de marca y campañas",
-      "Lanzamientos y activaciones",
-      "Piezas clave para web y RRSS",
+      "Presentación de empresa y producto",
+      "Entrevistas, testimonios y formación",
+      "Campañas, lanzamientos y piezas para web",
     ],
     includes: [
       "Definición de enfoque visual",
