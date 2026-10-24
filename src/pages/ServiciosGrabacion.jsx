@@ -206,6 +206,7 @@ const schema = {
       url: 'https://kulmenvisuals.com/servicios-grabacion-con-drones/',
       provider: {
         '@type': 'Organization',
+        '@id': 'https://kulmenvisuals.com/#localbusiness',
         name: 'Kulmen Visuals',
         url: 'https://kulmenvisuals.com',
         founder: { '@type': 'Person', name: 'io Rodríguez' },

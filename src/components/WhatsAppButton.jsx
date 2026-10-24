@@ -1,7 +1,8 @@
 // src/components/WhatsAppButton.jsx
 import { MessageCircle } from "lucide-react"
+import { business } from "../data/business.js"
 
-const phone = "34652405654"
+const phone = business.whatsappNumber
 const message = "Hola io, me gustaría hablar sobre un proyecto para mi marca."
 const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
 

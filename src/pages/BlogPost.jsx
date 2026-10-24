@@ -86,6 +86,7 @@ export default function BlogPost() {
       author: { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi/` },
       publisher: {
         '@type': 'Organization',
+        '@id': 'https://kulmenvisuals.com/#localbusiness',
         name: 'Kulmen Visuals',
         url: siteUrl,
         logo: { '@type': 'ImageObject', url: `${siteUrl}/logo-kulmen-visuals.png` },

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { blogPosts } from '../data/blogPosts.js'
+import { business, businessAddress, businessRef } from '../data/business.js'
 import { projects } from '../data/projects.js'
 import {
   defaultOgImage,
@@ -396,8 +397,8 @@ export function resolveRouteSeo(pathname = '/') {
         jobTitle: 'Realizadora audiovisual y piloto de drones FPV',
         description:
           'Creadora audiovisual y piloto de drones FPV en Galicia. Producción completa de vídeo para marcas, eventos y proyectos culturales.',
-        worksFor: { '@type': 'Organization', name: 'Kulmen Visuals', url: siteUrl },
-        address: { '@type': 'PostalAddress', addressRegion: 'Galicia', addressCountry: 'ES' },
+        worksFor: businessRef,
+        address: businessAddress,
         sameAs: ['https://www.instagram.com/kulmenvisuals/'],
       },
     })
@@ -416,13 +417,14 @@ export function resolveRouteSeo(pathname = '/') {
         url: absolutePageUrl(path),
         mainEntity: {
           ...organizationRef,
-          email: 'hola@kulmenvisuals.com',
-          telephone: '+34 652405654',
+          email: business.email,
+          telephone: business.phone,
+          address: businessAddress,
           contactPoint: {
             '@type': 'ContactPoint',
             contactType: 'customer service',
-            email: 'hola@kulmenvisuals.com',
-            telephone: '+34 652405654',
+            email: business.email,
+            telephone: business.phone,
             availableLanguage: 'es',
             areaServed: 'ES',
           },
@@ -483,6 +485,7 @@ export function resolveRouteSeo(pathname = '/') {
           },
           publisher: {
             '@type': 'Organization',
+            '@id': 'https://kulmenvisuals.com/#localbusiness',
             name: 'Kulmen Visuals',
             url: siteUrl,
             logo: { '@type': 'ImageObject', url: `${siteUrl}/logo-kulmen-visuals.png` },

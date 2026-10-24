@@ -1,6 +1,7 @@
 // src/pages/SobreMi.jsx
 import { Link } from "react-router-dom"
 import { usePageSeo, useJsonLd, siteUrl } from "../utils/seo.js"
+import { businessAddress, businessRef } from '../data/business.js'
 
 // Ruta de la foto (sirve en dev y en GitHub Pages)
 const fotoIo = `${import.meta.env.BASE_URL}images/io-portrait.jpg`
@@ -58,8 +59,8 @@ const sobreMiJsonLd = {
   jobTitle: 'Realizadora audiovisual y piloto de drones FPV',
   description:
     'Creadora audiovisual y piloto de drones FPV en Galicia. Producción completa de vídeo para marcas, eventos y proyectos culturales.',
-  worksFor: { '@type': 'Organization', name: 'Kulmen Visuals', url: siteUrl },
-  address: { '@type': 'PostalAddress', addressRegion: 'Galicia', addressCountry: 'ES' },
+  worksFor: businessRef,
+  address: businessAddress,
   sameAs: ['https://www.instagram.com/kulmenvisuals/'],
 }
 

@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard.jsx'
 import { projects } from '../data/projects.js'
 import { usePageSeo } from '../utils/seo.js'
+import { business, businessAddress } from '../data/business.js'
 
 const featuredProjects = Array.isArray(projects) ? projects.slice(0, 3) : []
 
@@ -189,15 +190,10 @@ const homeSchema = {
       url: "https://kulmenvisuals.com",
       logo: "https://kulmenvisuals.com/logo-kulmen-visuals.png",
       image: "https://kulmenvisuals.com/images/hero-poster.webp",
-      telephone: "+34 652405654",
-      email: "hola@kulmenvisuals.com",
+      telephone: business.phone,
+      email: business.email,
       priceRange: "€€",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Pontevedra",
-        addressRegion: "Galicia",
-        addressCountry: "ES",
-      },
+      address: businessAddress,
       areaServed: [
         {
           "@type": "State",

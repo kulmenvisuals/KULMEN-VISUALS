@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 import { Instagram } from "lucide-react"
 import { Link } from "react-router-dom"
+import { business } from "../data/business.js"
 
 const footerNav = [
   { to: "/", label: "Inicio" },
@@ -46,15 +47,29 @@ export default function Footer() {
             Pedir presupuesto
           </Link>
 
-          <p className="text-sm text-zinc-500">
-            O escríbeme a{" "}
-            <a
-              href="mailto:hola@kulmenvisuals.com"
-              className="text-amber-300 hover:text-amber-200 underline decoration-amber-300/30 underline-offset-4"
-            >
-              hola@kulmenvisuals.com
-            </a>
-          </p>
+          <address className="not-italic text-sm text-zinc-500 space-y-1">
+            <p className="text-zinc-300">{business.name}</p>
+            <p>
+              {business.locality}, {business.region}
+            </p>
+            <p>
+              <a
+                href={business.phoneHref}
+                className="text-amber-300 hover:text-amber-200 underline decoration-amber-300/30 underline-offset-4"
+              >
+                {business.phone}
+              </a>{" "}
+              · llamadas y WhatsApp
+            </p>
+            <p>
+              <a
+                href={`mailto:${business.email}`}
+                className="text-amber-300 hover:text-amber-200 underline decoration-amber-300/30 underline-offset-4"
+              >
+                {business.email}
+              </a>
+            </p>
+          </address>
         </div>
 
         {/* Navegación */}

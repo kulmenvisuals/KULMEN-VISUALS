@@ -16,6 +16,7 @@ const data = {
       'Producción de vídeo corporativo e industrial con dron para empresas. Muestra instalaciones, fábricas y sedes con planos aéreos profesionales.',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://kulmenvisuals.com/#localbusiness',
       name: 'Kulmen Visuals',
       url: 'https://kulmenvisuals.com',
     },

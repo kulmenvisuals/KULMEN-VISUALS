@@ -1,4 +1,5 @@
 import LocalLanding from '../components/LocalLanding.jsx'
+import { businessRef } from '../data/business.js'
 
 const data = {
   seo: {
@@ -14,17 +15,7 @@ const data = {
     name: 'Grabación con drones en Galicia',
     description:
       'Servicio profesional de grabación con drones en Galicia: FPV, cine, vídeo corporativo, eventos e inmobiliaria. Base en Pontevedra con cobertura en toda la comunidad.',
-    provider: {
-      '@type': 'Organization',
-      name: 'Kulmen Visuals',
-      url: 'https://kulmenvisuals.com',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Pontevedra',
-        addressRegion: 'Galicia',
-        addressCountry: 'ES',
-      },
-    },
+    provider: businessRef,
     areaServed: {
       '@type': 'AdministrativeArea',
       name: 'Galicia',

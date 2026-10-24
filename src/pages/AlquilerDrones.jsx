@@ -16,6 +16,7 @@ const data = {
       'Servicio de alquiler de drones con piloto profesional certificado. Permisos incluidos para rodajes, eventos y proyectos empresariales en España.',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://kulmenvisuals.com/#localbusiness',
       name: 'Kulmen Visuals',
       url: 'https://kulmenvisuals.com',
     },

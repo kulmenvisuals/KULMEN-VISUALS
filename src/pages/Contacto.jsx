@@ -1,6 +1,7 @@
 // src/pages/Contacto.jsx
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { business } from '../data/business.js'
 
 const objectiveFieldName = 'objetivo[]'
 
@@ -113,8 +114,30 @@ export default function Contacto() {
               <div>
                 <p className="kv-card-title text-zinc-100">Ubicación</p>
                 <p className="kv-body-muted">
-                  Trabajo desde Pontevedra y me desplazo por Galicia y España,
-                  según el proyecto.
+                  Trabajo desde {business.locality} y me desplazo por Galicia y
+                  España, según el proyecto.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <span className="mt-1 h-2.5 w-2.5 rounded-full bg-amber-400" />
+              <div>
+                <p className="kv-card-title text-zinc-100">
+                  Teléfono y WhatsApp
+                </p>
+                <p className="kv-body-muted">
+                  <a
+                    href={business.phoneHref}
+                    className="text-amber-300 hover:text-amber-200"
+                    onClick={() => {
+                      if (typeof window.fbq === 'function') {
+                        window.fbq('track', 'Contact')
+                      }
+                    }}
+                  >
+                    {business.phone}
+                  </a>
                 </p>
               </div>
             </div>

@@ -16,6 +16,7 @@ const data = {
       'Cobertura aérea con dron para festivales, conciertos, eventos corporativos y activaciones de marca. Aftermovies y contenido en directo.',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://kulmenvisuals.com/#localbusiness',
       name: 'Kulmen Visuals',
       url: 'https://kulmenvisuals.com',
     },

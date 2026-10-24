@@ -16,6 +16,7 @@ const data = {
       'Grabación aérea con drones FPV: planos dinámicos e inmersivos para publicidad, eventos y rodajes. Piloto certificado con permisos.',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://kulmenvisuals.com/#localbusiness',
       name: 'Kulmen Visuals',
       url: 'https://kulmenvisuals.com',
     },

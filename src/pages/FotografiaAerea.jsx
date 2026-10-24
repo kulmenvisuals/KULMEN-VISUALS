@@ -60,6 +60,7 @@ const data = {
         url: pageUrl,
         provider: {
           '@type': 'Organization',
+          '@id': 'https://kulmenvisuals.com/#localbusiness',
           name: 'Kulmen Visuals',
           url: 'https://kulmenvisuals.com',
           founder: { '@type': 'Person', name: 'io Rodríguez' },

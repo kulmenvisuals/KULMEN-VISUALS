@@ -16,6 +16,7 @@ const data = {
       'Planos aéreos cinematográficos para spots publicitarios, rodajes de cine y campañas de marca. Piloto certificado con permisos incluidos.',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://kulmenvisuals.com/#localbusiness',
       name: 'Kulmen Visuals',
       url: 'https://kulmenvisuals.com',
     },

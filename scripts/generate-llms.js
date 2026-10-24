@@ -5,6 +5,7 @@ import { blogPosts } from "../src/data/blogPosts.js"
 import { projects } from "../src/data/projects.js"
 import { getBlogPostPath, getProjectPath, routes, siteUrl } from "../src/utils/routes.js"
 import { resolveRouteSeo } from "../src/utils/seo.js"
+import { business } from "../src/data/business.js"
 
 const servicePages = [
   routes.servicios,
@@ -44,12 +45,12 @@ const postLines = [...blogPosts]
 
 const content = `# Kulmen Visuals
 
-> Productora audiovisual y operadora de drones FPV con base en Pontevedra (Galicia, España). Producción completa de vídeo para marcas, empresas, eventos, turismo e inmobiliaria: preproducción, rodaje con cámara de cine y dron (FPV, estabilizado e interiores), edición y postproducción. Piloto certificada EASA y operadora UAS registrada en AESA. Trabaja en toda Galicia y se desplaza al resto de España.
+> Productora audiovisual y operadora de drones FPV con base en ${business.locality} (Galicia, España). Producción completa de vídeo para marcas, empresas, eventos, turismo e inmobiliaria: preproducción, rodaje con cámara de cine y dron (FPV, estabilizado e interiores), edición y postproducción. Piloto certificada EASA y operadora UAS registrada en AESA. Trabaja en toda Galicia y se desplaza al resto de España.
 
 Datos clave:
 
 - Responsable: io Rodríguez, realizadora audiovisual y piloto de drones FPV.
-- Contacto: hola@kulmenvisuals.com · ${siteUrl}${routes.contacto}
+- Contacto: ${business.email} · ${business.phone} (llamadas y WhatsApp) · ${siteUrl}${routes.contacto}
 - Instagram: https://www.instagram.com/kulmenvisuals/
 - Idioma del sitio: español.
 

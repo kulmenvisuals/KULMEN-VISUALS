@@ -5,6 +5,7 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Shield, CheckCircle2 } from 'lucide-react'
 import { usePageSeo } from '../utils/seo.js'
+import { businessAddress } from '../data/business.js'
 
 const faqs = [
   {
@@ -112,12 +113,7 @@ const pageSchema = {
         'Producción audiovisual',
         'Edición y postproducción de vídeo',
       ],
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Pontevedra',
-        addressRegion: 'Galicia',
-        addressCountry: 'ES',
-      },
+      address: businessAddress,
       sameAs: ['https://www.instagram.com/kulmenvisuals/'],
     },
     {

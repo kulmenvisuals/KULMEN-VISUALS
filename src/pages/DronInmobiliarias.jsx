@@ -16,6 +16,7 @@ const data = {
       'Foto y vídeo aéreo con dron para inmobiliarias y promotoras. Muestra propiedades, parcelas y urbanizaciones desde el aire para acelerar la venta.',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://kulmenvisuals.com/#localbusiness',
       name: 'Kulmen Visuals',
       url: 'https://kulmenvisuals.com',
     },
