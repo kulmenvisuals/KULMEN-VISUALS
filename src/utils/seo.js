@@ -281,6 +281,56 @@ export function renderHeadTags(seoInput) {
   return tags.join('\n    ')
 }
 
+// Schema de una ficha de proyecto. VideoObject solo si hay vídeo y fecha
+// (uploadDate es obligatorio para Google); si no, CreativeWork.
+export function buildProjectSchema(project) {
+  const thumbnailUrl = absoluteUrl(project.thumbnail || project.images?.[0] || defaultOgImage)
+  const description =
+    project.description ||
+    'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.'
+  const pageUrl = absolutePageUrl(getProjectPath(project))
+  const authorRef = {
+    '@type': 'Person',
+    name: 'io Rodríguez',
+    url: absolutePageUrl(routes.sobreMi),
+  }
+
+  const youtubeId = project.youtubeUrl?.split('/embed/')?.[1]?.split('?')?.[0]
+  const vimeoId = project.vimeoUrl?.match(/vimeo\.com\/video\/(\d+)/)?.[1]
+  const embedUrl = project.youtubeUrl || project.vimeoUrl
+  const contentUrl = youtubeId
+    ? `https://www.youtube.com/watch?v=${youtubeId}`
+    : vimeoId
+      ? `https://vimeo.com/${vimeoId}`
+      : undefined
+  const uploadDate = project.uploadDate || (project.year ? `${project.year}-01-01` : undefined)
+
+  if (embedUrl && uploadDate) {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'VideoObject',
+      name: project.title,
+      description,
+      thumbnailUrl,
+      embedUrl,
+      contentUrl,
+      uploadDate,
+      url: pageUrl,
+      author: authorRef,
+    }
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: project.title,
+    description,
+    image: thumbnailUrl,
+    url: pageUrl,
+    creator: authorRef,
+  }
+}
+
 export function resolveRouteSeo(pathname = '/') {
   const path = normalizePathname(pathname)
 
@@ -316,44 +366,13 @@ export function resolveRouteSeo(pathname = '/') {
     const project = findProjectBySlug(slug)
 
     if (project) {
-      const thumbnailUrl = absoluteUrl(project.thumbnail || project.images?.[0] || defaultOgImage)
-      const projectDescription =
-        project.description ||
-        'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.'
-      const authorRef = {
-        '@type': 'Person',
-        name: 'io Rodríguez',
-        url: absolutePageUrl(routes.sobreMi),
-      }
-
-      const videoId = project.youtubeUrl?.split('/embed/')?.[1]?.split('?')?.[0]
-      const contentUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : undefined
-
-      const jsonLd = project.youtubeUrl
-        ? {
-            '@context': 'https://schema.org',
-            '@type': 'VideoObject',
-            name: project.title,
-            description: projectDescription,
-            thumbnailUrl,
-            embedUrl: project.youtubeUrl,
-            contentUrl,
-            uploadDate: project.year ? `${project.year}-01-01` : undefined,
-            author: authorRef,
-          }
-        : {
-            '@context': 'https://schema.org',
-            '@type': 'CreativeWork',
-            name: project.title,
-            description: projectDescription,
-            image: thumbnailUrl,
-            url: project.instagramUrl || absolutePageUrl(path),
-            creator: authorRef,
-          }
+      const jsonLd = buildProjectSchema(project)
 
       return buildSeo({
         title: brandTitle(project.title),
-        description: projectDescription,
+        description:
+          project.description ||
+          'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.',
         pathname: path,
         image: project.thumbnail || project.images?.[0] || defaultOgImage,
         jsonLd,

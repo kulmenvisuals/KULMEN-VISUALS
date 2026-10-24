@@ -1,8 +1,31 @@
 // src/pages/Contacto.jsx
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const objectiveFieldName = 'objetivo[]'
+
+const siguientesPasos = [
+  {
+    title: 'Te respondo en 24-48 horas',
+    desc: 'Leo tu mensaje y te escribo en un plazo de 24 a 48 horas laborables, con preguntas concretas o una primera idea de enfoque.',
+  },
+  {
+    title: 'Una llamada breve',
+    desc: 'Si hace falta, hablamos unos minutos para cerrar objetivo, fechas, localización y dónde se va a publicar el vídeo.',
+  },
+  {
+    title: 'Propuesta con presupuesto cerrado',
+    desc: 'Te envío la propuesta con el presupuesto desglosado: rodaje, dron, edición y desplazamiento. Sin compromiso y sin sorpresas después.',
+  },
+]
+
+const queIncluir = [
+  'Tipo de proyecto: spot, vídeo de empresa, evento, FPV, fotografía aérea, redes…',
+  'Localización y fechas aproximadas',
+  'Objetivo del vídeo y dónde se va a publicar',
+  'Referencias que te gusten, si las tienes',
+  'Presupuesto orientativo, si ya lo has definido',
+]
 
 export default function Contacto() {
   const navigate = useNavigate()
@@ -278,6 +301,51 @@ export default function Contacto() {
           </form>
         </div>
       </div>
+
+      {/* Qué pasa después del formulario */}
+      <section className="mt-16 md:mt-20 border-t border-zinc-800/70 pt-12 grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+        <div className="space-y-6">
+          <h2 className="kv-section-title">Qué pasa después de escribirme</h2>
+          <ol className="space-y-5">
+            {siguientesPasos.map((paso, i) => (
+              <li key={paso.title} className="flex gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-amber-300/40 text-sm font-semibold text-amber-200">
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="kv-card-title text-zinc-100 mb-1">{paso.title}</h3>
+                  <p className="kv-body-muted">{paso.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="space-y-6">
+          <div className="space-y-4">
+            <h2 className="kv-section-title">Qué incluir en tu mensaje</h2>
+            <ul className="space-y-2 text-zinc-300">
+              {queIncluir.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="kv-bullet mt-2 shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="kv-body-muted">
+            ¿Aún no sabes qué necesitas? Mira los{' '}
+            <Link to="/servicios/" className="text-amber-300 hover:text-amber-200 underline decoration-amber-300/30 underline-offset-4">
+              servicios audiovisuales
+            </Link>{' '}
+            o los{' '}
+            <Link to="/proyectos/" className="text-amber-300 hover:text-amber-200 underline decoration-amber-300/30 underline-offset-4">
+              proyectos recientes
+            </Link>{' '}
+            para hacerte una idea.
+          </p>
+        </div>
+      </section>
     </div>
   )
 }

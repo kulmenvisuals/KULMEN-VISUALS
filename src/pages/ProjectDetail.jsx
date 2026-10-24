@@ -2,11 +2,12 @@
 import { useMemo, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import { projects } from "../data/projects.js"
+import { projectCases } from "../data/projectCases.js"
 import VideoPlayer from "../components/VideoPlayer.jsx"
 import ProjectCard from "../components/ProjectCard.jsx"
 import { normalizeSlug } from "../utils/slug.js"
 import { getRelatedItems, getProjectTerms } from "../utils/related.js"
-import { usePageSeo, useJsonLd, siteUrl, brandTitle } from "../utils/seo.js"
+import { usePageSeo, useJsonLd, brandTitle, buildProjectSchema } from "../utils/seo.js"
 import { defaultOgImage, getProjectPath } from "../utils/routes.js"
 
 export default function ProjectDetail() {
@@ -33,39 +34,7 @@ export default function ProjectDetail() {
     robots: 'noindex, nofollow',
   }, [project])
 
-  const jsonLdSchema = useMemo(() => {
-    if (!project) return null
-    const thumbnailUrl = `${siteUrl}${project.thumbnail || project.images?.[0] || defaultOgImage}`
-    const projectDescription = project.description || 'Proyecto audiovisual producido por Kulmen Visuals para marcas, eventos y espacios.'
-    const authorRef = { '@type': 'Person', name: 'io Rodríguez', url: `${siteUrl}/sobre-mi/` }
-
-    const videoId = project.youtubeUrl?.split('/embed/')?.[1]?.split('?')?.[0]
-    const contentUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : undefined
-    const vimeoId = project.vimeoUrl?.match(/vimeo\.com\/video\/(\d+)/)?.[1]
-    const vimeoContentUrl = vimeoId ? `https://vimeo.com/${vimeoId}` : undefined
-
-    return (project.youtubeUrl || project.vimeoUrl)
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'VideoObject',
-          name: project.title,
-          description: projectDescription,
-          thumbnailUrl,
-          embedUrl: project.youtubeUrl || project.vimeoUrl,
-          contentUrl: contentUrl || vimeoContentUrl,
-          uploadDate: project.year ? `${project.year}-01-01` : undefined,
-          author: authorRef,
-        }
-      : {
-          '@context': 'https://schema.org',
-          '@type': 'CreativeWork',
-          name: project.title,
-          description: projectDescription,
-          image: thumbnailUrl,
-          url: project.instagramUrl || `${siteUrl}${getProjectPath(project)}`,
-          creator: authorRef,
-        }
-  }, [project])
+  const jsonLdSchema = useMemo(() => (project ? buildProjectSchema(project) : null), [project])
 
   usePageSeo(pageSeo)
   useJsonLd(jsonLdSchema)
@@ -126,6 +95,7 @@ export default function ProjectDetail() {
   const hasInstagram = Boolean(instagramEmbedUrl)
   const useInstagramSplit = hasInstagram && !hasYoutube && !hasVimeo && !hasLocalVideo
   const relatedProjects = getRelatedItems(projects, project, getProjectTerms, 3)
+  const caso = projectCases[project.slug]
   const hasMultipleVideos = Array.isArray(project.videos) && project.videos.length > 0
   const hasOnlyVerticalVideos = hasMultipleVideos && project.videos.every((video) => video.aspect === "9/16")
   const verticalVideosCount = hasOnlyVerticalVideos ? project.videos.length : 0
@@ -382,6 +352,44 @@ export default function ProjectDetail() {
                 </div>
               )}
             </aside>
+          </section>
+        )}
+
+        {/* Caso de estudio */}
+        {caso && (
+          <section className="space-y-6 border-t border-zinc-800/70 pt-10">
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="space-y-2">
+                <h2 className="kv-card-title text-zinc-100">El encargo</h2>
+                <p className="kv-body-muted text-zinc-300">{caso.encargo}</p>
+              </div>
+              <div className="space-y-2">
+                <h2 className="kv-card-title text-zinc-100">Cómo lo planteé</h2>
+                <p className="kv-body-muted text-zinc-300">{caso.enfoque}</p>
+              </div>
+              <div className="space-y-2">
+                <h2 className="kv-card-title text-zinc-100">Qué se entregó</h2>
+                <ul className="space-y-2 text-zinc-300">
+                  {caso.entregables.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="kv-bullet mt-2 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            {caso.servicio && (
+              <p className="kv-caption text-zinc-400">
+                Servicio relacionado:{" "}
+                <Link
+                  to={caso.servicio.to}
+                  className="text-amber-300 hover:text-amber-200 underline decoration-amber-300/30 underline-offset-4"
+                >
+                  {caso.servicio.label} →
+                </Link>
+              </p>
+            )}
           </section>
         )}
 

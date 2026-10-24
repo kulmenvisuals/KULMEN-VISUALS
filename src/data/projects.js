@@ -16,6 +16,8 @@ export const projects = [
 
     thumbnail: "https://img.youtube.com/vi/yxJbeSQxR2Y/hqdefault.jpg",
     youtubeUrl: "https://www.youtube.com/embed/yxJbeSQxR2Y",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2026-06-05",
 
     videoUrl: null,
     poster: null,
@@ -51,6 +53,8 @@ export const projects = [
 
     thumbnail: "https://img.youtube.com/vi/pNruh2kHs0A/maxresdefault.jpg",
     youtubeUrl: "https://www.youtube.com/embed/pNruh2kHs0A",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2026-07-14",
 
     videoUrl: null,
     poster: null,
@@ -81,6 +85,8 @@ export const projects = [
 
     thumbnail: "https://img.youtube.com/vi/-S6_EVetoAo/maxresdefault.jpg",
     youtubeUrl: "https://www.youtube.com/embed/-S6_EVetoAo",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2026-02-02",
 
     videoUrl: null,
     poster: null,
@@ -116,6 +122,8 @@ export const projects = [
 
     // YouTube embed
     youtubeUrl: "https://www.youtube.com/embed/qbNfBMfWglA",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2024-03-11",
 
     videoUrl: null,
     poster: null,
@@ -147,6 +155,8 @@ export const projects = [
 
     thumbnail: "/images/projects/concierto-fpv-galicia-kulmen.jpg",
     youtubeUrl: "https://www.youtube.com/embed/hiOG4r20MKQ",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2026-06-29",
 
     videoUrl: null,
     poster: null,
@@ -170,6 +180,7 @@ export const projects = [
 
     title: "Vídeo inmobiliario · Grupo Country Homes",
     client: "Grupo Country Homes",
+    year: 2026,
 
     category: "Espacios / Inmobiliario",
     type: ["Espacios", "Inmobiliario"],
@@ -177,6 +188,8 @@ export const projects = [
 
     thumbnail: "https://img.youtube.com/vi/um5LqwcuABo/maxresdefault.jpg",
     youtubeUrl: "https://www.youtube.com/embed/um5LqwcuABo",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2026-03-23",
 
     videoUrl: null,
     poster: null,
@@ -201,6 +214,7 @@ export const projects = [
 
     title: "Vídeo inmobiliario RRSS · Land of Eve",
     client: "Land of Eve",
+    year: 2026,
 
     category: "Espacios / Inmobiliario / RRSS",
     type: ["Espacios", "Inmobiliario", "RRSS"],
@@ -253,6 +267,7 @@ export const projects = [
 
     title: "Vídeo inmobiliario RRSS · Pazo en Lugo",
     client: "Pazo en Lugo",
+    year: 2026,
 
     category: "Espacios / Inmobiliario / RRSS",
     type: ["Espacios", "Inmobiliario", "RRSS"],
@@ -339,6 +354,8 @@ export const projects = [
     thumbnail: "/images/projects/Video-corporativo-fpv-galicia.jpg",
     vimeoUrl: null,
     youtubeUrl: "https://www.youtube.com/embed/rVydjna50tM",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2026-05-12",
     videoUrl: null,
     poster: null,
     images: [],
@@ -392,6 +409,10 @@ export const projects = [
     thumbnail: "https://img.youtube.com/vi/riE3cFCA-pM/maxresdefault.jpg",
 
     youtubeUrl: "https://www.youtube.com/embed/riE3cFCA-pM",
+
+    // Fecha real de publicación del vídeo (schema VideoObject)
+
+    uploadDate: "2026-05-13",
     videoUrl: null,
     poster: null,
     images: [],
@@ -420,6 +441,10 @@ export const projects = [
     thumbnail: "https://img.youtube.com/vi/gJlNWpcF3G8/maxresdefault.jpg",
 
     youtubeUrl: "https://www.youtube.com/embed/gJlNWpcF3G8",
+
+    // Fecha real de publicación del vídeo (schema VideoObject)
+
+    uploadDate: "2026-05-13",
     videoUrl: null,
     poster: null,
 
@@ -484,6 +509,10 @@ export const projects = [
     thumbnail: "https://img.youtube.com/vi/0JiD8UT_EHc/maxresdefault.jpg",
 
     youtubeUrl: "https://www.youtube.com/embed/0JiD8UT_EHc",
+
+    // Fecha real de publicación del vídeo (schema VideoObject)
+
+    uploadDate: "2026-05-13",
     videoUrl: null,
     poster: null,
 
@@ -573,6 +602,8 @@ export const projects = [
 
     // YouTube embed
     youtubeUrl: "https://www.youtube.com/embed/C_knrGpZW0k",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2024-06-12",
 
     // Fallback local
     videoUrl: null,
@@ -603,6 +634,8 @@ export const projects = [
     coords: [40.4168, -3.7038],
     thumbnail: "https://img.youtube.com/vi/MYtznjHXaYw/maxresdefault.jpg",
     youtubeUrl: "https://www.youtube.com/embed/MYtznjHXaYw",
+    // Fecha real de publicación del vídeo (schema VideoObject)
+    uploadDate: "2024-02-22",
     poster: null,
     images: [
       "/images/projects/mama-1.jpg",
