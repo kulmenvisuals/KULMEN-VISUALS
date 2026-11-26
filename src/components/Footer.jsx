@@ -105,6 +105,33 @@ export default function Footer() {
         </div>
       </div>
 
+      <section className="border-t border-white/5" aria-label="Axudas do Programa EMEGA">
+        <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
+          <figure className="mx-auto max-w-2xl text-center">
+            <a
+              href="/images/cartel-programa-emega.webp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-4 focus-visible:ring-offset-zinc-950"
+              aria-label="Abrir cartel de las ayudas del Programa EMEGA a tamaño completo"
+            >
+              <img
+                src="/images/cartel-programa-emega.webp"
+                alt="Axudas do Programa EMEGA. Actuación cofinanciada pola Unión Europea para fomentar o emprendemento feminino en Galicia. Xunta de Galicia, Fondos Europeos e Xacobeo 2027."
+                width="1786"
+                height="1263"
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full bg-white"
+              />
+            </a>
+            <figcaption className="mt-3 text-sm text-zinc-400">
+              Pulsa en el cartel para verlo a tamaño completo
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       {/* Franja inferior */}
       <div className="border-t border-white/5">
         <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
